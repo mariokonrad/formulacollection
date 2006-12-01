@@ -1,0 +1,1311 @@
+%
+% $Id: elektro.tex,v 1.3 2003/10/18 21:38:33 ninja Exp $
+%
+
+\section{Konstanten}
+
+\subsection{Elemtarladung}
+\begin{equation}
+	e_0=1.6\cdot 10^{-19}\unit{As}
+\end{equation}
+
+\subsection{Dielektrizit"atskonstante}
+\begin{equation}
+	\epsilon_0=8.854\cdot 10^{-12}\unit{\frac{As}{Vm}}
+\end{equation}
+\begin{center}
+	\begin{tabular}{ll}
+		\hline
+		$\epsilon_r$ & umgebendes Material \\
+		\hline
+		$\approx 1$ & Luft \\
+		$=1$ & Vakuum \\
+		$81$ & Wasser \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\subsection{Spezifischer Widerstand}
+\begin{center}
+	\begin{tabular}{lll}
+		\hline
+		Material & $\rho\unit{\Omega\frac{mm^2}{m}}$ & $\rho\unit{\Omega m}$ \\
+		\hline
+		Kupfer & $\approx 1.8\cdot 10^{-2}$ & $1.8\cdot 10^{-8}$ \\
+		Eisen & $\approx 0.2$ & \\
+		Chromnickel & $\approx 1.15$ & $1.15\cdot 10^{-6}$ \\
+		Widerstandsdraht & $\approx 0.4$ & \\
+		Glas & $\approx 5\cdot 10^{13}$ & $5\cdot 10^7$ \\
+		Porzellan & $\approx 10^{16}$ & \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\subsection{Temperatur-Koeffizient}
+\begin{center}
+	\begin{tabular}{lll}
+		\hline
+		Material & $\alpha\unit{\frac{1}{°C}}$ & $\beta\unit{\frac{1}{°C^2}}$ \\
+		\hline
+		Kupfer & $0.393\cdot 10^{-2}$ & $0.6\cdot 10^{-6}$ \\
+		Konstantan & $2\cdot 10^{-6}$ & $0$ \\
+		Mangemin & $6\cdot 10^{-6}$ & $0$ \\
+		Kohlenstoff & $-5\cdot 10^{-4}$ &  \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\section{Grundlagen}
+
+\subsection{Coulombsche Kraft}
+\begin{center}
+	\begin{pspicture}(0,0)(6,3)
+		\pscircle(2,1.5){1.0}\pscircle(2,1.5){0.05}
+		\pscircle(4,1.5){0.5}\pscircle(4,1.5){0.05}
+		\rput[Bb](2.8,2.3){$Q$}
+		\rput[Bb](3.5,2.0){$q$}
+		\pcline{->}(2,1.5)(0.0,1.5)
+		\Bput{$\overrightarrow{F(R)}$}
+		\pcline{->}(4,1.5)(6.0,1.5)
+		\Aput{$\overrightarrow{F(R)}$}
+		\psline[linestyle=dashed]{-}(2,1.5)(2,0.0)
+		\psline[linestyle=dashed]{-}(4,1.5)(4,0.0)
+		\pcline{<->}(2,0.2)(4,0.2)
+		\Aput{$R$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	F(R)=\frac{Q\cdot q}{4\pi\cdot\epsilon_r\cdot\epsilon_0}\cdot\frac{1}{R^2}\unit{N}
+\end{equation}
+
+\subsection{Elektrische Feldst"arke}
+\begin{center}
+	\begin{pspicture}(0,0)(6,3)
+		\pscircle(2,1.5){1.0}\pscircle(2,1.5){0.05}
+		\pscircle(4,1.5){0.5}\pscircle(4,1.5){0.05}
+		\rput[Bb](2.8,2.3){$Q$}
+		\psline[linestyle=dashed]{-}(2,1.5)(2,0.0)
+		\psline[linestyle=dashed]{-}(4,1.5)(4,0.0)
+		\pcline{<->}(2,0.2)(4,0.2)
+		\Aput{$r$}
+	\end{pspicture}
+\end{center}
+\begin{gather}
+	E(r)=\frac{Q}{4\pi\cdot\epsilon_0\cdot\epsilon_r}\cdot\frac{1}{r^2} \\
+	\Vec{E(r)}=E(r)\cdot\frac{\Vec{r}}{\|\Vec{r}\|} \\
+	Q=n\cdot e
+\end{gather}
+
+\subsection{Kraftwirkung im elektrischen Feld}
+\begin{gather}
+	\Vec{F}=\Vec{E}\cdot q\unit{N}
+\end{gather}
+
+\subsection{Strom $I$, $i$}
+\begin{gather}
+	i=\frac{\partial q}{\partial t}\unit{A} \\
+	i=\frac{n\cdot e^-\cdot v\cdot A\cdot\partial t}{\partial t}=n\cdot e^-\cdot v\cdot A
+	\intertext{mit}
+	\begin{align*}
+		A\quad &\text{: Leiterquerschnitt} \\
+		v\quad &\text{: Geschwindigkeit} \\
+		n\quad &\text{: Dichte der Elektronen }\unit{m^{-3}} \\
+		b\quad &\text{: Beweglichkeit }\unit{\frac{m^2}{v\cdot s}}
+	\end{align*} \\
+	I=q\cdot n\cdot A\cdot b\cdot E
+\end{gather}
+
+\subsection{Stromdichte $J$, $j$}
+\begin{gather}
+	j=\frac{i}{A}\qquad J=\frac{I}{A}\unit{\frac{A}{m^2}}
+\end{gather}
+
+\subsection{Spannung $U$, $u$}
+\begin{gather}
+	U=\underbrace{\frac{W}{q}}_{\text{Arbeitsverm"ogen pro Ladung}}=\underbrace{E\cdot l}_{\text{Feldst"arke mal L"ange}}\unit{V}
+\end{gather}
+
+\subsection{Ohmsches Gesetz}
+\begin{align}
+	U &= R\cdot I = \rho\frac{l}{A}\unit{V} \\
+	I &= \delta\frac{A}{l}\cdot U\unit{I} \\
+	R &= \frac{U}{I}\unit{\Omega}
+\end{align}
+\begin{align*}
+	R\quad &\text{: Widerstand}\unit{\Omega} \\
+	G\quad &\text{: Gleitwert}\unit{S} \\
+	\delta\quad &\text{: spez. Leitf"ahigkeit }=n\cdot\epsilon_0\cdot b \\
+	\rho\quad &\text{: spez. Widerstand }=\frac{1}{\delta} \\
+	l\quad &\text{: L"ange des Drahtes} \\
+	A\quad &\text{: Querschnitt}
+\end{align*}
+
+\subsection{Leistung $P$}
+\begin{gather}
+	p(t)=u(t)\cdot i(t)\unit{W}
+	\intertext{mit}
+	u(t)=\hat{u}\cdot\cos(\omega t)\quad\text{und}\quad i(t)=\hat{i}\cdot\cos(\omega t) \\
+	P=U\cdot I\unit{W}
+\end{gather}
+
+\subsection{Widerstand $R$}
+\begin{gather}
+	R=\frac{U}{I}\unit{\Omega} \\
+	R_{(20°C+\Delta\theta)}=R_{20}\left({1+\alpha\cdot\Delta\theta+\beta\cdot(\Delta\theta)^2+\cdots}\right)\unit{\Omega}
+\end{gather}
+
+\section{Halbleiter}
+\subsection{Diode}
+\begin{center}
+	\begin{pspicture}(0,0)(2,3)
+		\pscircle(0.5,2.25){0.1}
+		\pscircle(0.5,0.25){0.1}
+		\psline{-}(0.5,2.25)(1.5,2.25)(1.5,1.5)
+		\psline{-}(0.5,0.25)(1.5,0.25)(1.5,1.0)
+		\psline{-}(1.25,1.0)(1.75,1.0)
+		\psline{-}(1.5,1.0)(1.75,1.5)(1.25,1.5)(1.5,1.0)
+		\pcline[linecolor=blue]{->}(0.5,2.05)(0.5,0.45)
+		\Bput{$u_D$}
+		\pcline[linecolor=red]{->}(0.8,2.25)(1.3,2.25)
+		\Aput{$i_D$}
+	\end{pspicture}
+\end{center}
+\begin{gather}
+	i_D=I_s\left({{e^{\frac{|e_0|\cdot u_D}{k\cdot T}}-1}}\right)=I_s\left({e^{\frac{u_D}{u_S}}-1}\right) \\
+	\begin{align*}
+	I_s\quad &\text{: Sperrstromkonstante }\unit{A} \\
+	\epsilon_0\quad & 1.6\cdot 10^{-19}\unit{As} \\
+	k\quad &\text{: Bolzman-Konstante }=1.38\cdot 10^{-23}\unit{\frac{J}{K}} \\
+	T\quad &\text{: absolute Temperatur }\unit{K}
+	\end{align*}
+\end{gather}
+\paragraph{Flussspannung-"Ubersicht}
+\begin{center}
+	\begin{tabular}{ll}
+		\hline
+		Silizium & $\approx 0.7\ldots 0.8\unit{V}$ \\
+		Germanium & $\approx 0.3\unit{V}$ \\
+		Schottky & $\approx 0.4\unit{V}$ \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\subsection{Transistor}
+\subsubsection{Grosses Ersatzschaltbild (NPN)}
+\begin{center}
+	\begin{pspicture}(-0.5,-0.5)(6.5,4.5)
+		\pscircle(0,0){0.1}\rput[Br](-0.1,0.0){$E$}
+		\pscircle(0,4){0.1}\rput[Br](-0.1,4.0){$B$}
+		\pscircle(6,0){0.1}\rput[Bl]( 6.1,0.0){$E$}
+		\pscircle(6,4){0.1}\rput[Bl]( 6.1,4.0){$C$}
+		\psline{-}(0.1,0.0)(5.9,0.0)
+		\pscircle(2.0,1.0){0.25}\rput[B](2.0,1.0){$+$}
+		\pscircle(4.0,2.0){0.25}\rput[B](4.0,2.0){$\downarrow$}
+		\rput[Bl](4.3,2.0){$\beta\cdot i_b$}
+		\psframe(1.825,3.0)(2.125,3.5)\rput[Bl](2.2,3.25){$r_{be}$}
+		\psline{-}(1.75,2.0)(2.25,2.0)
+		\psline{-}(2.0,2.0)(2.25,2.3)(1.75,2.3)(2.0,2.0)
+		\rput[Bl](2.3,2.0){ideal}
+		\psline{-}(0.1,4.0)(2.0,4.0)(2.0,3.5)
+		\psline{-}(2.0,3.0)(2.0,2.3)
+		\psline{-}(2.0,2.0)(2.0,1.25)
+		\psline{-}(2.0,0.75)(2.0,0.0)
+		\pscircle[fillstyle=solid,fillcolor=black](2.0,0.0){0.05}
+		\psline{-}(5.9,4.0)(4.0,4.0)(4.0,2.25)
+		\psline{-}(4.0,1.75)(4.0,0.0)
+		\pscircle[fillstyle=solid,fillcolor=black](4.0,0.0){0.05}
+		\pcline[linecolor=blue]{->}(1.7,1.25)(1.7,0.75)\Bput{$u_F$}
+		\pcline[linecolor=blue]{->}(0.0,3.8)(0.0,0.2)\Bput{$u_{BE}$}
+		\pcline[linecolor=blue]{->}(6.0,3.8)(6.0,0.2)\Aput{$u_{CE}$}
+		\pcline[linecolor=red]{->}(0.5,4.0)(1.5,4.0)\Aput{$i_b$}
+		\pcline[linecolor=red]{->}(5.5,4.0)(4.5,4.0)\Bput{$i_c$}
+	\end{pspicture}
+\end{center}
+
+\subsubsection{Kleines Ersatzschaltbild (NPN)}
+\begin{center}
+	\begin{pspicture}(-0.5,-0.5)(6.5,2.5)
+		\pscircle(0,0){0.1}\rput[Br](-0.1,0.0){$E$}
+		\pscircle(0,2){0.1}\rput[Br](-0.1,2.0){$B$}
+		\pscircle(6,0){0.1}\rput[Bl]( 6.1,0.0){$E$}
+		\pscircle(6,2){0.1}\rput[Bl]( 6.1,2.0){$C$}
+		\psline{-}(0.1,0.0)(5.9,0.0)
+		\pscircle(4.0,1.0){0.25}\rput[B](4.0,1.0){$\downarrow$}
+		\rput[Bl](4.3,1.0){$\beta\cdot i_b$}
+		\psframe(1.825,0.75)(2.125,1.25)\rput[Bl](2.2,1.0){$r_{be}$}
+		\psline{-}(0.1,2.0)(2.0,2.0)(2.0,1.25)
+		\psline{-}(2.0,0.75)(2.0,0.0)
+		\pscircle[fillstyle=solid,fillcolor=black](2.0,0.0){0.05}
+		\psline{-}(5.9,2.0)(4.0,2.0)(4.0,1.25)
+		\psline{-}(4.0,0.75)(4.0,0.0)
+		\pscircle[fillstyle=solid,fillcolor=black](4.0,0.0){0.05}
+		\pcline[linecolor=blue]{->}(0.0,1.8)(0.0,0.2)\Bput{$u_{BE}$}
+		\pcline[linecolor=blue]{->}(6.0,1.8)(6.0,0.2)\Aput{$u_{CE}$}
+		\pcline[linecolor=red]{->}(0.5,2.0)(1.5,2.0)\Aput{$i_b$}
+		\pcline[linecolor=red]{->}(5.5,2.0)(4.5,2.0)\Bput{$i_c$}
+	\end{pspicture}
+\end{center}
+
+\subsubsection{Hybridparameter}
+\begin{gather}
+	\underbrace{\begin{bmatrix}h_{ie} & h_{re} \\ h_{fe} & h_{oe}\end{bmatrix}}_{e\text{ : Emitterschaltung}}\cdot\begin{bmatrix}i_b \\ u_{ce}\end{bmatrix}=\begin{bmatrix}u_{be} \\ i_c\end{bmatrix}
+\end{gather}
+siehe Datenblatt:
+\begin{align*}
+	h_{ie} &= r_{be} \\
+	h_{re} &= \alpha \\
+	h_{fe} &= \beta \\
+	h_{oe} &= G_{oe} = \frac{1}{r_{oe}}
+\end{align*}
+
+\section{Netzwerke}
+\subsection{Manipulation mit idealen Quellen}
+\begin{center}
+	\begin{pspicture}(-3,-2)(3,2)
+		\pscircle(0.0, 1.0){0.25}\rput[B](0.0, 0.93){$\leftarrow$}
+		\psframe(-0.250,-1.125)( 0.250,-0.875)
+		\psframe( 1.875,-0.250)( 2.125, 0.250)
+		\psframe(-2.125,-0.250)(-1.875, 0.250)
+		\psline{-}(-3.0, 1.0)(-0.25, 1.0)\psline{-}(0.25, 1.0)( 3.00, 1.0)
+		\psline{-}(-3.0,-1.0)(-0.25,-1.0)\psline{-}(0.25,-1.0)( 3.00,-1.0)
+		\psline{-}(-2.0, 2.0)(-2.0, 0.25)\psline{-}(-2.0,-0.25)(-2.0,-2.0)
+		\psline{-}( 2.0, 2.0)( 2.0, 0.25)\psline{-}( 2.0,-0.25)( 2.0,-2.0)
+		\pscircle[fillstyle=solid,fillcolor=black]( 2.0, 1.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=black](-2.0, 1.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=black]( 2.0,-1.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=black](-2.0,-1.0){0.1}
+		\pscircle[linecolor=red]( 0.00, 1.75){0.25}\rput[B](0.0, 1.67){$\rightarrow$}
+		\pscircle[linecolor=red]( 0.00,-1.75){0.25}\rput[B](0.0,-1.83){$\leftarrow$}
+		\pscircle[linecolor=red]( 2.75, 0.00){0.25}\rput[B](2.75,-0.08){$\downarrow$}
+		\pscircle[linecolor=red](-2.75, 0.00){0.25}\rput[B](-2.75,-0.08){$\uparrow$}
+		\psline[linecolor=red]{-}( 2.0, 1.0)( 2.75, 0.75)( 2.75, 0.25)
+		\psline[linecolor=red]{-}( 2.0,-1.0)( 2.75,-0.75)( 2.75,-0.25)
+		\psline[linecolor=red]{-}(-2.0, 1.0)(-2.75, 0.75)(-2.75, 0.25)
+		\psline[linecolor=red]{-}(-2.0,-1.0)(-2.75,-0.75)(-2.75,-0.25)
+		\psline[linecolor=red]{-}( 2.0, 1.0)( 1.75, 1.75)( 0.25, 1.75)
+		\psline[linecolor=red]{-}(-2.0, 1.0)(-1.75, 1.75)(-0.25, 1.75)
+		\psline[linecolor=red]{-}( 2.0,-1.0)( 1.75,-1.75)( 0.25,-1.75)
+		\psline[linecolor=red]{-}(-2.0,-1.0)(-1.75,-1.75)(-0.25,-1.75)
+	\end{pspicture}
+\end{center}
+
+\subsection{Maschenstromverfahren}
+\begin{center}
+	\begin{pspicture}(-1,0)(7,4)
+		\psframe[fillstyle=none](0.0,0.0)(6.0,3)
+		\psline{-}(2,3)(2,0)\psline{-}(4,3)(4,0)
+		\pscircle[fillstyle=solid,fillcolor=black](2.0,0.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=black](4.0,0.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=black](2.0,3.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=black](4.0,3.0){0.1}
+		\psframe[fillstyle=solid,fillcolor=white](0.5,  2.75)(1.5,  3.25)
+		\psframe[fillstyle=solid,fillcolor=white](2.5,  2.75)(3.5,  3.25)
+		\psframe[fillstyle=solid,fillcolor=white](4.5,  2.75)(5.5,  3.25)
+		\psframe[fillstyle=solid,fillcolor=white](1.75, 1.0 )(2.25, 2.0 )
+		\psframe[fillstyle=solid,fillcolor=white](3.75, 1.0 )(4.25, 2.0 )
+		\pscircle[fillstyle=solid,fillcolor=white](0.0, 1.5){0.5}
+		\pscircle[fillstyle=solid,fillcolor=white](6.0, 1.5){0.5}
+		\rput[Bb](1.0, 3.4){$R_1$}
+		\rput[Bb](3.0, 3.4){$R_2$}
+		\rput[Bb](5.0, 3.4){$R_5$}
+		\rput[tl](2.3, 0.8){$R_2$}
+		\rput[tl](4.3, 0.8){$R_4$}
+		\pcline[linecolor=blue]{->}(-0.6, 2.5)(-0.6, 0.5)\Bput{$U_{O1}$}
+		\rput[Bt](0.0, 1.9){$+$}
+		\pcline[linecolor=blue]{->}( 6.6, 2.5)( 6.6, 0.5)\Aput{$U_{O2}$}
+		\rput[Bt](6.0, 1.9){$+$}
+		\pcline[linecolor=red]{->}(1.5, 3.0)(2.0, 3.0)\Aput{$i_1$}
+		\pcline[linecolor=red]{->}(3.5, 3.0)(4.0, 3.0)\Aput{$i_1$}
+		\pcline[linecolor=red]{->}(5.5, 3.0)(6.0, 3.0)\Aput{$i_1$}
+		\pcline[linecolor=red]{->}(2.0, 2.5)(2.0, 2.0)\Aput{$i_2$}
+		\pcline[linecolor=red]{->}(4.0, 2.5)(4.0, 2.0)\Aput{$i_4$}
+		\psarcn[linecolor=red]{->}(1.0, 1.5){0.35}{270}{315}\rput[B](1.0,1.4){$m_1$}
+		\psarcn[linecolor=red]{->}(3.0, 1.5){0.35}{270}{315}\rput[B](3.0,1.4){$m_2$}
+		\psarcn[linecolor=red]{->}(5.0, 1.5){0.35}{270}{315}\rput[B](5.0,1.4){$m_3$}
+	\end{pspicture}
+\end{center}
+\begin{enumerate}
+	\item Vorbereitung des Netzwerkes: Stromquellen wegschaffen
+	\item Wahl der geeigneten Maschen
+\end{enumerate}
+\paragraph{Widerstandsmatrix}
+\begin{gather}
+	W=\begin{pmatrix}R_1+R_2 & -R_2 & 0 \\ R_2 & R_2+R_3+R_4 & -R_4 \\ 0 & -R_4 & R_4+R_5\end{pmatrix}
+\end{gather}
+Direktes Aufstellen von $W$:
+\begin{enumerate}
+	\item Diagonalelemente $(i=k)$: Summe der Widerst"ande, durch die der
+		betreffende Maschenstrom fliesst.
+	\item "Ubrige Elemente $(i\neq k)$: Summe der Widerst"ande, durch die der Maschenstrom
+		$i$ und $k$ fliesst. Das Vorzeichen ist negativ falls die Maschenstr"ome
+		unterschiedliche Richtungen haben.
+\end{enumerate}
+\paragraph{Quellvektor}
+\begin{gather}
+	\underline{u_0}=\begin{pmatrix}+U_{01} \\ 0 \\ -U_{02}\end{pmatrix}
+\end{gather}
+Direktes Aufstellen von $u_0$: Summe der einzelnen Quellspannungen in jeder Masche. Das
+Vorzeichen ist positiv wenn sich ein positiver Maschenstrom ergeben w"urde.
+\paragraph{Maschenstromvektor}
+\begin{gather}
+	\underline{m}=\begin{pmatrix}m_1 \\ m_2 \\ m_3\end{pmatrix}
+\end{gather}
+\paragraph{L"osung}
+\begin{gather}
+	W\cdot\underline{m}=\underline{u_0}
+\end{gather}
+
+\subsection{Knotenspannungsverfahren}
+\begin{center}
+	\begin{pspicture}(-1.0,-0.5)(11.0,4.0)
+		\psframe[fillstyle=none](0,0)(10,3)
+		\psline{-}(2,0)(2,3)
+		\psline{-}(4,0)(4,3)
+		\psline{-}(6,0)(6,3)
+		\psline{-}(8,0)(8,3)
+		\pscircle[fillstyle=solid,fillcolor=black](2.0,3.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=black](4.0,3.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=black](6.0,3.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=black](8.0,3.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=black](2.0,0.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=black](4.0,0.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=black](6.0,0.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=black](8.0,0.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](0.0,1.5){0.5}
+		\pscircle[fillstyle=solid,fillcolor=white](10,1.5){0.5}
+		\psframe[fillstyle=solid,fillcolor=white](1.75,1.0)(2.25,2.0)
+		\psframe[fillstyle=solid,fillcolor=white](3.75,1.0)(4.25,2.0)
+		\psframe[fillstyle=solid,fillcolor=white](5.75,1.0)(6.25,2.0)
+		\psframe[fillstyle=solid,fillcolor=white](7.75,1.0)(8.25,2.0)
+		\psframe[fillstyle=solid,fillcolor=white](4.5, 2.75)(5.5, 3.25)
+		\psframe[fillstyle=solid,fillcolor=white](6.5, 2.75)(7.5, 3.25)
+		\rput[tl](2.4,0.9){$G_1$}
+		\rput[tl](4.4,0.9){$G_2$}
+		\rput[Bb](5.0,3.3){$G_3$}
+		\rput[tl](6.4,0.9){$G_4$}
+		\rput[Bb](7.0,3.3){$G_5$}
+		\rput[tl](8.4,0.9){$G_6$}
+		\rput[Br](-0.6,1.4){$i_{O2}$}
+		\rput[Bl](10.6,1.4){$i_{O1}$}
+		\pscircle[fillstyle=none,linecolor=green](6.0,3.0){0.2}
+		\pscircle[fillstyle=none,linecolor=green](8.0,3.0){0.2}
+		\psframe[fillstyle=none,linecolor=green,framearc=1.0](1.8,2.8)(4.2,3.2)
+		\psframe[fillstyle=none,linecolor=green,framearc=1.0](1.8,-0.2)(8.2,0.2)
+		\rput[Bb](3.0, 3.2){$e_1$}
+		\rput[Bb](6.0, 3.5){$e_2$}
+		\rput[Bb](8.0, 3.5){$e_3$}
+		\rput[Bt](5.0,-0.2){$e_4$}
+		\rput[B]( 0.0, 1.4){$\uparrow$}
+		\rput[B](10.0, 1.4){$\uparrow$}
+		\pcline[linecolor=red]{->}(2.0, 2.5)(2.0, 2.0)\Aput{$i_1$}
+		\pcline[linecolor=red]{->}(4.0, 2.5)(4.0, 2.0)\Aput{$i_2$}
+		\pcline[linecolor=red]{->}(5.5, 3.0)(6.0, 3.0)\Aput{$i_3$}
+		\pcline[linecolor=red]{->}(6.0, 2.5)(6.0, 2.0)\Aput{$i_4$}
+		\pcline[linecolor=red]{->}(7.5, 3.0)(8.0, 3.0)\Aput{$i_3$}
+		\pcline[linecolor=red]{->}(8.0, 2.5)(8.0, 2.0)\Aput{$i_6$}
+	\end{pspicture}
+\end{center}
+\begin{enumerate}
+	\item Vorbereitung des Netzwerkes:
+		\begin{itemize}
+		\item Alles in Leitwert umrechnen
+		\item Spannungsquellen beseitigen
+		\end{itemize}
+	\item Einf"uhrung der Knotenspannungen:
+		\begin{itemize}
+		\item Wahl eines geeigneten Bezugsknotens
+		\end{itemize}
+\end{enumerate}
+\paragraph{Leitwertmatrix}
+\begin{equation}
+	L=\begin{pmatrix}
+		G_1+G_2+G_3 & -G_3 & 0 \\
+		-G_3 & G_3+G_4+G_5 & -G_5 \\
+		0 & -G_5 & G_5+G_6
+	\end{pmatrix}
+\end{equation}
+Direktes Aufstellen von $L$i:
+\begin{enumerate}
+	\item Diagonalelemente $(i=k)$: Summe aller Leitwerte des betreffenden Knotens
+	\item "Ubrige Elemente $(i\neq k)$: Summe der Leitwerte, die die betroffenen Knoten
+		miteinander verbindet. Das Vorzeichen ist immer negativ.
+\end{enumerate}
+\paragraph{Quellvektor}
+\begin{equation}
+	\underline{i_0}=\begin{pmatrix}i_{02} \\ 0 \\ i_{01} \end{pmatrix}
+\end{equation}
+Direktes Aufstellen von $i_0$: Summe aller Stromquellen, die Strom zu betrachteten Knoten
+liefern. Das Vorzeichen ist positiv wenn der Strom zum Knoten fliesst.
+\paragraph{Knotenspannungsvektoren}
+\begin{equation}
+	\underline{e}=\begin{pmatrix}e_1 \\ e_2 \\ e_3\end{pmatrix}
+\end{equation}
+\paragraph{L"osung}
+\begin{equation}
+	L\cdot\underline{e}=\underline{i_0}
+\end{equation}
+
+\section{Messtechnik}
+\subsection{Linearer Mittelwert (Average)}
+\begin{equation}
+	\overline{u}(t)=\frac{1}{T}\int\limits_0^T u\,dt
+\end{equation}
+
+\subsection{Betragsmittelwert}
+\begin{equation}
+	|\overline{u}(t)=\frac{1}{T}\int\limits_0^T|u|\,dt
+\end{equation}
+
+\subsection{Quadratischer Mittelwert, Effektivwert}
+\begin{align}
+	\overline{u^2}&=\frac{1}{T}\int\limits_0^Tu^2\,dt \\
+	u_{eff}&=\sqrt{\frac{1}{T}\int\limits_0^Tu^2\,dt}
+\end{align}
+
+\subsection{Fehler von digitalen VA Multimetern}
+Fehler $=\pm$(0.1\% der Ablesung +0.2\% des Messbereichs +1 Digit + spez. Fehler).
+\begin{center}
+	\psset{unit=0.8}
+	\begin{pspicture}(-1.0,-1.0)(9.5,5.0)
+		\psaxes[labels=all,ticks=none,log=all,dx=20mm]{->}(0,-2)(9,3)
+		\psline[linecolor=green]{-}(0,-1)(7.5,-1)
+		\psline[linecolor=red]{-}(0,2)(7.5,-2)
+		\psline[linecolor=blue]{-}(0,2.3)(7.5,-1.7)
+		\rput[Bl](9.2,-2){$U [V]$}
+		\rput[Bb](0.5,3){$rel. Faktor [\%]$}
+	\end{pspicture}
+\end{center}
+
+\subsection{Crest-Faktor (Scheitelfaktor)}
+\begin{gather}
+	CF=\frac{\hat{U}}{U_{eff}}\qquad\text{Sinus: }CF=\sqrt{2}
+\end{gather}
+
+\subsection{Differenzbetrieb beim KO}
+\begin{center}
+	\begin{pspicture}(0,0)(5,3)
+		\psline{-}(0.5,0.5)(4.5,0.5)
+		\psline{-}(0.5,2.5)(2.5,2.5)
+		\psline{-}(1.5,1.5)(2.5,1.5)
+		\psline{-}(3.5,2.0)(4.5,2.0)
+		\psline{-}(3.5,2.0)(2.5,3.0)(2.5,1.0)(3.5,2.0)
+		\psline{-}(1.5,0.5)(1.5,0.0)
+		\psline{-}(1.3,-0.1)(1.7,0.1)
+		\pscircle[fillstyle=solid,fillcolor=white](0.5,0.5){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](0.5,2.5){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](1.5,0.5){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](1.5,1.5){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](4.5,0.5){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](4.5,2.0){0.1}
+		\rput[Bl](2.6,2.4){$+$}
+		\rput[Bl](2.6,1.4){$-$}
+		\pcline[linecolor=blue]{->}(0.5,2.3)(0.5,0.7)\Bput{$U_1$}
+		\pcline[linecolor=blue]{->}(4.5,1.8)(4.5,0.7)\Aput{$U_O$}
+		\pcline[linecolor=blue]{->}(1.5,1.3)(1.5,0.7)\Aput{$U_2$}
+		\pcline[linecolor=blue]{->}(1.5,2.3)(1.5,1.7)\Aput{$U_D$}
+	\end{pspicture}
+\end{center}
+Ideal: $u_o=v_D\cdot(u_1-u_2)$ \\
+Real: $u_o=v_D\cdot(u_1-u_2)\pm v_c\cdot\left({\frac{u_1+u_2}{2}}\right)$
+\begin{align*}
+	v_D\quad&\text{: Differenzverst"arkung} \\
+	v_c\quad&\text{: Commonmodeverst"arkung} \\
+	u_D\quad&\text{: Commonmodespannung} \\
+	\mathrm{CMMR}\quad&\text{: Commonmode Rejection Ratio} \\
+	&\text{ (Gleichtakt-Unterdr"uckungs-Verst"arkung}
+\end{align*}
+\begin{gather*}
+	u_0=v_D\cdot u_D\cdot\left({1\pm\frac{1}{\mathrm{CMMR}}\cdot\frac{u_c}{u_D}}\right)\qquad\text{mit}\quad\frac{1}{\mathrm{CMMR}}=\frac{v_c}{v_D}
+\end{gather*}
+Verst"arkung in $dB=20\cdot\log(v)$. Es gilt auch:
+\begin{gather*}
+	10\leq\mathrm{CMMR}\leq 10^4 \\
+	20dB\leq\mathrm{CMMR}\leq 80dB
+\end{gather*}
+
+\section{Kapazit"at}
+\begin{center}
+	\begin{pspicture}(0,0)(2,2)
+		\psline{-}(0.3,0.2)(1.0,0.2)(1.0,0.9)
+		\psline{-}(1.0,1.1)(1.0,1.8)(0.3,1.8)
+		\psline{-}(0.5,0.9)(1.5,0.9)
+		\psline{-}(0.5,1.1)(1.5,1.1)
+		\rput[Bl](1.6,0.9){$C$}
+		\pscircle(0.2,0.2){0.1}
+		\pscircle(0.2,1.8){0.1}
+		\pcline[linecolor=blue]{->}(0.2,1.6)(0.2,0.4)\Bput{$u$}
+		\pcline[linecolor=red]{->}(0.4,1.8)(0.9,1.8)\Aput{$i$}
+	\end{pspicture}
+\end{center}
+\begin{align}
+	i&=C\cdot\frac{\partial u}{\partial t} \\
+	u&=\frac{1}{C}\cdot\int\limits_{t_0}^{t_1} i(\tau)\,d\tau + u_c(t=0)
+\end{align}
+
+\subsection{Dirac-Stoss}
+\begin{gather}
+	i(t)=C\cdot u_o\cdot\delta(t)\quad\text{mit}\quad\delta(t)\text{ : Dirac-Stoss}
+\end{gather}
+Fl"ache: $C\cdot u_o$
+
+\subsection{Ersatzschaltbild}
+\begin{center}
+	\begin{pspicture}(0,0)(6,3.25)
+		\pscircle(0.1,0.1){0.1}
+		\pscircle(0.1,2.9){0.1}
+		\psline{-}(0.2,0.1)(4.5,0.1)(4.5,2.9)(0.2,2.9)
+		\psline{-}(4.5,0.1)(5.5,0.1)(5.5,1.4)
+		\psline{-}(5.5,1.6)(5.5,2.9)(4.5,2.9)
+		\pscircle[fillstyle=solid,fillcolor=black](4.5,0.1){0.1}
+		\pscircle[fillstyle=solid,fillcolor=black](4.5,2.9){0.1}
+		\psframe[fillstyle=solid,fillcolor=white](1.0,2.75)(2.0,3.25)
+		\psframe[fillstyle=solid,fillcolor=black](3.0,2.75)(4.0,3.25)
+		\psframe[fillstyle=solid,fillcolor=white](4.25,1.0)(4.75,2.0)
+		\psline{-}(5.0,1.4)(6.0,1.4)
+		\psline{-}(5.0,1.6)(6.0,1.6)
+		\rput[Bt](1.5,2.7){$R_Z$}
+		\rput[Bt](3.5,2.7){$L_Z$}
+		\rput[Br](4.0,1.0){$R_P$}
+		\rput[Br](5.4,1.0){$C$}
+	\end{pspicture}
+\end{center}
+\begin{align*}
+	C\quad&\text{: Kapazit"at} \\
+	R_p\quad&\text{: Isolationswiderstand} \\
+	R_z\quad&\text{: Zuleitungswiderstand} \\
+	L_z\quad&\text{: Zuleitungsinduktivit"at}
+\end{align*}
+
+\subsection{Parallelschaltung}
+\begin{gather}
+	C_{total}=\sum_{i=1}^n C_i
+\end{gather}
+
+\subsection{Serieschaltung}
+\begin{gather}
+	\frac{1}{C_{total}}=\sum_{i=1}^n \frac{1}{C_i}
+\end{gather}
+
+\subsection{$U$ und $I$ in $RC$-Netzwerken}
+\begin{center}
+	\begin{pspicture}(-0.5,0)(5,2)
+		\psline(1.0,1.75)(2.0,2.0)
+		\psline(0.9,1.75)(0.5,1.75)(0.5,0.0)(4.5,0.0)(4.5,0.9)
+		\psline(4.5,1.1)(4.5,1.75)(2.1,1.75)
+		\pscircle[fillstyle=solid,fillcolor=white](0.5,0.8){0.5}
+		\psline{-}(4.0,0.9)(5.0,0.9)
+		\psline{-}(4.0,1.1)(5.0,1.1)
+		\psframe[fillstyle=solid,fillcolor=white](2.5,1.5)(3.5,2.0)
+		\pscircle[fillstyle=solid,fillcolor=white](2.0,1.75){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](1.0,1.75){0.1}
+		\rput[tr](4.4,0.8){$C$}
+		\rput[Bt](3.0,1.4){$R$}
+		\pcline[linecolor=blue]{->}(-0.1,1.5)(-0.1,0.2)\Bput{$U_0$}
+		\pcline{->}(1.5,1.75)(1.5,0.8)\Aput{$t=0$}
+		\rput[B](0.5,0.9){$+$}
+	\end{pspicture}
+\end{center}
+\begin{align}
+	u_o &= R\cdot C\cdot\frac{\partial u}{\partial t}+u_c(t) \\
+	u_c(t) &= u_o\left({1-e^{-\frac{t}{RC}}}\right) \\
+	i_c(t) &= u_o\cdot\frac{1}{R}\cdot e^{-\frac{t}{RC}} \\
+	p_c(t) &= \frac{u_o^2}{R}\left({1-e^{-\frac{t}{RC}}}\right)\cdot e^{-\frac{t}{RC}}
+\end{align}
+
+\subsection{Kondensator als Energiespeicher}
+\begin{equation}
+	W=\frac{U_o^2\cdot C}{2}=\frac{Q\cdot U_o}{2}
+\end{equation}
+
+\subsection{$U$ und $I$ bei Wechselstrom}
+\begin{align}
+	u_c(t) &= \hat{u}\cdot\cos(\omega t) \\
+	i_c(t) &= -\omega\cdot C\omega\hat{u}\cdot\sin(\omega t) \\
+	i_c(t) &= \omega\cdot C\cdot\hat{u}\cdot\cos(\omega t+\frac{\pi}{2})
+\end{align}
+Blindwiderstand:
+\begin{equation}
+	\frac{\hat{u}}{\hat{i}}=\frac{\hat{u}_c}{\omega C\hat{u}_c}=\frac{1}{\omega C}=X_c\unit{\Omega}
+\end{equation}
+
+
+\section{Induktivit"at}
+\begin{center}
+	\begin{pspicture}(0,0)(2,3)
+		\psline(0.5,0.1)(1.75,0.1)(1.75,2.9)(0.5,2.9)
+		\psframe[fillstyle=solid,fillcolor=black](1.5,1.0)(2.0,2.0)
+		\pscircle[fillstyle=solid,fillcolor=white](0.5,0.1){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](0.5,2.9){0.1}
+		\rput[Br](1.4,1.3){$L$}
+		\pcline[linecolor=blue]{->}(0.5,2.8)(0.5,0.2)\Bput{$U_L$}
+	\end{pspicture}
+\end{center}
+\begin{align}
+	u_L(t) &= L\frac{\partial i}{\partial t} \\
+	i_L(t) &= \frac{1}{L}\int\limits_{t_0}^{t_1} u_L(\tau)\,d\tau + i_L(0)
+\end{align}
+\begin{gather*}
+	L\quad\text{: Induktivit"at}\quad\unit{H}
+\end{gather*}
+Hat die Eigenschaft, dass der Strom niemals springt!
+
+\subsection{Zylinderspule}
+\begin{center}
+	\begin{pspicture}(0,0)(6,3)
+		\psellipse[fillstyle=solid,fillcolor=white](5.7,1.5)(0.5,1.0)
+		\psframe[fillstyle=solid,fillcolor=white,linecolor=white](1.5,0.5)(5.7,2.5)
+		\psline{-}(1.5,0.5)(5.7,0.5)
+		\psline{-}(1.5,2.5)(5.7,2.5)
+		\psellipse[fillstyle=solid,fillcolor=white](1.5,1.5)(0.5,1.0)
+		\pcline{<->}(0.5,2.5)(0.5,0.5)\Bput{$D$}
+		\psline[linecolor=red]{-}(1.7,0.2)(1.75,0.5)
+		\psecurve[linecolor=red]{-}(2.0,1.5)(2.0,2.5)(2.2,2.75)(2.4,2.75)(2.6,2.5)(2.8,1.5)(2.7,0.5)(2.5,0.25)(2.3,0.25)(2.1,0.5)(2.1,1.5)
+		\psecurve[linecolor=red]{-}(3.0,1.5)(3.0,2.5)(3.2,2.75)(3.4,2.75)(3.6,2.5)(3.8,1.5)(3.7,0.5)(3.5,0.25)(3.3,0.25)(3.1,0.5)(3.1,1.5)
+		\psecurve[linecolor=red]{-}(4.0,1.5)(4.0,2.5)(4.2,2.75)(4.4,2.75)(4.6,2.5)(4.8,1.5)(4.7,0.5)(4.5,0.25)(4.3,0.25)(4.1,0.5)(4.1,1.5)
+		\psecurve[linecolor=red]{-}(5.0,1.5)(5.0,2.5)(5.2,2.75)(5.4,2.75)(5.6,2.5)(5.8,1.5)(5.7,0.5)(5.5,0.25)(5.3,0.25)(5.3,0.25)
+		\pscircle[linecolor=red,fillstyle=solid,fillcolor=white](1.7,0.2){0.1}
+		\pscircle[linecolor=red,fillstyle=solid,fillcolor=white](5.3,0.2){0.1}
+	\end{pspicture}
+\end{center}
+\begin{gather}
+	L=\mu_0\cdot\mu_r\cdot\frac{D^2\cdot\frac{\pi}{4}}{l}\cdot N^2
+\end{gather}
+mit
+\begin{align*}
+	\mu_0\quad &= 1.256\cdot 10^{-6}\unit{\frac{Vs}{Am}} \\
+	\mu_r\quad &\text{: Luft =$1$, Eisen =$10^3$}
+\end{align*}
+
+\subsection{Ringkern}
+\begin{center}
+	\begin{pspicture}(0,0)(6,6)
+		\pscircle[linecolor=black,linewidth=2pt](3,3){2.0}
+		\pscircle[linecolor=black,linewidth=2pt](3,3){1.0}
+		\pscircle[linecolor=black,linewidth=1pt,linestyle=dashed](3,3){1.5}
+		\psline{-}(2.9,3.0)(3.1,3.0)
+		\psline{-}(3.0,2.9)(3.0,3.1)
+		\psecurve[linecolor=red]{-}(0.5,3.25)(0.5,3.25)(2.3,3.0)(2.1,3.1)(2.1,3.1)
+		\psecurve[linecolor=red]{-}(1.1,3.5)(1.1,3.5)(0.8,3.7)(2.4,3.3)(2.2,3.5)(2.2,3.5)
+		\psecurve[linecolor=red]{-}(1.4,4.2)(1.4,4.2)(1.3,4.5)(2.6,3.5)(2.45,3.8)(2.45,3.8)
+		\psecurve[linecolor=red]{-}(2.1,4.75)(2.1,4.75)(2.2,5.1)(2.85,3.65)(3.0,3.95)(3.0,3.95)
+		\psecurve[linecolor=red]{-}(3.0,5.0)(3.0,5.0)(3.2,5.3)(3.3,3.7)(3.5,3.8)(3.5,3.8)
+		\psecurve[linecolor=red]{-}(4.0,4.7)(4.0,4.7)(4.4,4.9)(3.6,3.3)(3.9,3.4)(3.9,3.4)
+		\psecurve[linecolor=red]{-}(4.7,4.0)(4.7,4.0)(5.1,4.0)(3.7,2.9)(3.9,2.85)(3.9,2.85)
+		\psecurve[linecolor=red]{-}(5.0,2.9)(5.0,2.9)(5.2,2.7)(3.5,2.5)(3.7,2.3)(3.7,2.3)
+		\psecurve[linecolor=red]{-}(4.7,2.0)(4.7,2.0)(4.8,1.7)(3.2,2.3)(3.2,2.1)(3.2,2.1)
+		\psecurve[linecolor=red]{-}(3.75,1.15)(3.75,1.15)(3.7,0.9)(2.8,2.3)(2.7,2.1)(2.7,2.1)
+		\psecurve[linecolor=red]{-}(2.7,1.05)(2.7,1.05)(2.5,0.8)(2.5,2.4)(2.35,2.3)(2.35,2.3)
+		\psecurve[linecolor=red]{-}(1.7,1.5)(1.7,1.5)(1.4,1.4)(2.3,2.6)(2.1,2.7)(2.1,2.7)
+		\psline[linecolor=red]{-}(1.0,2.75)(0.5,2.75)
+		\pscircle[linecolor=red,fillcolor=white,fillstyle=solid](0.5,3.25){0.1}
+		\pscircle[linecolor=red,fillcolor=white,fillstyle=solid](0.5,2.75){0.1}
+		\psline[linecolor=blue]{->}(3,3)(3.8,4.3)
+		\rput[Bl](3.2,3.0){$r_m$}
+		\rput[Bl](3.7,5.3){$N$:Windungen}
+		\rput[Bl](4.2,1.0){$A$:Querschnitt}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	L=\mu_0\cdot\mu_r\cdot\frac{A}{2\pi\cdot r_m}\cdot N^2
+\end{equation}
+
+\subsection{Ersatzschaltbild}
+\begin{center}
+	\begin{pspicture}(-0.5,-0.5)(6,4)
+		\psline{-}(0.0,0.0)(5.0,0.0)(5.0,3.0)(0.0,3.0)
+		\psline{-}(4.0,0.0)(4.0,3.0)
+		\psline{-}(3.0,0.0)(3.0,1.4)
+		\psline{-}(3.0,1.6)(3.0,3.0)
+		\pscircle[fillstyle=solid,fillcolor=black](3.0,0.0){0.05}
+		\pscircle[fillstyle=solid,fillcolor=black](4.0,0.0){0.05}
+		\pscircle[fillstyle=solid,fillcolor=black](3.0,3.0){0.05}
+		\pscircle[fillstyle=solid,fillcolor=black](4.0,3.0){0.05}
+		\pscircle[fillstyle=solid,fillcolor=white](0.0,0.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](0.0,3.0){0.1}
+		\psframe[fillstyle=solid,fillcolor=black](4.75,1.0)(5.25,2.0)\rput[Bl](5.3,1.5){$L$}
+		\psframe[fillstyle=solid,fillcolor=white](3.75,1.0)(4.25,2.0)\rput[Bl](4.1,2.1){$R_{Fe}$}
+		\psframe[fillstyle=solid,fillcolor=white](1.0,2.75)(2.0,3.25)\rput[B](1.5,3.4){$R_W$}
+		\psline{-}(2.5,1.4)(3.5,1.4)\psline{-}(2.5,1.6)(3.5,1.6)\rput[Bl](3.1,2.0){$C_W$}
+	\end{pspicture}
+\end{center}
+\begin{align*}
+	R_\omega\quad&\text{: Wicklungswiderstand} \\
+	L\quad&\text{: Induktivit"atswert} \\
+	C_w\quad&\text{: Wicklungskapazit"at} \\
+	R_{Fe}\quad&\text{: Kernverluste}
+\end{align*}
+
+\subsection{Gekoppelte Spulen}
+\begin{center}
+	\begin{pspicture}(0,-0.5)(6,3.5)
+		\psellipse[fillstyle=solid,fillcolor=white](5.7,1.5)(0.5,1.0)
+		\psframe[fillstyle=solid,fillcolor=white,linecolor=white](1.5,0.5)(5.7,2.5)
+		\psline{-}(1.5,0.5)(5.7,0.5)
+		\psline{-}(1.5,2.5)(5.7,2.5)
+		\psellipse[fillstyle=solid,fillcolor=white](1.5,1.5)(0.5,1.0)
+		\psecurve[linecolor=red]{-}(1.7,1.5)(1.7,2.5)(1.9,2.75)(2.1,2.75)(2.3,2.5)(2.5,1.5)(2.4,0.5)(2.2,0.25)(2.0,0.25)(1.8,0.5)(1.8,1.5)
+		\psecurve[linecolor=red]{-}(2.0,1.5)(2.0,2.5)(2.2,2.75)(2.4,2.75)(2.6,2.5)(2.8,1.5)(2.7,0.5)(2.5,0.25)(2.3,0.25)(2.1,0.5)(2.1,1.5)
+		\psecurve[linecolor=red]{-}(2.3,1.5)(2.3,2.5)(2.5,2.75)(2.7,2.75)(2.9,2.5)(3.1,1.5)(3.0,0.5)(2.8,0.25)(2.6,0.25)(2.4,0.5)(2.4,1.5)
+		\psecurve[linecolor=red]{-}(2.6,1.5)(2.6,2.5)(2.8,2.75)(3.0,2.75)(3.2,2.5)(3.4,1.5)(3.3,0.5)(3.1,0.25)(2.9,0.25)(2.9,0.25)
+		\psline[linecolor=red]{-}(1.7,0.25)(1.7,0.5)
+		\pscircle[linecolor=red,fillstyle=solid,fillcolor=white](3.0,0.25){0.1}
+		\pscircle[linecolor=red,fillstyle=solid,fillcolor=white](1.7,0.25){0.1}
+		\psecurve[linecolor=red]{-}(3.7,1.5)(3.7,2.5)(3.9,2.75)(4.1,2.75)(4.3,2.5)(4.5,1.5)(4.4,0.5)(4.2,0.25)(4.0,0.25)(3.8,0.5)(3.8,1.5)
+		\psecurve[linecolor=red]{-}(4.0,1.5)(4.0,2.5)(4.2,2.75)(4.4,2.75)(4.6,2.5)(4.8,1.5)(4.7,0.5)(4.5,0.25)(4.3,0.25)(4.1,0.5)(4.1,1.5)
+		\psecurve[linecolor=red]{-}(4.3,1.5)(4.3,2.5)(4.5,2.75)(4.7,2.75)(4.9,2.5)(5.1,1.5)(5.0,0.5)(4.8,0.25)(4.6,0.25)(4.4,0.5)(4.4,1.5)
+		\psecurve[linecolor=red]{-}(4.6,1.5)(4.6,2.5)(4.8,2.75)(5.0,2.75)(5.2,2.5)(5.4,1.5)(5.3,0.5)(5.1,0.25)(4.9,0.25)(4.9,0.25)
+		\psline[linecolor=red]{-}(3.7,0.25)(3.7,0.5)
+		\pscircle[linecolor=red,fillstyle=solid,fillcolor=white](5.0,0.25){0.1}
+		\pscircle[linecolor=red,fillstyle=solid,fillcolor=white](3.7,0.25){0.1}
+		\pcline{<->}(3.0,3.0)(4.0,3.0)\Aput{$M$}
+		\rput[B](2.0,3.0){$L_1$}\rput[B](5.0,3.0){$L_2$}
+		\pcline[linecolor=blue]{->}(1.9,0.1)(2.8,0.1)\Bput{$U_1(t)$}
+		\pcline[linecolor=blue]{->}(3.9,0.1)(4.8,0.1)\Bput{$U_2(t)$}
+		\pcline[linecolor=red]{->}(1.7,-0.5)(1.7,0.05)\Aput{$i_1(t)$}
+		\pcline[linecolor=red]{->}(3.7,-0.5)(3.7,0.05)\Aput{$i_2(t)$}
+	\end{pspicture}
+\end{center}
+\begin{align*}
+	L_1\quad&\text{: Induktivit"at der Spule 1} \\
+	L_2\quad&\text{: Induktivit"at der Spule 2} \\
+	M\quad&\text{: Gegeninduktivit"at (Kopplung)}
+\end{align*}
+ohne Streufluss:
+\begin{align}
+	u_1(t) &= L_1\frac{\partial i_1}{\partial t}+M\frac{\partial i_2}{\partial t} \\
+	u_2(t) &= L_2\frac{\partial i_2}{\partial t}+M\frac{\partial i_2}{\partial t} \\
+\end{align}
+
+\paragraph{Kopplungsfaktor}
+\begin{gather}
+	k=\frac{M}{\sqrt{L_1\cdot L_2}}\qquad\text{mit}\quad 0<k\leq 1
+\end{gather}
+Keinen Streufluss: $k=1$
+
+\begin{center}
+	\begin{pspicture}(-0.5,-0.5)(3.5,2.5)
+		\psline{-}(0.0,0.0)(1.0,0.0)(1.0,2.0)(0.0,2.0)
+		\psline{-}(3.0,0.0)(2.0,0.0)(2.0,2.0)(3.0,2.0)
+		\psline{-}(1.4,2.0)(1.4,0.0)
+		\psline{-}(1.6,2.0)(1.6,0.0)
+		\psframe[fillstyle=solid,fillcolor=black](0.75,0.5)(1.25,1.5)
+		\psframe[fillstyle=solid,fillcolor=black](1.75,0.5)(2.25,1.5)
+		\pscircle[fillstyle=solid,fillcolor=white](0.0,0.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](0.0,2.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](3.0,0.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](3.0,2.0){0.1}
+		\pcline{<->}(0.5,-0.1)(2.5,-0.1)\Bput{$M$}
+		\rput[Br](0.6,1.0){$L_1$}
+		\rput[Bl](2.4,1.0){$L_2$}
+		\pcline[linecolor=blue]{->}(0.0,1.8)(0.0,0.2)\Bput{$u_1$}
+		\pcline[linecolor=blue]{->}(3.0,1.8)(3.0,0.2)\Aput{$u_2$}
+		\pcline[linecolor=red]{->}(0.3,2.0)(0.8,2.0)\Aput{$i_1$}
+		\pcline[linecolor=red]{->}(2.7,2.0)(2.2,2.0)\Bput{$i_2$}
+	\end{pspicture}
+\end{center}
+\begin{align*}
+	u_1&=L_1\frac{\partial i_1}{\partial t}+M\frac{\partial i_2}{\partial t} \\
+	u_2&=L_2\frac{\partial i_2}{\partial t}+M\frac{\partial i_1}{\partial t} \\
+\end{align*}
+
+\begin{center}
+	\begin{pspicture}(-0.5,-0.5)(3.5,2.5)
+		\psline{-}(0.0,0.0)(1.0,0.0)(1.0,2.0)(0.0,2.0)
+		\psline{-}(3.0,0.0)(2.0,0.0)(2.0,2.0)(3.0,2.0)
+		\psline{-}(1.4,2.0)(1.4,0.0)
+		\psline{-}(1.6,2.0)(1.6,0.0)
+		\psframe[fillstyle=solid,fillcolor=black](0.75,0.5)(1.25,1.5)
+		\psframe[fillstyle=solid,fillcolor=black](1.75,0.5)(2.25,1.5)
+		\pscircle[fillstyle=solid,fillcolor=white](0.0,0.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](0.0,2.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](3.0,0.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](3.0,2.0){0.1}
+		\pcline{<->}(0.5,-0.1)(2.5,-0.1)\Bput{$M$}
+		\rput[Br](0.6,1.0){$L_1$}
+		\rput[Bl](2.4,1.0){$L_2$}
+		\pcline[linecolor=blue]{->}(0.0,1.8)(0.0,0.2)\Bput{$u_1$}
+		\pcline[linecolor=blue]{<-}(3.0,1.8)(3.0,0.2)\Aput{$u_2$}
+		\pcline[linecolor=red]{->}(0.3,2.0)(0.8,2.0)\Aput{$i_1$}
+		\pcline[linecolor=red]{<-}(2.7,2.0)(2.2,2.0)\Bput{$i_2$}
+	\end{pspicture}
+\end{center}
+\begin{align*}
+	u_1&=L_1\frac{\partial i_1}{\partial t}-M\frac{\partial i_2}{\partial t} \\
+	u_2&=L_2\frac{\partial i_2}{\partial t}-M\frac{\partial i_1}{\partial t} \\
+\end{align*}
+
+\begin{center}
+	\begin{pspicture}(-0.5,-0.5)(3.5,2.5)
+		\psline{-}(0.0,0.0)(1.0,0.0)(1.0,2.0)(0.0,2.0)
+		\psline{-}(3.0,0.0)(2.0,0.0)(2.0,2.0)(3.0,2.0)
+		\psline{-}(1.4,2.0)(1.4,0.0)
+		\psline{-}(1.6,2.0)(1.6,0.0)
+		\psframe[fillstyle=solid,fillcolor=black](0.75,0.5)(1.25,1.5)
+		\psframe[fillstyle=solid,fillcolor=black](1.75,0.5)(2.25,1.5)
+		\pscircle[fillstyle=solid,fillcolor=white](0.0,0.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](0.0,2.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](3.0,0.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](3.0,2.0){0.1}
+		\pcline{<->}(0.5,-0.1)(2.5,-0.1)\Bput{$M$}
+		\rput[Br](0.6,1.0){$L_1$}
+		\rput[Bl](2.4,1.0){$L_2$}
+		\pcline[linecolor=blue]{<-}(0.0,1.8)(0.0,0.2)\Bput{$u_1$}
+		\pcline[linecolor=blue]{<-}(3.0,1.8)(3.0,0.2)\Aput{$u_2$}
+		\pcline[linecolor=red]{<-}(0.3,2.0)(0.8,2.0)\Aput{$i_1$}
+		\pcline[linecolor=red]{<-}(2.7,2.0)(2.2,2.0)\Bput{$i_2$}
+	\end{pspicture}
+\end{center}
+\begin{align*}
+	u_1&=L_1\frac{\partial i_1}{\partial t}+M\frac{\partial i_2}{\partial t} \\
+	u_2&=L_2\frac{\partial i_2}{\partial t}+M\frac{\partial i_1}{\partial t} \\
+\end{align*}
+
+\begin{center}
+	\begin{pspicture}(-0.5,-0.5)(3.5,2.5)
+		\psline{-}(0.0,0.0)(1.0,0.0)(1.0,2.0)(0.0,2.0)
+		\psline{-}(3.0,0.0)(2.0,0.0)(2.0,2.0)(3.0,2.0)
+		\psline{-}(1.4,2.0)(1.4,0.0)
+		\psline{-}(1.6,2.0)(1.6,0.0)
+		\psframe[fillstyle=solid,fillcolor=black](0.75,0.5)(1.25,1.5)
+		\psframe[fillstyle=solid,fillcolor=black](1.75,0.5)(2.25,1.5)
+		\pscircle[fillstyle=solid,fillcolor=white](0.0,0.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](0.0,2.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](3.0,0.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](3.0,2.0){0.1}
+		\pcline{<->}(0.5,-0.1)(2.5,-0.1)\Bput{$M$}
+		\rput[Br](0.6,1.0){$L_1$}
+		\rput[Bl](2.4,1.0){$L_2$}
+		\pcline[linecolor=blue]{<-}(0.0,1.8)(0.0,0.2)\Bput{$u_1$}
+		\pcline[linecolor=blue]{->}(3.0,1.8)(3.0,0.2)\Aput{$u_2$}
+		\pcline[linecolor=red]{<-}(0.3,2.0)(0.8,2.0)\Aput{$i_1$}
+		\pcline[linecolor=red]{->}(2.7,2.0)(2.2,2.0)\Bput{$i_2$}
+	\end{pspicture}
+\end{center}
+\begin{align*}
+	u_1&=L_1\frac{\partial i_1}{\partial t}-M\frac{\partial i_2}{\partial t} \\
+	u_2&=L_2\frac{\partial i_2}{\partial t}-M\frac{\partial i_1}{\partial t} \\
+\end{align*}
+
+\subsection{Serieschaltung nichtgekoppelter Spulen}
+\begin{center}
+	\begin{pspicture}(-0.5,0)(6.5,2.0)
+		\psline{-}(0.0,0.0)(3.5,0.0)(3.5,1.0)(0.0,1.0)
+		\pscircle[fillstyle=solid,fillcolor=white](0.0,0.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](0.0,1.0){0.1}
+		\pcline[linecolor=blue]{->}(0.0,0.8)(0.0,0.2)\Bput{$u$}
+		\pcline[linecolor=red]{->}(0.1,1.0)(0.4,1.0)\Aput{$i$}
+		\psframe[fillstyle=solid,fillcolor=black](0.5,0.75)(1.5,1.25)\rput[Bb](1.0,1.3){$L_1$}
+		\psframe[fillstyle=solid,fillcolor=black](2.0,0.75)(3.0,1.25)\rput[Bb](2.5,1.3){$L_2$}
+		\psline{-}(4.5,0.0)(6.5,0.0)(6.5,1.0)(4.5,1.0)
+		\pscircle[fillstyle=solid,fillcolor=white](4.5,0.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](4.5,1.0){0.1}
+		\pcline[linecolor=blue]{->}(4.5,0.8)(4.5,0.2)\Bput{$u$}
+		\pcline[linecolor=red]{->}(4.6,1.0)(4.9,1.0)\Aput{$i$}
+		\psframe[fillstyle=solid,fillcolor=black](5.0,0.75)(6.0,1.25)\rput[Bb](5.5,1.3){$L_{total}$}
+		\psline{->}(3.6,0.5)(4.0,0.5)
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	L_{total}=\sum_{i=1}^n L_i
+\end{equation}
+
+\subsection{Parallelschaltung nichtgekoppelter Spulen}
+\begin{center}
+	\begin{pspicture}(-0.5,-0.5)(5.5,2.5)
+		\psline{-}(0.0,0.0)(2.0,0.0)(2.0,2.0)(0.0,2.0)
+		\psline{-}(1.0,0.0)(1.0,2.0)
+		\pscircle[fillstyle=solid,fillcolor=white](0.0,0.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](0.0,2.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=black](1.0,0.0){0.05}
+		\pscircle[fillstyle=solid,fillcolor=black](1.0,2.0){0.05}
+		\psframe[fillstyle=solid,fillcolor=black](0.75,0.5)(1.25,1.5)\rput[Br](0.7,1.0){$L_1$}
+		\psframe[fillstyle=solid,fillcolor=black](1.75,0.5)(2.25,1.5)\rput[Br](1.7,1.0){$L_2$}
+		\pcline[linecolor=blue]{->}(0.0,1.8)(0.0,0.2)\Bput{$u$}
+		\pcline[linecolor=red]{->}(0.2,2.0)(0.9,2.0)\Aput{$i$}
+		\pcline[linecolor=red]{->}(1.0,1.9)(1.0,1.6)\Aput{$i_1$}
+		\pcline[linecolor=red]{->}(2.0,1.9)(2.0,1.6)\Aput{$i_2$}
+		\psline{-}(3.5,0.0)(4.5,0.0)(4.5,2.0)(3.5,2.0)
+		\pscircle[fillstyle=solid,fillcolor=white](3.5,0.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](3.5,2.0){0.1}
+		\psframe[fillstyle=solid,fillcolor=black](4.25,0.5)(4.75,1.5)\rput[Bl](4.8,1.0){$L_{total}$}
+		\pcline[linecolor=blue]{->}(3.5,1.8)(3.5,0.2)\Bput{$u$}
+		\pcline[linecolor=red]{->}(3.8,2.0)(4.4,2.0)\Aput{$i$}
+		\psline{->}(2.4,1.0)(3.0,1.0)
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	\frac{1}{L_{total}}=\sum_{i=1}^n \frac{1}{L_i}
+\end{equation}
+
+\subsection{Parallelschaltung gekoppelter Spulen}
+\begin{center}
+	\begin{pspicture}(-0.5,-1.0)(5.5,2.5)
+		\psline{-}(0.0,0.0)(2.0,0.0)(2.0,2.0)(0.0,2.0)
+		\psline{-}(1.0,0.0)(1.0,2.0)
+		\pscircle[fillstyle=solid,fillcolor=white](0.0,0.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](0.0,2.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=black](1.0,0.0){0.05}
+		\pscircle[fillstyle=solid,fillcolor=black](1.0,2.0){0.05}
+		\psframe[fillstyle=solid,fillcolor=black](0.75,0.5)(1.25,1.5)\rput[Br](0.7,1.0){$L_1$}
+		\psframe[fillstyle=solid,fillcolor=black](1.75,0.5)(2.25,1.5)\rput[Br](1.7,1.0){$L_2$}
+		\pcline[linecolor=blue]{->}(0.0,1.8)(0.0,0.2)\Bput{$u$}
+		\pcline[linecolor=red]{->}(0.2,2.0)(0.9,2.0)\Aput{$i$}
+		\pcline[linecolor=red]{->}(1.0,1.9)(1.0,1.6)\Aput{$i_1$}
+		\pcline[linecolor=red]{->}(2.0,1.9)(2.0,1.6)\Aput{$i_2$}
+		\psline{-}(3.5,0.0)(4.5,0.0)(4.5,2.0)(3.5,2.0)
+		\pscircle[fillstyle=solid,fillcolor=white](3.5,0.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](3.5,2.0){0.1}
+		\psframe[fillstyle=solid,fillcolor=black](4.25,0.5)(4.75,1.5)\rput[Bl](4.8,1.0){$L_{total}$}
+		\pcline[linecolor=blue]{->}(3.5,1.8)(3.5,0.2)\Bput{$u$}
+		\pcline[linecolor=red]{->}(3.8,2.0)(4.4,2.0)\Aput{$i$}
+		\psline{->}(2.4,1.0)(3.0,1.0)
+		\pcline{<->}(1.0,-0.2)(2.0,-0.2)\Bput{$M$}
+	\end{pspicture}
+\end{center}
+f"ur die gezeigte Schaltung:
+\begin{equation}
+	L_{total}=\frac{L_1\cdot L_2 - M^2}{L_1+L_2+2M}
+\end{equation}
+\underline{Achtung:} Orientierung beachten (siehe obige 4 F"alle) \\
+$\Longrightarrow$ Gleichung "andert bei anderem Fall
+
+\subsection{Serieschaltung gekoppelter Spulen}
+\begin{center}
+	\begin{pspicture}(-0.5,0)(6.5,2.0)
+		\psline{-}(0.0,0.0)(3.5,0.0)(3.5,1.0)(0.0,1.0)
+		\pscircle[fillstyle=solid,fillcolor=white](0.0,0.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](0.0,1.0){0.1}
+		\pcline[linecolor=blue]{->}(0.0,0.8)(0.0,0.2)\Bput{$u$}
+		\pcline[linecolor=red]{->}(0.1,1.0)(0.4,1.0)\Aput{$i$}
+		\psframe[fillstyle=solid,fillcolor=black](0.5,0.75)(1.5,1.25)\rput[Bb](1.0,1.3){$L_1$}
+		\psframe[fillstyle=solid,fillcolor=black](2.0,0.75)(3.0,1.25)\rput[Bb](2.5,1.3){$L_2$}
+		\psline{-}(4.5,0.0)(6.5,0.0)(6.5,1.0)(4.5,1.0)
+		\pscircle[fillstyle=solid,fillcolor=white](4.5,0.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](4.5,1.0){0.1}
+		\pcline[linecolor=blue]{->}(4.5,0.8)(4.5,0.2)\Bput{$u$}
+		\pcline[linecolor=red]{->}(4.6,1.0)(4.9,1.0)\Aput{$i$}
+		\psframe[fillstyle=solid,fillcolor=black](5.0,0.75)(6.0,1.25)\rput[Bb](5.5,1.3){$L_{total}$}
+		\psline{->}(3.6,0.5)(4.0,0.5)
+		\pcline{<->}(1.0,0.6)(2.5,0.6)\Bput{$M$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	L_{total}=L_1+L_2+2M
+\end{equation}
+
+\subsection{Blindwiderstand}
+\begin{equation}
+	L\cdot\omega = X_L\unit{\Omega}
+\end{equation}
+
+\subsection{$RL$-Schaltung}
+\begin{center}
+	\begin{pspicture}(-1.0,0.0)(5.0,2.5)
+		\psframe(0.0,0.0)(4.0,2.0)
+		\psline{-}(3.0,0.0)(3.0,2.0)
+		\pscircle[fillstyle=solid,fillcolor=black](3.0,0.0){0.05}
+		\pscircle[fillstyle=solid,fillcolor=black](3.0,2.0){0.05}
+		\psframe[fillstyle=solid,fillcolor=white](3.75,0.5)(4.25,1.5)\rput[Bl](4.3,1.0){$R_2$}
+		\psframe[fillstyle=solid,fillcolor=black](2.75,0.5)(3.25,1.5)\rput[Bl](3.3,1.0){$L$}
+		\psframe[fillstyle=solid,fillcolor=white](1.0,1.75)(2.0,2.25)\rput[Bb](1.5,2.3){$R_1$}
+		\pscircle[fillstyle=solid,fillcolor=white](0.0,1.0){0.5}\rput[Bt](0.0,1.4){$+$}
+		\pcline[linecolor=blue]{->}(-0.6,1.5)(-0.6,0.5)\Bput{$U_0$}
+		\pcline[linecolor=blue]{->}(2.6,1.5)(2.6,0.5)\Bput{$U_L$}
+		\pcline[linecolor=red]{->}(0.2,2.0)(0.8,2.0)\Aput{$i$}
+		\pcline[linecolor=red]{->}(3.0,1.9)(3.0,1.6)\Aput{$i_L$}
+		\pcline[linecolor=red]{->}(4.0,1.9)(4.0,1.6)\Aput{$i_R$}
+	\end{pspicture}
+\end{center}
+\begin{align}
+	i_L(t) &= \frac{U_o}{R_1}\cdot e^{\frac{R_2}{L}\cdot t} \\
+	u_L(t) &= -\frac{R_2}{R_1}\cdot U_o\cdot e^{-\frac{R_2}{L}\cdot t} \\
+	p_L(t) &= -\left(\frac{U_o}{R_1}\right)^2\cdot R_2\cdot e^{-2\frac{R_2}{L}\cdot t}
+\end{align}
+\begin{equation*}
+	\tau = \frac{L}{R}
+\end{equation*}
+
+\section{Wechselstromtheorie}
+\subsection{Kennwerte und Kenngr"ossen}
+\begin{itemize}
+	\item Amplitude, Spitzenwert, Scheitelwert: $\hat{u}$, $\hat{i}$
+	\item Kreisfrequenz: $\omega=2\pi f=\frac{2\pi}{\tau}\unit{\frac{rad}{s}}$
+	\item Frequenz: $f=\frac{1}{T}\unit{Hz}$
+	\item Periodenzeit, Periodendauer: $T=\frac{1}{f}\unit{s}$
+	\item Nullphasenwinkel: $\phi_i$, $\phi_u$
+	\item Momentanwert: $i(t)$, $u(t)$
+\end{itemize}
+
+\subsection{Linearer Mittelwert}
+Arithmetischer Mittelwert:
+\begin{equation}
+	\overline{u}(t) = \frac{1}{T}\int\limits_0^T \hat{u}\cdot\cos(\omega t + \phi_u)\,dt
+\end{equation}
+
+\subsection{Betragsmittelwert}
+\begin{equation}
+	|\hat{u}|=\frac{1}{T}\int\limits_0^T\hat{u}\cdot|\cos(\omega t)|\,dt
+\end{equation}
+
+\subsection{Effektivwert}
+Geometrischer Mittelwert:
+\begin{equation}
+	U=U_{eff}=\sqrt{\frac{1}{T}\int\limits_0^Tu^2\,dt}
+\end{equation}
+
+\subsection{Zeigerdarstellung}
+\begin{center}
+	\begin{pspicture}(0.0,0.0)(3.0,3.0)
+		\psline{->}(0.0,0.0)(2.5,0.0)\rput[Bl](2.6,0.0){$Re$}
+		\psline{->}(0.0,0.0)(0.0,2.5)\rput[Bl](0.3,2.5){$Im$}
+		\pcline[linewidth=2pt]{->}(0.0,0.0)(2.0,2.0)\Aput{$\hat{u}$}
+		\psarc[linecolor=blue]{->}(0.0,0.0){1.0}{0}{45}\rput[Bl](1.0,0.5){$\phi_u$}
+		\psarc[linecolor=red]{->}(0.0,0.0){2.83}{45}{60}\rput[Bl](1.8,2.3){$\omega$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	\underline{\hat{u}}(t) = \hat{u}\cdot e^{j\phi_u}\cdot e^{j\omega t}
+\end{equation}
+\begin{align*}
+	\hat{u}\cdot e^{j\phi_u}\cdot e^{j\omega t} &= \underline{\hat{u}}\cdot e^{j\omega t} \\
+	&= \hat{u}\left[{\cos(\phi_u)+j\sin(\phi_u)}\right]\cdot e^{j\omega t} \\
+	&= \underline{\hat{u}}\left[{\cos(\omega t)+j\sin(\omega t)}\right]
+\end{align*}
+
+\subsection{Bezeichnungen und Konventionen}
+\begin{align*}
+	\hat{u}\quad&\text{: L"ange des Zeigers} \\
+	\omega\quad&\text{: Winkelgeschwindigkeit} \\
+	\phi_u\quad&\text{: Nullphasenlage}
+\end{align*}
+\begin{equation*}
+	\underline{\hat{u}}(t) = \hat{u}\cdot e^{j(\omega t + \phi_u)}
+\end{equation*}
+\paragraph{Komplexer Momentanwert}
+\begin{equation}
+	\underline{\hat{u}}(t)=\underline{\hat{u}}\cdot e^{j\omega t}
+\end{equation}
+\paragraph{Komplexer Scheitelwert}
+\begin{equation}
+	\underline{\hat{u}}=\hat{u}\cdot e^{j\phi_u}
+\end{equation}
+\paragraph{Reeller Momentanwert}
+\begin{equation}
+	u(t) = Re[\underline{\hat{u}}(t)]=\hat{u}\cdot\cos(\omega t +\phi_u)
+\end{equation}
+\paragraph{Imagin"arer Momentanwert}
+\begin{equation}
+	u(t) = Im[\underline{\hat{u}}(t)]=\hat{u}\cdot\sin(\omega t +\phi_u)
+\end{equation}
+\paragraph{Komplexer Effektivwert}
+\begin{equation}
+	\underline{u}=\underline{u}_{eff}=\frac{\underline{\hat{u}}}{\sqrt{2}}=\frac{\hat{u}}{\sqrt{2}}\cdot e^{j\phi_u}
+\end{equation}
+
+\subsection{Impedanz und Admittanz}
+\begin{align}
+	\underline{Z}&=\frac{\underline{\hat{u}}(t)}{\underline{\hat{i}}(t)}=\frac{\underline{\hat{u}}}{\underline{\hat{i}}}=R+jX \\
+	\underline{Y}=\frac{1}{\underline{Z}}=\frac{\underline{\hat{i}}(t)}{\underline{\hat{u}}(t)}=G+jB
+\end{align}
+\begin{align*}
+	Z\quad&\text{: Scheinwiderstand, Impedanz} \\
+	Y\quad&\text{: Scheinleitwert, Admittanz} \\
+	R\quad&\text{: Wirkwiderstand, Resistanz} \\
+	X\quad&\text{: Blindwiderstand, Reaktanz} \\
+	G\quad&\text{: Wirkleitwert, Konduktanz} \\
+	B\quad&\text{: Blindleitwert, Suszeptanz}
+\end{align*}
+
+\subsection{Bodediagramm}
+Zahlentafel:
+\begin{center}
+	\begin{tabular}{r|l|l}
+	\hline
+	$\frac{\omega}{\omega_y}$ & $v\unit{dB}$ & $\phi_z=\arctan(\frac{Im[\underline{v}]}{Re[\underline{v}]})$ \\
+	\hline
+	  $0.01$ & $ 0.000434$ & $0.5729°$ \\
+	  $0.10$ & $ 0.0432$ & $5.771°$ \\
+	  $1.00$ & $ 3.0103$ & $45°$ \\
+	 $10.00$ & $20.043$ & $84.289°$ \\
+	$100.00$ & $40.004$ & $89.43°$ \\
+	\hline
+	\end{tabular}
+\end{center}
+
+\subsection{Wechselstromleistung}
+\subsubsection{Wirkleistung $P\unit{W}$}
+\begin{align}
+	P&=\overline{p}(t)=\frac{\hat{u}\cdot\hat{i}}{2}\cdot\cos(\phi_u-\phi_i) \\
+	&= u_{eff}\cdot i_{eff}\cdot\cos(\phi_u-\phi_i)
+\end{align}
+
+\subsubsection{Blindleistung $Q\unit{VAR}$}
+\begin{align}
+	Q&=\frac{\hat{u}\cdot\hat{i}}{2}\cdot\sin(\phi_u-\phi_i) \\
+	&= u_{eff}\cdot i_{eff}\cdot\sin(\phi_u-\phi_i)
+\end{align}
+
+\subsubsection{Scheinleistung $S\unit{VA}$}
+\begin{equation}
+	S=u_{eff}\cdot i_{eff}
+\end{equation}
+
+\subsubsection{Leistungsfaktor}
+\begin{equation}
+	\cos(\phi)=\cos(\phi_u-\phi_i)=\frac{P}{S}
+\end{equation}
+
+\subsection{Netzwerk im Wechselstrom}
+Funktioniert gleich wie bei Gleichstrom mit der Unterscheidung:
+\begin{itemize}
+\item \textbf{mit magnetischer Kopplung:} Knotenspannungsmethode {\em nicht} geeignet.
+\item \textbf{ohne magnetischer Kopplung:} Knotenspannungs- sowie Maschenstrommethode
+	geeignet.
+\end{itemize}
+Mit magnetischer Kopplung:
+\begin{equation}
+	\left[{\begin{pmatrix} & \cdots & \\ \vdots & \ddots & \vdots \\ & \cdots & \end{pmatrix}+K}\right]\cdot\begin{bmatrix}m_1 \\ \vdots \\ m_n\end{bmatrix}=\underline{u}
+\end{equation}
+$K$ : Kopplungsmatrix \newline
+\textbf{Achtung:} Orientierung der Spulen beachten! Machen m"oglichst nicht wo Kopplungen sind!
+
+
+\section{Transformator}
+\subsection{Ersatzschaltbild}
+\begin{center}
+	\begin{pspicture}(-1.0,-0.3)(9.0,2.7)
+		\psline{-}(0.0,0.0)(8.0,0.0)(8.0,2.0)(0.0,2.0)
+		\psline{-}(3.5,0.0)(3.5,2.0)
+		\pscircle[fillstyle=solid,fillcolor=black](3.5,0.0){0.05}
+		\pscircle[fillstyle=solid,fillcolor=black](3.5,2.0){0.05}
+		\pscircle[fillstyle=solid,fillcolor=white](0.0,0.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](0.0,2.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](7.5,0.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](7.5,2.0){0.1}
+		\pcline[linecolor=blue]{->}(0.0,1.8)(0.0,0.2)\Bput{$\underline{U}_1$}
+		\pcline[linecolor=blue]{->}(7.5,1.8)(7.5,0.2)\Bput{$\underline{U}_2$}
+		\psframe[fillstyle=solid,fillcolor=white](0.5,1.75)(1.5,2.25)\rput[Bb](1.0,2.3){$R_{Cu1}$}
+		\psframe[fillstyle=solid,fillcolor=black](2.0,1.75)(3.0,2.25)\rput[Bb](2.5,2.3){$L_{\sigma 1}$}
+		\psframe[fillstyle=solid,fillcolor=black](4.0,1.75)(5.0,2.25)\rput[Bb](4.5,2.3){$L_{\sigma 2}$}
+		\psframe[fillstyle=solid,fillcolor=white](5.5,1.75)(6.5,2.25)\rput[Bb](6.0,2.3){$R_{Cu2}$}
+		\psframe[fillstyle=solid,fillcolor=black](3.25,0.5)(3.75,1.5)\rput[Br](3.1,1.0){$L_h$}\rput[Bl](3.8,1.0){$k\cdot L_1$}
+		\psframe[fillstyle=solid,fillcolor=white](7.75,0.5)(8.25,1.5)\rput[Bl](8.3,1.0){$n^2\cdot\underline{Z}_2$}
+	\end{pspicture}
+\end{center}
+\begin{equation*}
+	k=\frac{M}{\sqrt{L_1\cdot L_2}}\qquad\text{Kopplungsfaktor}
+\end{equation*}
+
+\subsection{Frequenzabh"anigkeit}
+\begin{equation}
+	\underline{H}(\omega)=\frac{n\cdot \underline{u}_2(\omega)}{\underline{u}_1(\omega)}
+\end{equation}
+\begin{align*}
+	\text{Hochpass:}\qquad& \underline{H}(\omega)=\frac{j\omega T(\omega)}{1+j\omega T(\omega)} \\
+	\text{Tiefpass:}\qquad& \underline{H}(\omega)=\frac{1}{1+j\omega T(0)} \\
+\end{align*}
+
+\section{Verst"arkertechnik}
+\subsection{Gleichstromgegenkopplung}
+\begin{center}
+	\begin{pspicture}(-0.2,-0.2)(5.5,7.0)
+		\psline{-}(0.0,6.5)(5.5,6.5)\rput[Bb](4.5,6.6){$U_{Batt}$}
+		\psline{-}(0.0,0.0)(5.5,0.0)
+		\pscircle[fillstyle=solid,fillcolor=white](0.0,0.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](5.5,0.0){0.1}
+		\psline{-}(0.0,4.0)(0.9,4.0)\psline{-}(1.1,4.0)(2.0,4.0)
+		\psline{-}(0.9,4.5)(0.9,3.5)\psline{-}(1.1,4.5)(1.1,3.5)\rput[Bb](1.0,4.6){$C_B$}
+		\pscircle[fillstyle=solid,fillcolor=white](0.0,4.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=black](2.0,0.0){0.05}
+		\pscircle[fillstyle=solid,fillcolor=black](2.0,4.0){0.05}
+		\pscircle[fillstyle=solid,fillcolor=black](2.0,6.5){0.05}
+		\psline{-}(2.0,6.5)(2.0,0.0)
+		\psframe[fillstyle=solid,fillcolor=white](1.75,5.0)(2.25,6.0)\rput[Bl](2.3,5.5){$R_{B1}$}
+		\psframe[fillstyle=solid,fillcolor=white](1.75,1.5)(2.25,2.5)\rput[Bl](2.3,2.0){$R_{B2}$}
+		\pcline[linecolor=blue]{->}(1.6,3.5)(1.6,0.5)\Bput{$U_B$}
+		\pcline[linecolor=red]{->}(2.0,3.8)(2.0,3.0)\Aput{$i_Q$}
+		\psline{-}(2.0,4.0)(3.0,4.0)
+		\pcline[linecolor=red]{->}(2.2,4.0)(2.8,4.0)\Aput{$i_b$}
+		\psline{-}(3.0,4.5)(3.0,3.5)\psline{-}(3.0,4.3)(3.5,4.5)\psline{->}(3.0,3.7)(3.5,3.5)
+		\psline{-}(3.5,3.5)(3.5,0.0)
+		\psline{-}(3.5,4.5)(3.5,6.5)
+		\psframe[fillstyle=solid,fillcolor=white](3.25,0.5)(3.75,1.5)\rput[Bl](3.8,1.0){$R_{E1}$}
+		\psframe[fillstyle=solid,fillcolor=white](3.25,2.0)(3.75,3.0)\rput[Bl](3.8,2.5){$R_{E2}$}
+		\psframe[fillstyle=solid,fillcolor=white](3.25,5.0)(3.75,6.0)\rput[Bl](3.8,5.5){$R_C$}
+		\pscircle[fillstyle=solid,fillcolor=black](3.5,0.0){0.05}
+		\pscircle[fillstyle=solid,fillcolor=black](3.5,1.75){0.05}
+		\pscircle[fillstyle=solid,fillcolor=black](3.5,4.5){0.05}
+		\pscircle[fillstyle=solid,fillcolor=black](3.5,6.5){0.05}
+		\psline{-}(3.5,4.5)(4.4,4.5)\psline{-}(4.6,4.5)(5.5,4.5)
+		\pscircle[fillstyle=solid,fillcolor=white](5.5,4.5){0.1}
+		\psline{-}(4.4,5.0)(4.4,4.0)\psline{-}(4.6,5.0)(4.6,4.0)\rput[bl](4.7,4.6){$C_C$}
+		\psline{-}(3.5,1.75)(5.0,1.75)(5.0,1.1)\psline{-}(5.0,0.9)(5.0,0.0)
+		\pscircle[fillstyle=solid,fillcolor=black](5.0,0.0){0.05}
+		\psline{-}(4.5,0.9)(5.5,0.9)\psline{-}(4.5,1.1)(5.5,1.1)\rput[bl](5.1,1.2){$C_E$}
+	\end{pspicture}
+\end{center}
+\begin{gather*}
+	\text{Regel: }\quad i_Q\approx(5\ldots 10)\cdot i_b \\
+	u_B \approx \frac{U_{Batt}}{R_{B1}+R_{B2}}\cdot R_{B2}
+\end{gather*}
+
+\subsection{Gleichspannungsgegenkopplung}
+\begin{center}
+	\begin{pspicture}(-0.5,-0.2)(6.0,4.5)
+		\psline{-}(0.0,0.0)(5.5,0.0)
+		\psline{-}(0.0,4.0)(5.5,4.0)
+		\rput[Bb](5.0,4.1){$U_{Batt}$}
+		\psline{-}(0.0,1.0)(0.4,1.0)\psline{-}(0.6,1.0)(1.0,1.0)
+		\psline{-}(0.4,1.5)(0.4,0.5)\psline{-}(0.6,1.5)(0.6,0.5)\rput[Bb](0.5,1.7){$C_B$}
+		\psline{-}(1.0,1.0)(1.0,2.0)(4.4,2.0)
+		\psframe[fillstyle=solid,fillcolor=white](1.5,1.75)(2.5,2.25)\rput[Bb](2.0,2.3){$R_B$}
+		\psline{-}(1.0,1.0)(3.0,1.0)
+		\psline{-}(3.0,1.5)(3.0,0.5)\psline{-}(3.0,1.3)(3.5,1.5)\psline{->}(3.0,0.7)(3.5,0.5)
+		\psline{-}(3.5,0.5)(3.5,0.0)
+		\psline{-}(3.5,1.5)(3.5,4.0)
+		\psframe[fillstyle=solid,fillcolor=white](3.25,2.5)(3.75,3.5)\rput[Bl](3.8,3.0){$R_C$}
+		\psline{-}(4.4,2.5)(4.4,1.5)\psline{-}(4.6,2.5)(4.6,1.5)\rput[bl](4.7,2.1){$C_C$}
+		\psline{-}(4.6,2.0)(5.5,2.0)
+		\pscircle[fillstyle=solid,fillcolor=white](0.0,0.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](0.0,1.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](5.5,0.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](5.5,2.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=black](3.5,4.0){0.05}
+		\pscircle[fillstyle=solid,fillcolor=black](3.5,2.0){0.05}
+		\pscircle[fillstyle=solid,fillcolor=black](3.5,0.0){0.05}
+		\pscircle[fillstyle=solid,fillcolor=black](1.0,1.0){0.05}
+		\pcline[linecolor=blue]{->}(0.0,0.8)(0.0,0.2)\Bput{$U_1$}
+		\pcline[linecolor=blue]{->}(5.5,1.8)(5.5,0.2)\Aput{$U_2$}
+	\end{pspicture}
+\end{center}
+
+\subsection{Einseitiger Transistorverst"arker}
+\begin{center}
+	\begin{pspicture}(-0.5,-0.5)(8.5,3.0)
+		\psline{-}(0.0,0.0)(7.5,0.0)
+		\psline{-}(0.0,2.0)(1.9,2.0)\psline{-}(2.1,2.0)(3.5,2.0)
+		\psline{-}(2.5,2.0)(2.5,1.1)\psline{-}(2.5,0.9)(2.5,0.0)
+		\psframe[fillstyle=solid,fillcolor=white](3.5,-0.2)(5.5,2.2)\rput[Bl](3.7,1.7){Transistor-}\rput[Bl](3.7,1.2){Verst\"arker}
+		\psframe[fillstyle=solid,fillcolor=white](0.5,1.75)(1.5,2.25)\rput[Bb](1.0,2.3){$R_D$}
+		\psline{-}(1.9,2.5)(1.9,1.5)\psline{-}(2.1,2.5)(2.1,1.5)\rput[Bb](2.0,2.6){$C_B$}
+		\psline{-}(2.0,0.9)(3.0,0.9)\psline{-}(2.0,1.1)(3.0,1.1)\rput[Br](1.9,1.0){$C_{LB}$}
+		\psline{-}(5.5,2.0)(5.9,2.0)\psline{-}(6.1,2.0)(7.5,2.0)
+		\psline{-}(5.9,2.5)(5.9,1.5)\psline{-}(6.1,2.5)(6.1,1.5)\rput[Bb](6.0,2.7){$C_C$}
+		\psline{-}(6.0,1.1)(7.0,1.1)\psline{-}(6.0,0.9)(7.0,0.9)\rput[rt](6.4,0.8){$C_{LC}$}
+		\psline{-}(7.5,2.0)(7.5,0.0)
+		\psframe[fillstyle=solid,fillcolor=white](7.25,0.5)(7.75,1.5)\rput[Bl](7.8,1.0){$R_L$}
+		\psline{-}(6.5,2.0)(6.5,1.1)\psline{-}(6.5,0.9)(6.5,0.0)
+		\pscircle[fillstyle=solid,fillcolor=white](0.0,0.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](0.0,2.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=black](2.5,0.0){0.05}
+		\pscircle[fillstyle=solid,fillcolor=black](2.5,2.0){0.05}
+		\pscircle[fillstyle=solid,fillcolor=black](6.5,0.0){0.05}
+		\pscircle[fillstyle=solid,fillcolor=black](6.5,2.0){0.05}
+		\rput[Bt](6.5,-0.2){Emitterstufe}
+		\pcline[linecolor=blue]{->}(0.0,1.8)(0.0,0.2)\Bput{$U_D$}
+	\end{pspicture}
+\end{center}
+
+%
+% EOF
+%

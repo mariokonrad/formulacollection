@@ -1,0 +1,455 @@
+%
+% $Id: physik_waermelehre.tex,v 1.2 2003/10/26 12:59:53 ninja Exp $
+%
+
+\section{Definitionen}
+
+\subsection{W"armemenge $Q$}
+\begin{equation}
+	\dot{Q}=P\qquad \Delta Q=P\cdot\Delta t
+\end{equation}
+\noindent Bremsw"arme: $$\Delta Q=F_R\cdot s=m\cdot g\cdot\mu_G\cdot s=\frac{1}{2}\cdot m\cdot v^2$$
+
+\subsection{Trippelpunkt}
+Trippelpunkt von $H_2O$: $273.16 K$, $0.0076^{\circ}C$ und $4.6 mmHg$ \\
+\noindent Im Trippelpunkt herrscht Koexistenz von festem, fl"ussigem und gasf"ormigem Zustand.
+\begin{center}
+	\begin{pspicture}(0,0)(5,4)
+		\psline{->}(0,0)(5,0)\rput[rb](5,0.2){$T$}
+		\psline{->}(0,0)(0,4)\rput[lt](0.2,4){$p$}
+		\pscurve[linecolor=red](0,0)(2.5,1.7)(5,4)
+		\pscurve[linecolor=red](1,4)(1.75,2.5)(2.5,1.7)
+		\pscircle[linecolor=blue](2.5,1.7){0.1}
+		\rput[tl](2.6,1.6){$T$}
+		\rput[b](2.5,3.0){fl"ussig}
+		\rput[r](1.5,1.7){fest}
+		\rput[tl](3.0,1.0){gasf"ormig}
+	\end{pspicture} \\
+	(die Grafik sieht f"ur jeden Stoff anders aus)
+\end{center}
+
+\subsection{Spezifische W"arme}
+\begin{equation}
+	\Delta Q^{\swarrow} = c\cdot m\cdot\Delta T
+\end{equation}
+\begin{align*}
+	\Delta Q^{\swarrow}\unit{J} \quad &\text{: dem System zugef"uhrte W"armeenergie} \\
+	c=\frac{1}{m}\cdot\frac{\partial Q^{\swarrow}}{\partial t}\unit{\frac{J}{kg\cdot K}}\quad &\text{: spezifische W"arme} \\
+	\Delta T\unit{K}\quad &\text{: Temperatur"anderung}
+\end{align*}
+\begin{center}\begin{tabular}{l | l}
+	\hline
+	Stoff & $c$ \\
+	\hline
+	Wasser	& $4182$ \\
+	Eis		& $2100$ \\
+	Eisen	& $465$ \\
+	Aluminium	& $896$ \\
+	\hline
+\end{tabular}\end{center}
+
+\subsection{Kalorie}
+$1 cal$ : W"armemenge um $1ml$ Wasser von $14.5^{\circ}C$ auf $15.5^{\circ}C$ zu erw"armen. \\
+\noindent $1 kcal = 4185.5 J$
+
+\subsection{Mischen}
+\begin{equation}
+	T_0=\frac{c_1\cdot m_1\cdot T_1+c_2\cdot m_2\cdot T_2}{c_1\cdot m_1+c_2\cdot m_2}
+\end{equation}
+\begin{align*}
+	c_i\quad &\text{: spezifische W"arme} \\
+	m_i\quad &\text{: Masse} \\
+	T_i\quad &\text{: abs. Temperatur (in $K$)}
+\end{align*}
+
+\subsection{Spezifische W"arme f"ur Gase}
+\begin{align}
+	c_p &= \frac{1}{m}\cdot\frac{\partial Q}{\partial T}\qquad\text{f"ur } p=\text{konstant} \\
+	c_V &= \frac{1}{m}\cdot\frac{\partial Q}{\partial T}\qquad\text{f"ur } V=\text{konstant} \\
+	c_p &> c_V
+\end{align}
+
+\subsection{L"angenausdehnung}
+\begin{center}
+	\begin{pspicture}(0,-0.5)(5,1.5)
+		\psframe(0,0)(3.5,0.25)
+		\psframe(0,0.5)(2.5,0.75)
+		\rput[b](1.25,0.8){$l_0$}
+		\rput[t](1.75,-0.2){$l_0+\Delta l$}
+		\pcline{|-|}(2.5,0.375)(3.5,0.375)\Aput{$\Delta l$}
+		\rput[l](4,0.625){$T_0$}
+		\rput[l](4,0.125){$T_0+\Delta T$}
+	\end{pspicture}
+\end{center}
+\begin{align}
+	\Delta l &= \alpha\cdot l_0\cdot\Delta T \\
+	l &= l_0\cdot (1+\alpha\cdot\Delta T)
+\end{align}
+
+\subsection{Volumenausdehnung}
+\begin{equation}
+	V = V_0\cdot(1+\gamma\cdot\Delta T)\qquad\text{mit}\quad\gamma\approx 3\cdot\alpha
+\end{equation}
+\begin{equation}
+	V=l^3=l_0^3(1+\alpha\cdot\Delta T)^3\qquad\text{Annahme: }\alpha\cdot\Delta T << 1\qquad\Longrightarrow\quad V=V_0(1+3\alpha\cdot\Delta T)
+\end{equation}
+
+\subsection{Ideales Gas}
+
+\paragraph{Isobar: $p$ konstant (Gay Lussac)}
+\begin{equation}
+	\frac{V_1}{V_2}=\frac{T_1}{T_2}
+\end{equation}
+
+\paragraph{Isochor: $V$ konstant (Amonton)}
+\begin{equation}
+	\frac{p_1}{p_2}=\frac{T_1}{T_2}
+\end{equation}
+
+\paragraph{Isotherm: $T$ konstant (Boyle Mariotte)}
+\begin{equation}
+	\frac{p_1}{p_2}=\frac{V_1}{V_2}
+\end{equation}
+\begin{equation}
+	\frac{p_1}{\rho_1}=\frac{p_2}{\rho_2}
+\end{equation}
+
+\paragraph{Verkettung}
+\begin{equation}
+	\frac{V_1\cdot p_1}{T_1} = \text{konstant}
+\end{equation}
+
+\subsection{Stoffmenge in $kmol$}
+Die Lochmidt'sche Zahl $L$ ist gleich der Anzahl der Atome in $12kg C_6^{12}$ (6 Protonen, 6 Neutronen, 6 Elektronen, Bindungsenergie): $$L=6.023\cdot 10^{26}$$
+\begin{equation*}
+	m=n\cdot M
+\end{equation*}
+\begin{align*}
+	m\quad &\text{: Masse} \\
+	n\quad &\text{: Anzahl } kmol \\
+	M\quad &\text{: Masse eines } kmol
+\end{align*}
+\begin{center}\begin{tabular}{r | l}
+	\hline
+	Molek"ul			& $M$ \\
+	\hline
+	$C_6^{12}$			& 12 \\
+	$H^1$				& 1 \\
+	$\phantom{H}^1He$	& 4 \\
+	$H_2O$				& 18 \\
+	Luft ($N_2$, $O_2$)	& 29 \\
+	\hline
+\end{tabular}\end{center}
+
+\subsection{Zustandsgleichung}
+\begin{equation}
+	p\cdot V = n\cdot R_M\cdot T
+\end{equation}
+\begin{align*}
+	T &\text{ : absolute Temperatur} \\
+	V &\text{ : Volumen} \\
+	n &\text{ : Anazahl } kmol \\
+	p &\text{ : Druck} \\
+	R_M &\text{ : molare Gaskonstante } = 8.314\cdot 10^3\unit{\frac{J}{kmol\cdot K}}
+\end{align*}
+\noindent $R_M$ ist Gasartunabh"angig
+\begin{equation*}
+	p=\rho\cdot R\cdot T\qquad\text{und}\quad p\cdot V=m\cdot R\cdot T\qquad\text{mit}\quad R=\frac{R_M}{M}
+\end{equation*}
+
+\subsection{Luftdruckabnahme in Atmosph"are}
+\begin{center}
+	\begin{pspicture}(-1,0)(3,2)
+		\psframe[fillstyle=hlines*,hatchcolor=blue,fillcolor=white,linestyle=none](0,0)(3,1)
+		\psline[linecolor=blue](0,1)(3,1)
+		\psline(0,2)(0,0)(3,0)(3,2)
+		\pcline{->}(-0.3,2)(-0.3,0)\Bput{$h$}
+		\rput[b](1.5,1.2){$p_0$}
+		\rput*[B](1.5,0.4){$\rho$}
+	\end{pspicture}
+\end{center}
+\begin{gather}
+	p_{(h)} = \rho\cdot g\cdot h+p_0 \\
+	dp = \rho\cdot g\cdot dh\qquad\text{auch g"ultig wenn } \rho_{(h)}
+\end{gather}
+
+\begin{center}
+	\begin{pspicture}(-1,0)(1,2)
+		\psframe[fillstyle=hlines*](-1,0)(1,0.25)
+		\psline{->}(0,0.25)(0,2)
+		\rput[tl](0.2,2){$y$}
+	\end{pspicture}
+\end{center}
+\begin{gather}
+	dp=-\rho_{(y)}\cdot g\cdot dy \\
+	\frac{dp}{dy}=-\frac{p}{R\cdot T}\cdot g \\
+	p_{(y)} = p_0\cdot e^{-\frac{g}{R\cdot T}\cdot y}\qquad T\text{ konstant f"ur alle $y$ (gute N"aherung)} \\
+	p_{(y)} = \rho_0\cdot R\cdot T_0\cdot e^{-\frac{\rho_0\cdot g\cdot y}{p_0}}
+\end{gather}
+
+\section{Kinetische Gastheorie}
+
+\subsection{Gas aus $n$ Molek"ulen (Punktmassen)}
+Kinetische Energie eines Teilchens: $$E_i=\frac{\mu_i}{2}\cdot v_i^2$$ mit $\mu_i$ als Masse eines Teilchens.
+\begin{equation}
+	p_i =\frac{\mu\cdot\left\|\overrightarrow{v}_i\right\|^2}{V}
+\end{equation}
+\noindent $N=n\cdot L$ f"ur $n$ $kmol$ eines Gases
+\begin{equation}
+	p_{total}=\frac{N\cdot\mu}{3\cdot V}\cdot\overline{v^2}
+\end{equation}
+\noindent Mittlere kinetische Energie eines Teilchens:
+\begin{equation}
+	E=\frac{3}{2}\cdot k_B\cdot T\qquad\text{mit}\quad k_B=\frac{R_M}{L}
+\end{equation}
+\noindent $k_B$ : Boltzmenn'sche Konstante $$k_B=1.38\cdot 10^{-23}\unit{\frac{J}{K}}$$
+
+\subsection{Mehratomige Molek"ule}
+Jeder zus"atzliche Freiheitsgrad liefert $\frac{1}{2}k_BT$ kinetische Energie = {\em Aquipartitionsgesetz}
+\begin{equation}
+	E_{kin}=\frac{f}{2}\cdot k_B\cdot T= \frac{f}{2}\cdot\frac{R_M}{L}\cdot T
+\end{equation}
+\begin{center}\begin{tabular}{r | l}
+	\hline
+	$f$ : Freiheitsgrade & Anzahl Atome \\
+	\hline
+	3	& 1 \\
+	5	& 2 \\
+	6	& $>$ 2 \\
+	\hline
+\end{tabular}\end{center}
+
+\subsection{Innere Energie $U$ eines Gases}
+\begin{align}
+	U	&= n\cdot L\cdot E_{kin} \\
+		&= n\cdot L\cdot\frac{f}{2}\cdot k_B\cdot T \\
+		&= n\cdot R_M\cdot\frac{f}{2}\cdot T \\
+		&= \frac{f}{2}\cdot p\cdot V
+\end{align}
+
+\subsection{Gasgemische}
+\begin{equation}
+	M = \frac{n_1\cdot M_1 + n_2\cdot M_2}{n_1+n_2}
+\end{equation}
+
+\subsection{Gesetz von Dalton}
+Der Druck eines Gasgemisches ist gleich der Summe der Partialdr"ucke:
+\begin{align}
+	p &= (\rho_1\cdot R_1+\rho_2\cdot R_2)\cdot T \\
+	p &= (\rho_1+\rho_2)\cdot\overline{R}\cdot T
+\end{align}
+\noindent mit
+\begin{equation*}
+	\overline{R}=\frac{R_M}{\overline{M}} \qquad\text{und}\qquad
+	\overline{M}=\frac{n_1\cdot M_1+n_2\cdot M_2}{n_1+n_2}=\frac{\sum_i n_i\cdot M_i}{\sum_i n_i}
+\end{equation*}
+
+\subsection{Relative Feuchtigkeit $\phi$}
+\begin{center}
+	\begin{pspicture}(0,0)(3,2)
+		\psframe[fillstyle=hlines*,hatchcolor=blue,fillcolor=white,linestyle=none](0,0)(3,1)
+		\psline[linecolor=blue](0,1)(3,1)
+		\psframe(0,0)(3,2)
+		\rput*[B](1.5,0.4){$H_2O$}
+		\rput[t](1.5,1.8){\small Luft(trocken)+$H_2O$}
+		\rput[t](1.5,1.4){\small $p_{tot}=p_L+p_D$}
+	\end{pspicture}
+\end{center}
+\begin{align*}
+	p_L &\text{ : Druck trockener Luft} \\
+	p_D &\text{ : Dampfdruck}
+\end{align*}
+\noindent Nach Dalton: $p_f=p_L+p_D$ ($p_f$ : feuchte Luft) \\
+\noindent Relative Feuchtigkeit $\phi(T)$:
+\begin{equation}
+	0\leq \phi(T) =\frac{p_D}{p_s(T)}\leq 1
+\end{equation}
+\noindent $p_s$ : S"attigungsdruck, $H_2O$:
+\begin{align*}
+	p_s(0^{\circ})   &= 611 Pa \\
+	p_s(20^{\circ})  &= 2357 Pa \\
+	p_s(100^{\circ}) &= 1.01325\cdot 10^5 Pa = 1atm \\
+\end{align*}
+
+\section{Thermodynamik}
+
+\subsection{1. Hauptsatz}
+\begin{align*}
+	Q^\nearrow &\text{ : die vom System an die Umgebung abgegebene W"arme} \\
+	Q^\swarrow &\text{ : die vom System von der Umgebung aufgenommene W"arme}
+\end{align*}
+\begin{equation}
+	\Longrightarrow\qquad Q^\nearrow = -Q^\swarrow
+\end{equation}
+\noindent dito f"ur $W$: $W^\nearrow=-W^\swarrow$
+\begin{equation*}
+	\Delta U = Q^\swarrow + W^\swarrow
+\end{equation*}
+\noindent Die vom System aufgenommene W"arme $Q^\swarrow$ und Arbeit $W^\swarrow$ erh"oht die innere Energie $U$ des Systems um $\Delta U$.
+
+\paragraph{Isochor}
+\begin{equation*}
+	C_V=\frac{1}{2}f\cdot R_M
+\end{equation*}
+\begin{itemize}
+	\item Gasart unabh"angig
+	\item Atomgewichtsunagh"angig
+\end{itemize}
+
+\paragraph{Isobar}
+\begin{align*}
+	C_p &= \frac{f}{2}\cdot R_M+R_M \\
+	    &= R_M\left(1+\frac{f}{2}\right) \\
+	    &= C_V+R_M \\
+	f   &= \{3,5,6\}
+\end{align*}
+
+\begin{align*}
+	C_p & > C_V \\
+	\Delta U = n\cdot C_V\cdot\Delta T\quad & \quad \Delta U \neq n\cdot C_p\cdot\Delta T \\
+	c_p=\frac{C_P}{M} \quad & \quad c_V=\frac{C_V}{M} \\
+	C_p=C_V+R_M\quad & \quad c_p=c_V+R \\
+\end{align*}
+
+\subsection{Adiabatische (isentrope) Prozesse}
+Dies sind Zustands"anderungen mit $\Delta Q=0$. Es gilt immer noch: $pV=nR_MT$
+\begin{align}
+	\chi &= \frac{c_p}{c_V}=\frac{C_p}{C_V}=\frac{C_V+R_M}{C_V}=1+\frac{R_M}{C_V}\qquad\text{mit}\quad C_V=\frac{f}{2}\cdot R_M \\
+	\chi &= 1+\frac{2}{f}
+\end{align}
+\begin{gather*}
+	T_1\cdot V_1^{\chi-1}=T_2\cdot V_2^{\chi-1}\qquad\text{dabei}\qquad T\cdot V^{\chi-1}=\text{ konstant} \\
+	p_1\rightarrow p_2\quad\text{: Berechnung mit } pV=nR_MT \\
+	T\cdot p^{\frac{1-\chi}{\chi}}=\text{ konstant}\qquad (V_1=V_2) \\
+	p\cdot V^\chi =\text{ konstant}\qquad (T_1=T_2)
+\end{gather*}
+
+\paragraph{Bemerkungen}
+\begin{itemize}
+	\item Streng adiabatische W"ande gibt es nicht.
+	\item Grosse Systeme $\rightarrow$ kleine Oberfl"achen ($\Rightarrow$ adiabatisch)
+	\item Schnelle Zustands"anderungen (Beispiel: Kolbenmotor)
+	\item Schallgeschwindigkeit: $$c_{Gas}=\sqrt{\chi\cdot R\cdot T}$$ Die Abh"anigkeit ist f"ur $\overline{V}_{Gas}^2$ und $C_{Gas}^2$ die Gleiche.
+\end{itemize}
+
+\subsection{Kreisprozesse}
+Rechtsl"aufiger Kreisprozess gibt Arbeit an Umwelt ab.
+\begin{gather}
+	W^\nearrow=\ointclockwise p\,dV=\ointclockwise dW > 0
+	Q_{zykl.}^\swarrow = W_{zykl.}^\nearrow
+\end{gather}
+
+\subsection{2. Hauptsatz}
+Ohne Aufwendung von "ausserer Arbeit str"omt W"arme niemals von einem k"alteren zu einem w"armeren Niveau.
+
+\subsection{Carnot-Zyklus}
+Dies ist ein idealer, reversibler Zyklus.
+
+\subsection{W"arme-Kraft-Maschine}
+Die Fl"ache unter $\ointclockwise$ ist positiv. Rechtsl"aufiger Kreisprozess. $Q$ fliesst von Warm nach Kalt.
+
+\subsection{Thermodynamischer Wirkungsgrad}
+\begin{equation}
+	\eta_{th} =\frac{Q_3^\swarrow-Q_1^\nearrow}{Q_3^\swarrow}=1-\frac{Q_1^\nearrow}{Q_3^\swarrow}
+\end{equation}
+\noindent F"ur nur reversible Prozesse gilt zus"atzlich:
+\begin{equation}
+	\eta_c=\eta_{ideal}=\eta_{rev.}=1-\frac{T_1}{T_2}
+\end{equation}
+
+\subsection{Arbeitsmaschine, W"armepumpe}
+Linksl"aufiger Kreisprozsess. Fl"ache unter $\ointctrclockwise$ ist positiv. $Q$ fliesst von Kalt nach Warm unter Zuf"uhrung von "ausserer Arbeit.
+
+\subsection{Leistungszahl COP}
+(COP = coefficient of performance)
+\begin{equation}
+	\epsilon_W=\frac{Q_3^\nearrow}{Q_3^\nearrow-Q_1^\swarrow}=\frac{1}{1-\frac{Q_1^\swarrow}{Q_3^\nearrow}}=\frac{1}{\eta_{th}}
+\end{equation}
+\noindent F"ur reversible Prozesse gilt zus"atzlich:
+\begin{equation}
+	\epsilon_W=\frac{1}{\eta_c}=\frac{T_3}{T_3-T_1}
+\end{equation}
+
+\section{W"armeleitung}
+$\lambda$ : W"armeleitungszahl \\
+\noindent W"armeleitungsgleichung nach Fourier:
+\begin{equation}
+	\frac{dQ}{dt}=-\lambda\cdot A\cdot\frac{dT}{dx}\qquad\lambda\unit{\frac{W}{m\cdot K}}
+\end{equation}
+\begin{align*}
+	A &\text{ : Querschnitt} \\
+	T &\text{ : absolute Temperatur}
+\end{align*}
+
+\subsection{W"armestromdichte}
+\begin{equation}
+	\rho_Q\cdot v=-\lambda\frac{dT}{dx}\qquad J=-\lambda\frac{dT}{dx}=\rho_Q\cdot v
+\end{equation}
+\noindent $v$ : Propagation der W"armedichte \\
+
+\paragraph{Verallgemeinerung}
+\begin{equation}
+	\overrightarrow{J}=-\lambda\cdot grad\left({T_{(x,y,z)}}\right)
+\end{equation}
+
+\subsection{W"arme"ubergang}
+$\alpha$ : W"arme"ubergangszahl
+\begin{gather}
+	J=\frac{dQ}{dt\cdot A}=\alpha\cdot\Delta T\qquad\text{mit}\quad\Delta T=T_1-T_2
+\end{gather}
+\begin{center}
+	\begin{pspicture}(0,0)(2.5,2.5)
+		\psframe[fillstyle=crosshatch*,hatchcolor=gray](2,0)(2.5,2)
+		\rput[b](2.25,2.2){$T_2$}
+		\rput[b](1.25,1.4){$T_1$}
+		\psline[linecolor=red](2.0,1.0)(2.5,1.0)
+		\pscurve[linecolor=red](0,1.3)(1.6,1.2)(2,1)
+	\end{pspicture}
+\end{center}
+\begin{center}\begin{tabular}{r | l}
+	\hline
+	Material	& $\lambda$ \\
+	\hline
+	Diamant		& 600 \\
+	Kupfer		& 384 \\
+	Beton		&   1 \\
+	Luft		& 0.026 \\
+	Eisen		& 74 \\
+	\hline
+\end{tabular}\end{center}
+
+\noindent $k$ : W"armedurchgangszahl
+\begin{center}
+	\begin{pspicture}(0,0)(2.5,2)
+		\psframe[fillstyle=crosshatch*,hatchcolor=gray](1,0)(1.5,2)
+		\rput[b](0.5,1){$T_i$}
+		\rput[b](2.0,1){$T_a$}
+	\end{pspicture}
+\end{center}
+\begin{equation*}
+	T_i > T_a\qquad \Delta T=T_i-T_a
+\end{equation*}
+\begin{equation}
+	J=\frac{dQ}{dt\cdot A}=k\cdot\Delta T=k\cdot(T_i-T_a)
+\end{equation}
+\noindent zweifaches Isolierglas: $k=3.0$ \\
+\noindent W"armed"ammglas: $k=1.3$
+\begin{center}
+	\begin{pspicture}(0,0)(2.5,2)
+		\psframe[fillstyle=crosshatch*,hatchcolor=gray](1,0)(1.5,2)
+		\rput[b](0.5,1.6){$T_i$}
+		\rput[b](2.0,0.6){$T_a$}
+		\psline[linecolor=red](0,1.5)(1,1.5)(1.5,0.5)(2.5,0.5)
+		\pscircle(1,1.5){0.1}
+		\pscircle(1.5,0.5){0.1}
+		\rput[tr](0.9,1.4){$d_i$}
+		\rput[bl](1.6,0.6){$d_a$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	\frac{1}{k}=\frac{1}{\alpha_i}+\frac{d}{\lambda}+\frac{1}{\alpha_a}
+\end{equation}
+
+%
+% EOF
+%

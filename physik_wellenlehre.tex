@@ -1,0 +1,414 @@
+%
+% $Id: physik_wellenlehre.tex,v 1.1 2003/10/24 15:42:53 ninja Exp $
+%
+
+\section{Schwingung}
+Endlich grosse St"orung eines Systems aus der Ruhelage. Sie propagiert \textbf{nicht!}
+
+\paragraph{Spezialfall: harmonische Schwingung}
+\begin{align*}
+	y(t) &= A\cdot\cos(\omega t+\delta) \\
+	\omega &= 2\cdot\pi\cdot\nu \\
+	T_p &= \nu^{-1} \\
+	\delta &= \text{ Nullphasenwinkel, Anphasenwinkel} \\
+	A &= \text{ Amplitude}
+\end{align*}
+
+\subsection{Erzwungene und ged"ampfte Schwingung}
+\begin{center}
+	\begin{pspicture}(0,0)(4,2)
+		\psframe[fillstyle=hlines*](0,0)(0.25,2)
+		\psframe(3,0.75)(4,1.25)
+		\rput[b](3.5,0.8){$m$}
+		\pszigzag[coilarm=0.25,coilwidth=0.8,coilheight=0.4,linearc=0.05](0.25,1)(3,1)
+		\rput[b](2.0,1.5){$c$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	m\cdot\ddot{y}_{(t)} = F_{Feder}+F_{Reib}+F_{Erzwingen}
+\end{equation}
+\begin{align*}
+	F_{Feder} &= -c\cdot y_{(t)} \\
+	F_{Erzwingen} &= F_0\cdot\cos(\omega_E\cdot t) \\
+	F_{Reib} &= -a\cdot\frac{\dot{y}}{|\dot{y}|}\qquad\text{Gleitreibung} \\
+		&= -b\cdot\dot{y}\qquad\text{Viskosereibung} \\
+		&= -\tilde{b}\cdot\left(\dot{y}\right)^2\cdot\frac{\dot{y}}{|\dot{y}|}\qquad\text{Druckwiderstand, z.B. Luft} \approx -v^2
+\end{align*}
+\noindent bei $F_{Reib}=-b\dot{y}$:
+\begin{equation}
+	m\ddot{y}=-cy-b\dot{y}+F_0\cdot\cos(\omega_E\cdot t)\qquad\omega_0^2=\frac{c}{m}\qquad D=\frac{b}{2\cdot\omega_0\cdot m}
+\end{equation}
+\begin{align*}
+	\omega_0 &\text{ : Schwingungsfrequenz des freien Oszillators} \\
+	D &\text{ : D"ampfungsgrad}
+\end{align*}
+\begin{equation*}
+	\ddot{y}=-\omega_0^2\cdot y-w\omega_0\cdot D\cdot\dot{y}+\frac{F_0}{m}\cos(\omega_E\cdot t)
+\end{equation*}
+\noindent freier Oszillator: $D=F_0=0$
+\begin{gather*}
+	\ddot{y}=-\omega_0^2\cdot y\qquad\text{(homogene Differentialgleichung)} \\
+	\Longrightarrow\quad y_{(t)}=C\cdot\cos(\omega t+\phi) \\
+	\Longrightarrow\quad y_{(t)}=A\cdot\cos(\omega t)+B\cdot\sin(\omega t)
+\end{gather*}
+\noindent $C$,$\phi$ bzw. $A$, $B$ sind Anfangsbedingungen.
+
+\paragraph{Anfangsbedingung: $F_E\neq0, D=0$}
+\begin{equation}
+	y_{(t)}=\frac{\frac{F_0}{m}}{\omega_0^2-\omega_E^2}\cos(\omega_E t)+C\cdot\cos(\omega_0 t+\delta)
+\end{equation}
+
+\paragraph{Anfangsbedingung: $F_E\neq0, D\neq0$}
+\begin{equation}
+	y_{(t)}=\frac{\frac{F_0}{m}}{\sqrt{(\omega_0^2-\omega_E^2)^2+(2\cdot D\cdot\omega_0\cdot\omega_E)^2}}\cos(\omega_E t+\delta)
+\end{equation}
+
+\section{Wellen}
+Ausbreitung
+\begin{align*}
+	x' &= x-vt \\
+	x = x' + vt
+\end{align*}
+\begin{equation}
+	\Longrightarrow\quad y_{(x,t)}=y_0\cdot(x-vt)
+\end{equation}
+\noindent $\frac{dx}{dt}=v$ : Propagationsgeschwindigkeit der St"orung
+\begin{equation*}
+	y_{t(x)}=y_{(x,t)}=y_0\cdot(x\mp vt)
+\end{equation*}
+\noindent In 2 und 3 Dimensionen gibt es eine Raumd"ampfung:
+\begin{align}
+	\frac{1}{v^2}\cdot\frac{\partial^2 y_{(x,t)}}{\partial t^2} &= \frac{\partial^2 y_{(x,t)}}{\partial x^2} \\
+	\frac{1}{v^2}\cdot\frac{\partial^2 y_{(x_1,x_2,x_3,t)}}{\partial t} &= \frac{\partial^2 y}{\partial x_1^2}+\frac{\partial^2 y}{\partial x_2^2}+\frac{\partial^2 y}{\partial x_3^2}
+\end{align}
+
+\subsection{Harmonische Welle}
+\begin{equation}
+	y_{(x,t)}=A\cdot\cos\left(k\cdot(x-vt)\right)
+\end{equation}
+\noindent In 3 Dimensionen werden $x$ und $k$ zu den Vektoren $\overrightarrow{x}$ und $\overrightarrow{k}$. $\overrightarrow{k}$ ist der Wellenvektor, zeigt in Richtung der Wellenausbreitung.
+\begin{equation}
+	T=\frac{2\pi}{k\cdot v}\qquad\frac{1}{T}=\nu=\frac{\omega}{2\pi}=\frac{k\cdot v}{2\pi}\quad\Longrightarrow\quad\omega=k\cdot v
+\end{equation}
+\begin{equation}
+	\nu\cdot\lambda=v
+\end{equation}
+
+\subsection{Ausbreitungsgeschwindigkeit}
+
+\subsubsection{Transversalwellen}
+
+\paragraph{Seilwelle}
+\begin{equation}
+	v = \sqrt{\frac{z}{\mu}} = \sqrt{\frac{\sigma}{\rho}}
+\end{equation}
+\begin{align*}
+	z &\text{ : Zugkraft} \\
+	\mu=\frac{m}{l} &\text{ : ``L"angen-Massen-Dichte''} \\
+	\rho &\text{ : Dichte} \\
+	\sigma=\frac{z}{A} &\text{ : Zugspannung} \\
+	A &\text{ : Querschnitt}
+\end{align*}
+
+\paragraph{Wasserwellen $h<<\lambda$}
+\begin{equation}
+	v=\sqrt{g\cdot h}\qquad h\text{ : Tiefe}
+\end{equation}
+
+\paragraph{Elektromagnetische Wellen}
+\begin{equation}
+	\lambda\cdot\nu=c=3\cdot 10^8\unit{\frac{m}{s}}
+\end{equation}
+\noindent Sie ist immer Transversal falls keine Randbedingungen.
+
+\subsubsection{Longitudinalwellen}
+
+\paragraph{Schallwellen im Gas}
+\begin{equation}
+	v=\sqrt{\chi\cdot R\cdot T}\qquad R=\frac{R_M}{M}\qquad \chi=\frac{c_p}{c_V}
+\end{equation}
+
+\paragraph{Schallwellen im Stab}
+\begin{gather}
+	v=\sqrt{\frac{E}{\rho}}\qquad E\text{ : Elastizit"atsmodul} \\
+	\sigma=E\cdot\frac{\Delta l}{l}
+\end{gather}
+
+\subsection{Dopplereffekt}
+
+\subsubsection{Stehende Quelle, Bewegter Beobachter}
+\begin{align}
+	\nu'&=\nu\left(1\mp\frac{u}{v}\right)\qquad\begin{cases}-\text{ weg von Quelle}\\+\text{ zu Quelle}\end{cases} \\
+	\frac{\Delta\nu}{\nu}&=\mp\frac{u}{v}
+\end{align}
+\begin{align*}
+	u &\text{ : Geschwindigkeit Beobachter} \\
+	v &\text{ : Wellenausbreitungsgeschwindigkeit}
+\end{align*}
+
+\subsubsection{Bewegte Quelle, Stehender Beobachter}
+
+\begin{align}
+	\nu'&=\nu\frac{1}{1\pm\frac{u}{v}}\qquad\begin{cases}-\text{ weg von Beobachter}\\+\text{ zu Beobachter}\end{cases} \\
+	\frac{\Delta\nu}{\nu}&=\frac{\pm\frac{u}{v}}{1\pm\frac{u}{v}}
+\end{align}
+
+\subsubsection{Dopplereffekt f"ur el. magn. Wellen}
+\begin{equation}
+	\nu'=\nu\frac{\sqrt{1\mp\frac{u}{v}}}{1\pm\frac{u}{v}}\qquad\begin{cases}\text{weg: Zeichen oben}\\\text{zu: Zeichen unten}\end{cases}
+\end{equation}
+\noindent F"ur $u<<c \quad\Longrightarrow\quad\frac{\Delta\nu}{\nu}\approx\pm\frac{u}{v}$
+
+\subsection{Stehende Wellen}
+Verschiedene Randbedingungen k"onnen zu stehender Welle f"uhren:
+\begin{center}
+	\begin{pspicture}(0,-1.5)(7,4)
+		\rput[b](0.5,3.3){Ruhe}
+		\psframe[fillstyle=hlines*](0.0,-0.25)(1.0,0)
+		\psframe[fillstyle=hlines*](0.0,3)(1.0,3.25)
+		\psframe[fillstyle=hlines*](1.5,-0.25)(2.5,0)
+		\psframe[fillstyle=hlines*](1.5,3)(2.5,3.25)
+		\psline[linecolor=red](0.5,0)(0.5,3.0)
+		\psline[linecolor=lightgray](2.0,0)(2.0,3.0)
+		\rput[tl](0.2,-0.7){$y_{(0,t)}=0\quad\forall t$}
+		\rput[tl](0.2,-1.2){$y_{(l,t)}=0\quad\forall t$}
+		\pscurve[linecolor=red](2.0,3.0)(1.75,2.5)(2.25,1.5)(1.75,0.5)(2.0,0)
+		\pscircle(2.0,2.0){0.1}
+		\pscircle(2.0,1.0){0.1}
+		\rput[b](4.5,3.3){Ruhe}
+		\psframe[fillstyle=hlines*](4.0,3)(5.0,3.25)
+		\psframe[fillstyle=hlines*](5.5,3)(6.5,3.25)
+		\psline[linecolor=red](4.5,0)(4.5,3.0)
+		\psline[linecolor=lightgray](6.0,0)(6.0,3.0)
+		\rput[tl](4.2,-0.7){$y_{(0,t)}=0\quad\forall t$}
+		\rput[tl](4.2,-1.2){$\frac{d y_{(l,t)}}{dx}=0\quad\forall t$}
+		\pscurve[linecolor=red](6.0,3.0)(5.75,2.5)(6.25,1.5)(5.75,0.5)(5.75,0)
+		\pscircle(6.0,2.0){0.1}
+		\pscircle(6.0,1.0){0.1}
+	\end{pspicture}
+\end{center}
+\noindent Stehende Welle $=$ Schwingung
+
+\subsection{Stehende Welle auf Saite}
+\begin{center}
+	\begin{pspicture}(-0.5,0)(5,3)
+		\psframe[fillstyle=hlines*](-0.25,0)(0,1)
+		\psframe[fillstyle=hlines*](-0.25,2)(0,3)
+		\psframe[fillstyle=hlines*](3,0)(3.25,1)
+		\psframe[fillstyle=hlines*](3,2)(3.25,3)
+		\psline[linecolor=lightgray](0,0.5)(3,0.5)
+		\psline[linecolor=lightgray](0,2.5)(3,2.5)
+		\rput[B](1.5,1.5){$L$}
+		\rput[l](3.5,0.5){$2\frac{\lambda_2}{2}=L$}
+		\rput[l](3.5,2.5){$\frac{\lambda_1}{2}=L$}
+		\pscurve[linecolor=red](0,0.5)(0.75,1.0)(2.25,0)(3,0.5)
+		\pscurve[linecolor=red](0,2.5)(1.5,3.0)(3,2.5)
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	n\cdot\frac{\lambda_n}{2}=L
+\end{equation}
+\begin{align*}
+	n = 1\quad &\text{ : Grundschwingung, 1. Harmonische} \\
+	n = 2\quad &\text{ : 1. Oberschwingung, 2. Harmonische} \\
+	n = 3\quad &\text{ : 2. Oberschwingung, 3. Harmonische} \\
+\end{align*}
+\noindent Bedingung f"ur $\nu_n=\frac{v}{\lambda_n}=\frac{n\cdot v}{2\cdot L}$
+
+\subsection{Anregefrequenzen f"ur Eigenschwingungen}
+\begin{equation}
+	\nu_n=\frac{n}{2L}\sqrt{\frac{z}{\mu}}\qquad\mu=\rho\cdot A\qquad z\text{ : Zugkraft}
+\end{equation}
+
+\subsection{Stehende Welle in Lufts"aule}
+
+\subsubsection{Geschlossene Pfeife}
+\begin{equation}
+	L=\frac{\lambda}{4}+n\cdot\frac{\lambda}{2}\qquad f_i\text{ mit } i=1,3,5,7,\ldots
+\end{equation}
+
+\subsubsection{Offene Pfeife}
+\begin{equation}
+	L=n\cdot\frac{\lambda}{2}\qquad f_i\text{ mit } i=1,2,3,4,\ldots
+\end{equation}
+
+\section{Reflexion und Brechungsgesetz}
+
+\subsection{Allgemein}
+\begin{center}
+	\begin{pspicture}(-2,-2)(4,2)
+		\psline(-2,0)(2,0)\psline(0,2)(0,-2)
+		\psline[linecolor=red]{->}(-2,2)(0,0)
+		\psline[linecolor=red]{->}(0,0)(2,2)
+		\psline[linecolor=red]{->}(0,0)(1,-2)
+		\rput[t](-1.8,1.6){$A$}
+		\rput[t](1.8,1.6){$B$}
+		\rput[b](1.2,-1.8){$C$}
+		\psarc(0,0){1.0}{90}{135}
+		\psarc(0,0){1.0}{45}{90}
+		\psarc(0,0){1.0}{270}{297}
+		\rput[B](-0.3,0.6){$\alpha_1$}
+		\rput[B]( 0.3,0.6){$\alpha_1'$}
+		\rput[B](0.2,-1.3){$\alpha_2$}
+		\rput[l](2.2,1.0){Medium 1: $c_1=\frac{c}{n_1}$}
+		\rput[l](2.2,-1.0){Medium 2: $c_2=\frac{c}{n_2}$}
+	\end{pspicture}
+\end{center}
+\begin{equation*}
+	n_1 < n_2\qquad\text{ : Brechungsindices}
+\end{equation*}
+\begin{align*}
+	A &\text{ : einfallender Strahl} \\
+	B &\text{ : reflektierter Strahl} \\
+	C &\text{ : gebrochener Strahl} \\
+\end{align*}
+\begin{equation*}
+	\alpha_1=\alpha_1'
+\end{equation*}
+\begin{equation}
+	\frac{\sin(\alpha_1)}{\sin(\alpha_2)}=\underbrace{\frac{n_2}{n_1}}_{\text{nur f"ur Licht}}=\underbrace{\frac{c_1}{c_2}}_{\text{allgemein g"ultig}}
+\end{equation}
+\noindent Totalreflexion wenn: $\alpha_1=\frac{\pi}{2}$ $$\Longrightarrow\quad\sin(\alpha_2)=\frac{n_1}{n_2}=\frac{c_1}{c_2}$$
+
+\subsection{Prinzip von Fernat}
+\begin{center}
+	\begin{pspicture}(0,-1)(3,1)
+		\psline(0,0)(3,0)
+		\psline[linecolor=red]{o-o}(0,1)(2,0)(3,-1)
+		\psline(2,0.05)(2,-0.05)
+		\rput[tr](3,1){$n_1$}
+		\rput[tr](3,-0.2){$n_2$}
+		\rput[tl](0.1,0.7){$A$}
+		\rput[br](2.6,-1){$B$}
+	\end{pspicture}
+\end{center}
+\noindent Der Strahl von $A$ nach $B$ w"ahlt den schnellsten Weg.
+
+\section{Interferenz}
+
+\subsection{Koh"arenz}
+Koh"arenz ist wenn zwei Bedingugnen gelten:
+\begin{itemize}
+	\item gleiche Frequenz
+	\item konstante Phasenverschiebung
+\end{itemize}
+\begin{center}
+	\begin{pspicture}(0,-1)(4,1)
+		\psline(0,1)(0,-1)
+		\psline{->}(0,0)(4,0)
+		\psplot[linecolor=red]{0.0}{3.5}{x 3 mul 180 mul 3.14159265365 div sin 0.5 mul}
+		\psplot[linecolor=blue]{0.0}{3.5}{x 3 mul 180 mul 3.14159265365 div 30 sub sin 0.5 mul}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	y=y_{1(x,t)}+y_{2(x,t)}
+\end{equation}
+\begin{itemize}
+	\item Vollst"andige Verst"arkung: $\Delta=n\cdot\lambda$
+	\item Vollst"andige Ausl"oschung: $\Delta=\frac{\lambda}{2}+n\cdot\lambda$
+\end{itemize}
+\noindent $\Delta$ = Gangunterschied
+
+\subsection{Beugung am Spalt}
+\begin{center}
+	\begin{pspicture}(0,-2)(2.5,2)
+		\psframe(0.875,0.125)(1.125,2)
+		\psframe(0.875,-0.125)(1.125,-2)
+		\pscircle(1,0){0.05}
+		\pcline{|-|}(0.75,0.125)(0.75,-0.125)\Bput{\small $s$}
+		\psline{->}(0, 1.5)(0.3, 1.5)
+		\psline{->}(0, 1.0)(0.3, 1.0)
+		\psline{->}(0, 0.5)(0.3, 0.5)
+		\psline{->}(0, 0.0)(0.3, 0.0)
+		\psline{->}(0,-0.5)(0.3,-0.5)
+		\psline{->}(0,-1.0)(0.3,-1.0)
+		\psline{->}(0,-1.5)(0.3,-1.5)
+		\psarc(1,0){0.5}{280}{80}
+		\psarc(1,0){0.75}{280}{80}
+		\psarc(1,0){1.0}{280}{80}
+		\psarc(1,0){1.25}{280}{80}
+	\end{pspicture}
+\end{center}
+\noindent es gilt: $s << \lambda$ \\
+\noindent Jeder Punkt der virtuellen Grenzfl"ache dient als Ursprung einer sekund"aren Kugelwelle. Gesamterregung $\rightarrow$ Superposition.
+\begin{center}
+	\begin{pspicture}(-0.5,-2)(2.5,2)
+		\psframe(0.875,0.5)(1.125,2)
+		\psframe(0.875,-0.5)(1.125,-2)
+		\pcline{|-|}(0.75,0.5)(0.75,-0.5)\Bput{\small $s$}
+		\psline[linestyle=dashed,linecolor=lightgray](2.5,0)(1.125,-0.5)(2.5,-0.5)
+		\psarc[linecolor=lightgray](1.125,-0.5){1}{0}{20}
+		\rput[r](2.5,-0.3){$\Theta$}
+		\pcline{->}(-0.5,0)(0.3,0)\Aput{$\overrightarrow{x}$}
+	\end{pspicture}
+\end{center}
+\noindent es gilt: $\lambda < s$
+\begin{equation}
+	\frac{A}{s}\cdot\frac{\lambda}{2\pi\sin(\Theta)}\cdot 2\sin\left(\frac{\pi\cdot s\cdot\sin(\Theta)}{\lambda}\right)\cdot\cos\left({\phi_{(t)}+\frac{\pi\cdot s\cdot\sin(\Theta)}{\lambda}}\right)
+\end{equation}
+
+\subsection{Beugung am Gitter}
+\begin{center}
+	\begin{pspicture}(-1,0)(2,3)
+		\psline(0,0.0) (0,0.5)
+		\psline(0,0.75)(0,1.25)
+		\psline(0,1.5) (0,2.0)
+		\psline(0,2.25)(0,2.75)
+		\pcline{|-|}(-0.2,2.25)(-0.2,2.0)\Bput{\small $s$}
+		\pcline{|-|}(-0.2,0.25)(-0.2,1)\Aput{\small $d$}
+		\psline[linecolor=lightgray](2,0.5)(0,0.5)(2,1.0)
+		\psline[linecolor=lightgray](2,1.25)(0,1.25)(2,1.75)
+		\psarc[linecolor=lightgray](0,0.5){1.5}{0}{15}
+		\psarc[linecolor=lightgray](0,1.25){1.5}{0}{15}
+		\rput[r](2.0,0.7){$\Theta$}
+		\rput[r](2.0,1.45){$\Theta$}
+	\end{pspicture}
+\end{center}
+\noindent Richtung von max. Verst"arkungen:
+\begin{equation}
+	\sin(\Theta)=\frac{n\cdot\lambda}{d}\qquad\text{f"ur } \pm n=0,1,2,\ldots
+\end{equation}
+\noindent Richtung von Ausl"oschungen:
+\begin{equation}
+	\sin(\Theta)=\frac{n\cdot\lambda}{d\cdot N}\qquad\text{f"ur } n\neq iN\quad i=0,1,2,\ldots\qquad (n\mod N\neq 0)
+\end{equation}
+
+\section{Erg"anzungen}
+
+\subsection{Koinzidenz}
+Koinzidenz wenn: Wellenzug$>$Gangdifferenz (Gangdifferenz $\Delta=b+c$)
+\begin{center}
+	\begin{pspicture}(-0.5,-0.5)(4,2.5)
+		\psline(0.75,2.25)(1.25,1.75)
+		\psline(0.75,0.25)(1.25,-0.25)
+		\psline(3,-0.5)(3,-0.1)
+		\psline(3,0.1)(3,1.9)
+		\psline(3,2.1)(3,2.5)
+		\psline[linecolor=red]{->}(0,2)(1,2)
+		\psline[linecolor=blue]{->}(1,2)(3,2)(4,2.5)
+		\psline[linecolor=blue]{->}(1,2)(1,0)(3,0)(4,0.5)
+		\rput[l](1.2,1.0){$b$}
+		\rput[b](2.0,0.2){$a$}
+	\end{pspicture}
+\end{center}
+
+\subsection{Addition}
+Definition Intensit"at:
+\begin{align}
+	I_{(t)} &= y^2 \qquad & y_1 = A_1\cdot\sin(\omega t) \\
+	\overline{I} &= \frac{1}{T}\int\limits_0^T I_{(t)}\,dt\qquad & y_2 = A_2\cdot\sin(\omega t)
+\end{align}
+
+\paragraph{Koharente Addition}
+\begin{equation}
+	\overline{I}_{koh.}=\frac{1}{2}\left(A_1+A_2\right)^2
+\end{equation}
+
+\paragraph{Inkoh"arente Addition}
+\begin{equation}
+	\overline{I}_{inkoh.}=\frac{1}{2}A_1^2+\frac{1}{2}A_2^2
+\end{equation}
+
+%
+% EOF
+%

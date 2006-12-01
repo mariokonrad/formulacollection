@@ -1,0 +1,185 @@
+\makeatletter
+
+% D.G. - April 1998
+
+% Define "log" parameter (log=all|x|y|none with default=none)
+\def\psset@log#1{%
+\pst@expandafter\psset@@ticks{#1}\@nil\psk@log%
+% X axis labels (\psk@log = 0 or 1)
+\ifnum\psk@log<\tw@\let\pshlabel\pshlabellog\fi
+% Y axis labels (\psk@log = 0 or 2)
+\ifodd\psk@log\else\let\psvlabel\psvlabellog\fi}
+\psset@log{none}
+
+% Default formats for log labels
+\def\pshlabellog#1{$10^{#1}$}
+\def\psvlabellog#1{$10^{#1}$}
+
+% Define "ticklines" parameter (ticklines=all|x|y|none with default=none)
+\def\psset@ticklines#1{\pst@expandafter\psset@@ticks{#1}\@nil\psk@ticklines}
+\psset@ticklines{none}
+
+% The parameter styles for the tick lines
+% (default=arrows=-,linestyle=dotted,dotsep=5pt)
+\def\TickLinesXStyle{}
+\def\TickLinesYStyle{}
+
+% Modified \psaxes@iv macro for log axis
+\def\psaxes@iv(#1,#2)(#3,#4)(#5,#6){%
+  \setbox\pst@hbox=\hbox\bgroup
+    \use@par
+    \pssetxlength\pst@dimg{#1}% o-x
+    \pssetylength\pst@dimh{#2}% o-y
+    \pssetxlength\pst@dima{#3}% bl-x
+    \pssetylength\pst@dimb{#4}% bl-y
+    \pssetxlength\pst@dimc{#5}% ur-x
+    \pssetylength\pst@dimd{#6}% ur-y
+% D.G. modification begin - Apr.  6, 1998
+    % If minimum values are negative in log mode, we modify Ox
+    % (respectively Oy) if this was not done by the user
+    % X axis labels (\psk@log = 0 or 1)
+    \ifnum\psk@log<\tw@
+      \ifdim\psk@Ox pt=\z@
+        \ifdim#3pt<\z@
+          \pssetxlength\pst@dimg{#3}% o-x
+          \psset@Ox{#3}%
+        \fi
+      \fi
+    \fi
+    % Y axis labels (\psk@log = 0 or 2)
+    \ifodd\psk@log
+    \else
+      \ifdim#4pt<\z@
+        \ifdim\psk@Oy pt=\z@
+          \pssetylength\pst@dimh{#4}% o-y
+          \psset@Oy{#4}%
+        \fi
+      \fi
+    \fi
+% D.G. modification end
+% Whole thing will be translated to origin:
+    \advance\pst@dima-\pst@dimg % Dist. from bl-x to o-x
+    \advance\pst@dimb-\pst@dimh % Dist. from bl-y to o-y
+    \advance\pst@dimc-\pst@dimg % Dist. from ur-x to o-x
+    \advance\pst@dimd-\pst@dimh % Dist. from ur-y to o-y
+% Make lines/arrows or frame:
+    \@nameuse{psxs@\psk@axesstyle}%
+% "\pslabelsep" should be from the edge of the axis.
+    \advance\pslabelsep.5\pslinewidth
+% Now the ticks and labels. Start by checking for "\multido".
+% !!Need to fix this so that does nothing when there are 0 ticks.!!
+    \begingroup
+      \ifdim\pst@dimb=\z@\else\showoriginfalse\fi
+      \ifnum\psk@dx=\z@
+        \pst@dimg=\psk@Dx\psxunit
+        \edef\psk@dx{\number\pst@dimg}%
+      \fi
+      \ifnum\psk@ticks<\tw@
+        \ifnum\psk@tickstyle>\z@\else
+          \advance\pslabelsep\psk@ticksize\p@
+        \fi
+      \fi
+% D.G. modification begin - Apr.  8, 1998 - For vertical ticklines
+%      \pst@hlabels\pst@dimc\psk@arrowB
+%      \pst@hlabels\pst@dima\psk@arrowA
+      \pst@hlabels{\pst@dimc}{\psk@arrowB}{#4}{#6}
+      \pst@hlabels{\pst@dima}{\psk@arrowA}{#4}{#6}
+% D.G. modification end
+    \endgroup
+    \begingroup
+      \ifdim\pst@dima=\z@\else\showoriginfalse\fi
+      \ifnum\psk@dy=\z@
+         \pst@dimg=\psk@Dy\psyunit
+         \edef\psk@dy{\number\pst@dimg}%
+      \fi
+      \ifodd\psk@ticks\else
+        \ifnum\psk@tickstyle>\z@\else
+          \advance\pslabelsep\psk@ticksize\p@
+        \fi
+      \fi
+% D.G. modification begin - Apr.  8, 1998 - For horizontal ticklines
+%      \pst@vlabels\pst@dimd\psk@arrowB
+%      \pst@vlabels\pst@dimb\psk@arrowA
+      \pst@vlabels{\pst@dimd}{\psk@arrowB}{#3}{#5}
+      \pst@vlabels{\pst@dimb}{\psk@arrowA}{#3}{#5}
+% D.G. modification end
+    \endgroup
+% Now close "\pst@hbox" (which is 0-dimensional), and put it at the origin.
+  \egroup
+  \pssetxlength\pst@dimg{#1}%
+  \pssetylength\pst@dimh{#2}%
+  \leavevmode\psput@cartesian\pst@hbox
+  \ignorespaces}
+
+% The origin is never the only label.
+% D.G. modification begin - Apr.  8, 1998
+% Modified \pst@hlabels macro for tick lines
+%\def\pst@hlabels#1#2{%
+\def\pst@hlabels#1#2#3#4{%
+% D.G. modification end
+  \ifdim#1=\z@\else
+    \ifx#2\empty\else
+      \advance#1\ifdim#1>\z@-\fi7\pslinewidth
+    \fi
+    \pst@cnta=#1\relax                % Distance (in sp) to end.
+    \divide\pst@cnta\psk@dx\relax     % Number of ticks/labels
+    \ifnum\pst@cnta=\z@\else
+      \pst@dimb=\psk@dx sp            % Space between ticks.
+      \ifnum\psk@ticks<\tw@
+        \pst@ticks{0}{\pst@number\pst@dimb}{\the\pst@cnta}{\pst@dimd}%
+      \fi
+      \ifnum\psk@labels<\tw@ \pst@@hlabels\fi
+      \showoriginfalse
+% D.G. modification begin - Apr.  8, 1998 - For vertical ticklines
+      \ifnum\psk@ticklines<\tw@
+        \pst@cntb=\pst@cnta
+        \ifnum\pst@cnta<\z@
+          \multiply\pst@cntb\m@ne
+        \fi
+        \multips(\ifnum\pst@cnta<\z@-\fi\pst@dimb,0)%
+                (\ifnum\pst@cnta<\z@-\fi\pst@dimb,0){\pst@cntb}{%
+          \psset{arrows=-,linestyle=dotted,dotsep=5pt}
+          \ifx\TickLinesYStyle\empty\else\TickLinesYStyle\fi
+          \psline(0,#3)(0,#4)}
+      \fi
+% D.G. modification end
+    \fi
+  \fi}
+
+% D.G. modification begin - Apr.  8, 1998
+% Modified \pst@vlabels macro for tick lines
+%\def\pst@vlabels#1#2{%
+\def\pst@vlabels#1#2#3#4{%
+% D.G. modification end
+  \ifdim#1=\z@\else
+    \ifx#2\empty\else
+      \advance#1\ifdim#1>\z@-\fi7\pslinewidth
+    \fi
+    \pst@cnta=#1\relax                % Distance (in sp) to end.
+    \divide\pst@cnta\psk@dy\relax     % Number of ticks/labels
+    \ifnum\pst@cnta=\z@\else
+      \pst@dima=\psk@dy sp            % Space between ticks.
+      \ifodd\psk@ticks\else
+        \pst@ticks{90}{\pst@number\pst@dima}{\the\pst@cnta}{-\pst@dimc}%
+      \fi
+      \ifodd\psk@labels\else\pst@@vlabels\fi
+      \showoriginfalse
+% D.G. modification begin - Apr.  8, 1998 - For horizontal ticklines
+      \ifodd\psk@ticklines
+      \else
+        \pst@cntb=\pst@cnta
+        \ifnum\pst@cnta<\z@
+          \multiply\pst@cntb\m@ne
+        \fi
+        \multips(0,\ifnum\pst@cnta<\z@-\fi\pst@dima)%
+                (0,\ifnum\pst@cnta<\z@-\fi\pst@dima){\pst@cntb}{%
+          \psset{arrows=-,linestyle=dotted,dotsep=5pt}
+          \ifx\TickLinesXStyle\empty\else\TickLinesXStyle\fi
+          \psline(#3,0)(#4,0)}
+      \fi
+% D.G. modification end
+    \fi
+  \fi}
+
+\makeatother
+

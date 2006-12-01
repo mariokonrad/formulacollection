@@ -1,0 +1,959 @@
+%
+% $Id: physik_mechanik.tex,v 1.5 2003/10/26 12:59:53 ninja Exp $
+%
+
+\section{Kinematik}
+
+\subsection{Geschwindigkeit $v$}
+\begin{equation}
+v = \frac{s}{t} \unit{\frac{m}{s}}
+\end{equation}
+\begin{equation}
+v_{(t)} = \frac{\delta s}{\delta t} \unit{\frac{m}{s}}
+\end{equation}
+
+
+\subsection{Beschleunigung $a$}
+Negative Beschleunigungen nennt man auch: \textbf{Verz\"ogerung}.
+
+\begin{equation}
+a = \frac{v}{t} \unit{\frac{m}{s^2}}
+\end{equation}
+\begin{equation}
+a_{(t)} = \frac{\delta v}{\delta t} \unit{\frac{m}{s^2}}
+\end{equation}
+
+F\"ur $a=\text{const}$ git: 
+\begin{equation}
+s_{(t)} = \frac{a}{2}(t - t_1)^2 + v1(t - t_1) + s_1 \unit{m}
+\end{equation}
+\begin{equation}
+v_{(t)} = a(t - t_1) + v_1 \unit{\frac{m}{s}}
+\end{equation}
+
+F\"ur $a_{(t)} = pt + q$ gilt:
+\begin{equation}
+v_{(t)} = \frac{p}{2}t^2 + q \cdot t + v_0 \unit{\frac{m}{s}}
+\end{equation}
+\begin{equation}
+s_{(t)} = \frac{p}{6}t^3 + \frac{q}{2}t^2 + t \cdot v_0 + s_0 \unit{m}
+\end{equation}
+
+F\"ur $a_{(t)} = k t^n$ gilt:
+\begin{equation}
+v_{(t)} = \frac{k}{n+1}t^{n+1} + v_0 \unit{\frac{m}{s}}
+\end{equation}
+\begin{equation}
+s_{(t)} = \frac{k}{(n+1)(n+2)}t^{n+2} + t \cdot v_0 + s_0 \unit{m}
+\end{equation}
+
+
+\subsection{Freier Fall}
+\begin{center}
+	\begin{pspicture}(0,0)(2,4)
+		\psframe[linewidth=1pt,fillstyle=hlines*,fillcolor=lightgray](0,0)(2,0.5)
+		\pscircle[linewidth=1pt](1,3.5){0.5}
+		\psline[linewidth=1pt]{->}(1,3)(1,0.5)
+		\rput[B](1,3.5){$m$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+t_{end} = \sqrt{\frac{2h}{g}} \unit{s}
+\end{equation}
+\begin{equation}
+v_{(t)} = g \cdot t \unit{\frac{m}{s}}
+\end{equation}
+
+
+\subsection{Schiefer Wurf (ohne Reibung)}
+\begin{center}
+	\begin{pspicture}(-1,-1)(7,4)
+		\psline[linewidth=1pt]{->}(0,0)(6.5,0)
+		\psline[linewidth=1pt]{->}(0,0)(0,3.5)
+		\psplot[plotpoints=50,linecolor=red,linewidth=2pt]{0}{6.0}{x 0 sub x 6 sub mul neg 0.25 mul}
+		\rput[Bt](2,-0.2){$x_T$}
+		\rput[Bt](6,-0.2){$x_A$}
+		\psline[linewidth=1pt](2,0.1)(2,-0.1)
+		\psline[linewidth=1pt](6,0.1)(6,-0.1)
+		\psline[linewidth=1pt](0,0)(2,3)
+		\psline[linewidth=1pt]{->}(-0.33,-0.5)(0,0)
+		\rput[Bt](0,-0.3){$\overrightarrow{v_0}$}
+		\psline[linewidth=1pt,linestyle=dashed]{-}(2,0.1)(2,3)
+		\psline[linewidth=1pt,linestyle=dashed]{-}(0,3)(2,3)
+		\rput[Br](-0.2,2.9){$h_T$}
+		\rput[Bl](6.7,-0.1){$x$}
+		\rput[Br](-0.2,3.4){$y$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+v_{x0} = \| \vec{v_0} \| \cdot \cos{\alpha} \unit{\frac{m}{s}}
+\end{equation}
+\begin{equation}
+v_{y0} = \| \vec{v_0} \| \cdot \sin{\alpha} \unit{\frac{m}{s}}
+\end{equation}
+
+\begin{equation}
+t_A = \frac{2 \cdot v_{y0}}{g} = \frac{2 \cdot v_0 \cdot \sin{\alpha}}{g} \unit{s}
+\end{equation}
+
+\begin{equation}
+x_A = \frac{2}{g} \cdot {v_0}^2 \cdot \cos{\alpha} \cdot \sin{\alpha} = {v_0}^2 \frac{\sin{2\alpha}}{g} \unit{m}
+\end{equation}
+
+\begin{equation}
+t_T = \frac{x_T}{v_{x0}} = \frac{x_T}{v_0 \cdot \cos{\alpha}} \unit{s}
+\end{equation}
+
+\begin{equation}
+y_{T(x_T)} = -\frac{g}{2} \cdot \frac{{x_T}^2}{{v_{x0}}^2} + h_T \unit{m}
+\end{equation}
+
+Bahnkurve:
+\begin{equation}
+	y_{(x)} = -\frac{g}{2} \cdot \frac{x^2}{{v_{x0}}^2} + x \cdot \frac{v_{y0}}{v_{x0}} \unit{m}
+\end{equation}
+
+F\"ur horizontalen Abschuss:
+\begin{equation}
+	y_{(x)} = -\frac{g}{2 \cdot {v_{x0}}^2} \cdot x^2 \unit{m}
+\end{equation}
+
+
+\subsection{Kreisbewegung $\phi_{(t)}$}
+Skalar:
+\begin{equation}
+	\phi_{(t)} = \frac{b}{r} \unit{rad}
+\end{equation}
+\noindent Vektor:
+\begin{equation}
+	\vec{\phi_{(t)}} = \frac{b}{r} \cdot \frac{\vec{e}}{\|\vec{e}\|} \unit{rad}
+\end{equation}
+
+
+\subsection{Winkelgeschwindigkeit $\omega_{(t)}$}
+Skalar:
+\begin{equation}
+	\omega_{(t)} = \frac{\phi_2 - \phi_1}{t_2 - t_1} \unit{\frac{rad}{s}}
+\end{equation}
+\noindent Vektor:
+\begin{equation}
+	\vec{\omega_{(t)}} = \omega_{(t)} \cdot \hat{e} = \omega_{(t)} \cdot \frac{\vec{e}}{\|\vec{e}\|} \unit{\frac{rad}{s}}
+\end{equation}
+
+
+\subsection{Winkelbeschleunigung $\alpha_{(t)}$}
+\begin{equation}
+\alpha_{(t)} = \frac{\delta \omega}{\delta t} = \frac{\omega_2 - \omega_1}{t_2 - t_1} \unit{\frac{rad}{s^2}}
+\end{equation}
+\begin{equation}
+\vec{\alpha_{(t)}} = \alpha_{(t)} \cdot \hat{e}
+\end{equation}
+\begin{equation}
+s = r \cdot \phi \unit{m}
+\end{equation}
+\begin{equation}
+v_{tangential} = r \cdot \omega \unit{\frac{m}{s}}
+\end{equation}
+\begin{equation}
+a_{tangential} = r \cdot \alpha \unit{\frac{m}{s^2}}
+\end{equation}
+
+\subsection{Kreisf\"ormige Bewegung (Gleichf\"ormig)}
+Zentripedalbeschleunigung $a_p$ zeit in Richrung Kreismittelpunkt:
+\begin{gather}
+	\|\overrightarrow{a_p}\| = \omega^2 r \\
+	\overrightarrow{a_p} = -\omega^2\overrightarrow{r} = -\frac{v^2}{r^2}\cdot\overrightarrow{r}
+\end{gather}
+\noindent mit
+\begin{align*}
+	\omega\qquad &: \text{Kreisfrequenz} \\
+	\nu =\frac{\omega}{2\pi} \qquad &: \text{lineare Frequenz} \\
+	T=\frac{1}{\nu} \qquad &: \text{Periode} 
+\end{align*}
+\begin{equation*}
+	a_p = \omega^2 r =\frac{v_{tan}^2}{r}\qquad\Longrightarrow\qquad\omega=\frac{v_{tan}}{r}
+\end{equation*}
+
+
+\subsection{Horizontaler Wasserstrahl}
+\begin{center}
+	\begin{pspicture}(-1.0,-0.5)(3.5,5)
+		\psline[linewidth=1pt]{->}(3,0)
+		\psline[linewidth=1pt]{->}(0,4.5)
+		\psplot[plotpoints=50,linecolor=red,linewidth=2pt]{0}{2}{4 x x mul sub}
+		\rput[B](2,-0.5){$x_0$}
+		\rput[Br](-0.3,3.9){$h$}
+		\psline[linewidth=1pt]{->}(0,4)(1,4)
+		\rput[Bl](1.2,3.9){$v_0$}
+	\end{pspicture}
+\end{center}
+\begin{align}
+	x_0 &= \sqrt{\frac{2hv_0^2}{g}} \\
+	y &= \frac{g}{2v_0^2}\cdot x^2
+\end{align}
+
+\subsubsection{Kr\"ummungsradius der Parabel in $O$}
+\begin{equation}
+	r=\frac{v_0^2}{g}
+\end{equation}
+\noindent allgemein:
+\begin{equation}
+	r=\frac{1}{2A}\qquad\text{Scheitelkr\"ummungsradius der Parabel}
+\end{equation}
+
+\section{Dynamik}
+
+\subsection{Kraft}
+\begin{equation}
+	\overrightarrow{F}=m\cdot\overrightarrow{a}\unit{N}
+\end{equation}
+\noindent in der relativistischen Physik (wurde so von Newton formuliert):
+\begin{equation}
+	\overrightarrow{F}=\frac{\Delta (m\cdot \overrightarrow{v})}{\Delta t}
+\end{equation}
+
+\subsection{Gravitation}
+\begin{equation}
+	F_s=m\cdot g\unit{N}\qquad\text{mit}\quad g=9.81
+\end{equation}
+
+\subsection{Federkraft}
+\begin{center}
+	\begin{pspicture}(0,0)(7,5)
+		\psframe[linewidth=1pt,fillstyle=hlines*,fillcolor=lightgray](0,0)(0.5,2)
+		\psframe[linewidth=1pt,fillstyle=hlines*,fillcolor=lightgray](0,2.5)(0.5,4.5)
+		\pscircle[linewidth=1pt](4.5,1){0.5}
+		\pscircle[linewidth=1pt](3.5,3.5){0.5}
+		\rput[B](4.5,1){$m$}
+		\rput[B](3.5,3.5){$m$}
+		\pscoil[coilarm=0pt,coilwidth=5mm,linewidth=1pt]{-}(0.5,1)(4,1)
+		\pscoil[coilarm=0pt,coilwidth=5mm,linewidth=1pt]{-}(0.5,3.5)(3,3.5)
+		\psline[linewidth=1pt]{->}(5.2,1)(6.2,1)
+		\rput[Bl](6.4,1){$\overrightarrow{F_A}$}
+		\psline[linewidth=1pt](3.5,3)(3.5,2)
+		\psline[linewidth=1pt](4.5,1.5)(4.5,2.5)
+		\psline[linewidth=1pt]{<->}(3.5,2.25)(4.5,2.25)
+		\rput[Bt](4,2){$\Delta x$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	k\cdot\Delta x = F_A=-F_F
+\end{equation}
+\noindent mit
+\begin{align*}
+	k \qquad   &: \text{Federkonstante} \\
+	F_A \qquad &: \text{\"aussere Kraft} \\
+	F_F \qquad &: \text{Federkraft}
+\end{align*}
+
+\subsection{Newton}
+\subsubsection{Tr\"agheitsgesetz}
+Massepunkt, auf den keine Kr\"afte wirken ist in Ruhe oder auf gleichf\"ormiger, geradliniger Bewegung.
+
+\subsubsection{Definition der Kraft}
+\begin{equation}
+	\overrightarrow{F}=\frac{\Delta (m\cdot\overrightarrow{v})}{\Delta t}\qquad\text{mit}\quad
+		m(v) = \frac{m_0}{\sqrt{1-\frac{v^2}{c^2}}}
+\end{equation}
+
+\subsection{Aktion / Reaktion}
+Kr\"afte, die zwei K\"orper aufeinander aus\"uben sind gleich:
+\begin{equation}
+	F_{ij} = -F{ji}\qquad\text{$i$ \"ubt Kraft auf $j$ aus}
+\end{equation}
+
+\subsection{D'Alembert'sches Gesetz}
+\begin{equation}
+	\sum F = 0
+\end{equation}
+
+\subsection{``Freier Fall'' mit Hemmung}
+\begin{center}
+	\begin{pspicture}(0,0)(5,4)
+		\pscircle[linewidth=2pt](3,3){0.5}
+		\psframe[linewidth=2pt](0,4)(1,3)
+		\psframe[linewidth=2pt](3,1)(4,0)
+		\psline[linewidth=1pt]{-}(1,3.5)(3,3.5)
+		\psline[linewidth=1pt]{-}(3.5,3)(3.5,1)
+		\rput[B](0.5,3.4){$M$}
+		\rput[B](3.5,0.4){$m$}
+		\pscircle[linewidth=1pt](2,3.5){0.1}
+		\rput[B](2,3.7){$T_A$}
+		\pscircle[linewidth=1pt](3.5,2){0.1}
+		\rput[Bl](3.7,1.9){$T_B$}
+		\psline[linewidth=1pt]{->}(4.5,1)(4.5,0)
+		\rput[Bl](4.6,0.5){$a$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	a = \frac{m}{m+M}\cdot g \qquad T_B = m(g-a) \qquad T_A = \frac{mM}{m+M}\cdot g
+\end{equation}
+
+\subsection{Flaschenzug}
+\begin{center}
+	\begin{pspicture}(0,0)(6,5)
+		\psframe[linewidth=1pt,fillstyle=hlines*,fillcolor=lightgray](0,4.5)(6,5)
+		\pscircle[linewidth=1pt](1.5,3){0.5}
+		\pscircle[linewidth=1pt](4.5,2){0.5}
+		\psframe[linewidth=1pt](0,0)(2,0.8)
+		\psframe[linewidth=1pt](3.5,0)(5.5,0.8)
+		\rput[B](1,0.3){$m_1$}
+		\rput[B](4.5,0.3){$m_1$}
+		\psline[linewidth=1pt]{-}(1,0.8)(1,3)
+		\psline[linewidth=1pt]{-}(4.5,2)(4.5,0.8)
+		\psline[linewidth=1pt]{-}(1.5,3)(1.5,4.5)
+		\psline[linewidth=1pt]{-}(5,2)(5,4.5)
+		\psline[linewidth=1pt](1.8,3.4)(4.2,1.6)
+		\pscircle[linewidth=1pt](1,1.25){0.1}
+		\pscircle[linewidth=1pt](4.5,1.25){0.1}
+		\rput[Br](0.8,1.15){$T_1$}
+		\rput[Bl](4.7,1.15){$T_2$}
+	\end{pspicture}
+\end{center}
+\begin{gather}
+	T_1 = m_1(g-a) \qquad\text{und}\qquad T_2 = m_2(g+\frac{a}{2}) \\
+	2T_1 = T_2 \\
+	a = g\cdot\frac{m_1-\frac{m_2}{2}}{m_1+\frac{m_2}{4}}
+\end{gather}
+
+\subsection{Looping}
+\begin{center}
+	\begin{pspicture}(-3,-0.5)(3,5)
+		\pscircle[linewidth=2pt](0,2){2.05}
+		\pscircle[linewidth=1pt](0,2){0.1}
+		\psline[linewidth=1pt]{->}(0,1.9)(0,0)
+		\rput[Bl](0.2,1){$r$}
+		\psplot[plotpoints=50,linewidth=2pt]{-4}{0}{x dup mul 0.2 mul}
+		\psframe[linewidth=2pt,linecolor=red](-0.4,3.6)(0.4,4.0)
+		\rput[B](0,3.7){$m$}
+		\psline[linewidth=1pt]{->}(-0.4,3.8)(-2.4,3.8)
+		\rput[B](-1.5,4.0){$v_A$}
+		\psline[linewidth=1pt]{->}(0,4)(0,4.8)
+		\rput[Bl](0.2,4.5){$F_z$}
+		\psline[linewidth=1pt]{->}(2,2)(0.5,2)
+		\psline[linewidth=1pt]{-}(2.05,1)(2.05,3)
+		\rput[B](1.5,2.2){$N$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	F_z = \frac{m\cdot v_A^2}{r} = m\cdot g+N\qquad\text{und}\quad v_A\text{ kritisch } (N=0): v_A=\sqrt{gr}
+\end{equation}
+
+\subsection{Zentrifugalkraft}
+\begin{center}
+	\begin{pspicture}(-2,0)(3,2)
+		\psline(0,0)(0,2)
+		\psarc{->}(0,1.8){0.2}{135}{45}\rput[l](0.4,1.8){$\omega$}
+		\pcline(0,1.5)(-1.5,0.5)\Bput{$l_1$}\pscircle[fillstyle=solid,fillcolor=white](-1.5,0.5){0.2}
+		\rput[t](-1.5,0.2){$m_1$}
+		\pcline(0,1.5)( 1.5,0.5)\Aput{$l_2$}\pscircle[fillstyle=solid,fillcolor=white]( 1.5,0.5){0.2}
+		\rput[t]( 1.5,0.2){$m_2$}
+		\psarc(0,1.5){0.75}{215}{270}\rput[t](-0.5,0.7){$\phi_1$}
+		\psarc(0,1.5){0.75}{270}{325}\rput[t]( 0.5,0.7){$\phi_2$}
+		\pcline{|-|}(2.5,0.5)(2.5,1.5)\Bput{$h$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	h=\frac{g}{\omega^2}\qquad 1\geq cos(\phi_2)=\frac{g}{\omega^2\cdot l_2}\quad\rightarrow\quad \omega_i\geq\sqrt{\frac{g}{l_i}}
+\end{equation}
+\begin{center}
+	\begin{pspicture}(-1.5,-1.5)(1.5,1.5)
+		\pscircle(0,0){1.0}
+		\psline{<->}(0,1)(0,0)(0.707,0.707)
+		\psarc(0,0){0.5}{45}{90}\rput[b](0.3,0.5){$\phi$}
+		\rput[t](0.5,0.4){$r$}
+		\pscircle(0,1.1){0.1}\rput[l](0.2,1.1){$m$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	F_p=m\cdot a_p\qquad\text{mit}\quad a_p=\omega^2\cdot r\qquad\text{und}\quad \omega=\frac{\phi}{t}
+\end{equation}
+\noindent Es gilt auch: $\overrightarrow{F}_{zentripetal}=-\overrightarrow{F}_{zentrifugal}$
+
+\subsection{Reibungskoeffizient $\mu$}
+\subsubsection{Haftreibungskoeffizient $\mu_H$}
+\begin{equation}
+	\|\overrightarrow{N}\|\cdot\mu_H = \|\overrightarrow{R}_{max}\|\qquad\text{mit}\quad\overrightarrow{N}\text{ : Normalkraft}\qquad\overrightarrow{R}\text{ : Reibungskraft}
+\end{equation}
+\begin{equation*}
+	\mu_H=\frac{\|\overrightarrow{R}_{max}\|}{\|\overrightarrow{N}\|}=tan(\alpha_{kritisch})
+\end{equation*}
+\begin{center}
+	\begin{pspicture}(0,0)(3,1.5)
+		\psline(0,0)(3,0)(0,1)
+		\psarc(3,0){1}{161}{180}\rput[r](1.8,0.2){$\alpha$}
+		\pscustom{
+			\translate(3,0)
+			\rotate{-19}
+			\psframe(-3,0)(-2.5,0.25)
+		}
+		\rput[b](1.0,0.8){$m$}
+	\end{pspicture}
+\end{center}
+
+\subsubsection{Gleitreibungskoeffizient $\mu_G$}
+\begin{equation*}
+	\mu_G < \mu_H\qquad\text{nicht Geschwindigkeitsabh\"angig!}
+\end{equation*}
+\noindent Stahl-Stahl: $\mu_H=0.15\quad\mu_G=0.12$
+
+\subsection{Kugel in Mulde}
+\begin{center}
+	\begin{pspicture}(-1.5,-2.5)(1.5,0.5)
+		\psarc(0,0){1.5}{180}{0}
+		\pcline{->}(0.1,-1.4)(1.5,-1.4)\Bput{$v_A$}
+		\pscircle(0,-1.4){0.1}\rput[b](0,-1.2){$m$}
+		\pcline{->}(0,-2.4)(0,-1.5)\Bput{$N$}
+		\pcline{*->}(0,0)(1.5,0)\Aput{$r$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	N=m\left(g+\frac{v_A^2}{r}\right)
+\end{equation}
+
+\subsection{Gravitation}
+\subsubsection{Universelle Gravitationskonstante $G$}
+\begin{equation}
+	G=6.67\cdot 10^{-11}\unit{\frac{N\cdot m}{kg^2}}
+\end{equation}
+
+\subsection{Anziehung von Punktmassen}
+\begin{center}
+	\begin{pspicture}(0,0)(2,2)
+		\psline{<->}(0,2)(0,0)(2,0)\rput[lt](0.1,2){$y$}\rput[br](2,0.1){$x$}
+		\pcline{->}(0.5,1.5)(1.0,1.0)\Bput{$\overrightarrow{F}_{21}$}\pscircle*(0.5,1.5){0.1}
+		\pcline{->}(1.5,0.5)(1.0,1.0)\Aput{$\overrightarrow{F}_{12}$}\pscircle*(1.5,0.5){0.1}
+		\rput[b](0.7,1.7){$m_1$}
+		\rput[b](1.7,0.7){$m_2$}
+	\end{pspicture}\\
+	($F_{ij}$ : $i$ \"ubt auf $j$ Kraft $F$ aus)
+\end{center}
+\begin{equation}
+	F=\frac{G\cdot m_1\cdot m_2}{r^2}\qquad\text{mit}\quad r\text{ : Abstand der Punkte}
+\end{equation}
+\begin{center}
+	\begin{pspicture}(0,0.0)(5,3)
+		\pscircle(1.0,2.0){0.3}\pscircle(3.0,2.0){0.3}\rput[B](1.0,1.9){$m_1$}\rput[B](3.0,1.9){$m_2$}
+		\pcline{|-|}(1.0,1.5)(3.0,1.5)\Aput{$r_1$}
+		\pscircle(1.0,1.0){0.3}\pscircle(4.0,1.0){0.3}\rput[B](1.0,0.9){$m_1$}\rput[B](4.0,0.9){$m_2$}
+		\pcline{|-|}(1.0,0.5)(4.0,0.5)\Aput{$r_2$}
+	\end{pspicture} \\
+	$\frac{F_1}{F_2}=\frac{r_2^2}{r_1^2}$
+\end{center}
+
+\subsubsection{Punktmasse ausserhalb Kugelmasse}
+Zentralsymmetrische Kugelmassenverteilung $\rho=m\cdot V^{-1}$. Masse kann als Punkt im Zentrum angenommen werden.
+
+\subsection{Zusammenhang zwischen $g$ und $G$}
+\begin{equation}
+	\rho_{Erde}=\frac{3\cdot g}{G\cdot 4\cdot\pi\cdot r}\qquad g=\frac{M\cdot G}{r^2}
+\end{equation}
+
+\subsubsection{Umlaufzeit}
+\begin{equation}
+	M_{Sonne} >> m_{Planet}\qquad\frac{G\cdot M_{Sonne}}{4\cdot\pi^2}=\frac{r^3}{T^2}
+\end{equation}
+
+\subsubsection{3. Kepler'sches Gesetz}
+\begin{equation}
+	\frac{T^2}{r^3}\text{ ist konstant}\qquad\frac{T_1^2}{T_2^2}=\frac{R_1^3}{R_2^3}
+\end{equation}
+
+\subsubsection{Punktmasse innerhalb Kugelmasse}
+(Zentralsymmetrische Dichteverteilung)\\
+\noindent Eine Kugelschale mit konstanter Dichte $\rho$ "ubt auf eine Masse $m$, die sich innerhalb dieser Kugelschale befindet {\em keine} Gravitationskraft aus.
+\begin{center}
+	\begin{pspicture}(-3,-2)(3,2)
+		\pscircle(-1.5,0){1.0}\pcline{->}(-1.5,0)(-1.5,1)\Aput{$r$}
+		\pscircle(-1.5,0){1.5}\pcline{->}(-1.5,0)(-3.0,0)\Aput{$R$}
+		\pcline{<->}(-1.5,-1.5)(-1.5,-1.0)\Aput{$\Delta r$}
+		\pscircle(-0.5,0){0.1}\rput*[b](-0.5,0.3){$m$}
+		\psline{->}(0.2,0)(0.8,0)
+		\pscircle(2.0,0){1.0}\pcline{->}(2.0,0)(2.0,1)\Aput{$r$}
+		\pscircle(3.0,0){0.1}\rput*[b](3.0,0.3){$m$}
+	\end{pspicture}
+\end{center}
+
+\subsubsection{Erde mit Kanal}
+\begin{center}
+	\begin{pspicture}(-2,-2)(2,2)
+		\pscircle(0,0){2}
+		\psline[linecolor=lightgray](-0.3,1.9)(-0.3,-1.9)
+		\psline[linecolor=lightgray]( 0.3,1.9)( 0.3,-1.9)
+		\pcline{->}(0,0)(2,0)\Bput{$R$}
+		\psframe(-0.2,1.0)(0.2,1.4)\rput[b](0,1.1){$m$}
+		\pcline{->}(0,0)(0,1)\Aput{$x$}
+		\rput[b](-1,0){$\rho$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	a(t) = -\frac{4}{3}\pi\cdot G\cdot\rho\cdot x(t)
+\end{equation}
+
+\subsubsection{Flucht von der Erde}
+\begin{center}
+	\begin{pspicture}(-1,-1)(2,1)
+		\pscircle(0,0){1}\rput[b](-0.7,0){$M$}
+		\pcline{->}(0,0)(0,-1)\Bput{$R_E$}
+		\pcline[linecolor=lightgray,linestyle=dashed](0,0)(2,1)\Bput{$r$}
+		\psline{->}(0.89,0.45)(1.34,0.67)
+		\pscircle[fillstyle=solid,fillcolor=white](0.89,0.45){0.1}\rput[b](0.89,0.65){$m$}
+	\end{pspicture}
+\end{center}
+\begin{align}
+	a(r) &= -g\cdot\frac{R_E^2}{r^2}\qquad\text{mit}\quad g=\frac{G\cdot M}{R_E^2} \\
+	v_0 &= \sqrt{2\cdot g\cdot R_E}	
+\end{align}
+
+\subsubsection{Coriolis-Kraft}
+\begin{center}
+	\begin{pspicture}(-2,-2)(2,2)
+		\SpecialCoor
+		\pscircle(0,0){2}
+		\pcline{*->}(0,0)(2,0)\Aput{\small $r$}
+		\psline[linecolor=lightgray,linestyle=dashed]{-}(0,0)(2;100)
+		\pscircle(2;100){0.1}
+		\rput*[tr](2;110){\small $P_0 / {P'}_1$}
+		\psline{->}(0,0)(0.7;100)
+		\rput[br](-0.4,0.4){\small $v_0'=v_0$}
+		\psarc{->}(0,0){1.9}{250}{290}\rput[b](0,-1.8){\small $\omega\neq 0$}
+		\psplot{0.0}{1.55}{x sqrt}
+		\pscircle(2;39){0.1}
+		\rput*[b](2;50){\small $P_2$}
+	\end{pspicture}
+\end{center}
+\begin{align*}
+	b_c &= 2\cdot v'_0\cdot\omega \\
+	F_c &= m\cdot b_c
+	\intertext{mit}
+	& b_c\quad\text{: Coriolis-Beschleunigung} \\
+	& F_c\quad\text{: Coriolis-Kraft}
+\end{align*}
+\begin{align*}
+	\overrightarrow{F}_c = m\cdot\overrightarrow{b}_c &= 2\cdot m\cdot\left(\overrightarrow{v'}\times\overrightarrow{\omega}\right) \\
+	\overrightarrow{b}_c &= 2\cdot\overrightarrow{v'}\times\overrightarrow{\omega}
+\end{align*}
+
+\subsubsection{Geschwindigkeit im rot. System}
+\begin{center}
+	\begin{pspicture}(-2,-2)(2,2)
+		\SpecialCoor
+		\pscircle(0,0){2.0}
+		\psarc{->}(0,0){1.9}{250}{290}\rput[b](0,-1.8){$\omega$}
+		\pcline{*->}(0,0)(2;200)\Aput{$r$}
+		\pcline{-o}(0,0)(0.5;45)\Bput{\small $\overrightarrow{r}_N$}
+		\pcline{->}(0.5;45)(1.7;80)\Aput{\small $\overrightarrow{v}$}
+		\pcline{->}(0.5;45)(1.7;30)\Bput{\small $\overrightarrow{v'}$}
+		\pcline{->}(1.7;30)(1.7;80)\Bput*{\small $\Delta\overrightarrow{v}$}
+	\end{pspicture}
+\end{center}
+\begin{align}
+	\Delta\overrightarrow{v} &= \overrightarrow{\omega}\times\overrightarrow{r}_N \\
+	\overrightarrow{v} &= \overrightarrow{v'}+\overrightarrow{\omega}\times\overrightarrow{r}_N \\
+	\overrightarrow{v'} &= \overrightarrow{v}-\overrightarrow{\omega}\times\overrightarrow{r}_N
+\end{align}
+
+\subsubsection{Beschleunigungen im rot. System}
+\begin{equation}
+	\overrightarrow{b'}=\overrightarrow{b}+2\overrightarrow{v'}\times\overrightarrow{\omega}+\omega^2\cdot\overrightarrow{r}_N
+\end{equation}
+\noindent Alle ``Strich''-Gr"ossen sidn die des Plattenbewohners.
+
+
+\subsection{Arbeit $W$}
+\begin{equation}
+	W\unit{J=\frac{kg\cdot m^2}{s^2}=Nm=Ws}
+\end{equation}
+\begin{equation*}
+	\Delta W=\Delta\overrightarrow{s}\circ\Delta\overrightarrow{F}_{(s)}=\|\Delta\overrightarrow{F}_{(s)}\|\cdot\|\Delta\overrightarrow{s}\|\cdot\cos(\alpha)
+\end{equation*}
+\begin{equation*}
+	W=m\cdot v^2\cdot\frac{1}{2}
+\end{equation*}
+
+\subsubsection{Ziehen eines Schlittens}
+\begin{gather*}
+	W = s\cdot\mu_G\left(m\cdot g-F\cdot\sin(\alpha)\right) \\
+	F\cdot\cos(\alpha)=\mu_G\left(m\cdot g-F\cdot\sin(\alpha)\right)
+\end{gather*}
+\begin{center}
+	\begin{pspicture}(0,0)(3,2)
+		\psframe[fillstyle=hlines*,fillcolor=lightgray](0,0)(3,0.3)
+		\psframe[fillstyle=solid,fillcolor=white](0.5,0.3)(1.5,1.0)
+		\rput[b](1,0.6){$m$}
+		\rput[lb](0,0.4){$\mu_G$}
+		\pcline{->}(1.5,0.65)(2.5,1.5)\Aput{$F$}
+		\pcline{|-|}(1.5,0.65)(2.5,0.65)\Bput*{$s$}
+		\psarc(1.5,0.65){0.8}{0}{40}\rput[l](2.5,1.0){$\alpha$}
+	\end{pspicture}
+\end{center}
+
+\subsubsection{Feder mit Federkonstante $k$}
+\begin{center}
+	\begin{pspicture}(0,0)(6,3)
+		\psframe[fillstyle=hlines*,fillcolor=white](0,0)(0.25,3)
+		\pszigzag[coilarm=0.25,linearc=0.05,coilwidth=0.8,coilheight=0.5](0.25,0.75)(4.0,0.75)
+		\pszigzag[coilarm=0.25,linearc=0.05,coilwidth=0.8,coilheight=0.5](0.25,2.25)(3.0,2.25)
+		\pscircle(4.5,0.75){0.5}\rput[B](4.5,0.7){$m$}
+		\pscircle(3.5,2.25){0.5}\rput[B](3.5,2.2){$m$}
+		\pcline{|-|}(3.5,1.4)(4.5,1.4)\Aput{$s_0$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	W=k\cdot\frac{s_0^2}{2}
+\end{equation}
+
+\subsection{Leistung $P$}
+\begin{equation}
+	P=\frac{\Delta W}{\Delta t}\unit{W}\qquad 1PS=746W
+\end{equation}
+
+\subsection{Energie $E$}
+Energie ist das Verm"ogen Arbeit zu leisten: $E\unit{J}$
+
+\subsubsection{Energieerhaltungssatz}
+\begin{equation}
+	E_{\text{vorher}}=E_{\text{nachher}}
+\end{equation}
+
+\subsubsection{Potentielle Energie}
+\begin{equation}
+	E_L=E_{Pot}=m\cdot g\cdot h
+\end{equation}
+
+\subsubsection{Reversible Deformationsenergie}
+\begin{equation}
+	E_D=\frac{1}{2}\cdot k\cdot s_0^2
+\end{equation}
+\noindent(potientielle Energie)
+
+\subsubsection{Kinetische Energie}
+\begin{equation}
+	E_K=E_{Kin}=\frac{1}{2}\cdot m\cdot v^2
+\end{equation}
+
+\subsubsection{W"arme-Energie}
+\begin{equation}
+	E_{reib}=\mu_G\cdot N\cdot s
+\end{equation}
+\noindent(kann weder direkt noch vollst"andig zur"uckgewonnen werden)
+
+\subsubsection{Energie der Masse (Einstein)}
+\begin{gather}
+	E=m\cdot c^2\qquad\text{mit}\quad c=3\cdot 10^8\unit{\frac{m}{s}} \\
+	m_{(v)}=\frac{m_0}{\sqrt{1-\frac{v^2}{c^2}}}\qquad\text{mit}\quad m_0\text{ : Ruhemasse}
+\end{gather}
+
+\subsubsection{Rotationsenergie}
+\begin{gather}
+	E_{K,R}=\frac{1}{2}\cdot I\cdot\omega^2 \\
+	I=\sum r_{N_i}^2\cdot\Delta m_i\qquad r_{N_i}\text{ ist normal zu ausgezeichneten Achse}
+\end{gather}
+
+\begin{center}\begin{tabular}{l l}
+	$I$				& \\
+	\hline
+	Kugel											& $\frac{2}{5}\cdot m\cdot r^2$ \\
+	Stab (Drehachse in der Mitte der L"angsachse)	& $\frac{1}{12}\cdot m\cdot l^2$ \\
+	Stab (Drehachse an einem Ende)					& $\frac{1}{3}\cdot m\cdot l^2$ \\
+	Vollzylinder (Drehachse in L"angsachse)			& $\frac{1}{2}\cdot m\cdot R^2$ \\
+	Hohlzylinder (Drehachse in L"angsachse)			& $m\cdot R^2$ \\
+\end{tabular}\end{center}
+
+\subsection{Mathematisches Pendel}
+\begin{center}
+	\begin{pspicture}(0.75,-0.1)(3.1,2.0)
+		\psline[linecolor=lightgray,linestyle=dashed](1.0,2.0)(1.0,0.0)
+		\psarcn{->}(1.0,2.0){1.8}{-57}{-80}\rput[t](1.9,0.3){$\overrightarrow{v}$}
+		\psarcn(1.0,2.0){1.0}{-57}{-90}\rput[B](1.2,1.2){$\phi$}
+		\pcline{*-o}(1.0,2.0)(2.0,0.5)\Aput{$l$}\rput[r](1.8,0.5){$m$}
+		\psline[linecolor=lightgray,linestyle=dashed](1.0,2.0)(3.0,2.0)
+		\psline[linecolor=lightgray,linestyle=dashed](2.0,0.5)(3.0,0.5)
+		\pcline{|-|}(3.0,2.0)(3.0,0.5)\Bput{$h$}
+	\end{pspicture}
+\end{center}
+\noindent Annahme: $\phi << \frac{\pi}{2}$ so dass $\sin(\phi)\approx\phi$ $\Longrightarrow \alpha=-\frac{g}{l}\cdot\phi$ (harmonischer Oszillator)
+\begin{equation}
+	\omega^2+\frac{g}{l}\cdot\phi^2=\frac{2\cdot E}{l^2\cdot m}\qquad\text{mit}\quad\phi << \frac{\pi}{2}
+\end{equation}
+
+\begin{center}
+	\begin{pspicture}(-0.1,-0.1)(1.5,2.1)
+		\pcline{*-o}(1.0,2.0)(1.0,0.0)\Aput{$l$}
+		\rput[l](1.1,0.0){$m$}
+		\pcline{->}(0.8,0.0)(0.0,0.0)\Aput{$\overrightarrow{v}$}
+	\end{pspicture}
+\end{center}
+\begin{align*}
+	\phi(t) &= \phi_{max}\cdot\sin(\Omega t) \\
+	\omega(t) &= \Omega\cdot\phi_{max}\cdot\cos(\Omega t) \\
+	\intertext{mit}
+	\Omega=\sqrt{\frac{g}{l}}
+\end{align*}
+
+\paragraph{Bemerkung}
+\begin{equation}
+	\ddot{y}=-\lambda\cdot y\qquad\text{z.B. Feder:}\quad\lambda=\frac{k}{m}
+\end{equation}
+
+\subsubsection{Pendeluhr}
+\begin{center}
+	\begin{pspicture}(0,0)(1.0,2.0)
+		\pcline{*-o}(0.1,1.9)(0.9,0.2)\Aput{$l$}\rput[rb](0.7,0.2){$m$}
+	\end{pspicture}
+\end{center}
+\begin{align}
+	T^{-1} &= \nu=\frac{\Omega}{2\pi}=\frac{\sqrt{\frac{g}{l}}}{2\pi} \\
+	T &= \frac{2\pi}{\sqrt{\frac{g}{l}}}=2\pi\sqrt{\frac{l}{g}}
+\end{align}
+\noindent L"osung der Bewegungsgleichung mit Anfangsbedingung: $$\phi(0)=\phi_{max}\qquad\omega(0)=0$$
+\begin{align*}
+	\phi_{(t)} &= \phi_{max}\cdot\cos(\Omega t) \\
+	\omega_{(t)} &= -\Omega\cdot\phi_{max}\cdot\sin(\Omega t) \\
+	\alpha_{(t)} &= -\Omega^2\cdot\phi_{max}\cdot\cos(\Omega t) \qquad\text{wobei}\quad\Omega=\sqrt{\frac{g}{l}}
+\end{align*}
+
+
+\subsection{System von Massepunkten}
+
+\subsubsection{Gleichgewicht}
+\begin{equation}
+	\sum \overrightarrow{F}_{"aussere}=0
+\end{equation}
+
+\subsubsection{Drehmoment}
+\begin{align}
+	\overrightarrow{T} &= \overrightarrow{r}\times\overrightarrow{F}\qquad\text{Drehmoment bez"uglich eines bel. Punktes} \\
+	\sum\overrightarrow{T}_i &= \sum\left({\overrightarrow{r}_i\times\overrightarrow{F}_i}\right)=0\qquad\text{2. Bedingung f"ur Gleichgewicht}
+\end{align}
+\begin{center}
+	\begin{pspicture}(-0.1,0.5)(4.1,-1.1)
+		\psline{o-o}(0,0)(4,0)\rput[b](0,0.2){$m_1$}\rput[b](4,0.2){$m_2$}
+		\psline{-}(1.5,0.0)(1.6,-0.1)(1.4,-0.1)(1.5,0.0)
+		\pcline{|-|}(0.0,-0.5)(1.5,-0.5)\Aput{$x$}
+		\pcline{|-|}(0.0,-1.0)(4.0,-1.0)\Aput{$l$}
+	\end{pspicture}
+\end{center}
+\begin{equation*}
+	x = \frac{l\cdot m_2}{m_1+m_2}\qquad\Longrightarrow\quad\text{System im Gleichgewicht}
+\end{equation*}
+
+\subsubsection{Schwerpunkt}
+\begin{center}
+	\begin{pspicture}(0,-0.5)(6,0.5)
+		\psline[linestyle=dashed,linecolor=gray]{|->}(0,0)(5,0)\rput[l](5.2,0){$x$}
+		\rput[t](0.0,-0.3){$0$}
+		\pscircle[fillstyle=solid,fillcolor=white](1.0,0){0.2}\rput[b](1.0,0.3){$m_1$}\rput[t](1.0,-0.3){$x_1$}
+		\pscircle[fillstyle=solid,fillcolor=white](2.0,0){0.2}\rput[b](2.0,0.3){$m_2$}\rput[t](2.0,-0.3){$x_2$}
+		\pscircle[fillstyle=solid,fillcolor=white](3.0,0){0.2}\rput[b](3.0,0.3){$m_3$}\rput[t](3.0,-0.3){$x_3$}
+		\pscircle[fillstyle=solid,fillcolor=white](4.0,0){0.2}\rput[b](4.0,0.3){$m_i$}\rput[t](4.0,-0.3){$x_i$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	M\cdot x_s = \sum\limits_{i=1}^N m_i\cdot x_i\qquad M=\sum\limits_{i=1}^N m_i
+\end{equation}
+
+\subsubsection{Satz von Steiner}
+\begin{center}
+	\begin{pspicture}(0,-0.5)(1.5,2.5)
+		\psccurve(0.5,0.5)(1.0,0.5)(1.0,1.0)(1.5,1.0)(1.0,2.0)(0.0,1.0)
+		\pscircle(0.5,1.2){0.1}\rput[r](0.3,1.2){$s$}
+		\psline[linecolor=lightgray,linestyle=dashed](0.5,2.3)(0.5,-0.5)
+		\psline[linecolor=lightgray,linestyle=dashed](1.0,2.3)(1.0,-0.5)
+		\rput[r](0.4,2.3){$\overrightarrow{s}$}
+		\rput[l](1.1,2.3){$\overrightarrow{d}$}
+		\pcline{->}(0.5,-0.4)(1.0,-0.4)\Aput{$\overrightarrow{a}$}
+	\end{pspicture}
+\end{center}
+\begin{align*}
+	I_s \qquad\text{: Tr"agheitsmoment bez"uglich } \overrightarrow{s} \\
+	I_d \qquad\text{: Tr"agheitsmoment bez"uglich } \overrightarrow{d}
+\end{align*}
+\begin{equation}
+	I_d = I_s + M\cdot a^2
+\end{equation}
+
+\subsubsection{Schwerpunktsatz}
+Der Schwerpunkt in einem System von Massepunkten bewegt sich als ob in ihm die ganz Massenkonzentration w"are, und s"amtliche "ausseren Kr"afte an ihm angreifen w"urden.
+
+\subsection{Impuls}
+
+\subsubsection{Definition}
+\begin{equation}
+	\overrightarrow{p}=m\cdot\overrightarrow{v}\unit{\frac{kg\cdot m}{s}}
+\end{equation}
+
+\subsubsection{Zusammenhang mit $E_{Kin}$}
+\begin{equation}
+	E_{Kin}=\frac{1}{2}\cdot m\cdot\overrightarrow{v}=\frac{p^2}{2\cdot m}
+\end{equation}
+
+\subsubsection{Zusammenhang mit 2. Newton'schen Gesetz}
+\begin{equation}
+	\lim_{\Delta t\rightarrow 0}\frac{\Delta\overrightarrow{p}}{\Delta t}=\frac{\partial\overrightarrow{p}}{\partial t}=\overrightarrow{F}
+\end{equation}
+
+\subsection{Impulserhaltung}
+
+\subsubsection{F"ur 2 Massepunkte}
+\begin{gather}
+	\overrightarrow{p}_1+\overrightarrow{p}_2=\text{ konstant} \\
+	\overrightarrow{p}_{total}=\sum\overrightarrow{p}_i
+\end{gather}
+
+\subsubsection{F"ur $n$ Massepunkte}
+\begin{gather}
+	\frac{\partial\overrightarrow{p}_{total}}{\partial t} = \overrightarrow{F}_{total} \\
+	\frac{\partial}{\partial t}\sum_i\overrightarrow{p}_i=\sum_j\overrightarrow{F}_j
+\end{gather}
+\noindent $\overrightarrow{F}_{total}$ und $\overrightarrow{F}_i$ als "aussere Kr"afte.
+
+\subsubsection{Arten von Impulserhaltung}
+\begin{enumerate}
+	\item {\em Unelastisch}: K"orper sind zusammen
+	\item {\em Inelastisch}: K"orper sind deformiert, Oszillation
+	\item {\em Elastisch}: Kein Energieverlust, \textbf{existiert nicht!}
+\end{enumerate}
+
+\subsubsection{Stossparameter $b$}
+\begin{center}
+	\begin{pspicture}(-0.5,-0.5)(2.5,0.5)
+		\pscircle(0,0){0.5}
+		\pscircle(2,0){0.5}
+		\pcline{->}(0.5,0)(1.0,0)\Aput{$\overrightarrow{v}_1$}
+		\pcline{->}(1.5,0)(1.0,0)\Aput{$\overrightarrow{v}_2$}
+	\end{pspicture}
+\end{center}
+\noindent gerader zentraler Stoss $b=0$
+
+\begin{center}
+	\begin{pspicture}(-1,-1)(3,1.5)
+		\pscircle(0,0){0.5}
+		\pscircle(2,0.5){0.5}
+		\pcline{->}(0.5,0)(1.0,0)\Bput{$\overrightarrow{v}_1$}
+		\pcline{->}(1.5,0.5)(1.0,0.5)\Bput{$\overrightarrow{v}_2$}
+		\pcline[linecolor=lightgray]{|-|}(1.0,0.5)(1.0,0.0)\Aput{$b$}
+		\pcline{->}(0,0)(0,-0.5)\Bput*{\footnotesize $r_1$}
+		\pcline{->}(2,0.5)(2,0)\Aput*{\footnotesize $r_2$}
+	\end{pspicture}
+\end{center}
+\noindent gerader nicht zentraler Stoss $b>0$
+
+\begin{align*}
+	r_1+r_2 &< b\qquad\rightarrow\quad\text{kein Stoss} \\
+	r_1+r_2 &\geq b\qquad\rightarrow\quad\text{Stoss der Art 1\ldots3}
+\end{align*}
+
+\subsection{Ballistisches Pendel}
+\begin{center}
+	\begin{pspicture}(1,-0.5)(6,3)
+		\pcline{o->}(1,0.25)(2,0.25)\Bput{$\overrightarrow{v}_K$}\rput[b](1,0.4){$m_K$}
+		\pcline{o-}(3,3)(3,0.5)\Bput{$l$}
+		\psframe(2.5,0.0)(3.5,0.5)\pscircle(3.0,0.25){0.05}\rput[t](3.0,-0.2){$m_H$}
+		\pscustom{
+			\translate(3,3)
+			\rotate{40}
+			\psline[liftpen=2](0,0)(0,-2.5)
+			\translate(0,-2.5)
+			\psframe[liftpen=1](-0.5,-0.5)(0.5,0.0)
+		}
+		\pscircle(4.77,0.89){0.05}
+		\rput[b](5.0,1.6){$m_H$}
+		\psline[linecolor=lightgray](3.0,0.25)(6,0.25)
+		\psline[linecolor=lightgray](4.77,0.89) (6,0.89)
+		\pcline{<->}(6,0.89)(6,0.25)\Bput{\small $h$}
+		\psarc{->}(3,3){1.0}{270}{310}\rput[l](3.3,1.5){\small $\phi_{max}$}
+	\end{pspicture}
+\end{center}
+\begin{gather*}
+	\text{Impulserhaltung:}\quad m_K\cdot v_K = v_H(m_K+m_H) \\
+	\text{Energieerhaltung:}\quad \frac{1}{2}(m_K+m_H)\cdot v_H^2= g\cdot h\cdot(m_K+m_H)
+\end{gather*}
+\begin{equation}
+	\Longrightarrow\qquad v_K=\frac{m_K+m_H}{m_K}\cdot\sqrt{2\cdot l\cdot g\cdot\left({1-\cos(\phi_{max})}\right)}
+\end{equation}
+
+\subsection{Physikalisches Pendel}
+\begin{center}
+	\begin{pspicture}(0,0)(4.0,3)
+		\psccurve(1.5,0.5)(1.5,1.0)(2.0,2.0)(1.0,2.0)(0.5,2.5)(1.0,0.5)
+		\psline[linecolor=lightgray](0.5,2.0)(0.5,0.0)
+		\psline[linecolor=lightgray](0.5,2.0)(3.3,0.0)
+		\psline[linecolor=lightgray](0.5,2.0)(1.4,2.5)\rput[l](1.5,2.5){Drehachse}
+		\pscircle(0.5,2.0){0.1}
+		\psline[linecolor=lightgray](1.2,1.5)(2.4,2.0)\rput[l](2.5,2.0){Schwerpunkt}
+		\pscircle(1.2,1.5){0.1}
+		\psarc[linecolor=blue]{->}(0.5,2.0){1.2}{270}{-35.5}
+		\rput[bl](0.8,1.1){\small $\phi$}
+	\end{pspicture}
+\end{center}
+\begin{equation*}
+	I_{K,D}=I_{K,S}+l^2\cdot m
+\end{equation*}
+\begin{equation}
+	-l\cdot m\cdot g\cdot\sin(\phi)=I_{K,D}\cdot\phi
+\end{equation}
+\noindent F"ur kleine Ausschl"age: $\sin(\phi)=\phi$
+\begin{equation*}
+	\Longrightarrow\qquad f=-\frac{l\cdot m\cdot g}{I_{K,S}+m\cdot l^2}\cdot\phi
+\end{equation*}
+\begin{gather*}
+	\phi_{(t)}=\phi_0\cdot\cos(\omega t)\quad\text{mit}\quad\omega=\sqrt{\frac{l\cdot m\cdot g}{I_{K,S}+m\cdot l^2}} \\
+	T=\tau=2\pi\sqrt{\frac{I_{K,S}+m\cdot l^2}{l\cdot m\cdot g}}
+\end{gather*}
+
+\subsection{Drehimpuls / Drall}
+
+\subsubsection{Definition}
+Mit fixer Drehachse:
+\begin{equation}
+	\overrightarrow{L}_{\|}=I\cdot\overrightarrow{\omega}\qquad\text{Drehachse parallel zu }\overrightarrow{L}_{\|}
+\end{equation}
+
+\begin{center}
+	\begin{pspicture}(-0.5,-0.5)(3,1)
+		\pcline{->}(0,0)(2.4,0)\Aput{$\overrightarrow{r}$}
+		\pcline{->}(2.5,0)(2.0,1.0)\Bput{$\overrightarrow{v}$}
+		\pscircle[fillstyle=solid,fillcolor=white](0,0){0.1}\rput[b](0,0.2){$B$}
+		\pscircle[fillstyle=solid,fillcolor=white](2.5,0){0.1}\rput[l](2.7,0){$m$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	\overrightarrow{L}=\overrightarrow{r}\times\overrightarrow{p}\qquad\text{mit}\quad\overrightarrow{p}=m\cdot\overrightarrow{v}
+\end{equation}
+
+\begin{equation}
+	\overrightarrow{L}=\sum_i \overrightarrow{r}_i\times\overrightarrow{p}_i=\sum_i\overrightarrow{L}_i
+\end{equation}
+
+\subsubsection{Drehimpulserhaltung}
+Analog zu $\frac{\partial\overrightarrow{p}}{\partial t}=\overrightarrow{F}$
+\begin{equation}
+	\frac{\partial\overrightarrow{L}}{\partial t}=\overrightarrow{T}
+\end{equation}
+\begin{align*}
+	\overrightarrow{L} &= \overrightarrow{r}\times\overrightarrow{p} \\
+	\overrightarrow{T} &= \overrightarrow{r}\times\overrightarrow{F}
+\end{align*}
+
+\subsubsection{Zentralproblem}
+\begin{center}
+	\begin{pspicture}(0,0)(3,3)
+		\psline{->}(0,0)(3,0)\rput[br](3,0.2){$x_1$}
+		\psline{->}(0,0)(0,3)\rput[tl](0.2,3){$x_2$}
+		\pcline{->}(2,1)(1,2)\Bput{$\dot{\overrightarrow{x}}_{(t)}$}
+		\pscircle[fillstyle=solid,fillcolor=white](2,1){0.1}\rput[l](2.2,1){$m$}
+		\pcline[nodesepB=0.1]{->}(0,0)(2,1)\Aput{$\overrightarrow{x}_{(t)}$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	m\cdot\ddot{\overrightarrow{x}} = \frac{\overrightarrow{x}}{\|\overrightarrow{x}\|}\cdot f\left(\|\overrightarrow{x}\|\right)
+\end{equation}
+\begin{align*}
+	f < 0 \quad &\rightarrow\quad\text{Anziehung} \\
+	f > 0 \quad &\rightarrow\quad\text{Abstossung}
+\end{align*}
+
+%
+% EOF
+%

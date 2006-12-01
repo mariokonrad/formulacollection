@@ -1,0 +1,81 @@
+%
+% $Id: mathematik_trigonometrie.tex,v 1.4 2003/10/26 12:59:53 ninja Exp $
+%
+
+\section{Winkelfunktionen}
+
+\begin{center}\begin{tabular}{| p{1cm} | p{1cm} | p{1cm} | p{1cm} | p{1cm} | p{1cm} |}
+\hline
+$\alpha$ & $0$ & $\frac{\pi}{6}$ & $\frac{\pi}{4}$ & $\frac{\pi}{3}$ & $\frac{\pi}{2}$ \\
+\hline
+$\sin{\alpha}$ & $0$ & $\frac{1}{2}$ & $\frac{\sqrt{2}}{2}$ & $\frac{\sqrt{3}}{2}$ & $1$ \\
+\hline
+$\cos{\alpha}$ & $1$ & $\frac{\sqrt{3}}{2}$ & $\frac{\sqrt{2}}{2}$ & $\frac{1}{2}$ & $0$ \\
+\hline
+$\tan{\alpha}$ & $0$ & $\frac{\sqrt{3}}{3}$ & $1$ & $\sqrt{3}$ & $inf$ \\
+\hline
+\end{tabular}\end{center}
+
+\begin{equation}
+\sin^2{\alpha} + \cos^2{\alpha} \equiv 1
+\end{equation}
+F\"ur $\cos{\alpha} \neq 0$:
+\begin{equation}
+\tan{\alpha} \equiv \frac{\sin{\alpha}}{\cos{\alpha}}
+\end{equation}
+\begin{equation}
+\frac{1}{\cos^2{\alpha}} \equiv 1 + \tan^2{\alpha}
+\end{equation}
+
+\subsection{Cosinussatz}
+\begin{equation}
+c^2 = a^2 + b^2 - 2 \cdot a \cdot b \cdot \cos{\gamma}
+\end{equation}
+\begin{equation}
+a^2 = b^2 + c^2 - 2 \cdot b \cdot c \cdot \cos{\alpha}
+\end{equation}
+\begin{equation}
+b^2 = a^2 + c^2 - 2 \cdot a \cdot c \cdot \cos{\beta}
+\end{equation}
+
+\subsection{Sinussatz}
+\begin{equation}
+\frac{a}{\sin{\alpha}} = \frac{b}{\sin{\beta}} = \frac{c}{\sin{\gamma}} = 2 \cdot r
+\end{equation}
+$r$ : Radius des Umkreises
+
+\section{Inverse Trigonometrische Funktionen}
+\begin{align}
+  \sin{\arcsin{x}} &= x \\
+  \cos{\arcsin{x}} &= \sqrt{1-x^2} \\
+  \tan{\arcsin{x}} &= \frac{x}{\sqrt{1-x^2}} \\
+  \cot{\arcsin{x}} &= \frac{\sqrt{1-x^2}}{x} \\
+  \arctan{\tan{x}} &= x \\
+  \tan{\arctan{x}} &= x \\
+  \sin{\arctan{x}} &= \frac{x}{\sqrt{1+x^2}} \\
+  \cos{\arctan{x}} &= \frac{1}{\sqrt{1+x^2}} \\
+  \cot{\arctan{x}} &= \frac{1}{x}
+\end{align}
+
+\section{Hyperbolische Funktionen}
+\begin{align}
+  \sinh &= \frac{1}{2}\left({\exp^x-\exp^{-x}}\right) \\
+  \cosh &= \frac{1}{2}\left({\exp^x+\exp^{-x}}\right) \\
+  \tanh &= \frac{\sinh{x}}{\cosh{x}} \\
+  \coth &= \frac{\cosh{x}}{\sinh{x}} \\
+  \sinh{t+s} &= \frac{\exp^t\cdot\exp^s-\exp^{-t}\cdot\exp^{-s}}{2} = \sinh{t}\cdot\cosh{s}+\cosh{t}\cdot\sinh{s} \\
+  \cosh{t+s} &= \cosh{t}\cdot\cosh{s}+\sinh{t}\cdot\sinh{s}
+\end{align}
+
+\section{Area-Funktionen}
+\begin{align}
+  \sinh{x} \quad\longrightarrow & \quad\text{ArSinh}(x) \quad=\quad\ln{\left({x+\sqrt{x^2+1}}\right)} \\
+  \cosh{x} \quad\longrightarrow & \quad\text{ArCosh}(x) \quad=\quad\ln{\left({x+\sqrt{x^2-1}}\right)} \\
+  \tanh{x} \quad\longrightarrow & \quad\text{ArTanh}(x) \quad=\quad\frac{1}{2}\ln{\left({\frac{1+x}{1-x}}\right)} \\
+  \coth{x} \quad\longrightarrow & \quad\text{ArCoth}(x)
+\end{align}
+
+
+%
+% EOF
+%

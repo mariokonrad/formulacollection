@@ -1,0 +1,381 @@
+%
+% $Id: physik_magnetismus.tex,v 1.4 2003/10/26 12:59:53 ninja Exp $
+%
+
+\section{Ausdr"ucke}
+\begin{description}
+	\item[$\overrightarrow{B}$-Feld] Magnetisches Induktionsfeld, verursacht durch Str"ome (Gleichf"ormig bewegte Ladung)
+	\item[Lorentzkraft] Kraft auf bewegte Ladung, bewirkt durch das $\overrightarrow{B}$-Feld.
+	\item[Induktion] Erzeugung einer elektrischen Spannung durch zeitlich ver"anderliches $\overrightarrow{B}$-Feld.
+\end{description}
+
+\section{Lorzentzkraft}
+Bewegte ladung erf"ahrt eine Kraft, die {\em Lorentzkraft}:
+\begin{equation}
+	\overrightarrow{F}=Q\cdot\overrightarrow{v}\times\overrightarrow{B}
+\end{equation}
+\noindent mit
+\begin{equation*}
+	B\unit{\frac{Ns}{Cm}=\frac{N}{Am}=\frac{Vs}{m^2}=Tesla}\qquad\text{und}\qquad 1 Gauss=10^{-4}\unit{T}
+\end{equation*}
+
+\section{Gesetz von Biot-Savart}
+\begin{equation}
+	\overrightarrow{dB}=\frac{\mu_0}{4\pi}\cdot I\cdot\frac{\overrightarrow{ds}\times\overrightarrow{r}}{\|\overrightarrow{r}\|^3}
+\end{equation}
+\noindent Induktionstante: $\mu_0=4\pi\cdot 10^{-7}=1.256\cdot 10^{-6}\unit{\frac{Tm}{A}}$ \\
+\noindent $dB\thicksim I\qquad dB\thicksim\frac{1}{r^2}$
+
+\section{Gesetz von Amp\`ere}
+\begin{center}
+	\begin{pspicture}(0,0)(2,2)
+		\pscurve(0.5,0.5)(1.0,0.5)(1.5,1.5)(0.9,1.5)(0.5,1.0)(0.5,0.5)
+		\psecurve[linecolor=red]{->}(0,0)(0,0)(0.6,1.0)(0.3,1.8)(0,2.5)
+		\psecurve[linecolor=red]{->}(1,0)(1,0)(1.1,1.0)(1.2,1.8)(1.5,2.5)
+		\psecurve[linecolor=red]{->}(1.5,0)(1.5,0)(1.3,1.0)(1.6,1.8)(2,2.5)
+		\pcline[linecolor=blue,linewidth=1.5pt]{->}(0.5,0.5)(1.0,0.5)\Bput{$\overrightarrow{ds}$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	\int\limits_C \overrightarrow{B}\overrightarrow{ds}=\mu_0\cdot I_{total}\qquad\text{mit}\qquad I_{total}=\sum_i I_i
+\end{equation}
+\noindent $B_{Erde}=0.2 Gauss$
+\subsection{Beispiel: Spule}
+\begin{center}
+	\begin{pspicture}(-0.5,-1.5)(5,1.5)
+		\pscoil[coilarm=0,coilwidth=1](0.5,0)(4.5,0)
+		\psline[linecolor=blue]{->}(0,0)(5,0)
+		\pcline{|-|}(0.5,-0.7)(4.5,-0.7)\Bput{$l$}
+		\pcline{|-|}(-0.1,0.5)(-0.1,-0.5)\Bput{$r$}
+		\rput[B](4.8,0.3){$\overrightarrow{B}$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	B=\frac{\mu_0\cdot I}{2\pi r}\qquad B_{innen}=\mu_0\cdot n\cdot T\qquad\text{mit}\quad n=\frac{N}{l}\text{ Windungen}
+\end{equation}
+
+\section{Bahnkurve eines geladenen Teilchens}
+\begin{center}
+	\begin{pspicture}(-2,-3)(2,3)
+		\psline[linecolor=lightgray]{->}(0,0)(0,3)\rput[l](0.2,2.8){$z$}
+		\psline[linecolor=lightgray]{->}(0,0)(-1.73,-1)\rput[b](-1.7,-0.8){$x$}
+		\psline[linecolor=lightgray]{->}(0,0)( 1.73,-1)\rput[b]( 1.7,-0.8){$y$}
+		\psellipse(0,0)(1.5,1.0)
+		\pcline{->}(0,0)(1.2,0.6)\Aput{$r$}
+		\pcline[linecolor=blue]{->}(-0.5,1.0)(-0.5,2.0)\Aput{$B$}
+		\pcline[linecolor=red]{->}(-0.2,-1.0)(0.8,-1.0)\Bput{$\overrightarrow{v}$}
+		\pscircle[fillstyle=solid,fillcolor=white](-0.2,-1.0){0.1}
+		\rput[t](-0.2,-1.3){$Q,m$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	m\cdot\omega=Q\cdot B\qquad\text{mit}\quad v_{0z}=0\qquad\omega\neq f(r)\qquad r\thicksim v_0
+\end{equation}
+\noindent Zyklotron:
+\begin{equation}
+	\omega=\frac{Q\cdot B}{m}=2\pi\cdot\gamma=\frac{2\pi}{T}
+\end{equation}
+
+\section{Spezifische Ladung $\frac{e}{m}$ des Elektrons}
+\begin{center}
+	\begin{pspicture}(0,0.5)(6,4)
+		\psline(0,4)(4,4)\psline(0,2)(4,2)
+		\psline(5,4)(5,0.5)
+		\pscircle[linecolor=blue,fillstyle=solid,fillcolor=blue](0.1,3){0.1}\rput[t](0.1,2.7){$e$}
+		\pcline[linecolor=blue]{->}(0.3,3)(1.3,3)\Aput{$v_0$}
+		\psline[linecolor=green]{->}(2,3.9)(2,2.1)\rput[l](2.2,2.3){$E$}
+		\pcline{|-|}(0,1.7)(4,1.7)\Bput{$l$}
+		\pcline{<->}(0,1)(5,1)\Bput{$d$}
+		\pcline{|-|}(5.3,3)(5.3,3.5)\Bput{$f_0$}
+		\pscurve[linestyle=dashed,linecolor=red](1.5,3)(3,3.1)(4.8,3.5)
+		\rput[l](3.0,2.3){$\otimes$ $\overrightarrow{B}$-Feld}
+	\end{pspicture}
+\end{center}
+\noindent f"ur $B=0$:
+\begin{align}
+	f_0 &= \frac{E\cdot e\cdot l}{2\cdot m\cdot v_0^2}(2d-l) \\
+	v_0^2 &= \frac{E\cdot e\cdot l}{2\cdot m\cdot f_0}(2d-l)
+\end{align}
+\noindent f"ur $B\neq 0\qquad f=0$:
+\begin{equation}
+	\frac{e}{m}=\frac{2\cdot E\cdot f_0}{B^2\cdot l\cdot (2d-l)}
+\end{equation}
+
+\section{Kraft im hom. Magnetfeld}
+
+\subsection{Auf Leiter}
+\begin{align}
+	\overrightarrow{dF} &= dq\cdot \overrightarrow{v}\times\overrightarrow{B} \\
+	\overrightarrow{dF} &= I\cdot\overrightarrow{ds}\times\overrightarrow{B}
+\end{align}
+\noindent Spezialfall: Leiter Geradlinig:
+\begin{center}
+	\begin{pspicture}(0,0)(4,2)
+		\psline{*-*}(0.5,0.5)(3.5,1.5)
+		\rput[tr](0.4,0.4){$A$}
+		\rput[bl](3.6,1.6){$B$}
+		\pcline[linecolor=red]{->}(0.6,0.53)(1.6,0.87)\Aput{$I$}
+		\pcline{|-|}(0.6,0.3)(3.6,1.3)\Bput{$\overrightarrow{l}_{AB}$}
+		\rput[b](2.0,1.5){$\otimes\,\overrightarrow{B}$}
+	\end{pspicture} 
+\end{center}
+\begin{equation}
+	F=I\cdot\overrightarrow{l}_{AB}\times\overrightarrow{B}
+\end{equation}
+
+\subsection{Zwischen zwei geraden, parallelen Str"omen}
+\begin{center}
+	\begin{pspicture}(-1.5,-2.0)(1.5,1.5)
+		\psline(0.0,-1.0)(0.0,1.0)
+		\psline(1.0,-1.0)(1.0,1.0)
+		\psellipse[linecolor=lightgray](0.0,0.0)(1.0,0.5)
+		\rput[t](0.0,-1.1){$L_1$}
+		\rput[t](1.0,-1.1){$L_2$}
+		\rput[t](0.0,-1.6){$\infty$}
+		\rput[t](1.0,-1.6){endlich}
+		\pcline{|-|}(0.0,1.2)(1.0,1.2)\Aput{$d$}
+		\pcline[linecolor=red]{->}(0.0,-0.8)(0.0,0.0)\Aput{$I_1$}
+		\pcline[linecolor=red]{->}(1.0,-0.8)(1.0,0.0)\Aput{$I_2$}
+		\pcline{->}(-1.0,0.2)(-1.0,-0.2)\Bput{$B_1$}
+	\end{pspicture}
+\end{center}
+\begin{gather*}
+	B_1 = B_{ind} = \frac{\mu_0\cdot I_1}{2\pi\cdot d} \\
+	\frac{F_{12}}{l_2}=\frac{I_1\cdot I_2\cdot\mu_0}{2\pi\cdot d}
+\end{gather*}
+
+\subsection{Gleichstrommotor}
+\begin{center}
+	\begin{pspicture}(0.5,0)(6,3)
+		\pcline[linecolor=gray,linestyle=dashed]{-}(1.0,0.33)(6,2)\lput*{:U}{\tiny Drehachse}
+		\psline{-}(1.5,0.63)(2.8,1.07)(2.8,1.07)(2.0,1.33)(4.0,2.0)(6.0,1.33)(4.0,0.67)(3.2,0.93)(1.9,0.5)
+		\pcline[offset=8pt]{|-|}(6.0,1.33)(4.0,0.67)\Aput{$a$}
+		\pcline[offset=8pt]{|-|}(4.0,0.67)(3.2,0.93)\Aput{$b$}
+		\pcline[linecolor=red]{->}(4.5,0.83)(5.5,1.17)\Aput{$I$}
+	\end{pspicture}
+	\hspace{5mm}
+	\begin{pspicture}(-1.5,-1.5)(2,2)
+		\psline{->}(0,0)(2,0)\rput[rb](2.0,0.2){$x$}
+		\psline{->}(0,0)(0,2)\rput[lt](0.2,2.0){$y$}
+		\pcline{->}(1.0,-1.0)(1.0,-1.3)\Aput{\small $\overrightarrow{F}_{12}$}
+		\pcline{->}(-1.0,1.0)(-1.0,1.3)\Bput{\small $\overrightarrow{F}_{34}$}
+		\psline{o-o}(-1.0,1.0)(1.0,-1.0)
+		\psline{->}(0,0)(1,1)\rput[bl](1.1,1.1){$\overrightarrow{B}$}
+		\psarc{->}(0,0){1.0}{0}{35}\rput[l](1.1,0.5){$\phi$}
+		\pscircle[linecolor=red](1.0,-1.0){0.05}
+		\rput[r](0.8,-1.0){$I$}
+		\pscircle[fillstyle=solid,fillcolor=black](0,0){0.05}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	T_z=-a\cdot b\cdot I\cdot B\cdot\sin(\phi)
+\end{equation}
+\noindent F"ur $N$ Windungen:
+\begin{gather*}
+	T_z =-A\cdot N\cdot I\cdot B\cdot\sin(\phi)\qquad\text{mit}\quad A=a\cdot b \\
+	\Theta\cdot\ddot{\phi}=T_z=-A\cdot N\cdot I\cdot B\cdot\phi
+	\intertext{\em Harmonischer Oszillator}
+	T=I_{(t)}\cdot N\cdot A\cdot B\cdot\sin(\phi_{(t)}) \\
+	U_{ind}=-\omega\cdot N\cdot A\cdot B\cdot\sin(\phi)
+\end{gather*}
+
+\subsection{Galvanometer}
+\begin{center}
+	\begin{pspicture}(-2,-1)(2,1)
+		\psline[linecolor=lightgray,linestyle=dashed](0,0)(-2.0,0.0)
+		\psline{-}(-2,0.707) (-0.707,0.707)
+		\psarc{-}(0,0){1.0}{135}{225}
+		\psline{-}(-2,-0.707)(-0.707,-0.707)
+		\psline{-}(2,0.707) (0.707,0.707)
+		\psarc{-}(0,0){1.0}{315}{45}
+		\psline{-}(2,-0.707)(0.707,-0.707)
+		\psline{o-o}(-0.5,0.5)(0.5,-0.5)
+		\psline{->}(0,0)(0.25,0.25)\rput[bl](0.3,0.3){\small $\overrightarrow{n}$}
+		\pscircle[linecolor=red,fillstyle=solid,fillcolor=red](0.5,-0.5){0.05}
+		\rput[bl](0.6,-0.6){\small $I$}
+		\psarc{->}(0,0){0.7}{135}{180}\rput[t](-0.5,0.2){$\beta$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	\beta=\frac{A\cdot N\cdot I\cdot B}{D}\qquad D\text{ : Spiralfederkonstante}
+\end{equation}
+\noindent Ausschlag proportional zu $I$
+
+\subsection{Drehmoment auf ebene Leiterschleife}
+\begin{center}
+	\begin{pspicture}(-2,-1)(2,1)
+		\psellipse[fillstyle=solid,fillcolor=lightgray](0,0)(1.5,0.75)
+		\pcline{->}(0.0,0.0)(0.0,1.0)\Bput{\small $\overrightarrow{n}$}
+		\pcline[linecolor=blue]{->}(-0.2,-0.75)(0.2,-0.75)\Bput{\small $\mathcal{C}$}
+		\pcline{->}(1.0,0.0)(1.0,1.0)\Bput{$\overrightarrow{B}$}
+		\pcline[linecolor=red,linewidth=1.5pt]{->}(-1.5,0.2)(-1.5,-0.2)\Bput{$I$}
+		\rput*[b](-0.8,-0.1){$A$}
+	\end{pspicture}
+\end{center}
+\begin{center}\begin{tabular}{r l}
+	$\overrightarrow{B}$		& homogenes Feld \\
+	$\mathcal{C}$				& ebene, geschlossene Kurve \\
+	$A$							& Fl"ache von $\mathcal{C}$ umschlossen \\
+	$I$							& Strom durch $\mathcal{C}$ \\
+	$\overrightarrow{n}$		& rechtwinklig auf $A$ \\
+\end{tabular}\end{center}
+
+\subsubsection{Definition: Magnetisches Moment}
+\begin{equation}
+	\overrightarrow{m}=I\cdot A\cdot\overrightarrow{n}
+\end{equation}
+
+\subsubsection{Drehmoment um beliebigen Punkt $P$}
+\begin{equation}
+	\overrightarrow{T}=\overrightarrow{m}\times\overrightarrow{B}
+\end{equation}
+\noindent F"ur $N$ Windungen:
+\begin{equation}
+	\|\overrightarrow{T}\|= I\cdot A\cdot N\cdot B\cdot\sin(\phi)
+\end{equation}
+
+\section{Induktivit"at}
+
+\subsection{Induktionsgesetz von Faraday}
+Magnetischer Fluss $\phi$ des $\overrightarrow{B}$-Feldes:
+\begin{gather}
+	\phi_A=\int_A\overrightarrow{B}\,\overrightarrow{da}=\int_A\overrightarrow{B}\overrightarrow{n}\,da\unit{\text{Weber }=Tm^3=Vs} \\
+	U_{ind} =-\dot{\phi}
+\end{gather}
+\paragraph{Lenz'sche Regel}
+Die induzierte Spannung erzeugt ein Induktionsstrom, der so gerichtet ist, dass er dem ihn erzeugenden Vorgang zu hemmen versucht.
+
+\subsection{Selbstinduktion}
+Spule im "ausseren Feld:
+\begin{center}
+	\begin{pspicture}(0,0)(5,3)
+		\pszigzag[coilarm=0.1,linearc=0.02,coilwidth=0.8,coilheight=0.4]{-}(1.0,1.5)(3.0,1.5)
+		\psline{o-}(1.0,0.5)(1.0,1.5)
+		\psline{o-}(3.0,0.5)(3.0,1.5)
+		\pcline{|-|}(1.0,2.2)(3.0,2.2)\Aput{$l$}
+		\pcline[linecolor=blue]{->}(3.2,1.5)(5.0,1.5)\Aput{$\overrightarrow{B}$}
+		\psellipse[fillstyle=solid,fillcolor=lightgray](0.75,1.5)(0.1,0.4)
+		\rput[r](0.6,1.5){$A$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+ U_{ind}=-N\cdot A\cdot\dot{B}_{(t)}
+\end{equation}
+\noindent Spule im eigenen Feld, bewirkt durch $I$
+\begin{equation}
+	U_{ind}=-\mu_0\cdot\frac{N^2\cdot A}{l}\cdot I_{(t)}
+\end{equation}
+\noindent Allgeimein: $U_{ind}=-L\cdot\dot{I}_{(t)}$
+\begin{equation}
+	L=\frac{N^2\cdot A\cdot \mu_0}{l}\unit{\text{Henry }=H}
+\end{equation}
+
+\subsection{Schalten eines Stromes in einer Spule}
+\begin{center}
+	\begin{pspicture}(-1.0,0.0)(3.5,2.7)
+		\psframe(0,0)(3,2)
+		\psframe[fillstyle=solid,fillcolor=black](2.75,0.5)(3.25,1.5)\rput[l](3.3,1.0){$L$}
+		\psframe[fillstyle=solid,fillcolor=white](1.0,1.75)(2.0,2.25)\rput[b](1.5,2.3){$R$}
+		\pscircle[fillstyle=solid,fillcolor=white](0.0,1.0){0.5}\rput[t](0.0,1.4){$+$}
+		\pcline[linecolor=blue]{->}(-0.6,1.5)(-0.6,0.5)\Bput{$U_0$}
+	\end{pspicture}
+\end{center}
+\begin{gather}
+	I_{(t)} = \frac{U_0}{R}\left(1-e^{-\frac{R}{L}\cdot t}\right) \\
+	I_{max} = \frac{U_0}{R}
+\end{gather}
+
+\subsection{Transformator}
+\begin{center}
+	\begin{pspicture}(0,-0.5)(5,3)
+		\pszigzag[coilarm=0.25,linearc=0.02,coilwidth=0.8,coilheight=0.4]{-}(2.5,2.75)(2.5,0.25)
+		\psline{-}(2.5,2.75)(4.5,2.75)
+		\psline{-}(2.5,0.25)(4.5,0.25)
+		\pscircle[fillstyle=solid,fillcolor=white](4.5,2.75){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](4.5,0.25){0.1}
+		\psline{-}(2.2,1.9)(0.5,1.9)
+		\psline{-}(2.2,0.95)(0.5,0.95)
+		\pscircle[fillstyle=solid,fillcolor=white](0.5,1.9){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](0.5,0.95){0.1}
+		\rput[tl](0.5,0.8){\small $N_1,A_1,R_1$}
+		\rput[tr](4.5,0.0){\small $N_2,A_2,R_2$}
+		\pcline{<->}(2.0,1.8)(2.0,1.05)\Bput{$l_1$}
+		\pcline{<->}(3.0,2.65)(3.0,0.35)\Aput{$l_2$}
+		\pcline[linecolor=blue]{->}(4.5,2.5)(4.5,0.5)\Aput{$U_2$}
+		\pcline[linecolor=blue]{->}(0.5,1.7)(0.5,1.1)\Bput{$U_1$}
+	\end{pspicture}
+\end{center}
+\begin{align*}
+	L_{11} &= \frac{\mu_0\cdot A_1\cdot N_1^2}{l_1} \\
+	L_{22} &= \frac{\mu_0\cdot A_2\cdot N_2^2}{l_2} \\
+\end{align*}
+\noindent Induktion $U_{11}=-L_{11}\cdot\hat{I}_1$ und $U_{12}=-L_{12}\cdot\hat{I}_1$ mit
+\begin{align*}
+	L_{12} &= \frac{\mu_0\cdot A_2\cdot N_1\cdot N_2}{l_1} \\
+	L_{21} &= \frac{\mu_0\cdot A_1\cdot N_1\cdot N_2}{l_2} \\
+\end{align*}
+\begin{equation*}
+	L_{12}^2=L_{21}^2=L_{11}\cdot L_{22}
+\end{equation*}
+\begin{equation*}
+	\frac{U_1}{U_2}=-\frac{N_2}{N_1}
+\end{equation*}
+
+\subsection{Energie des magnetischen Feldes}
+Aus der induzierten Spannung einer Spule
+\begin{align*}
+	W_{magn} &= -\int\limits_0^T u_{ind}\cdot I\,dt \\
+	W_{magn} &= \frac{1}{2}\cdot\frac{B^2}{\mu_0}\cdot l\cdot A \\
+	W_{magn} &= \frac{1}{2}\cdot\frac{B_{mat}^2}{\mu_o\cdot\mu_r}\cdot l\cdot A
+	\intertext{mit}
+	\mu_r & \text{: Permabilit"at} \\
+	\mu_0 & \text{: Induktionskoeffizient}
+\end{align*}
+\noindent Energiedichte: $$\nu_{magn}=\frac{1}{2}\frac{B_{vac}^2}{\mu_0}\cdot\mu_r$$ oder $$\nu_{magn}=\frac{1}{2}\cdot\frac{B_{mat}^2}{\mu_0\cdot\mu_r}$$
+
+\section{RCL-Kreis}
+\begin{equation}
+	\dot{U}(t)=L\cdot\ddot{I}+R\cdot\dot{I}+I\cdot\frac{1}{C}
+\end{equation}
+\begin{center}
+	\begin{pspicture}(-0.5,-0.5)(3,2.5)
+		\psline(0,0)(2.5,0)(2.5,0.9)\psline(2.5,1.1)(2.5,2)(0,2)
+		\pscircle[fillstyle=solid,fillcolor=white](0,0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white](0,2){0.1}
+		\psline(2,0.9)(3,0.9)\psline(2,1.1)(3,1.1)\rput[r](1.8,1){$C$}
+		\psframe[fillstyle=solid,fillcolor=white](0.5,1.75)(1.5,2.25)\rput[b](1.0,2.3){$R$}
+		\psframe[fillstyle=solid,fillcolor=black](0.5,-0.25)(1.5,0.25)\rput[b](1.0,0.3){$L$}
+	\end{pspicture}
+\end{center}
+\noindent allgemeine L"osung: $I=I_h+I_{ih}$ \\
+
+\noindent \textbf{homogene L"osung:}
+\begin{gather}
+	\ddot{I}+\frac{1}{LC}I=0\qquad\text{mit}\quad R=0 \\
+	L\cdot\ddot{I}+R\cdot\dot{I}+\frac{1}{C}\cdot I=0\qquad\text{mit}\quad R\neq 0
+\end{gather}
+\begin{align*}
+	R^2>\frac{4L}{C}\qquad &\Longrightarrow\qquad\text{grosse D"ampfung:}\quad\lambda_{12}=-\frac{R}{2L}\pm\frac{1}{2}\sqrt{\frac{R^2}{L^2}-\frac{4}{LC}} \\
+	R^2=\frac{4L}{C}\qquad &\Longrightarrow\qquad\text{kritisch:}\quad\lambda_{12}=-\frac{R}{2L} \\
+	R^2<\frac{4L}{C}\qquad &\Longrightarrow\qquad\text{kleine D"ampfung:}\quad\lambda_{12}=-\frac{R}{2L}\pm\frac{j}{2}\sqrt{-\frac{R^2}{L^2}+\frac{4}{LC}} \\
+\end{align*}
+
+\noindent \textbf{partikul"are L"osung:}
+\begin{align}
+	\underline{I} &= I_0\cdot e^{j(\omega t-\phi)} \\
+	I_0 &= \frac{U_0}{\sqrt{R^2-\left(\omega L-\frac{1}{\omega C}\right)^2}}
+\end{align}
+
+\noindent \textbf{Achtung:} der L"osungstrick mit dem Rechnen mit komplexen Zahlen funktioniert {\em nur} im linearen Fall, d.h.:
+\begin{equation*}
+	I(\omega,t) =\underline{z}^{-1}(\omega)\cdot\underline{u}(\omega,t)\qquad\text{mit}\quad\underline{z}\text{ nicht Abh"angig von }u
+\end{equation*}
+\noindent sonst werden sich andere Frequenzen zeigen:
+\begin{align*}
+	\underline{I} &=a_0+a_1\cdot I_1+a_2\cdot I_2^2 \\
+	I_i &= u_1\cdot e^{j(\omega_1\cdot t-\phi_1}+u_2\cdot e^{j(\omega_2\cdot t-\phi_2)}
+\end{align*}
+
+%
+% EOF
+%

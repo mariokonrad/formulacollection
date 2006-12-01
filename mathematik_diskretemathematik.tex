@@ -1,0 +1,852 @@
+%
+% $Id: mathematik_diskretemathematik.tex,v 1.5 2003/10/18 21:38:33 ninja Exp $
+%
+
+\newcommand{\ztf}{{\huge\mathfrak{z}}}
+
+\section{Begriffe}
+
+\paragraph{Aussage ``$p$''}
+\begin{align*}
+	\text{Formal:}&\quad p \\
+	\mathcal{D}\text{:} & \quad\text{true/false}, \text{wahr/falsch}, 1/0
+\end{align*}
+
+\paragraph{Aussage ``\textit{nicht $p$}''}
+\begin{align*}
+	\text{Formal:}&\quad\urcorner p\qquad\text{(Negation)} \\
+	\mathcal{D}\text{:} & \quad\text{false/true}, \text{falsch/wahr}, 0/1
+\end{align*}
+
+\paragraph{Aussage ``\textit{$P$ und $Q$}''}
+\begin{gather*}
+	\text{Formal:} \quad p\wedge q\quad\text{oder}\quad p\cdot q\qquad\text{(Konjunktion)}
+\end{gather*}
+\begin{center}
+	\begin{tabular}{cc|c}
+		\hline
+		$p$ & $q$ & $p\wedge q$ \\
+		\hline
+		$0$ & $0$ & $0$ \\
+		$0$ & $1$ & $0$ \\
+		$1$ & $0$ & $0$ \\
+		$1$ & $1$ & $1$ \\
+	\end{tabular}
+\end{center}
+
+\paragraph{Aussage ``\textit{$P$ oder $Q$}''}
+\begin{gather*}
+	\text{Formal:} \quad p\vee q\quad\text{oder}\quad p+q\qquad\text{(Disjunktion)}
+\end{gather*}
+\begin{center}
+	\begin{tabular}{cc|c}
+		\hline
+		$p$ & $q$ & $p\vee q$ \\
+		\hline
+		$0$ & $0$ & $0$ \\
+		$0$ & $1$ & $1$ \\
+		$1$ & $0$ & $1$ \\
+		$1$ & $1$ & $1$ \\
+	\end{tabular}
+\end{center}
+
+\paragraph{Aussage ``\textit{wenn $P$ dann $Q$}''}
+\begin{gather*}
+	\text{Formal:} \quad p\rightarrow q\qquad\text{(Konditional)}
+\end{gather*}
+\begin{center}
+	\begin{tabular}{cc|c}
+		\hline
+		$p$ & $q$ & $p\vee q$ \\
+		\hline
+		$0$ & $0$ & $1$ \\
+		$0$ & $1$ & $1$ \\
+		$1$ & $0$ & $0$ \\
+		$1$ & $1$ & $1$ \\
+	\end{tabular}
+\end{center}
+
+\paragraph{Aussage ``\textit{$Q$ genau dann wenn $P$}''}
+\begin{gather*}
+	\text{Formal:} \quad p\leftrightarrow q\qquad\text{(Bikonditional)}
+\end{gather*}
+\begin{center}
+	\begin{tabular}{cc|c}
+		\hline
+		$p$ & $q$ & $p\vee q$ \\
+		\hline
+		$0$ & $0$ & $1$ \\
+		$0$ & $1$ & $0$ \\
+		$1$ & $0$ & $0$ \\
+		$1$ & $1$ & $1$ \\
+	\end{tabular}
+\end{center}
+
+\paragraph{Aussage ``\textit{aus $P$ folgt $Q$}''}
+\begin{gather*}
+	\text{Formal:} \quad P\Longrightarrow Q\qquad\text{(Folgerung)}
+\end{gather*}
+
+\paragraph{Aussage ``\textit{$P$ ist "aquivalent zu $Q$}''}
+\begin{gather*}
+	\text{Formal:} \quad P\Longleftrightarrow Q\qquad\text{("Aquivalenz)}
+\end{gather*}
+
+\subsection{Allgemein}
+\begin{align*}
+	W,F,P,Q,\ldots\qquad &\hat{=}\text{Atomare Bausteine, Atome, Formeln} \\
+	W,F\qquad &\hat{=}\text{Wahrheitswerte}
+\end{align*}
+
+\subsection{Priorit"aten}
+\begin{center}
+	\begin{tabular}{c|cc}
+		& \multicolumn{2}{c}{$\underrightarrow{\text{gleichbleibend}}$} \\
+		\hline
+		\multirow{3}{5mm}{\begin{sideways}$\underleftarrow{\text{abnehmend}}$\end{sideways}} & & \\
+			& $\urcorner$ & \\
+			& $\wedge$ & $\vee$ \\
+			& $\rightarrow$ & $\leftrightarrow$ \\
+	\end{tabular}
+\end{center}
+\vspace{2mm}
+
+\subsection{Allgemeing"ultigkeit}
+Eine Formel ist allgemeing"ultig, wenn sie f"ur jede Belegung der Wahrheitswert $W$
+ergibt.
+
+Auch {\em Tautologie} genannt.
+
+\subsection{Definitionen}
+Eine Formel heisst erf"ullbar, wenn es min. eine Belegung gibt f"ur die
+sie Wahr ist.
+
+Eine Formel $B$ folgt aus einer anderen Formel $A$, wenn f"ur jede Belegung
+die $A$ Wahr macht, $B$ wahr wird.
+
+Eine Formelmenge $y$ folgt aus der Formelmenge $x$, wenn jede Formel aus $y$
+Wahr wird f"ur Belegungen die $x$ Wahr macht.
+
+Zwei Formeln oder Formelmengen sind zueinander "aquivalent, wenn sie
+gegenseitig auseinander Folgern.
+
+\section{Beweis-Strategien}
+\subsection{M"ogliche Strategien}
+\begin{itemize}
+\item Beweis durch {\em Kontraposition}
+\item Beweis durch {\em Widerspruch}
+\item Beweis durch {\em Fallunterscheidung}
+\item {\em Direkter Beweis}
+\item {\em Induktionsbeweis}
+\end{itemize}
+
+\subsection{Widerspr"uchlichkeit}
+Eine Formal $A$ heisst {\em widerspr"uchlich}, wenn sowohl $A$ als auch
+$\urcorner A$ f"ur gleiche Belegungen Wahr werden.
+
+Eine Formelmenge heisst Widerspr"uchlich, wenn f"ur min. eine Formel obiges gilt.
+
+\section{Entscheidungsverfahren}
+Entscheidungsverfahren f"ur Erf"ullbarkeit entspricht einem {\em Algroithmus}
+
+Erf"ullbarkeit, Allgemeing"ultigkeit und logische Folgerungen f"ur endliche Formelmengen
+sind entscheidbar.
+
+Umfang: Anzahl Zeilen der Wahrheitstabelle = $2^\text{Anzahl Atome}$
+
+\section{Normalformen}
+Ein {\em Literal} ($L$) entspricht einem aussagekr"aftigen Atom oder seiner Verneinung.
+
+\subsection{Konjunktive Normalform (KNF)}
+Formal: Produkt von Summen
+\begin{equation}
+	\bigwedge\limits_{j=1}^n\left({\bigvee\limits_{i=1}^m L_{ij}}\right)
+\end{equation}
+\begin{itemize}
+\item Sind nicht eindeutig bestimmt!
+\item Verschiedene Formeln k"onnen die gleiche KNF besitzen
+\end{itemize}
+
+\subsection{Disjunktive Normalform (DNF)}
+Formal: Summe von Produkten
+\begin{equation}
+	\bigvee\limits_{j=1}^n\left({\bigwedge\limits_{i=1}^m L_{ij}}\right)
+\end{equation}
+
+\subsection{Ausgezeichnete Normalform}
+Alle Literale kommen in einem Disjunktionsterm bzw. Konjunktionsterm vor. Die
+ausgezeichnete Normalform ist nicht die k"urzeste M"oglichkeit eine Formel zu beschreiben.
+\begin{itemize}
+\item \textbf{Ausgezeichnete KNF:} Nullwerte (Falsch) in der Wahrheitstabelle betrachten
+\item \textbf{Ausgezeichnete DNF:} Einswerte (Wahr) in der Wahrheitstabelle betrachten
+\end{itemize}
+
+\section{Ableitungen}
+\begin{gather}
+	\underbrace{A\quad\wedge\quad\urcorner A}_\text{Pr"amisse}\quad\Longrightarrow\quad\underbrace{F}_\text{Konklusion}
+\end{gather}
+\vspace{5mm}
+\begin{center}
+	\begin{rotate}{180}
+		\setlength{\GapWidth}{2cm}
+		\setlength{\GapDepth}{1cm}
+		\begin{bundle}{\begin{rotate}{180}Konklusion\end{rotate}}
+		\chunk{\begin{rotate}{180}Pr"amisse\end{rotate}}
+		\chunk{\begin{rotate}{180}Pr"amisse\end{rotate}}
+		\chunk{\begin{rotate}{180}Pr"amisse\end{rotate}}
+		\end{bundle}
+	\end{rotate}
+\end{center}
+\vspace{5mm}
+
+\section{Boolsche Algebra}
+Grundmenge: $\mathbb{B}=\{0,1\}$
+\subsection{Axiome}
+\begin{align}
+	0\cdot 0 &= 1\cdot 0=0\cdot 1=0 \\
+	0+1 &= 1+0 = 1+1 = 0 \\
+	0+0 &= 0 \\
+	1\cdot 1 &= 1 \\
+	\overline{0} &= 1\qquad\text{Komplement, Negation} \\
+	\overline{1} &= 0\qquad\text{Komplement, Negation}
+\end{align}
+
+\subsection{Dualisieren}
+\begin{equation*}
+	s^d\quad\hat{=}\quad\text{``$s$ dual''}
+\end{equation*}
+Inverseion der Funktionen und Operationen:
+\begin{align*}
+	+\quad & \rightarrow\quad\cdot \\
+	\cdot\quad & \rightarrow\quad + \\
+	0 \quad & \rightarrow\quad 1 \\
+	1 \quad & \rightarrow\quad 0
+\end{align*}
+
+\subsection{Normalformen}
+\subsubsection{Disjuktive Normalform}
+\begin{center}
+{\em Summe von Produkten}
+\end{center}
+Siehe auch {\em disjunktive Normalform} in der Aussagenlogik.
+
+\subsubsection{Konjunktive Normalform}
+\begin{center}
+{\em Produkt von Summen}
+\end{center}
+Siehe auch {\em konjunktive Normalform} in der Aussagenlogik.
+
+\section{Mengen}
+\subsection{Begriffe}
+\subsubsection{Mengeh und Teilmengen}
+\begin{center}
+	\begin{pspicture}(-2,-2)(2,2)
+		\pscircle(0,0){1.5}
+		\pscircle[linecolor=blue](0,0){1.25}
+		\pscircle[linecolor=red](0,0){1.0}
+		\rput[Bl](1.7,1.5){$G$}
+		\rput[Bl](1.7,1.0){$B$}
+		\rput[Bl](1.7,0.5){$A$}
+		\psline{-}(1.7,1.5)(1.05,1.05)
+		\psline{-}(1.7,1.0)(1.0, 0.7)
+		\psline{-}(1.7,0.5)(0.95,0.3)
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	\mathbb{A}\subset\mathbb{B}
+\end{equation}
+\begin{center}
+	\begin{pspicture}(-2,-2)(2,2)
+		\pscircle(0,0){1.5}
+		\pscircle[linecolor=blue](0,0){1.0}
+		\pscircle[linecolor=red,linestyle=dashed](0,0){1.0}
+		\rput[Bl](1.7,1.5){$G$}
+		\rput[Bl](1.7,1.0){$B$}
+		\rput[Bl](1.7,0.5){$A$}
+		\psline{-}(1.7,1.5)(1.05,1.05)
+		\psline{-}(1.7,1.0)(0.95,0.3)
+		\psline{-}(1.7,0.5)(0.95,0.3)
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	\mathbb{A}\subseteq\mathbb{B}\quad\text{und}\quad\mathbb{B}\subseteq\mathbb{A}\qquad\Longrightarrow\quad\mathbb{A}=\mathbb{B}
+\end{equation}
+
+\subsubsection{Leere Menge}
+\begin{equation}
+	\text{Leere Menge: }\qquad\emptyset\quad\text{oder}\quad\{\}
+\end{equation}
+
+\subsubsection{Standardmengen}
+\begin{center}
+	\begin{tabular}{ll}
+		$\mathbb{N}, \mathbb{N}_0$		& Nat"urliche Zahlen \\
+		$\mathbb{Z}^+, \mathbb{Z}_0^+, \mathbb{Z}^-, \mathbb{Z}_0^-, \mathbb{Z}$	& Nat"urliche ganze Zahlen \\
+		$\mathbb{Q}^+, \mathbb{Q}_0^+, \mathbb{Q}^-, \mathbb{Q}_0^-, \mathbb{Q}$	& \\
+		$\mathbb{R}^+, \mathbb{R}_0^+, \mathbb{R}^-, \mathbb{R}_0^-, \mathbb{R}$	& reelle Zahlen \\
+		$\mathbb{C}$					& komplexe Zahlen
+	\end{tabular}
+\end{center}
+
+\subsubsection{Potenzmenge}
+$\mathbb{P}(\mathbb{A})$ entspricht der Potenzmenge von $\mathbb{A}$. Die Potenzmenge
+ist die Menge aller Teilmengen, inkl. $\emptyset$.
+
+\subsection{Verkn"upfungen}
+\begin{center}
+	Vereinigung: $\mathbb{A}\cup\mathbb{B}$ \\ %% A or B
+	\begin{pspicture}(0,0)(5,3)
+		\rput[Br](1.0,2.0){$A$}
+		\rput[Bl](4.0,2.0){$B$}
+		\psarc[linewidth=2pt,linecolor=red,fillcolor=white,fillstyle=hlines,hatchcolor=red](2.0,1.5){1.0}{60}{-60}
+		\psarc[linewidth=2pt,linecolor=red,fillcolor=white,fillstyle=hlines,hatchcolor=red](3.0,1.5){1.0}{240}{120}
+	\end{pspicture}
+\end{center}
+\begin{center}
+	Schnittmenge: $\mathbb{A}\cap\mathbb{B}$ \\ %% A and B
+	\begin{pspicture}(0,0)(5,3)
+		\rput[Br](1.0,2.0){$A$}
+		\rput[Bl](4.0,2.0){$B$}
+		\pscircle(2,1.5){1.0}
+		\pscircle(3,1.5){1.0}
+		\psarc[linewidth=2pt,linecolor=red,fillcolor=white,fillstyle=hlines,hatchcolor=red](2.0,1.5){1.0}{-60}{60}
+		\psarc[linewidth=2pt,linecolor=red,fillcolor=white,fillstyle=hlines,hatchcolor=red](3.0,1.5){1.0}{120}{240}
+	\end{pspicture}
+\end{center}
+\begin{center}
+	Differenz: $\mathbb{A}\backslash\mathbb{B}$ \\ %% A minus B
+	\begin{pspicture}(0,0)(5,3)
+		\rput[Br](1.0,2.0){$A$}
+		\rput[Bl](4.0,2.0){$B$}
+		\pscircle[linewidth=2pt,linecolor=red,fillcolor=white,fillstyle=hlines,hatchcolor=red](2,1.5){1.0}
+		\pscircle[fillcolor=white,fillstyle=solid](3,1.5){1.0}
+		\psarc[linewidth=2pt,linecolor=red](3.0,1.5){1.0}{120}{240}
+	\end{pspicture}
+\end{center}
+\begin{center}
+	Symmetrische Differenz: $\mathbb{A}\triangle\mathbb{B}$ \\ %% A symminus B
+	\begin{pspicture}(0,0)(5,3)
+		\rput[Br](1.0,2.0){$A$}
+		\rput[Bl](4.0,2.0){$B$}
+		\psarc[linewidth=2pt,linecolor=red,fillcolor=white,fillstyle=hlines,hatchcolor=red](2.0,1.5){1.0}{60}{-60}
+		\psarc[linewidth=2pt,linecolor=red,fillcolor=white,fillstyle=hlines,hatchcolor=red](3.0,1.5){1.0}{240}{120}
+		\psarc[linewidth=2pt,linecolor=red,fillcolor=white,fillstyle=solid](2.0,1.5){1.0}{-60}{60}
+		\psarc[linewidth=2pt,linecolor=red,fillcolor=white,fillstyle=solid](3.0,1.5){1.0}{120}{240}
+	\end{pspicture}
+\end{center}
+
+\subsection{Dualisieren}
+\begin{center}\begin{tabular}{c c}
+	Ersetzen 		& durch \\
+	\hline
+	$\cup$			& $\cap$ \\
+	$\cap$			& $\cup$ \\
+	$\emptyset$		& $\mathbb{G}$ \\
+	$\mathbb{G}$	& $\emptyset$ \\
+\end{tabular}\end{center}
+\begin{gather*}
+	(\mathbb{A}\cap\mathbb{B})\cup\emptyset=\mathbb{D}\quad\Longrightarrow\quad\mathbb{D}^d=(\mathbb{A}\cup\mathbb{B})\cap\mathbb{G} \\
+	\mathbb{A}=\mathbb{B}\Longleftrightarrow\mathbb{A}^d=\mathbb{B}^d
+\end{gather*}
+
+\subsection{Venn-Diagramm}
+Grafische Veranschaulichung von Mengen. Alternative zu Venn-Diagramm: Zugeh"origkeitstabelle.
+\begin{center}
+	\begin{pspicture}(0,0)(5,3)
+		\rput[Br](1.0,2.0){$A$}
+		\rput[Bl](4.0,2.0){$B$}
+		\pscircle(2,1.5){1.0}
+		\pscircle(3,1.5){1.0}
+		\psarc[linewidth=2pt,linecolor=red,fillcolor=white,fillstyle=hlines,hatchcolor=red](2.0,1.5){1.0}{-60}{60}
+		\psarc[linewidth=2pt,linecolor=red,fillcolor=white,fillstyle=hlines,hatchcolor=red](3.0,1.5){1.0}{120}{240}
+	\end{pspicture} \\
+	$\mathbb{A}\cap\mathbb{B}$
+\end{center}
+
+\subsection{Indexmenge}
+Zusammenfassung aller Werte, die ein Index annhemen kann.
+\begin{equation}
+	\overline{\bigcup\limits_{i\in\text{II}}\mathbb{A}_i}=\bigcap\limits_{i\in\text{II}}\mathbb{A}_i\qquad\qquad
+	\overline{\bigcap\limits_{i\in\text{II}}\mathbb{A}_i}=\bigcup\limits_{i\in\text{II}}\mathbb{A}_i
+\end{equation}
+
+\subsection{M"achtigkeit}
+$|\mathbb{A}|\quad\hat{=}$ Anzahl der Elemente von $\mathbb{A}$, sofern $\mathbb{A}$ endlich. \\
+\noindent $card(\mathbb{A})\quad\hat{=}$ M"achtigkeit der Menge $\mathbb{A}$. \\
+\noindent F"ur endliche Mengen: $card(\mathbb{A})=|\mathbb{A}|$. F"ur unendliche Mengen dient $\mathbb{N}$ als Referenzmenge.
+\begin{align*}
+	|\mathbb{A}\cup\mathbb{B}| &= |\mathbb{A}|+|\mathbb{B}|-|\mathbb{A}\cap\mathbb{B}| \\
+	|\mathbb{A}\cup\mathbb{B}\cup\mathbb{C}| &= |\mathbb{A}|+|\mathbb{B}|+|\mathbb{C}|-|\mathbb{A}\cap\mathbb{B}|-|\mathbb{A}\cap\mathbb{C}|-|\mathbb{B}\cap\mathbb{C}|+|\mathbb{A}\cap\mathbb{B}\cap\mathbb{C}|
+\end{align*}
+
+\section{Wahrscheinlichkeitstheorie}
+\begin{equation}
+	P=\frac{\text{Anzahl g"unstige F"alle}}{\text{Anzahl m"ogliche F"alle}}
+\end{equation}
+\begin{equation*}
+	P(\mathbb{A}) = p\qquad\text{mit}\quad p\in [0,1]
+\end{equation*}
+
+\section{Kombinatorik}
+\subsection{Permutation}
+Die Permutation ist die Anordnung von $n$ Elementen {\em ohne Wiederholung} und {\em mit Reihenfolge}.
+\begin{equation}
+	P_n=n!
+\end{equation}
+
+\subsection{Variationen}
+Variationen ist die Anordnung von $k$ Elementen aus insgesammt $n$ {\em mit Reihenfolge}.
+\begin{equation}
+	V_n^k=\frac{n!}{(n-k)!}
+\end{equation}
+\noindent ``Anzahl Variationen von $n$ Elementen zur $k$-ten Klasse''
+
+\subsection{Variationen mit Wiederholung}
+Es sind die Anordnung von $k$ aus $n$ Elementen {\em mit Wiederholung} und {\em mit Reihenfolge}.
+\begin{equation}
+	\phantom{V}^wV_n^k=n^k
+\end{equation}
+
+\subsection{Kombinationen}
+Kombinationen sind die Anordnung von $k$ aus $n$ Elementen {\em ohne Reihenfolge} und {\em ohne Wiederholung}.
+\begin{equation}
+	C_n^k=\frac{n!}{k!\cdot(n-k)!}=\binom{n}{k}
+\end{equation}
+
+\subsection{Kombinationen mit Wiederholungen}
+Es ist die Anordnung von $k$ aus $n$ Elementen {\em mit Wiederholung} und {\em ohne Reihenfolge}.
+\begin{equation}
+	\phantom{C}^wC_n^k=\binom{n+k-1}{k}
+\end{equation}
+
+\subsection{Klassifizierung}
+\begin{center}
+	\pstree[nodesep=4pt,levelsep=1cm]{\TR{Anordnung}}{
+		\psset{linestyle=none}
+		\pstree{\TR{Reihenfolge}}{
+			\pstree{\TR{Wiederholung}}{
+				\TR{Auswahl aus allen}
+			}
+		}
+		\psset{linestyle=solid}
+		\pstree{\TR{wesentlich}}{
+
+			\pstree[levelsep=0.5cm]{\TR{mit}}{
+				\psset{linestyle=none}
+				\TR{$\phantom{V}^wV_n^k$}
+			}
+
+			\pstree{\TR{ohne}}{
+
+				\pstree[levelsep=0.5cm]{\TR{ja}}{
+				\psset{linestyle=none}
+					\TR{$V_n^k$}
+				}
+
+				\pstree[levelsep=0.5cm]{\TR{nein}}{
+				\psset{linestyle=none}
+					\TR{$V_n^n=P_n$}
+				}
+			}
+		}
+		\pstree{\TR{unwesentlich}}{
+
+			\pstree[levelsep=0.5cm]{\TR{mit}}{
+				\psset{linestyle=none}
+				\TR{$\phantom{C}^wC_n^k$}
+			}
+
+			\pstree{\TR{ohne}}{
+
+				\pstree[levelsep=0.5cm]{\TR{ja}}{
+				\psset{linestyle=none}
+					\TR{$C_n^k$}
+				}
+
+				\pstree[levelsep=0.5cm]{\TR{nein}}{
+				\psset{linestyle=none}
+					\TR{$C_n^n=1$}
+				}
+			}
+		}
+		\psset{linestyle=none}
+		\TR{\phantom{Auswahl aus allen}}
+	}
+\end{center}
+
+\begin{align*}
+	P_n &= n! \\
+	\phantom{V}^wV_n^k &= n^k \\
+	V_n^k &= \frac{n!}{(n-k)!} \\
+	\phantom{C}^wC_n^k &= \binom{n+k-1}{k} \\
+	C_n^k &= \frac{n!}{k!\cdot(n-k)!}=\binom{n}{k}
+\end{align*}
+
+\section{Rekursionen}
+Eine Rekursion ist eine Beziehung einer Funktion an der Stelle $n$ zu Werten an der Stelle $n-1,n-2,\ldots,n-k$.
+
+\noindent Beispiel: $f_n=f_{n-1}+f_{n-2}$
+
+\section{Erzeugende Funktionen}
+Entspricht einer Aufl"osung einer Rekursion, mit welcher direkt das $n$-te Glied berechnet werden kann, anstatt von Anfang bis zum $n$-ten Glied durchzurechnen.
+
+\noindent \underline{Definition:} $a_0,a_1,\ldots$ sei eine Folge von reellen Zahlen, dann heisst die Funktion
+\begin{equation*}
+	f:x\mapsto a_0+a_1+a_2x^2+\cdots\quad=\sum\limits_{k=0}^\infty a_kx^k
+\end{equation*}
+\noindent ezeugende Funktion f"ur die gegebene Zahlenfolge.
+
+\section{Differenzengleichungen}
+Auch Rekursinosgleichungen genannt.
+
+\subsection{Definition}
+Differenzengleichung $k$-ter Ordnung: $F(y_t,y_{t-1},y_{t-2},\ldots,y_{t-k})$
+
+\subsection{Klassierung}
+\begin{center}
+	\pstree[levelsep=1cm,nodesep=3pt]{\TR{Differenzengleichung}}{
+		\TR{nicht linear}
+		\pstree{\TR{linear}}{
+			\pstree{\TR{1./2.~Ordnung}}{
+				\pstree{\TR{\small konst.~Koeff.}}{
+					\TR{\small homogen}
+					\TR{\small inhomogen}
+				}
+				\pstree{\TR{\small var.~Koeff.}}{
+					\TR{\small homogen}
+					\TR{\small inhomogen}
+				}
+			}
+			\pstree{\TR{h"ohere~Ordnung}}{
+				\pstree{\TR{\small konst.~Koeff.}}{
+					\TR{\small homogen}
+					\TR{\small inhomogen}
+				}
+				\pstree{\TR{\small var.~Koeff.}}{
+					\TR{\small homogen}
+					\TR{\small inhomogen}
+				}
+			}
+		}
+	}
+\end{center}
+
+\noindent Der Typ bestimmt die L"osungsmethode. L"osungsmethoden f"ur lineare Differezengleichung mit konstanten Koeffizienten:
+\begin{enumerate}
+	\item Z-Transformation
+	\item Konventionell \begin{enumerate}
+			\item homogen \begin{enumerate}
+				\item mittels Ansatz
+				\end{enumerate}
+			\item inhomogen \begin{enumerate}
+				\item mittels Ansatz vom Typ der St"orfunktion
+				\item erzeugende Funktion
+				\item Operator-Technik
+				\end{enumerate}
+		\end{enumerate}
+\end{enumerate}
+
+\subsection{Lineare DGL, konst. Koeff, Homogen}
+Standardgleichung:
+\begin{equation}
+	a_0\cdot y_{t+n}+a_1\cdot y_{t+n-1}+a_2\cdot y_{t+n-2}+\cdots+a_n\cdot y_t =0\quad\forall t
+\end{equation}
+
+\noindent Ansatz f"ur L"osung: $y_t=c\cdot\lambda^t$
+\begin{align*}
+	\Longrightarrow\qquad
+		y_{t+1} &= c\cdot\lambda^{t+1} \\
+		y_{t+2} &= c\cdot\lambda^{t+2} \\
+		y_{t+n} &= c\cdot\lambda^{t+n}
+\end{align*}
+\noindent eingesetzt in DGL:
+\begin{align*}
+	a_0\cdot c\cdot\lambda^{t+n}+a_1\cdot c\cdot\lambda^{t+n-1}+\cdots &= 0 \\
+	a_0\cdot\lambda^{t+n}+a_1\cdot\lambda^{t+n-1}+\cdots &= 0
+\end{align*}
+\noindent Dies ist ein Polynom $n$-ten Grades, d.h. $n$ L"osungen: $\lambda_1,\lambda_2,\ldots,\lambda_n$
+
+\subsection{Ansatz vom Typ der St"orfunktion}
+\begin{center}\begin{tabular}{l l}
+	St"orfunktion & Ansatz f"ur L"osung \\
+	\hline
+	$\beta^t$						& $A\cdot\beta^t$ \\
+	$\sin(\alpha t)$				& $A\cdot\cos(\alpha t)+B\cdot\sin(\alpha t)$ \\
+	$\cos(\alpha t)$				& $A\cdot\cos(\alpha t)+B\cdot\sin(\alpha t)$ \\
+	$P_m(t)$						& $A_0\cdot t^m+A_1\cdot t^{m-1}+\cdots+A_m$ \\
+	$\beta^t\cdot P_m(t)$			& $\beta^t(A_0\cdot t^m+A_1\cdot t^{m-1}+\cdots+A_m)$ \\
+	$\beta^t\cdot\sin(\alpha t)$	& $\beta^t\cdot(A\cdot\cos(\alpha t)+B\cdot\sin(\alpha t))$ \\
+\end{tabular}\end{center}
+
+\subsection{Unabh"angigkeit der L"osung}
+{\em Casorati-Determinante}
+\begin{equation}
+	\det\begin{pmatrix}
+		{(y_{k})}_1		& {(y_{k})}_2		& \cdots	& {(y_{k})}_n \\
+		{(y_{k+1})}_1	& {(y_{k+1})}_2		& \cdots	& {(y_{k+1})}_n \\
+		\vdots			& \vdots			&			& \vdots \\
+		{(y_{k+n-1})}_1	& {(y_{k+n-1})}_2	& \cdots	& {(y_{k+n-1})}_n \\
+	\end{pmatrix}\neq 0
+\end{equation}
+
+\subsection{Komplexe Nullstellen}
+\begin{equation}
+	e^{j\phi}=\cos(\phi)+j\sin(\phi)\qquad\phi\in\mathbb{R}
+\end{equation}
+\begin{equation}
+	\Longrightarrow\qquad c_s\cdot|\lambda_s|^k\cdot\cos(\phi\cdot k)+c_{s+1}\cdot|\lambda_s|^k\cdot\cos(\phi\cdot k)+
+\end{equation}
+
+\subsection{L"osen mittels erzeugende Funktion}
+\begin{equation}
+	\{a_k\}\mapsto\sum\limits_{k=0}^\infty a_k\cdot x^k = G(x)
+\end{equation}
+\noindent Methode:
+\begin{enumerate}
+	\item Multiplikation der DGL mit $x^k$
+	\item Summation der DGLs von $k=0\ldots\infty$
+	\item Vereinfachen unter Benutzung von $G(x)$, der erzeugenden Funktion
+	\item Isolierung der erzeugenden Funktion
+	\item Reihenentwicklung f"ur erzeugende Funktion
+\end{enumerate}
+
+\section{Z-Transformation}
+\begin{center}\begin{tabular}{c c c c c}
+	(1) & Differenzgleichung & $\ztransf$ & gew"ohnliche Gleichung & (2) \\
+	& & & $\downarrow$ & \\
+	(4) & L"osung der DGL & $\ztransf$ & $\underbrace{\text{L"osung der Gleichung}}_{\text{Bildbereich}}$ & (3) \\
+\end{tabular}\end{center}
+
+\subsection{Definition}
+\begin{equation}
+	\{y_k\}\ztransf Y(z)=\sum\limits_{k=0}^\infty y_k\cdot z^{-k}\qquad z\in\mathbb{C}
+\end{equation}
+\noindent Kurzschreibweise:
+\begin{eqnarray*}
+	\ztf\left(\{y_k\}\right) \quad & = & \quad Y(z) \\
+	\{y_k\}\quad & \ztransf & \quad Y(z) \\
+	\ztf(y_k) \quad & = & \quad Y(z)
+\end{eqnarray*}
+
+\subsection{Eigenschaften}
+
+\subsubsection{Linearit"at}
+\begin{equation}
+	\ztf(ay_k+bx_k)=a\cdot\ztf(y_k)+b\cdot\ztf(x_k)
+\end{equation}
+
+\subsubsection{Indexverschiebung}
+\begin{align}
+	\ztf(y_{k+s}) &= z^s\left({Y_{(z)}-\sum\limits_{k=0}^{s-1}\frac{y^k}{z^k}}\right) \\
+	\ztf(y_{k-s}) &= \frac{1}{z^s}\left({Y_{(z)}-\sum\limits_{k=1}^{s}y_{-k}\cdot z^k}\right)
+\end{align}
+
+\subsubsection{D"ampfungssatz}
+\begin{equation}
+	\ztf\left(y_k\cdot e^{-ak}\right) = Y(z\cdot e^a)
+\end{equation}
+
+\subsubsection{Differentiation im Bildbereich}
+\begin{equation}
+	\frac{\partial}{\partial z}Y(z)=-\frac{1}{z}\cdot\ztf(k\cdot y_k)
+\end{equation}
+
+\subsubsection{Differentation nach einem Parameter}
+\begin{equation}
+	\ztf\left(\frac{\partial}{\partial a}y_k(a)\right)=\frac{\partial}{\partial a}\ztf\left(y_k(a)\right)
+\end{equation}
+
+\subsubsection{Faltungssatz}
+\begin{equation}
+	\ztf(y_k)\cdot\ztf(x_k)=\ztf(y_k\ast x_k)
+\end{equation}
+\paragraph{Faltung}
+\begin{equation}
+	y_k\ast x_k =\sum\limits_{m=0}^k x_m\cdot y_{k-m}
+\end{equation}
+
+\section{Numerik}
+
+\subsection{Definition}
+Maschinenzahlen sind die im Rechner {\em exakt} darstellbaren Zahlen.
+
+\begin{verbatim}
+    DecimalToBaseB(x,a)    // 0 <= x(10) < 1
+      a[0] = 0
+      k = 0
+      while (x != 0)
+        k = k + 1
+        a[k] = floor(B*x)
+        x = B * x - a[k]
+      end while
+\end{verbatim}
+
+\subsection{Festpunktzahlen}
+\begin{equation}
+	z=\sigma\cdot\sum\limits_{i=m}^n a_i\cdot B^i \qquad m,n\in\mathbb{Z}\quad(\text{typ. } m<0<n)
+\end{equation}
+\begin{equation*}
+	\text{mit}\quad\sigma=\text{sign}=\pm 1\qquad\text{und}\quad a_i\in [0,B-1]
+\end{equation*}
+
+\subsubsection{Allgemeines}
+\begin{itemize}
+	\item gr"osste Maschinenzahl $B^{n+1}-B^m$
+	\item gleichm"assige Verteilung
+	\item jede im Maschinenbereich liegende Zahl l"asst sich durch eine Zahl $z^{\ast}$ approximieren mit $$|z-z^\ast|\leq\frac{1}{2}B^{-m}$$
+	\item $(a\oplus B)\oplus c = a\oplus (b\oplus c)$
+	\item $a\odot b \neq a\cdot b$
+\end{itemize}
+
+\paragraph{Vorteile}
+\begin{itemize}
+	\item effiziente Arithmetik
+\end{itemize}
+
+\paragraph{Nachteile}
+\begin{itemize}
+	\item kleiner Zahlenbereich
+\end{itemize}
+
+
+\subsection{Gleitpunktzahlen}
+\begin{equation}
+	z=\sigma\cdot m\cdot B^e\qquad e\in\mathbb{Z}\text{ und } e\in[e_{min},e_{max}]
+\end{equation}
+\begin{equation*}
+	\text{mit}\qquad m=\sum\limits_{k=1}^n a_{-k}\cdot B^{-k}\qquad\text{mit}\quad a_k\in[0,B-1]
+\end{equation*}
+
+\subsubsection{Definition}
+Eine Gleitpunktzahl ist normalisiert falls $$\frac{1}{B}\leq m < 1$$
+d.h. die f"hrende Ziffer der Mantisse $\neq0$
+
+\subsubsection{Allgemeines}
+\begin{itemize}
+	\item F"ur die Null existiert keine normalisierte Darstellung
+	\item L"ucke bei Null: $[0,B^{e_{min}-1}]$ enth"alt keine Maschinenzahl
+	\item Anzahl normalisierte Zahlen: $$2(B-1)\cdot B^{n-1}\cdot\Delta e = 2\cdot B^{n-1}(B-1)(e_{max}-e_{min}+1)$$
+	\item Anzahl denomalisierte Zahlen: $$2\cdot B^{n-1}$$
+\end{itemize}
+
+\subsubsection{Definition}
+\begin{equation}
+	\mathbb{M}=M(B,n;e_0,e_1)=\left\{z|\sigma\left(\sum\limits_{k=1}^na_{-k}\cdot B^{-k}\right)\cdot B^{-k},e\in[e_0,e_1]\right\}
+\end{equation}
+\noindent $a\in M(B,n,e_0,e_1)$ heisst Maschinenzahl, darstellbare Zahl. \\
+\noindent Charakteristika von $\mathbb{M}=M(B,n,e_0,e_1)$
+\begin{itemize}
+	\item Gr"osste darstellbare Zahl: $$(1-B^{-1}\cdot B^{e_1}$$
+	\item betragsm"assig kleinste $$\text{normalisierte Zahl: }\frac{1}{B}\cdot B^{e_0}=B^{e_0-1}$$ $$\text{darstellbare Zahl gr"osser Null: } B^{.n}\cdot B^{e_0}=B^{e_0-n}$$
+\end{itemize}
+
+\noindent Allgemeines:
+\begin{itemize}
+	\item ungleichm"assig Verteilt
+	\item Dichte nimmt bei wachsender Zahlengr"osse exponentiell ab
+	\item Approximationsfehler bei grossen Zahlen entsprechend gr"osser
+\end{itemize}
+
+\section{Newton-Verfahren}
+
+\subsection{Lineare Gleichungsysteme}
+\begin{equation}
+	x_{k+1})F(x_k)=x_k-\frac{f(x)}{f'(x)}
+\end{equation}
+
+\paragraph{Konvergenzgeschwindigkeit}
+\begin{equation}
+	\lim_{x\rightarrow a}F'(x)
+\end{equation}
+
+\paragraph{Konvergenzfaktor}
+\begin{equation}
+	F'(s)\qquad\text{mit }\quad s\text{ : Fixpunkt}
+\end{equation}
+
+\paragraph{Konvergenzordnung}
+\begin{center}\begin{tabular}{l l l l}
+	linear			& $F'(s)\neq 0$ 	& und	& $|F'(s)|<1$ \\
+	quadratisch		& $F'(s)=0$			& und	& $F''(s)\neq 0$ \\
+	kubisch			& $F''(s)=F's(s)=0$	& und	& $F'''\neq 0$
+\end{tabular}\end{center}
+
+\subsection{Nichtlineare Gleichungsysteme}
+\begin{gather*}
+	\underline{f}=\begin{pmatrix}f(x,y)\\g(x,y)\end{pmatrix} \\
+	J_f=\begin{pmatrix}f_x & f_y \\ g_x & g_y\end{pmatrix}\qquad\text{Jacobi-Matrix} \\
+	\underline{x}_{k+1}=\underline{x}_k-J_f^{(-1)}\cdot f\qquad\text{mit}\quad\underline{x}_0=\begin{pmatrix}x_0\\y_0\end{pmatrix} \\
+	\text{Vereinfachung: }\quad\underline{h}=-J_f^{(-1)}\cdot f\quad\Longrightarrow\underline{x}_{k+1}=\underline{x}_k+\underline{h}
+\end{gather*}
+
+\section{Apriori Fehlerabsch"atzung}
+\begin{align}
+	\|x_n-x_k\| &\leq L^k<frac{1}{1-L}\cdot\|x_1-x_0\| \\
+	k &\geq \frac{\ln\left(\epsilon\cdot(1-L)\cdot\|x_1-x_0\|^{-1}\right)}{\ln(L)}
+\end{align}
+
+\section{Newton-Cotes-Regeln}
+Beispiel: Simpson
+\begin{equation}
+	I=\frac{h}{3}(y_0+4y_1+y_2)=\int\limits_a^b f(x)\,dx
+\end{equation}
+\begin{center}
+	\begin{pspicture}(-0.5,-0.8)(5,3)
+		\psline{->}(0,0)(5,0)\rput[br](5,0.2){$x$}
+		\psline{->}(0,0)(0,3)\rput[tl](0.2,3){$y$}
+		\psline[linestyle=dashed,linecolor=lightgray]{-}(0.2,2.0)(0.2,0.0)
+		\psline[linestyle=dashed,linecolor=lightgray]{-}(2.5,1.0)(2.5,0.0)
+		\psline[linestyle=dashed,linecolor=lightgray]{-}(4.5,2.5)(4.5,0.0)
+		\psecurve[linecolor=red,showpoints=true]{-}(-0.3,1.5)(0.2,2.0)(2.5,1.0)(4.5,2.5)(5.0,3.0)
+		\rput[t](0.2,-0.1){$x_0$}
+		\rput[t](0.2,-0.5){$a$}
+		\rput[t](2.5,-0.1){$x_1$}
+		\rput[t](4.5,-0.1){$x_2$}
+		\rput[t](4.5,-0.5){$b$}
+		\rput[l](4.6,2.5){$f(x)$}
+	\end{pspicture}
+\end{center}
+\begin{equation*}
+	h=x_1-x_0
+\end{equation*}
+
+\section{Gauss-Quadratur}
+\begin{equation}
+	\int\limits_a^b f(x)\,dx\approx\sum\limits_{k=1}^n w_k\cdot f(x)
+\end{equation}
+\noindent Genauigkeitsgrad: 2n-1
+
+\begin{align*}
+	f\equiv 1 \qquad   & \int\limits_a^b\,dx = b-a = \sum\limits_{k=1}^n w_k \\
+	f\equiv x \qquad   & \int\limits_a^b x\,dx = \frac{b^2}{2}-\frac{a^2}{2} = \sum\limits_{k=1}^n w_k\cdot x_k \\
+	f\equiv x^2 \qquad & \int\limits_a^b x^2\,dx = \underbrace{\frac{b^3}{3}-\frac{a^3}{3}}_{\underline{b}} = \sum\limits_{k=1}^n w_k\cdot x_k^2 \\
+\end{align*}
+
+\noindent Vandermode-Matrix
+\begin{equation}
+	V\cdot\underline{w}=\underline{b}\qquad\Longrightarrow\quad\underline{w}=V^{-1}\cdot\underline{b}\qquad\text{falls}\quad\det(V)\neq0
+\end{equation}
+
+\section{Orthogonal-Polynome}
+Skalarprodukt: $$(f,g)=\int\limits_a^b w_{(x)}\cdot f_{(x)}\cdot g_{(x)}\,dx$$ \\
+Orthogonalpolynome $p_0,p_1,p_2,\ldots,\text{usw.}$
+\begin{align*}
+	p_0 &= 1 \\
+	p_1 &= x+a \\
+	p_2 &= x^2 + bx + c \\
+	\vdots \\
+	\text{usw.}
+\end{align*}
+\noindent Bedingung:
+\begin{align*}
+	(p_0,p_1) &= 0 \\
+	(p_0,p_2) &= 0 \\
+	(p_1,p_2) &= 0 \\
+	\vdots \\
+	\text{usw.}
+\end{align*}
+\noindent Alle Orthogonalpolynome m"ussen gegenseitig Skalarmultipliziert $0$ ergeben $\Longrightarrow$ Gleichungssystem in $a$, $b$, $c$, usw.
+
+%
+% EOF
+%

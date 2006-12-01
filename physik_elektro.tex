@@ -1,0 +1,284 @@
+%
+% $Id: physik_elektro.tex,v 1.2 2003/10/26 12:59:53 ninja Exp $
+%
+
+\section{Felder}
+
+\subsection{Gravitationsfeld}
+\begin{gather}
+	\overrightarrow{g}_{(\overrightarrow{r})}=-\frac{G\cdot M\cdot\overrightarrow{r}}{r^3}\qquad\text{Zentralsymmetrischer Fall} \\
+	G=6.67\cdot 10^{-11}\unit{\frac{N\cdot m}{kg^2}} \nonumber \\
+	\overrightarrow{F}=\frac{G\cdot M\cdot m\cdot\left({\overrightarrow{r}_M-\overrightarrow{r}}\right)}{\left\|{\overrightarrow{r}_M-\overrightarrow{r}}\right\|^2}\qquad\text{Allgemeiner Fall}
+\end{gather}
+\begin{center}
+	\begin{pspicture}(-2,-2)(2,2)
+		\psline[linecolor=lightgray](-2,0)(2,0)
+		\psline[linecolor=lightgray](0,-2)(0,2)
+		\psline[linecolor=lightgray](-2,-2)(2,2)
+		\psline[linecolor=lightgray](-2,2)(2,-2)
+		\pscircle(0,0){0.1}\rput[tl](0.2,-0.2){$M$}
+		\pcline{->}(0,0)(1.0,2.0)\Bput{$r_2$}
+		\pcline{->}(0,0)(-2.0,1.0)\Bput{$r_1$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	\|\overrightarrow{g}_{(\overrightarrow{r}_2)}\|=\|\overrightarrow{g}_{(\overrightarrow{r}_1)}\|\cdot\frac{r_1^2}{r_2^2}
+\end{equation}
+
+\subsubsection{Verallgemeinerung}
+\begin{align}
+	\overrightarrow{g}_{(\overrightarrow{r})} &= G\cdot\sum_{i=1}^N M_i\cdot\frac{\overrightarrow{r}_i-\overrightarrow{r}}{\left\|{\overrightarrow{r}_i-\overrightarrow{r}}\right\|^3}\qquad\text{Zentralproblem} \\
+	\overrightarrow{g}_{(\overrightarrow{r})} &= G\cdot\int\frac{\rho_{(\overrightarrow{x})}\cdot\left(\overrightarrow{x}-\overrightarrow{r}\right)}{\left\|{\overrightarrow{x}-\overrightarrow{r}}\right\|^3}\,dV
+\end{align}
+
+\subsection{Feldfluss}
+\begin{equation}
+	\text{Feldfluss}\quad \overrightarrow{F}_{(\overrightarrow{r})}=\rho_{(\overrightarrow{r})}\cdot\overrightarrow{v}_{(\overrightarrow{r})}
+\end{equation}
+
+\subsubsection{Definition durch orientierte Fl"ache}
+\begin{align}
+	\partial\phi_{d\overrightarrow{a}} &= \overrightarrow{F}_{(\overrightarrow{r})}\cdot d\overrightarrow{a} \\
+	\partial\phi_{d\overrightarrow{a}} &= \overrightarrow{F}_{(\overrightarrow{r})}\cdot\underbrace{\hat{n}}_{\text{normierter Normalenvektor}}\cdot da \\
+	\phi &=\hat{n}\cdot\overrightarrow{v}\cdot A
+\end{align}
+
+\subsubsection{Verallgemeinerung}
+\begin{equation}
+	\phi_A=\underbrace{\int\limits_{\partial A}}_{\text{Rand der Fl"ache}} \overrightarrow{F}_{(\overrightarrow{r})}\,d\overrightarrow{a}
+\end{equation}
+
+\subsection{Definitionen}
+
+\subsubsection{Elektrische Ladung}
+\begin{equation}
+	\epsilon_0=8.85\cdot 10^{-12}\unit{\frac{C^2}{N\cdot m^2}}
+\end{equation}
+\noindent Ladung eines Elektrons: $1.6\cdot 10^{-19}\unit{C}$
+\begin{center}
+	\begin{pspicture}(-1,-0.5)(3,3)
+		\SpecialCoor
+		\psline(0,0)(0.25;90)\psline(0,0)(0.25;210)\psline(0,0)(0.25;330)
+		\pscircle(-0.5,2){0.1}\rput[r](-0.6,2.0){$Q_i$}
+		\pscircle(2.5,2.5){0.1}\rput[l](2.6,2.5){$Q_j$}
+		\pcline[linecolor=red,nodesep=0.1]{->}(-0.5,2)(2.5,2.5)\Aput{$\overrightarrow{r}$}
+		\pcline[nodesepB=0.1]{->}(0,0)(-0.5,2)\Aput{$\overrightarrow{r}_i$}
+		\pcline[nodesepB=0.1]{->}(0,0)(2.5,2.5)\Bput{$\overrightarrow{r}_j$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	\overrightarrow{F}_{ij}=\frac{1}{4\pi\cdot\epsilon_0}\cdot\frac{Q_i\cdot Q_j\cdot\left({\overrightarrow{r}_j-\overrightarrow{r}_i}\right)}{\left\|{\overrightarrow{r}_j-\overrightarrow{r}_i}\right\|^3}
+\end{equation}
+
+\subsubsection{Elektrisches Feld}
+\begin{align}
+	\overrightarrow{F}_{ij} &= Q_j\cdot\overrightarrow{E}_i \\
+	\overrightarrow{E}_{i(\overrightarrow{r})} &= \frac{Q_i\cdot\overrightarrow{r}}{4\pi\cdot\epsilon_0\cdot r^3}
+\end{align}
+\noindent {\em Feldrichtung} : Richtung von $\overrightarrow{E}$ ist die Richtung der Kraft die eine positive Probeladung erf"ahrt.
+
+\subsection{Satz von Gauss}
+\begin{equation}
+	\phi_{Kugel}=\int\limits_{\partial Kugel}\overrightarrow{E}\,d\overrightarrow{a}=\frac{Q}{\epsilon_0}\qquad\text{(Radiusunabh"angig!)}
+\end{equation}
+\begin{equation}
+	\overrightarrow{E}_{(\overrightarrow{r})}=\int\limits_V\frac{\rho_{e(\overrightarrow{x})}\cdot(\overrightarrow{r}-\overrightarrow{x})}{4\pi\cdot\epsilon_0\cdot\left\|{\overrightarrow{r}-\overrightarrow{x}}\right\|^3}\,dV
+\end{equation}
+
+\paragraph{Gauss in Integralform}
+\begin{align}
+	\phi_{\partial V} &=\int\limits_{\partial V}\overrightarrow{E}\,d\overrightarrow{a}=\frac{Q_{innen}}{\epsilon_0} \\
+	Q_{innen} &= \int\limits_\mathbb{V}\rho_{e(\overrightarrow{x})}\,dV
+\end{align}
+
+\paragraph{Gauss in Differentialform}
+\begin{equation}
+	\left(\overrightarrow{E}\right)'=\frac{\partial E}{\partial x}+\frac{\partial E}{\partial y}+\frac{\partial E}{\partial z}\qquad\epsilon_0\cdot\left(\overrightarrow{E}\right)'=\rho_e
+\end{equation}
+
+\subsection{Elektrische Ladung: Beispiele}
+
+\subsubsection{Plattenkondensator}
+\begin{center}
+	\begin{pspicture}(0,0)(2,2)
+		\psline(0.25,0)(0.25,1)
+		\pcline(0.75,0)(0.75,1)\Bput{$A=l^2$}
+		\pcline{|-|}(0.25,1.2)(0.75,1.2)\Aput{$d$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	E=\frac{Q}{A\cdot\epsilon_0}
+\end{equation}
+
+\subsubsection{Zylinderkondensator}
+\begin{center}
+	\begin{pspicture}(-1,-1.5)(4,1)
+		\psframe(0,-0.5)(3,0.5)
+		\psframe(0,-1.0)(3,1.0)
+		\pcline{|-|}(0,-1.2)(3,-1.2)\Bput{$l$}
+		\pcline{|-|}(3.2,0)(3.2,0.5)\Bput{$r_1$}
+		\pcline{|-|}(-0.2,0)(-0.2,1.0)\Aput{$r_2$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	\overrightarrow{E}=\frac{-\lambda_e\cdot\hat{r}}{2\pi\cdot\epsilon_0\cdot r}\qquad\text{mit}\quad \lambda_e=\frac{|Q|}{l}\qquad E\sim\frac{1}{r^{n-1}}
+\end{equation}
+
+\section{Elektrische Spannung}
+\begin{align}
+	U_{AB} &=\frac{W_{AB}}{Q_{Proto}^{+}}=\int\limits_A^B\overrightarrow{E}\,d\overrightarrow{s} \\
+	U_{(r)} &= \underbrace{\int\limits_r^\infty\overrightarrow{E}\,d\overrightarrow{s}}_{\text{Allgemein}}=\underbrace{\frac{Q_{erz}^{+}}{4\pi\cdot\epsilon_0}\cdot\frac{1}{r}}_{\text{Kugelsymmetrie}} \\
+	\text{grad}\left(U_{(r)}\right) &= -\overrightarrow{E}
+\end{align}
+\noindent Bemerkungen
+\begin{itemize}
+	\item $\int\overrightarrow{E}\,d\overrightarrow{s}$ ist Wegunabh"angig
+	\item $U_{AB}=-U_{BA}$
+	\item $U_{AC}=U_{AB}+U_{BC}$
+\end{itemize}
+
+\section{Elektrostatik}
+
+\subsection{Berechung $E$ aus $U$}
+
+\subsubsection{Zentralsymmetrisches Feld}
+\begin{equation}
+	\overrightarrow{E}=\frac{Q}{4\pi\cdot\epsilon_0}\cdot\frac{\overrightarrow{r}}{r^3}
+\end{equation}
+
+\subsubsection{Dipolfeld}
+\begin{equation}
+	\overrightarrow{p}_d=Q^{+}\cdot\overrightarrow{d}\qquad\left(\overrightarrow{d}\text{ zeigt von }Q^{-}\text{ nach }Q^{+}\right)
+\end{equation}
+
+\subsection{Dielektrika}
+Der Abstand zwischen dem Atomkern und dem Elektron ist die {\em Separationsdistanz} $\delta < \infty$
+\begin{equation}
+	N\cdot Q\cdot\overrightarrow{\delta}=\overrightarrow{P}
+\end{equation}
+\begin{align*}
+	N &\text{ : Anzahl Atome pro Volumen} \\
+	Q &\text{ : Ladung} \\
+	\delta &\text{ : Separationsdistanz} \\
+	P &\text{ : Polarisationsdichte (-vektor)}
+\end{align*}
+
+\subsubsection{Plattenkondensator}
+\begin{center}
+	\begin{pspicture}(-0.5,0)(3.5,3)
+		\psframe[fillstyle=hlines*,hatchcolor=lightgray,linestyle=none](0,0.25)(3,0.75)
+		\psframe(0,0)(3,0.25)\rput[r](-0.2,0.125){$+$}
+		\psframe(0,0.75)(3,1)\rput[r](-0.2,0.875){$-$}
+		\psframe(0,2)(3,2.25)\rput[r](-0.2,2.125){$+$}
+		\psframe(0,2.75)(3,3)\rput[r](-0.2,2.875){$-$}
+		\pcline{|-|}(3.2,2.75)(3.2,2.25)\Aput{$d$}
+		\pcline{->}(3.2,0.25)(3.2,0.75)\Bput{$E_{in}$}
+	\end{pspicture}
+\end{center}
+\begin{gather}
+	C=\frac{\epsilon_0\cdot A}{d} \\
+	N\cdot Q\cdot\delta = \frac{Q_{oberfl.}}{A}=P=\sigma_{pol.} \\
+	P=\chi\cdot\epsilon_0\cdot E_{in}\qquad E\text{ : elektrsiche Suszeptibilit"at} \\
+	E_{in}=\frac{\sigma_{free}}{\epsilon_0\cdot(1+\chi)} \\
+	\Longrightarrow\qquad c=\frac{A\cdot\epsilon_0}{d}(1+\chi)
+\end{gather}
+\begin{equation}
+	\epsilon_r=1+\chi=\epsilon\qquad E_{in}=\frac{E_vac.}{\epsilon}
+\end{equation}
+
+\subsection{Bewegung von Ladung im $E$-Feld}
+\begin{equation}
+	1eV=1.6\cdot 10^{-19}\unit{J}
+\end{equation}
+\begin{equation}
+	\Delta E_{kin}=Q^{+}\cdot\Delta U=\frac{mv^2}{2}-\frac{mv_0^2}{2}
+\end{equation}
+\begin{equation}
+	\text{Masse Elektron: } 9.1\cdot 10^{-31}\unit{kg}
+\end{equation}
+
+\subsection{Mobilit"at}
+\begin{gather}
+	\overrightarrow{v}_{end}=\mu\cdot\overrightarrow{E}\unit{\frac{m^2}{s\cdot V}} \\
+	\mu_{O_2^+}\approx 1\unit{\frac{cm^2}{s\cdot V}}
+\end{gather}
+
+\subsection{Energieim Kondensator}
+\begin{equation}
+	W=\frac{Q^2}{2\cdot C}=\frac{C}{2}\cdot U^2
+\end{equation}
+
+\subsection{Energiedichte $\nu$}
+\begin{align}
+	\nu&=\frac{\epsilon_0}{2}\cdot E_v^2\qquad\text{: Energiedichte im Vakuum} \\
+	\nu&=\frac{\epsilon_0\cdot\epsilon_r}{2}\cdot E_{diel}^2\qquad\text{: Energiedichte im Dielektrikum} \\
+	\nu&=\frac{1}{2}\cdot\frac{\epsilon_0}{\epsilon_r}\cdot E_v^2
+\end{align}
+
+\subsection{Anziehung zweier Platten}
+\begin{equation}
+	F=\nu\cdot A\qquad A\text{ : Fl"ache der Platten}
+\end{equation}
+
+\section{Stromst"arke}
+\begin{gather}
+	I=\frac{\partial Q}{\partial t}=\dot{Q}\unit{A=\frac{C}{s}} \\
+	\overrightarrow{j}=\rho\cdot\overrightarrow{v}\qquad\text{: Landugnsfluss, Stromdichte}
+\end{gather}
+
+\section{Ohm'sches Gesetz}
+\begin{gather}
+	U=R\cdot I\unit{V=\Omega\cdot A} \\
+	\overrightarrow{j}=\sigma\cdot\overrightarrow{E} \\
+	U=i\cdot\frac{l}{A\cdot\sigma}\qquad R=\frac{l}{A\cdot\sigma}=\frac{\rho\cdot l}{A} \\
+	\sigma^{-1}=\rho \\
+	\rho=\frac{A\cdot R}{l} \\
+	\sigma=\mu\cdot\rho_e
+\end{gather}
+\begin{align*}
+	l&\text{ : Leiterl"ange} \\
+	A&\text{ : Leiterquerschnitt} \\
+	\sigma&\text{ : spezifische Leitf"ahigkeit} \\
+	\rho&\text{ : spezifischer Widerstand}
+\end{align*}
+
+\section{Zeitkonstante $\tau$}
+\begin{equation}
+	\tau=R\cdot C\unit{s}
+\end{equation}
+
+\subsection{Laden und Entladen eines Kondensators}
+\begin{center}
+	\begin{pspicture}(-1,0)(4,3)
+		\psframe(0,0)(3,2)
+		\psframe[fillstyle=solid,fillcolor=white](1,1.75)(2,2.25)
+		\rput[b](1.5,2.3){$R$}
+		\psframe[fillstyle=solid,fillcolor=white,linestyle=none](2.5,0.9)(3.5,1.1)
+		\psline(2.5,0.9)(3.5,0.9)
+		\psline(2.5,1.1)(3.5,1.1)
+		\rput[r](2.3,1){$C$}
+		\pcline[linecolor=blue]{->}(3.6,1.5)(3.6,0.5)\Aput{$U_C$}
+		\pscircle[fillstyle=solid,fillcolor=white](0,1){0.5}\rput[t](0,1.4){$+$}
+		\pcline[linecolor=blue]{->}(-0.6,1.5)(-0.6,0.5)\Bput{$U_0$}
+	\end{pspicture}
+\end{center}
+\begin{align}
+	U_C&=U_0\left(1-e^{-\frac{t}{RC}}\right) \\
+	Q_{(t)}&=Q_{max}\cdot e^{-\frac{t}{RC}}
+\end{align}
+
+\section{Kirchhoff}
+
+\subsection{Knotenpunktsatz}
+\begin{equation}
+	\sum i = 0
+\end{equation}
+
+\subsection{Maschenpotentialsatz}
+\begin{equation}
+	\sum u = 0
+\end{equation}
+
+%
+% EOF
+%

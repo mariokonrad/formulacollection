@@ -1,0 +1,115 @@
+%
+% $Id: physik_relativitaet.tex,v 1.1 2003/10/18 21:38:33 ninja Exp $
+%
+
+\section{Lichtgeschwindigkeit $c$}
+Die absolute Lichtgeschwindigkeit $c\approx 3\cdot10^8 \unit{\frac{m}{s}}$
+
+\section{Galilei-Transformation (GT)}
+\begin{gather*}
+	x'=x-vt\qquad y'=y\qquad z'=z\qquad t'=t \\
+	x = x'+vt\qquad y=y'\qquad z=z'\qquad t=t'
+\end{gather*}
+
+\section{Lorentz-Transformation}
+Einstein's (1905) spezielle Relativit\"atstheorie basiert auf drei Postulaten:
+\begin{enumerate}
+	\item Konstanz und Endlichkeit der Lichtgeschwindigkeit $c$
+	\item Der Raum ist homogen und isotrop.
+	\item Alle  Inertialsysteme sind Gleichwertig.
+\end{enumerate}
+
+\subsection{Hintransformation}
+\begin{gather}
+	x'=\frac{x-vt}{\sqrt{1-\frac{v^2}{c^2}}}\qquad y'=y\qquad z'=z\qquad t'=\frac{t-\frac{v}{c^2}x}{\sqrt{1-\frac{v^2}{c^2}}}
+\end{gather}
+
+\subsection{R\"ucktransformation}
+\begin{gather*}
+	x'\leftrightarrow x\qquad y'\leftrightarrow y\qquad z'\leftrightarrow z\qquad t'\leftrightarrow t
+\end{gather*}
+\begin{gather}
+	x=\frac{x'+vt'}{\sqrt{1-\frac{v^2}{c^2}}}\qquad y=y'\qquad z=z'\qquad t=\frac{t'+\frac{v}{c^2}x'}{\sqrt{1-\frac{v^2}{c^2}}}
+\end{gather}
+
+\subsection{Notation}
+\begin{gather}
+	\beta\equiv\frac{v}{c} \qquad \gamma=\frac{1}{\sqrt{1-\frac{v^2}{c^2}}} \qquad \beta=\frac{\partial x^1}{\partial x^0} \quad\text{ f\"ur }\beta\rightarrow 1 \\
+	\underline{x}=\begin{pmatrix} x^0 \\ x^1 \\ x^2 \\ x^3 \end{pmatrix} \hat{=}\begin{pmatrix} c\cdot t \\ x \\ y \\ z \end{pmatrix}
+\end{gather}
+
+\subsection{Transformationen, die 2.}
+\noindent Hintransformation:
+\begin{align*}
+	{x^0}' &= \gamma(x^0-\beta x^1) \\
+	{x^1}' &= \gamma(x^1-\beta x^0) \\
+	{x^2}' &= x^2 \\
+	{x^3}' &= x^3
+\end{align*}
+\noindent R\"ucktransformation:
+\begin{align*}
+	x^0 &= \gamma({x^0}'-\beta {x^1}') \\
+	x^1 &= \gamma({x^1}'+\beta {x^0}') \\
+	x^2 &= {x^2}' \\
+	x^3 &= {x^3}'
+\end{align*}
+\noindent mit
+\begin{equation*}
+	\underline{x}\quad\text{: Ereignis, Ereignispunkt}
+\end{equation*}
+
+\section{Geschwindigkeitsaddition}
+\subsection{Longitudinal}
+\begin{gather}
+	v_1' = \frac{v_1-v}{1-\frac{v_1'\cdot v}{c^2}}
+	\qquad
+	v_1 = \frac{v_1'+v}{1+\frac{v_1'\cdot v}{c^2}}
+\end{gather}
+
+\subsection{Allgemein}
+(auch traversal)
+\begin{gather}
+	v_1=\frac{v_1'+v}{1+\frac{v\cdot v_1'}{c^2}}
+	\qquad
+	v_2 = v_2'\cdot\frac{\sqrt{1-\frac{v^2}{c^2}}}{1+\frac{v\cdot v_1'}{c^2}}
+\end{gather}
+\noindent Transversalfal: $v_1'=0$
+\begin{equation*}
+	\Longrightarrow\quad v_1=v\qquad v_2=v_2'\cdot\sqrt{1-\frac{v^2}{c^2}}
+\end{equation*}
+
+\section{Dopplereffekt}
+\subsection{Longitudinal}
+\noindent Sich n\"ahrend:
+\begin{gather}
+	\nu=\nu'\sqrt{\frac{1-\beta}{1+\beta}}\qquad \Delta t=\Delta t'\sqrt{\frac{1+\beta}{1-\beta}}
+\end{gather}
+\noindent Sich entfernend:
+\begin{gather}
+	\nu=\nu'\sqrt{\frac{1+\beta}{1-\beta}}\qquad \Delta t=\Delta t'\sqrt{\frac{1-\beta}{1+\beta}}
+\end{gather}
+
+\subsection{Transversal}
+\begin{equation}
+	\nu=\nu'\sqrt{1-\beta^2}\qquad\text{(f\"ur hin {\em und} zur\"uck)}\qquad\Delta t=\gamma\cdot\Delta t'
+\end{equation}
+
+\section{L\"angenkontraktion}
+\begin{equation}
+	l=l'\sqrt{1-\beta^2}
+\end{equation}
+\noindent Die vorbeifliegende Rakete scheint verk\"urtzt: $l<l'=l_{Ruhe}=$ Eigenl\"ange
+
+\section{Zeitdilatation}
+\begin{equation}
+	T=t_2-t_1=\delta_t\cdot t=\gamma(t_2'-t_1')=\gamma\cdot T'\qquad\text{mit }T>T'=\text{ Eigenzeit}
+\end{equation}
+
+\section{$\mu$-Meson}
+\noindent Kosmische Strahlung in der H\"ohe $10..20km$ generieren $\mu$-Mesonen, welche auf der Oberfl\"ache beobachtet wurden.
+
+\noindent Eigenlebensdauer: $2.2\cdot 10^{-6}\unit{s}$
+
+%
+% EOF
+%

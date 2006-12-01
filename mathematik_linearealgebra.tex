@@ -1,0 +1,1521 @@
+
+%
+% $Id: mathematik_linearealgebra.tex,v 1.3 2003/10/26 12:59:53 ninja Exp $
+%
+
+\section{Vektoren}
+
+\subsection{Vektor $\vec{v}$}
+\begin{equation}
+\vec{v} = \left( v_1, v_2, \ldots, v_n \right)
+\end{equation}
+
+\paragraph{Algebraische Eigenschaften}
+\begin{gather}
+\text{Kommutativit\"at:}: \quad \vec{a} + \vec{b} = \vec{b} + \vec{a} \\
+\text{Assoziavitiv\"at:} \quad
+\left(\vec{a} + \vec{b}\right) + \vec{c} = \vec{a} + \left(\vec{b} + \vec{c}\right) \\
+\text{Existenz eines neutralen Elements:} \quad
+\vec{a} + \vec{0} = \vec{a} \qquad \forall \vec{a} \\
+\vec{a} + \left(-\vec{a}\right) = \vec{0} \\
+\end{gather}
+
+\paragraph{Multiplikation mit einem Skalar}
+\begin{align}
+  \left(\lambda+\mu\right)\cdot\vec{a} & = \lambda\cdot\vec{a} + \mu\cdot\vec{a} \\
+  \lambda\cdot\left(\vec{a}+\vec{b}\right) & = \lambda\cdot\vec{a}+\lambda\cdot\vec{b} \\
+  \left(\lambda\cdot\mu\right)\cdot\vec{a} & = \lambda\cdot\left(\mu\cdot\vec{a}\right)
+\end{align}
+
+\paragraph{Einheitsvektor}
+\begin{equation}
+  \vec{e} = \frac{\vec{a}}{\|\vec{a}\|} \qquad \text{Vektor mit L\"ange 1}
+\end{equation}
+Zerlegung eines Vektors:
+\begin{align}
+  \vec{c} & = \alpha\vec{a}+\beta\vec{b} \\
+  \begin{pmatrix}c_1 \\ c_2\end{pmatrix} & = \alpha\begin{pmatrix}a_1 \\ a_2\end{pmatrix}+\beta\begin{pmatrix}b_1 \\ b_2\end{pmatrix}
+\end{align}
+wobei:
+\begin{equation}
+  \alpha=\frac{\begin{vmatrix}c_1 & b_1 \\ c_2 & b_2 \end{vmatrix}}{\begin{vmatrix}a_1 & b_1 \\ a_2 & b_2\end{vmatrix}}
+  \qquad \beta=\frac{\begin{vmatrix}a_1 & c_1 \\ a_2 & c_2\end{vmatrix}}{\begin{vmatrix}a_1 & b_1 \\ a_2 & b_2\end{vmatrix}}
+\end{equation}
+
+
+\subsection{Gerade}
+\begin{align}
+\vec{p} & = \begin{pmatrix}x & y & z\end{pmatrix} \\
+\vec{p_0} & = \begin{pmatrix}x_0 & y_0 & z_0\end{pmatrix} \\
+\vec{r} & = \begin{pmatrix}r_1 & r_2 & r_3\end{pmatrix}
+\end{align}
+\begin{align}
+\Rightarrow \quad \vec{p} & = \vec{p_0}+\lambda\vec{r} \\
+\begin{pmatrix}x\\y\\z\end{pmatrix} & = \begin{pmatrix}x_0\\y_0\\z_0\end{pmatrix}+\lambda\begin{pmatrix}r_1\\r_2\\r_3\end{pmatrix}
+\end{align}
+
+
+\subsection{Ebene}
+\begin{equation}
+\vec{p} = \vec{p_0}+\lambda\vec{a}+\mu\vec{b}
+\end{equation}
+Wobei $\vec{p}$ der Ortsvektor des laufenden Punktes ist.
+\begin{equation}
+  \begin{pmatrix}x\\y\\z\end{pmatrix} =
+  \begin{pmatrix}x_0\\y_0\\z_0\end{pmatrix}+\lambda
+  \begin{pmatrix}a_1\\a_2\\a_2\end{pmatrix}+\mu
+  \begin{pmatrix}b_1\\b_2\\b_3\end{pmatrix}
+\end{equation}
+
+
+\subsection{Koordinatengleichung der Ebene}
+\begin{gather}
+Ax+By+Cz=D \\
+\vec{n}=\begin{pmatrix}A&B&C\end{pmatrix} \qquad \text{Normalenvektor auf die Ebene} \\
+D=\vec{n}\circ\vec{p} \qquad \vec{p}\text{: Punkt der Ebene}
+\end{gather}
+
+
+\subsection{Skalarprodukt}
+\begin{align}
+\vec{a}\circ\vec{b} & = \|\vec{a}\|\cdot\|\vec{b}\|\cdot\cos\omega \\
+\underline{a}'\cdot\underline{b} & = \sum_{i=1}a_i\cdot b_i \\
+\vec{a}\circ\vec{a} & = {\|\vec{a}\|}^2
+\end{align}
+\begin{gather}
+\text{wenn} \omega = k\frac{\pi}{2} \quad k\in\mathbb{Z} \qquad
+\Rightarrow \quad \vec{a}\circ\vec{b}=0 \\
+0 < \omega \ \frac{\pi}{2} \Rightarrow \vec{a}\circ\vec{b} > 0 \\
+\frac{\pi}{2} < \omega < \pi \Rightarrow \vec{a}\circ\vec{b} < 0 \\
+\text{Kommutativit\"at:} \quad \vec{a}\circ\vec{b} = \vec{b}\circ\vec{a} \\
+\text{Distributivit\"at:} \quad \vec{a}\circ\left(\vec{b}+\vec{c}\right)
+  = \vec{a}\circ\vec{b}+\vec{a}\circ\vec{c}\\
+\text{\textbf{KEINE} Assoziativit\"at} \quad \vec{a}\cdot\left(\vec{b}\circ\vec{c}\right) \neq \left(\vec{a}\circ\vec{b}\right)\cdot\vec{c}
+\end{gather}
+
+
+\subsection{Vektorprodukt}
+\begin{equation}
+\vec{v} = \vec{a}\times\vec{b} \qquad\vec{v}\text{ steht senkrecht auf }\vec{a}\text{ und }\vec{b}
+\end{equation}
+\begin{gather}
+  \|\vec{v}\| = \|\vec{a}\|\cdot\|\vec{b}\|\cdot\sin{\alpha} \\
+  (\vec{a}\times\vec{b})\circ\vec{a} = 0 \\
+  (\vec{a}\times\vec{b})\circ\vec{b} = 0 \\
+  \text{\textbf{KEINE} Kommutativit\"at} \quad \vec{a}\times\vec{b} = -(\vec{b}\times\vec{a}) \\
+  \text{\textbf{KEINE} Assoziativit\"at} \quad (\vec{a}\times\vec{b})\times\vec{c} \neq \vec{a}\times(\vec{b}\times\vec{c}) \\
+  \text{Distributivit\"at} \quad (\vec{a}+\vec{b})\times\vec{c} = \vec{a}\times\vec{c} + \vec{b}\times\vec{c}
+\end{gather}
+
+
+\subsection{Spatprodukt}
+\begin{gather}
+  (\vec{a}\times\vec{b})\circ\vec{c} = [\vec{a}, \vec{b}, \vec{c}] \\
+  \text{Distributivit\"at} \quad [\vec{a_1}+\vec{a_2}, \vec{b}, \vec{c}] = [\vec{a_1}, \vec{b}, \vec{c}] + [\vec{a_2}, \vec{b}, \vec{c}] \\
+  [\alpha\vec{a}, \beta\vec{b}, \gamma\vec{c}] = \alpha\beta\gamma[\vec{a}, \vec{b}, \vec{c}]
+\end{gather}
+
+
+\subsection{Cachy-Schwarz-Ungleichung}
+\begin{equation}
+\left|\vec{a}\circ\vec{b}\right| \le \|\vec{a}\|\cdot\|\vec{b}\|
+\end{equation}
+
+
+\subsection{Gleichung der Ebene: Hesse'sche Normalform}
+\begin{equation}
+\frac{ax+by+cz-d}{\sqrt{a^2+b^2+c^2}} = 0
+\end{equation}
+Der Abstand eines Punktes P von einer Ebene E wird erhalten, indem
+die Koordinaten des laufenden Punktes der Ebene in der Hesse'schen
+Normalform durch die Koordinaten von P ersetzt werden:
+\begin{equation}
+\frac{\underline{n'}\left({\underline{p}-\underline{p_0}}\right)}{\|\underline{n}\|} \quad = \quad\text{Abstand mit Vorzeichen}
+\end{equation}
+
+
+\subsection{Projektion eines Vektors auf einen andern}
+\begin{equation}
+\vec{a_b} = \frac{\left({\vec{a}\circ\vec{b}}\right)}{{\|\vec{b}\|}^2}\cdot\vec{b}
+\end{equation}
+
+
+\subsection{Linearkombination}
+\begin{align}
+  \vec{v} &= \alpha\vec{a} + \beta\vec{b} + \gamma\vec{c} \\
+  \alpha &= \frac{[\vec{v}, \vec{b}, \vec{c}]}{[\vec{a}, \vec{b}, \vec{c}]} \\
+  \alpha &= \frac{[\vec{a}, \vec{v}, \vec{c}]}{[\vec{a}, \vec{b}, \vec{c}]} \\
+  \alpha &= \frac{[\vec{a}, \vec{b}, \vec{v}]}{[\vec{a}, \vec{b}, \vec{c}]} \\
+\end{align}
+
+
+\subsection{Lineare Abh\"angigkeit}
+\textbf{Lineare Abh\"anigkeit:} Vektor kann als Linearkombination anderer Vektoren dargestellt werden. \\
+\textbf{Lineare Unabh\"angigkeit: } Vektoren $\{\vec{a_1}, \vec{a_2}, \ldots, \vec{a_n}\}$ sind
+linear unabh\"angig, wenn der Nullvektor \textbf{nur} die triviale Darstellung zul\"asst, d.h. wenn aus
+\begin{gather*}
+\vec{0} = \alpha_1\vec{a_1}+\alpha_2\vec{a_2}+ \cdots +\alpha_n\vec{a_n} \\
+\alpha_1 = \alpha_2 = \alpha_3 = \cdots = \alpha_n = 0
+\end{gather*}
+folgt.
+
+\section{Matrizen}
+
+\subsection{Basis eines Vektorraumes}
+Vektoren $\{\vec{a_1} \cdots \vec{a_n}\}$ bilden eine Basis f\"ur einen Vektorraum,
+wenn:
+\begin{itemize}
+  \item $\{\vec{a_1} \cdots \vec{a_n}\}$ linear unabh\"angig sind.
+  \item $\{\vec{a_1} \cdots \vec{a_n}\}$ den gesamten Raum aufspannen.
+\end{itemize}
+
+
+\subsection{Gleichungsysteme}
+Lineare Gleichung mit einer unbekannten. Form: $a\cdot x = b$.
+Drei m\"ogliche F\"alle:
+\begin{enumerate}
+  \item $a\neq 0\qquad\Longrightarrow$ genau eine L\"osung.
+  \item $a=0$ und $b \neq 0 \qquad\Longrightarrow$ keine L\"osung.
+  \item $a=0$ und $b=0 \qquad\Longrightarrow$ unendlich viele L\"osungen
+  (jede Zahl $x \in \mathbb{R}$ ist L\"osung).
+\end{enumerate}
+Lineares Gleichungsystem mit zwei Unbekannten. Form:
+\begin{align*}
+  a_{11}\cdot x_1 + a_{12}\cdot x_2 &= b_1 \\
+  a_{21}\cdot x_1 + a_{22}\cdot x_2 &= b_2 \\
+\end{align*}
+wobei $a_{ik}$ und $b_i$ bekannt sind.
+Dies kann als Koordinatenpaar des Schnittpunktes interpretiert werden:
+\begin{gather*}
+  \begin{pmatrix}b_1 \\ b_2\end{pmatrix} = x_1\begin{pmatrix}a_{11} \\ a_{21}\end{pmatrix}
+    + x_2\begin{pmatrix}a_{12} \\ a_{22}\end{pmatrix} \\
+  A = \begin{pmatrix}a_{11} & a_{12} \\ a_{21} & a_{22}\end{pmatrix}
+\end{gather*}
+Keine L\"osung falls Determinante 0 gibt:
+\begin{equation*}
+  a_{11}\cdot a_{22}- a_{21}\cdot a_{12} = 0
+\end{equation*}
+Ein lineares Gleichungsystem heisst \textbf{homogen} wenn $\underline{b}=\underline{0}$ ist.
+\begin{equation*}
+  A\cdot\underline{x} = \underline{b} = \underline{0}
+\end{equation*}
+\begin{itemize}
+  \item homogenes, lineares Gleichungssystem hat minimum eine L\"osung (die Triviale)
+  \item homogenes, lineares Gleichungssystem hat nur die triviale L\"osung wenn
+	\begin{itemize}
+	  \item A ist regul\"ar ($A^{-1}$ existiert)
+	  \item Austauschverfahren bricht nicht vorzeitig ab
+	  \item Zeilen-/Spaltenvektoren sind linear unabh\"angig
+	\end{itemize}
+  \item $\underline{x}^{(1)}, \underline{x}^{(2)}$ sind L\"osungen des
+	homogenen, linearen Gleichungssystemes $A\underline{x}=\underline{0}$,
+	dann ist auch jede Linearkombination von $\underline{x}^{(1)}$ und
+	$\underline{x}^{(2)}$ L\"osung des Systems.
+\end{itemize}
+Die L\"osungsmenge des Sytems $\underset{n\times n}{A}\cdot\underline{x}=\underline{0}$ ist ein Vektorraum der Dimension $n-r$ wobei $r=\text{Rang}(A)$ \\
+Ein lineares Gleichungsystem heisst \textbf{inhomogen} wenn $\underline{b}\neq\underline{0}$
+\begin{equation*}
+  A\cdot\underline{x} = \underline{b} \neq \underline{0}
+\end{equation*}
+\begin{itemize}
+  \item inhomogenes, lineares Gleichungssystem $\underset{n\times n}{A}\cdot\underline{x}=\underline{b}$
+	ist genau dann eindeutig l\"osbar, wenn
+	\begin{itemize}
+	  \item A ist regul\"ar, d.h. $\det{A}\neq 0, \exists A^{-1}$
+	  \item Austauschverfahren bricht nicht vorzeitig ab
+	  \item $\underline{b}$ l\"asst sich genau auf eine Art als
+		Linearkombination der Spalten von A darstellen.
+	\end{itemize}
+\end{itemize}
+
+
+\subsection{Determinanten}
+\begin{gather}
+  A = \begin{pmatrix}a_{11} & a_{12} \\ a_{21} & a_{22}\end{pmatrix} \\
+  \det{A} = a_{11}\cdot a_{22}- a_{21}\cdot a_{12} \\
+  B = \begin{pmatrix}
+	b_{11} & b_{12} & b_{13} \\
+	b_{21} & b_{22} & b_{23} \\
+	b_{31} & b_{23} & b_{33}
+      \end{pmatrix}
+\end{gather}
+Determinante ist rekursiv definiert:
+\begin{gather}
+  \det{B} = b_{11}\begin{vmatrix}b_{22}&b_{23}\\b_{32}&b_{33}\end{vmatrix}
+          - b_{12}\begin{vmatrix}b_{21}&b_{23}\\b_{31}&b_{33}\end{vmatrix}
+          + b_{13}\begin{vmatrix}b_{21}&b_{22}\\b_{31}&b_{32}\end{vmatrix} \\
+  \det{B} = \sum_{j=1}^3 {(-1)}^{1+j}\cdot a_{1j}\cdot UD_{1j}
+\end{gather}
+Allgemein:
+\begin{gather}
+  \det{A} = \sum_{j=1}^n {(-1)}^{1+j}\cdot a_{1j} \cdot UD_{1j}
+  \det{\underset{n\times n}{A}} = \det{A\underset{n\times n}{A^T}}
+\end{gather}
+\begin{itemize}
+  \item Werden in einer Determinanten zwei Zeilen (Spalten) vertauscht, so \"andert
+	sich das Vorzeichen.
+  \item Wenn in einer Determinanten s\"amtliche Elemente einer Zeile (Spalte) 0
+	sind, so ist die Determinante gleich 0.
+  \item Wenn in einer Determinanten zwei Zeilen (Spalten) gleich sind, dann hat die
+	Determinante einen Wert von 0.
+  \item Multipliziert man alle Elemente mit einer Zahl $\lambda$, so ist der
+	Wert der Determinante gleich dem $\lambda$-fachen.
+\end{itemize}
+Dreiecksformen:
+\begin{gather}
+  \begin{vmatrix}
+    a_{11} & a_{12} & a_{13} \\
+    0 & a_{22} & a_{23} \\
+    0 & 0 & a_{33} \\
+  \end{vmatrix} = a_{11}\cdot a_{22}\cdot a_{33} \\
+  \begin{vmatrix}
+    a_{11} & 0 & 0 \\
+    a_{21} & a_{22} & 0 \\
+    a_{31} & a_{32} & a_{33} \\
+  \end{vmatrix} = a_{11}\cdot a_{22}\cdot a_{33}
+\end{gather}
+
+
+\subsection{Cramer'sche Regel}
+Gleichungssystem (regul\"ar):
+\begin{gather}
+  \begin{bmatrix}
+	a_{11} & \cdots & a_{1n} \\
+	\vdots & \ddots & \vdots \\
+	a_{n1} & \cdots & a_{nn}
+  \end{bmatrix}
+  \begin{bmatrix}
+	x_1 \\
+	\vdots \\
+	x_n
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+	b_1 \\
+	\vdots \\
+	b_n
+  \end{bmatrix} \\
+  D = \begin{vmatrix}
+	a_{11} & \cdots & a_{1n} \\
+	\vdots & \ddots & \vdots \\
+	a_{n1} & \cdots & a_{nn}
+  \end{vmatrix} \\
+  \intertext{regul\"ar $\quad \Longrightarrow \quad D \neq 0$}
+  D_1 = \begin{vmatrix}
+	b_1 & a_{12} & \cdots & a_{1n} \\
+	\vdots & \vdots & \ddots & \vdots \\
+	b_n & a_{n2} & \cdots & a_{nn}
+  \end{vmatrix} \\
+  \text{falls} D\neq 0 \Rightarrow x_1\cdot D=D_1 \Rightarrow x_1 =\frac{D_1}{D}
+\end{gather}
+\textbf{Bemerkung:} die formale L\"osung ist nicht anzuwenden f\"ur gr\"ossere
+Gleichungssysteme.
+
+
+\subsection{Allgemeines}
+\begin{gather}
+  \underset{n\times n}{A} = \begin{bmatrix}
+	a_{11} & \cdots & a_{1n} \\
+	\vdots & \ddots & \vdots \\
+	a_{n1} & \cdots & a_{nn}
+  \end{bmatrix} \\
+  \underset{1\times n}{A} = \begin{bmatrix}
+	a_1 & \cdots & a_n
+  \end{bmatrix} \\
+  \underset{n\times 1}{A} = \begin{bmatrix}
+	a_1 \\
+	\vdots \\
+	a_n
+  \end{bmatrix}
+\end{gather}
+mit
+\begin{align*}
+a_{ij} &\in \mathbb{C} \\
+a_{ij} &\in \mathbb{R}
+\end{align*}
+Transponierte Matrix:
+\begin{equation}
+  \underset{m\times n}{A} \Rightarrow \underset{n\times m}{A'} = \underset{n\times m}{A^T}
+\end{equation}
+Spalten und Zeilen werden vertauscht. \\
+
+\paragraph{Addition}
+\begin{gather}
+  \underset{m\times n}{A} + \underset{m\times n}{B} = \begin{bmatrix}
+	a_{11} + b_{11} & a_{12} + b_{12} & \cdots \\
+	a_{21} + b_{21} & a_{22} + b_{22} & \cdots \\
+	a_{31} + b_{31} & a_{32} + b_{32} & \cdots \\
+	\vdots & \vdots & \ddots
+  \end{bmatrix} \\
+  s_{ij} = a_{ij} + b_{ij}
+\end{gather}
+
+\paragraph{Differenz}
+\begin{gather}
+  s_{ij} = a_{ij} - b_{ij}
+\end{gather}
+
+\paragraph{Algebraische Eigenschaften}
+\begin{gather}
+  \text{Kommutativit\"at:} \quad A+B = B+A \\
+  \text{Assoziativit\"at:} \quad (A+B)+C = A+(B+C) \\
+  \text{neutrales Element:} \quad A+0 = A \qquad \forall A \qquad
+	0=\begin{bmatrix}
+		0 & 0 & \cdots \\
+		0 & 0 & \cdots \\
+		\vdots & \vdots & \ddots
+	\end{bmatrix} \\
+  \forall A \quad \exists \widetilde{A} \quad\text{mit}\quad A+\widetilde{A} = 0
+	\qquad\Longrightarrow\quad \widetilde{a_{ij}} = -a_{ij}
+\end{gather}
+
+\paragraph{Multiplikation mit Skalar}
+\begin{gather}
+  \underset{n\times m}{A} \cdot \underset{m\times 1}{\underline{x}} = \underset{n\times 1}{\underline{b}} \\
+  b_i = \sum_{j=1}^m a_{ij}\cdot x_j
+\end{gather}
+
+\paragraph{Lineare Abbildungen}
+\begin{alignat}{2}
+  \sqrt{\frac{3}{2}}x_1 &- \frac{1}{2}x_2 &= y_1 \\
+  \frac{1}{2}x_1 &- \sqrt{\frac{3}{2}}x_2 &= y_2
+\end{alignat}
+\begin{equation}
+  \begin{pmatrix}
+	\sqrt{\frac{3}{2}} & -\frac{1}{2} \\
+	\frac{1}{2} & \sqrt{\frac{3}{2}} \\
+  \end{pmatrix}
+  \begin{pmatrix}
+	x_1 \\ x_2
+  \end{pmatrix} =
+  \begin{pmatrix}
+	y_1 \\ y_2
+  \end{pmatrix}
+\end{equation}
+
+
+\subsection{Matrixmultiplikation}
+\begin{gather}
+  \underset{m\times n}{A}\cdot\underset{n\times k}{B} = \underset{m\times k}{C} \\
+  c_{ij} = \sum_{l=1}^m a_{il}\cdot b_{lj}
+\end{gather}
+Rechenregeln:
+\begin{gather}
+  \text{Assoziativit\"at:} \quad (A\cdot B)\cdot C = A\cdot(B\cdot C) \\
+  \text{Distributivit\"at von links:} \quad B\cdot(C+D) = B\cdot C + B\cdot D \\
+  \text{Distributivit\"at von rechts:} \quad (C+D)\cdot E = C\cdot E + D\cdot E \\
+  \text{\textbf{KEINE} Kommutativit\"at:} \quad A\cdot B \neq B\cdot A \\
+  {(A \cdot B)}^T = B^T \cdot A^T \\
+  \det{A\cdot B} = \det{A}\cdot\det{B}
+\end{gather}
+
+
+\subsection{Inverse oder Kehrmatrix}
+Nur regul\"are ($\det{A}\neq 0$) Matrizen haben eine Inverse.
+\begin{gather}
+  A^{-1} \cdot A = I = A \cdot A^{-1} \\
+  A^{-1} = \frac{1}{\det{A}}\begin{pmatrix}d & -b \\ -c & a\end{pmatrix} \quad\text{gilt nur f\"ur 2x2 Matrizen}
+\end{gather}
+Eigenschaften:
+\begin{enumerate}
+  \item $A^{-1}\cdot A = I = A\cdot A^{-1}$
+  \item Die Inverse zu A ist \textbf{eindeutig}.
+  \item $\det{A^{-1}} = \frac{1}{\det{A}}$
+  \item ${(A^{-1})}^T = {(A^T)}^{-1}$
+  \item A und B seien regul\"are Matrizen: $(A\cdot B)^{-1} = B^{-1} \cdot A^{-1}$
+\end{enumerate}
+Austauschverfahren zu Berechnung von $A^{-1}$:
+\begin{tabular}{p{1.5cm} p{1.5cm} p{1.5cm}}
+  & $x_1$ & $x_2$ \\
+  $y_1$ & $a_{11}$ & $a_{12}$ \\
+  $y_2$ & $a_{21}$ & $a_{22}$ \\
+\end{tabular}
+Rechenregeln:
+\begin{enumerate}
+  \item Das Pivot geht in reziproken Wert \"uber:
+	\begin{equation*}
+		a_{11}^* = \frac{1}{a_{11}} \qquad\text{mit}\quad a_{11}\neq 0
+	\end{equation*}
+  \item Die Elemente in der Pivot-Spalte sind durch das Pivot zu dividieren:
+	\begin{equation*}
+		a_{21}^* = \frac{a_{21}}{a_{11}}
+	\end{equation*}
+  \item Die Elemente in der Pivot-Zeile sind durch das Pivot zu dividieren und
+	das Vorzeichen ist zu wechseln:
+	\begin{equation*}
+		a_{12}^* = -\frac{a_{12}}{a_{11}}
+	\end{equation*}
+  \item Restliche Elemente werden berechnet, indem man das Produkt aus
+	dem Element der Pivot-Spalte und dem neuen Element inder Pivot-Zeile
+	addiert:
+	\begin{align*}
+		a_{22}^* &= a_{22} + a_{21}\cdot a_{12}^* \\
+		&= a_{22} + a_{21}\cdot\left({-\frac{a_{12}}{a_{11}}}\right) \\
+		&= a_{22} - a_{21}\cdot\frac{a_{12}}{a_{11}}
+	\end{align*}
+\end{enumerate}
+\textbf{Bemerkung:} es ist verboten ein Pivot zu w\"ahlen, welches 0 ist.
+
+
+\subsection{Rang einer Matrix}
+Der Rang einer Matrix A ist gleich der maximalen Anzahl linear unabh\"angiger Zeilen-
+oder Spaltenvektoren.
+\begin{equation}
+  \text{Rang}\left({\underset{n\times m}{A}}\right)\leq\min{(n,m)}
+\end{equation}
+Der Rang einer Matrix $\underset{n\times m}{A}$ ist gleich der Ordnung
+der gr\"ossten von Null verschiedenen Unterdeterminanten von A.
+\begin{align}
+  \text{Rang}\left({\underset{n\times m}{A}\cdot\underset{m\times k}{B}}\right)
+	&\leq\min{\left({\text{Rang}(A), \text{Rang}(B)}\right)} \\
+  \text{Rang}\left({A}\right) & \leq\min{(n, m)} \\
+  \text{Rang}\left({B}\right) & \leq\min{(m, k)} \\
+  \text{Rang}\left({A\cdot B}\right) & \leq\min{(n, k)}
+\end{align}
+
+
+\subsection{Vektorr\"aume}
+Ein Tripel $(V, \oplus, \odot)$ bestehend aus einer Menge V und zwei Operatoren
+$\oplus, \odot$ heisst Vektorraum, falls V abgeschlossen gegen\"uber den
+Operatoren $\oplus, \odot$ und falls sie folgende Axiome erf\"ullen (8):
+\begin{enumerate}
+  \item Assoziativit\"at von $\oplus$
+	\begin{equation}
+	  (x \oplus y)\oplus z = x \oplus (y \oplus z) \qquad\forall x,y,z \in V
+	\end{equation}
+  \item Kommutativit\"at von $\oplus$
+	\begin{equation}
+	  x \oplus y = y \oplus x \qquad\forall x,y \in V
+	\end{equation}
+  \item Existenz des neutralen Elements f\"ur $\oplus$
+	\begin{equation}
+	  \exists e \in V \quad\text{so dass}\quad e \oplus x = x \qquad\forall x \in V
+	\end{equation}
+  \item Existenz des inversen Elements f\"ur $\oplus$
+	\begin{equation}
+	  \forall x \in V \quad \exists\widetilde{x} \in V \quad\text{mit}
+		\quad x\oplus\widetilde{x} = e \qquad\forall x,\widetilde{x} \in V
+	\end{equation}
+  \item Multiplikatio mit Skalar
+	\begin{equation}
+	  \lambda \odot(\mu\odot x) = (\lambda\cdot\mu)\odot x
+		\qquad\forall \lambda,\mu\in\mathbb{R}\quad\text{und}\quad\forall x \in V
+	\end{equation}
+  \item Existenz des neutralen Elements f\"ur $\odot$
+	\begin{equation}
+	  1 \odot x = x \qquad\forall x \in V
+	\end{equation}
+  \item Distributivit\"at f\"ur $\odot$
+	\begin{equation}
+	  \lambda\odot(x\oplus y) = (\lambda \odot x)\oplus(\lambda\odot y)
+		\qquad\forall x,y \in V
+	\end{equation}
+  \item Distributivit\"at
+	\begin{equation}
+	  (\lambda + \mu)\odot x = (\lambda \odot x)\oplus(\mu \odot x)
+		\qquad\forall x \in V
+	\end{equation}
+\end{enumerate}
+
+
+\subsection{LU-Zerlegung einer Matrix}
+\begin{align}
+  \underset{n\times n}{A} & = \underset{n\times n}{L}\cdot\underset{n\times n}{U} \\
+  A	& =	\begin{pmatrix}
+			1      & 0      & 0      & \cdots \\
+			a_{21} & 1      & 0      & \cdots \\
+			a_{31} & a_{32} & 1      & \cdots \\
+			\vdots & \vdots & \vdots & \ddots
+		\end{pmatrix}
+	\cdot	\begin{pmatrix}
+			a_{11} & a_{12} & a_{13} & \cdots \\
+			0      & a_{22} & a_{23} & \cdots \\
+			0      & 0      & a_{33} & \cdots \\
+			\vdots & \vdots & \vdots & \ddots
+		\end{pmatrix} \\
+  A\cdot \underline{x} &= \underline{b}
+	\qquad\underline{x}\quad\text{unbekannt},\underline{b}\quad\text{bekannt}\\
+  L\cdot U\cdot\underline{z} &= \underline{b} \\
+  L\cdot\underline{z} & = \underline{b} \qquad\text{mit}\quad\underline{z} = U\cdot\underline{x}
+\end{align}
+Das System wird f\"ur $\underline{z}$ gel\"ost. Wenn dann $\underline{z}$
+bekannt ist, wird das System $U\underline{x}=\underline{z}$ f\"ur
+$\underline{x}$ gel\"ost.
+
+Die k-ten Zeile von U enth\"alt die Elemente der Pivot-Zeile des k-ten Austauschschrittes.
+
+Die k-ten Spalte von L enth\"alt unterhalb der Diagonalen die Elemente der Pivot-Spalte
+des k-ten Austauschschrittes. Die Diagonale von L enth\"alt 1.
+
+
+\section{Kegelschnitte in achsenparalleler Lage}
+\begin{gather}
+  A\cdot {x_1}^2+C\cdot{x_2}^2+2\cdot D\cdot x_1 + 2\cdot E\cdot x_2 + F = 0 \\
+  \begin{pmatrix} x_1 & x_2 & 1 \end{pmatrix}
+	\begin{pmatrix}
+		A & 0 & D \\
+		0 & C & E \\
+		D & E & F
+	\end{pmatrix}
+	\begin{pmatrix}
+		x_1 \\
+		x_2 \\
+		1
+	\end{pmatrix} = 0 \\
+  \underline{x'} \cdot \Delta \cdot \underline{x} = 0 \\
+  \text{spur}(\Delta) = A + C + F \quad\hat{=}\quad \sum\text{Diagonalelemente}
+\end{gather}
+
+Kreis:
+\begin{align*}
+  M = (m_1, m_2) \qquad & \text{Mittelpunkt} \\
+  P = (x_1, x_2) \qquad & \text{bliebiger Punkt auf Kreis} \\
+  R = M - P \qquad & \text{Abstand zwischen M und P}
+\end{align*}
+\begin{gather}
+  R^2 = {\left({x_1 - m_1}\right)}^2 + {\left({x_2 - m_2}\right)}^2 \\
+  R^2 = x_1^2 - 2\cdot m_1\cdot x_1 + m_1^2 + x_2^2 - 2\cdot m_2\cdot x_2 + m_2^2 \\
+  A\cdot x_1^2 + A\cdot x_2^2 + 2\cdot D\cdot x_1 + 2\cdot E\cdot x_2 + F = 0 \\
+  \begin{pmatrix} x_1 & x_2 & 1 \end{pmatrix}
+	\begin{pmatrix}
+		A & 0 & D \\
+		0 & A & E \\
+		D & E & F
+	\end{pmatrix}
+	\begin{pmatrix} x_1 \\ x_2 \\ 1 \end{pmatrix} = 0
+\end{gather}
+Bedingungen f\"ur Kreischrakter:
+\begin{itemize}
+  \item $\det{\rho} = A^2 > 0$
+  \item $\text{koeff}(x_1^2) = \text{koeff}(x_2^2)$
+  \item keine gemischte Terme der Form $x_1\cdot x_2$
+\end{itemize}
+
+Tangente an Kreis:
+\begin{gather}
+  (x_1-m_1)(p_1-m_1)+(x_2-m_2)(p_2-m_2) = R^2 \\
+  \intertext{Steigung der Geraden durch M und P:}
+  \frac{p_2 - m_2}{p_1 - m_1} \\
+  \intertext{Steigung der Tangenten durch P:}
+  -\frac{p_1-m_1}{p_2-m_2} \\
+  \intertext{Gleichung der Tangente}
+  \frac{x_2-p_2}{x_1-p_1} = -\frac{p_1-m_1}{p_2-m_2}
+\end{gather}
+
+\subsection{Ellipse in der Ebene}
+\textbf{Definition:} Die Ellipse ist der geometrische Ort der Punkte der Ebene,
+f\"ur welche die Summe der Abst\"ande zu zwei festen Punkten $F_1, F_2$
+(Brennpunkte) konstant ist.
+
+\begin{center}
+	\psset{unit=0.7}
+	\begin{pspicture}(-5,-3)(5,3)
+		\psline[linewidth=1pt]{->}(-4.5,0)(4.5,0)
+		\psline[linewidth=1pt]{->}(0,-2.5)(0,2.5)
+		\rput[Bl](4.7,-0.1){$x_1$}
+		\rput[Bl](0.1,2.5){$x_2$}
+		\psellipse(0,0)(4,2)
+		\psline[linewidth=2pt,linecolor=red](0,-0.2)(4,-0.2)
+		\psline[linewidth=2pt,linecolor=red](-0.2,0)(-0.2,2)
+		\rput[Bt](2,-0.7){$a$}
+		\rput[Br](-0.7,1){$b$}
+	\end{pspicture}
+\end{center}
+
+\begin{equation}
+  \frac{x_1^2}{a^2}+\frac{x_2^2}{b^2} = 1 \qquad\text{mit}\quad a, b\quad\text{als Achsenabschnitte}
+\end{equation}
+Parameter-Gleichung:
+\begin{align*}
+  x_1 &= m_1 + a\cdot \cos{t} \\
+  x_2 &= m_2 + b\cdot \sin{t}
+\end{align*}
+
+Gleichung der Tangente durch elliptischen Punkt P:
+\begin{equation}
+  \frac{(x_1-m_1)(p_1-m_1)}{a^2} + \frac{(x_2-m_2)(p_2-m_2)}{b^2} = 1
+\end{equation}
+
+\subsection{Hyperbel in der Ebene}
+\textbf{Definition:} Die Hyperbel ist der geometrische Ort der Punkte der Ebene f\"ur
+welche die Differenz der Abst\"ande zu zwei festen Punkten (Brennpunkte), dem
+Betrag nach konstant ist.
+
+\begin{equation}
+  \frac{x_1^2}{a^2} - \frac{x_2^2}{b^2} = 1
+\end{equation}
+Brennachse parallel der $x_1$-Achse: $+\frac{x_1^2}{a^2}-\frac{x_2^2}{b^2}=1$\\
+Brennachse parallel der $x_2$-Achse: $-\frac{x_1^2}{a^2}+\frac{x_2^2}{b^2}=1$\\
+
+Hyperbel\"aste:
+\begin{gather*}
+  x_2 = +\frac{b}{a}\sqrt{x_1^2-a^2} \\
+  x_2 = -\frac{b}{a}\sqrt{x_1^2-a^2} \\
+  x_2 = +\frac{b}{a}\sqrt{a^2+x_1^2} \\
+  x_2 = -\frac{b}{a}\sqrt{a^2+x_1^2} \\
+\end{gather*}
+
+M\"ogliche Parametergleichung der Hyperbel:
+\begin{gather}
+  \cosh \text{:}\quad x \longmapsto \frac{\exp^x+\exp^{-x}}{2} \\
+  \sinh \text{:}\quad x \longmapsto \frac{\exp^x-\exp^{-x}}{2} \\
+  \cosh^2{x}-\sinh^2{x} \equiv 1
+\end{gather}
+
+\begin{gather*}
+  x_1 = a\cdot\cosh{t}
+  x_2 = b\cdot\sinh{t}
+\end{gather*}
+\begin{gather*}
+  x_1 = a\cdot\sinh{t}
+  x_2 = b\cdot\cosh{t}
+\end{gather*}
+\begin{gather*}
+  x_1 = -a\cdot \cosh{t}
+  x_2 = b\cdot\sinh{t}
+\end{gather*}
+
+\textbf{Satz:} Jede Hyperbel besitzt ein paar Asymptoten, die sich im Mittelpunkt
+der Hyperbel schneiden und symmetrisch sind zu den Hyperbelachsen.
+\begin{equation}
+  A\cdot x_1^2+2\cdot B\cdot x_1\cdot x_2+C\cdot x_2^2+2\cdot D\cdot x_1 + 2\cdot E\cdot x_2+F=0
+\end{equation}
+
+
+\subsection{Parabel in achsenparalleler Lage}
+\textbf{Definition:} Die Parabel ist der geometrische Ort der Punkte, f\"ur welche das
+Verh\"altnis des Abstandes zu einem festen Punkt F (Brennpunkt) und zu einer festen
+Geraden d (Leitlinie) gleich ist.
+\begin{equation}
+  x_2^2 = 2\cdot\exp\cdot x_1
+\end{equation}
+
+Verschiebung der Parabel parallel zu Achsen:
+\begin{gather}
+  {\left({x_2-a_2}\right)}^2 = 2 \cdot \exp \cdot \left({x_1-a_1}\right) \\
+  A \cdot x_2^2 + 2 \cdot D \cdot x_1 + 2 \cdot E \cdot x_2 + F = 0
+\end{gather}
+
+Allgemeine Form:
+\begin{gather}
+  \begin{pmatrix}x_1 & x_2 & 1\end{pmatrix}
+	\begin{pmatrix}
+		0 & 0 & D \\
+		0 & A & E \\
+		D & E & F
+	\end{pmatrix}
+	\begin{pmatrix}x_1 \\ x_2 \\ 1 \end{pmatrix} = 0 \\
+	\det{\rho} = 0 \\
+	\det{\delta} = D\cdot (-A\cdot D)
+\end{gather}
+
+Gleichung der Tangente:
+\begin{gather}
+  \frac{x_2-p_2}{x_1-p_1} = \frac{\exp}{p_2} \\
+  x_2 = \frac{\exp}{p_2}(x_1-p_1)+p_2
+\end{gather}
+
+Schnittpunkt der Tangente mit $x_2$-Achse:
+\begin{align}
+  x_2 &= \frac{\exp}{p_2}(x_1-p_1)+p_2 \\
+  x_1 &= 0
+\end{align}
+
+\begin{align}
+  x_2 &= -\frac{\exp\cdot p_1}{p_2}+p_2 \\
+  x_1 &= 0
+\end{align}
+
+\begin{equation}
+  \Rightarrow\quad x_2 = \frac{p_2}{2}
+\end{equation}
+
+
+
+\section{Lineare Abbildungen}
+\textbf{Definition:} Eine Abbildung ist linear, wenn f\"ur alle $\underline{x},
+\underline{y} \in V, \lambda \in \mathbb{R} \text{ oder } \mathbb{C}$ folgendes gilt:
+\begin{align}
+  f(\underline{x} + \underline{y}) &= f(\underline{x}) \oplus f(\underline{y}) \\
+  f(\lambda \cdot \underline{x}) &= \lambda \odot f(\underline{x})
+\end{align}
+\textbf{Definition des Kerns:} Der Kern von $f$ ist die Menge der Vektoren
+$\underline{x}\in V$, die auf den Nullvektor abgebildet werden.
+\begin{gather}
+  \text{Kern} = \{\underline{x} | \underline{x} \in V, f(\underline{x}) = \underline{0}\} \\
+  f(\underline{x}) = A\cdot\underline{x} = \underline{0}
+\end{gather}
+\textbf{Satz:} Der Kern der linearen Abbildung $f : V\longmapsto W$ ist ein Untervektorraum
+von $W$. \\
+\textbf{Definition:} Die Menge der Bildvektoren von $V$ in $W$ heisst Bild
+von $f$:
+\begin{equation}
+  \text{Bild}(f) = \{\underline{p}\in W, \underline{p} = f(\underline{x}) \quad\text{mit}\quad\underline{x}\in V\}
+\end{equation}
+Statt Bild auch: image(f), f(V) \\
+\textbf{Satz:} Das Bild von $f(W)$ ist ein Untervektorraum von $W$. \\
+\textbf{Definition:} Sei $f$ eine lineare Abbildung von $V$ in $W$.
+Ist $f(V)$ endlich dimensional, dann heisst die Dimension von $f(V)$ der Rang
+der Abbildung $f$.
+\begin{equation}
+  \text{Rang}(f) = \text{Dimension von}\quad f(V)
+\end{equation}
+
+\subsection{Abbildung als Matrix}
+\begin{gather}
+  V\longmapsto W \\
+  f(\underline{x}) = \underline{x}^* \\
+  A\cdot\underline{x} = \underline{x}^* \\
+  A = \begin{pmatrix}
+		a_{11} & a_{12} & \cdots & a_{1n} \\
+		a_{21} & \ddots &        & \vdots \\
+		\vdots &        &        & \vdots \\
+		a_{m1} & a_{m2} & \cdots & a_{mn}
+	\end{pmatrix}
+\end{gather}
+Die Spaltenvektoren sind die Bilder der Basisvektoren. \\
+
+\subsection{Lineare Abbildungen von $\mathbb{R}^n$ nach $\mathbb{R}^m$}
+Die Elemente der (Kolonnen) Spalten der Abbildungsmatrix sind die Komponenten der Bilder der
+Grundvektoren.
+\begin{equation}
+  A\cdot\underline{x} = f(\underline{x})
+\end{equation}
+\textbf{Satz:} Eine lineare Abbildung ist dann und nur dann Umkehrbar, wenn diese Abbildungsdeterminante
+von Null verschieden ist. \\
+Ist $A$ die Matrix der Abbildung $f$, so ist $A^{-1}$ die Matrix der Abbildung $f^{-1}$. \\
+Lineare abbildungen mit \textbf{positiver} Determinante sind Orientierungserhaltend. Abbildungen mit
+\textbf{negativer} Determinante kehren die Orientierung um.
+
+\subsection{Zusammengesetzte Abbildungen}
+Seien $g_1, g_2$ lineare Abbildungen. Das Produkt $g_2\left({g_1(\underline{x})}\right)$ von linearen Abbildungen ist wieder eine lineare Abbildung, deren Matrix dem Produkt der zugeh\"origen Matrizen $A_2\cdot A_1$ in der gleichen Reihenfolge entspricht.
+
+\subsection{Allgemeine Eigenschaften}
+\begin{itemize}
+  \item Das Bild einer Geraden ist wieder eine Gerade.
+  \item Das Bild einer Geraden durch den Nullpunkt ist wieder eine Gerade durch den Nullpunkt.
+  \item Lineare Abbildungen bewahren die parallele Lage von Geraden.
+\end{itemize}
+
+\subsection{Bild eines Gitters}
+Das Verh\"altnis der Inhalte der schraffierten Fl\"achen ist durch den Betrag der Abbildungsdeterminante gegeben.
+\begin{equation}
+  \det{A} = \frac{\|\underline{\hat{e_1}} \times \underline{\hat{e_2}} \|}{\|\underline{e_1} \times \underline{e_2}\|}
+\end{equation}
+\textbf{Satz:} Betragsm\"assig ist der Wert der Determinante einer Abbildungsmatrix gleich dem Verh\"altnis
+zugeordnete Volumen im $\mathbb{R}^n$.
+
+
+\subsection{Spezielle Abbildungen}
+Abbildungen welche das Skalarprodukt invariant lassen:
+\begin{equation}
+  \underline{x}' \cdot \underline{y} = \underline{\hat{x}}' \cdot \underline{\hat{y}}
+\end{equation}
+\begin{itemize}
+  \item Falls $f$ das Skalarprodukt invariant l\"asst, dann ist $f$ L\"angentreu.
+  \item Die Betr\"age der Winkel bleiben erhalten. Winkeltreu bis auf das Vorzeichen.
+\end{itemize}
+
+
+\subsection{L\"angentreue Abbildungen}
+\begin{equation}
+  A^T\cdot A = I
+\end{equation}
+$A$ ist orthonormiert, d.h. die Spaltenvektoren sind orthogonal und haben die L\"ange 1.
+
+Die L\"angentreuen Abbildungen sind durch orthonormierte Abbildungsmatrizen gekennzeichnet.
+\begin{gather}
+  A^T\cdot A = I = A\cdot A^T \\
+  \Longrightarrow \det{A} = +1 \quad\text{oder}\quad -1 \\
+  \Longrightarrow A^{-1} = A^T
+\end{gather}
+
+
+
+\subsection{Spiegelung an beliebiger Ebene durch 0}
+\begin{gather}
+  f: \underline{x}\longmapsto\underline{x}-2\cdot (\underline{x}' \cdot\underline{n})\cdot\underline{n} \\
+  \Longrightarrow \quad A = \begin{pmatrix}
+		1-2n_1^2 & -2n_1n_2 & -2n_1n_3 \\
+		-2n_1n_2 & 1-2n_2^2 & -2n_2n_3 \\
+		-2n_1n_3 & -2n_2n_3 & 1-2n_3^2
+	\end{pmatrix}
+\end{gather}
+
+
+\subsection{Drehung um eine beliebige Ache mit Winkel $\omega$}
+\begin{gather}
+  \|\underline{a}\| = \tan{\frac{\omega}{2}}
+  \underline{v}^* = \frac{1}{1+{\|\underline{a}\|}^2}\cdot
+	\left[{\left({1-{\|\underline{a}\|}^2}\right)\cdot\underline{v}+
+	2\cdot (\underline{a}'\cdot\underline{v})\cdot\underline{a}+
+	2\cdot (\underline{a}\times\underline{v})}\right] \\
+  \Longrightarrow\quad A = \frac{1}{1+{\|\underline{a}\|}^2}\cdot
+	\begin{pmatrix}
+		1+a_1^2-a_2^2-a_3^2    &  2(a_1\cdot a_2-a_3)  &  2(a_1\cdot a_3 - a_2) \\
+		2(a_1\cdot a_2 + a_3)  &  1-a_1^2+a_2^2-a_3^2  &  2(a_2\cdot a_3 - a_1) \\
+		2(a_1\cdot a_3 - a_2)  &  2(a_2\cdot a_3+a_1)  &  1-a_1^2-a_2^2+a_3^2
+	\end{pmatrix}
+\end{gather}
+
+
+\subsection{Drehungen}
+
+\subsubsection{Drehung um die X-Achse im $\mathbb{R}^3$}
+\begin{equation}
+  A = \begin{pmatrix}
+		1    & 0    & 0     \\
+		0    & \cos & -\sin \\
+		0    & \sin & \cos
+	\end{pmatrix}
+\end{equation}
+
+\subsubsection{Drehung um die Y-Achse im $\mathbb{R}^3$}
+\begin{equation}
+  A = \begin{pmatrix}
+		\cos  & 0    & \sin  \\
+		0     & 1    & 0     \\
+		-\sin & 0    & \cos
+	\end{pmatrix}
+\end{equation}
+
+\subsubsection{Drehung um die Z-Achse im $\mathbb{R}^3$}
+\begin{equation}
+  A = \begin{pmatrix}
+		\cos & -\sin & 0    \\
+		\sin & \cos  & 0    \\
+		0    & 0     & 1
+	\end{pmatrix}
+\end{equation}
+
+\textbf{Satz:} Jede orthonormierte Matrix A mit $\det{A}=1$ stellt eine
+Drehung dar. Der Drehwinkel $\omega$ ist gegeben durch:
+\begin{gather}
+  \cos{\omega} = \frac{\text{Spur}(A)-1}{2} \\
+  \intertext{wobei}
+  \text{Spur}(A) = \sum_{i=1}^n a_{ii} \\
+  \cos{\omega} = \frac{1-{\|\underline{a}\|}^2}{1+{\|\underline{a}\|}^2}
+\end{gather}
+
+
+\subsection{Perspektive Affinit\"at}
+Die Abbildung
+\begin{equation}
+  f: \underline{x}\longmapsto\underline{x}-(\underline{x}'\cdot\underline{n})\cdot\underline{r}
+\end{equation}
+ist linear.
+
+
+\section{Eigenwerte, Eigenvektoren}
+Ein Vektor $(\underline{x}\neq\underline{0})$, welcher bei einer linearen Abbildung $f$ seine Richtung (nichtnotwendigerweise seine L\"ange) beibeh\"alt, heisst Eigenvektor von $f$.
+
+Sie sind durch folgende Gleichung gekennzeichnet:
+\begin{equation}
+  f(\overrightarrow{x}) = \lambda\cdot\overrightarrow{x} \qquad\text{mit}\underline{x}\neq\underline{0}
+\end{equation}
+
+Ist $A$ die Abbildungsmatrix. $\underline{x}$ ist Eigenvektor der Matrix $A$ zum Eigenwert $\lambda$, wenn folgendes gilt:
+\begin{gather}
+  \underset{n\times n}{A}\cdot\underline{x} = \lambda\cdot\underline{x}\qquad\underline{x}\neq\underline{0} \\
+  \left({\underset{n\times n}{A} - \lambda\cdot\underset{n\times n}{I}}\right)\cdot\underline{x} = \underline{0}
+\end{gather}
+
+\textbf{Satz:}
+\begin{enumerate}
+  \item Jede $n\times n$ reelle \textbf{symmetrische} Matrix A hat n reelle Eigenwerte.
+  \item Die Eigenvektoren zu verschiedenen Eigenwerten sind zueinander orthogonal.
+  \item Es ist immer m\"oglich Eigenvektoren, welche zu mehrfachen Eigenwerten geh\"oren, so zu
+	w\"ahlen, dass sie orthogonal zueinander sind.
+\end{enumerate}
+
+\textbf{Satz:} Jede reelle symmetrische Matrix A l\"asst sich wie folgt zerlegen:
+\begin{equation}
+  A = \Gamma\Lambda\Gamma^{-1}
+\end{equation}
+mit $\Gamma$ orthonormiert (d.h.: $\Gamma^{-1}=\Gamma^T$) und $\Lambda$ diagonal.
+
+$\Gamma$ ist die Matrix der orthogonormierten Eigenvektoren von A. $\Lambda$ ist die Matrix der Eigenwerte von A.
+
+$\underline{g}^{(i)}$ ist Eigenvektor zum Eigenwert $\lambda_i$.
+\begin{gather}
+  A\cdot\begin{pmatrix}
+		\vdots              & \vdots              &         & \vdots              \\
+		\underline{g}^{(1)} & \underline{g}^{(2)} & \cdots  & \underline{g}^{(n)} \\
+		\vdots              & \vdots              &         & \vdots
+	\end{pmatrix} =
+	\begin{pmatrix}
+		\vdots              & \vdots              &         & \vdots              \\
+		\underline{g}^{(1)} & \underline{g}^{(2)} & \cdots  & \underline{g}^{(n)} \\
+		\vdots              & \vdots              &         & \vdots
+	\end{pmatrix}
+	\begin{pmatrix}
+		\lambda_1 & 0         & \cdots & 0 \\
+		0         & \lambda_2 & 0      & 0 \\ 
+		0         & 0         & \ddots & 0 \\
+		0         & 0         & 0      & \lambda_n
+	\end{pmatrix} \\
+  \Longrightarrow\quad A = \Gamma\cdot\Lambda\cdot\Gamma^{-1}
+\end{gather}
+
+Bei orthogonalen Transformationen bleiben Spur und Determinante von quadratischen Matrizen
+invariant. \\
+Bei orthogonalen Transformationen mit Transformationsmatrix $S$ geht eine
+Matrix $A$ in die Matrix $S\cdot A\cdot S^T$ \"uber.
+\begin{gather}
+  \text{Spur}(S\cdot A\cdot S^T) = \text{Spur}(A) \\
+  \det{S\cdot A\cdot S^T} = \det{A} \\
+  S = \begin{pmatrix}
+		s_{11} & s_{12} \\
+		s_{21} & s_{22}
+	\end{pmatrix} \qquad\text{Transformationsmatrix} \\
+  S^{-1} = \frac{1}{\det{S}}\begin{pmatrix}
+		s_{22} & -s_{12} \\
+		-s_{21} & s_{11}
+	\end{pmatrix} \\
+  \overrightarrow{E}_j = \sum_{i=1}^2 s_{ji}\cdot \overrightarrow{e}_j \\
+  \underline{x} = S^T \cdot \underline{X} \\
+  \underline{X} = (S^{-1})^T \cdot \underline{x}
+\end{gather}
+Die Komponenten transformieren sich \textbf{nicht} wie die Grundvektoren. Sie
+heissen \textbf{kontravariante} Komponenten.
+
+
+\section{Koordinatentransformationen}
+Die \textbf{kovarianten} Komponenten transformieren sich wie die Grundvektoren.
+\begin{center}
+	\psset{unit=0.7}
+	\begin{pspicture}(-3,-2)(4,2)
+		\psline{->}(0,0)(3.5,-2)
+		\psline{->}(0,0)(3.5, 2)
+		\rput[Bl](3.6, 1.9){$e_2$}
+		\rput[Bl](3.6,-2.1){$e_1$}
+		\psline[linecolor=red,linewidth=1pt]{->}(0,0)(3,0)
+		\psline[linestyle=dashed]{-}(3,0)(2.26,-1.29)
+		\psline[linestyle=dashed]{-}(3,0)(2.26, 1.29)
+		\psline[linestyle=dotted]{-}(3,0)(1.5,-0.86)
+		\psline[linestyle=dotted]{-}(3,0)(1.5, 0.86)
+		\psline[linecolor=blue]{-}(-0.099,-.17)(2.16,-1.47)
+		\psline[linecolor=blue]{-}(-0.099, .17)(2.16, 1.47)
+		\psline[linecolor=magenta]{-}(-0.049,-.087)(1.45,-0.94)
+		\psline[linecolor=magenta]{-}(-0.049, .087)(1.45, 0.94)
+		\rput[Bb](-1, 1.5){kovariante Komponente}
+		\rput[Bt](-1,-1.5){kontravariante Komponente}
+		\psline[linewidth=1pt]{-}(-1, 1.5)(1,0.8)
+		\psline[linewidth=1pt]{-}(-1,-1.5)(1,-0.7)
+	\end{pspicture}
+\end{center}
+
+
+\section{\"Ubergang von orthogonalen Koordinatensystemen}
+Der \"Ubergang zwischen zwei cartesischen Koordinatensystemen mit dem gleichem
+Ursprung ist durch eine orthonormierte Transformationsmatrix gekennzeichnet.
+\begin{gather}
+  S = \begin{pmatrix}
+		s_{11} & s_{12} & s_{13} \\
+		s_{21} & s_{22} & s_{23} \\
+		s_{31} & s_{32} & s_{33} \\
+	\end{pmatrix} \\
+  S_{ij} = \overrightarrow{E}_i \odot \overrightarrow{e}_j
+\end{gather}
+Die Determinante einer orthogonalen Koordinatentransformation hat immer den Wert $\pm 1$, $+1$ wenn die Orientierung der beiden Systeme gleich sind, sonst $-1$.
+\begin{gather}
+  \det{S} = \pm 1
+\end{gather}
+
+\subsection{Inverse Transformation}
+\begin{gather}
+  S^{-1} = S^T \qquad S\quad\text{ist orthogonal}
+\end{gather}
+Eine quadratische Matrix, welche nach Zeilen orthogonal ist, ist von selbst nach
+Spalten orthogonal.
+\begin{gather}
+  \underline{X} = S\cdot\underline{x} \\
+  \underline{X} = (S^{-1})^T\cdot\underline{x}
+\end{gather}
+Bei einer orthogonalen Koordinatentransformation sind die neuen Vektorkomponenten bzw. Punktkoordinaten Linearformen der alten (homogene lineare Funktion), wobei die Matrix der Koeffizienten mit der Transformationsmatrix $S$ \"ubereinstimmen.
+
+
+\section{Eulersche Winkel}
+Die relative Lage von zwei cartesischen Koordinatensystemen mit dem
+gleichen Ursprung l\"asst sich mit Hilfe von 3 Drehwinklen vollst\"andig beschreiben.
+\begin{itemize}
+  \item[$\psi$] Winkel zwischen $\overrightarrow{e_1}$ und der Schnittgerade $s$ der $\overrightarrow{e_1}-\overrightarrow{e_2}$ - Ebene mit der $\overrightarrow{E_1}-\overrightarrow{E_2}$ - Ebene.
+  \item[$\phi$] Winkel zwischen $s$ und $\overrightarrow{E_1}$
+  \item[$\theta$] Winkel zwischen $\overrightarrow{e_3}$ und $\overrightarrow{E_3}$
+\end{itemize}
+\textbf{Satz von Euler:} Die allgemeine Auslenkung eines starren K\"orpers von dem ein Punkt festgehalten wird, ist eine Drehung um eine Achse um diesen Punkt.
+
+\section{Hauptachsentheorem}
+Quadratische Form in zwei Variablen:
+\begin{gather}
+  Q_{(x_1, x_2)} = a_{11}\cdot x_1^2 + 2\cdot a_{12}\cdot x_1 \cdot x_2 + a_{22}\cdot x_2^2 \\
+  \underline{x}^T \cdot A \cdot\underline{x} \quad\text{mit}\quad A = \begin{pmatrix}
+		a_{11} & a_{12} \\ a_{12} & a_{22}
+	\end{pmatrix} \qquad\text{symmetrisch!} \\
+  A\cdot\underline{x} = \begin{pmatrix}
+		a_{11}\cdot x_1 + a_{12}\cdot x_2 \\
+		a_{12}\cdot x_1 + a_{22}\cdot x_2
+	\end{pmatrix}
+\end{gather}
+Eine Gleichung der Form $Q_{(\underline{x})} = C$ mit $C$ fest, ist eine Gleichung eines Kegelschnittes mit Mittelpunkt im Ursprung des Koordinatensystems, falls der Mittelpunkt existiert.
+
+Ein cartesisches Koordinatensystem in welchem eine quadratische Form $Q$ kein gemischtes Glied aufweist wird als Hauptachsensystem bezeichnet.
+
+Bez\"uglich diesem System hat die quadratische Form folgende Gestalt:
+\begin{gather}
+  \lambda_1 \cdot x_1^2 + \lambda_2 \cdot x_2^2
+\end{gather}
+
+Der Kegelschnitt mit der Gleichung
+\begin{gather}
+  a_{11}\cdot x_1^2 + a_{22}\cdot x_2^2 + 2\cdot a_{12}\cdot x_1 \cdot x_2
+\end{gather}
+kann aufgrund der Eigenwerte der Koeffizienzmatrix klassifiziert werden.
+\begin{gather}
+  \delta = \begin{pmatrix}
+		a_{11} & a_{12} \\ a_{21} & a_{22}
+	\end{pmatrix} \qquad \tan{2\alpha} = \frac{2a_{12}}{a_{11}-a_{22}}
+\end{gather}
+$\alpha\hat{=}\text{Drehwinkel der Transformationsmatrix}\Rightarrow\text{Hauptachsen}$
+\begin{align}
+  \det{\delta} > 0 &\Longrightarrow \qquad\text{Ellipse} \\
+  \det{\delta} = 0 &\Longrightarrow \qquad\text{Parabel} \\
+  \det{\delta} < 0 &\Longrightarrow \qquad\text{Hyperbel}
+\end{align}
+
+
+\subsection{Kegelschnitte in allgemeiner Lage}
+Der geometrische Ort aller Punkte deren Koordinaten bez\"uglich eines bestimmten Koordinatensystems
+folgende Gleichung zweiten Grades erf\"ullen, wird Kurve zweiter Ordnung genannt.
+\begin{equation}
+  a_{11}\cdot x_1^2 + 2\cdot a_{22}\cdot x_1\cdot x_2 + a_{22}\cdot x_2^2 + 2\cdot b_1 \cdot x_1 + 2\cdot b_2\cdot x_2 + C = 0
+\end{equation}
+\noindent Matrizenscheibweise: $\underline{x}^T\cdot\Delta\underline{x} = 0$
+\begin{equation}
+  \begin{pmatrix}x_1 & x_2 & 1 \end{pmatrix}
+	\begin{pmatrix}
+		a_{11} & a_{12} & b_1 \\
+		a_{21} & a_{22} & b_2 \\
+		b_1    & b_2    & C
+	\end{pmatrix}\begin{pmatrix}x_1 \\ x_2 \\ 1 \end{pmatrix} = 0
+\end{equation}
+\noindent mit $a_{12} = a_{21}$ und $\Delta$ ist symmetrisch.
+
+\noindent Ist die Gleichung einer Kurve 2. Ordnung mit dem Ursprung $O = (0, 0)$ frei von linearen Gliedern, so ist der Punkt $O$ ein Mittelpunkt der Kurve.
+\noindent Ist ein Mittelpunkt vorhanden, dann gibt es zu jedem Punkt $(x_1, x_2)$ einen symmetrischen Punkt $(-x_1, -x_2)$ auf der Kurve.
+\noindent Die Koordinaten $(m_1, m_2)$ des Mittelpunkts einer Kurve 2. Ordnung $F(x_1, x_2) + C = 0$ sind die L\"osungen des Systems:
+\begin{align}
+  \frac{\partial F}{\partial x_1}(x_1, x_2) = 0 \qquad&\qquad a_{11}\cdot x_1 + a_{12}\cdot x_2 + b_1 = 0 \\
+  \frac{\partial F}{\partial x_2}(x_1, x_2) = 0 \qquad&\qquad a_{12}\cdot x_1 + a_{22}\cdot x_2 + b_2 = 0
+\end{align}
+Die Kurve besitzt also nur dann einen Mittelpunkt, wenn das obige Gleichungssystem l\"osbar ist, d.h.
+\begin{equation}
+  \det{\delta} \neq 0 \qquad\text{mit}\quad\delta=\begin{pmatrix} a_{11} & a_{12} \\ a_{12} & a_{22} \end{pmatrix}
+\end{equation}
+
+Der Typ der Kurve kann mit Hilfe von $\delta$ bezogen auf das urspr\"ungliche System bestimmt werden. Insbesondere die Lage der Kurve (Eigenvektoren von $\delta$) und die L\"angen der Halbachsen.
+\begin{align}
+  c \rightsquigarrow & \widetilde{c} = \frac{\det{\Delta}}{\det{\delta}} \\
+  & \widetilde{c} = F(m_1, m_2) + C \\
+  & \widetilde{c} = \frac{1}{2}L(m_1, m_2) + C
+\end{align}
+\noindent mit $L(m_1, m_2) = 2\cdot b_1\cdot m_1 + 2\cdot b_2\cdot m_2$ (lineare Form). \\
+\begin{align}
+  (x_1, x_2) \rightsquigarrow (\widetilde{x_1}, \widetilde{x_2}) \quad&\det{\Delta}\text{ und }\det{\delta}\text{ bleigen invariant} \\
+  (\widetilde{x_1}, \widetilde{x_2}) \rightsquigarrow (x_1, x_2) \quad&\det{\delta}, \widetilde{c}\text{ und }\det{\Delta}\text{ bleiben invariant}
+\end{align}
+
+\begin{align}
+  \Delta &= \begin{pmatrix}
+		a_{11} & a_{12} & b_1 \\
+		a_{12} & a_{22} & b_2 \\
+		b_1    & b_2    & C
+	\end{pmatrix} \\
+  \delta &= \begin{pmatrix}
+		a_{11} & a_{12} \\
+		a_{12} & a_{22}
+	\end{pmatrix} \\
+  \sigma &= \text{Spur}(\delta)
+\end{align}
+
+\begin{center}
+{\small
+\begin{tabular}{p{1.5cm} | p{5cm} | p{3cm}}
+	                      & $\det{\Delta}\neq 0$ & $\det{\Delta} = 0$ \\
+\hline
+$\det{\delta} > 0$ & \begin{tabular}{l | l} $\sigma\cdot\det{\Delta} < 0$ & reelle Ellipse \\ \hline $\sigma\cdot\det{\Delta} > 0$ & imagin\"are Ellipse \end{tabular}    & 2 imagin\"are Geraden oder 1 Punkt \\
+\hline
+$\det{\delta} < 0$ & Hyperbel                        & ein Paar sich schneidende Geraden \\
+\hline
+$\det{\delta} = 0$ & Parabel                         & ein Paar parallele Geraden reell oder imagin\"ar \\
+\hline
+\end{tabular}
+}
+\end{center}
+
+
+\section{Kleinste Quadrate}
+Modell: $y_i = a_0 + a_1 \cdot x_i + r_i$ \\
+linear in den Parametern $a_0, a_1$ \\
+Messdaten: $(x_i, y_i)$ mit $x_i$ Fehlerfrei und $y_i$ mit zuf\"alligem Fehler. Fehler,
+Residuum: $r_i$
+\begin{equation}
+  \sum_{i=1}^n r_i^2 = \sum_{i=1}^n {\left[{y_i-(a_0+a_1\cdot x_i)}\right]}^2
+\end{equation}
+
+Beispiele von Modellen:
+\begin{align}
+  y_i &= a_0 + a_1 \cdot x_i + a_2 \cdot x_i^2 + r_i \\
+  y_i &= a_1 + a_2 \cdot \exp^{-x_i} + r_i \\
+  & \Longrightarrow \ln{x_i} = \ln{a_i} - x_i \cdot a_2 + \ln{r_i} \\
+  & \Longrightarrow z_i = b_1 - x_i \cdot b_2 + \widetilde{r_i} \qquad\text{Substituiert}
+  y_i &= a_1 \cdot \sin{x_i} + r_i
+\end{align}
+
+\subsection{Matrizenschreibweise des linearen Modells}
+\begin{equation}
+  \underline{y} = X \cdot \underline{a} + \underline{r}
+\end{equation}
+mit
+\begin{tabular}{l l}
+  $\underline{y}$ & Vektor der Messwerte (bekannt) \\
+  $X$ & Designmatrix (bekannt) \\
+  $\underline{a}$ & Vektor der Parameter (unbekannt) \\
+  $\underline{r}$ & Vektor der Residuen (unbekannt) \\
+\end{tabular}
+\begin{gather}
+  \begin{pmatrix} y_1 \\ \vdots \\ y_n \end{pmatrix} =
+	\begin{pmatrix} x_1 & 1 \\ \vdots & \vdots \\ x_n & 1 \end{pmatrix}
+	\begin{pmatrix} a_1 \\ a_0 \end{pmatrix} +
+	\begin{pmatrix} r_1 \\ \vdots \\ r_n \end{pmatrix} \\
+  {\|\underline{y}-X\underline{a}\|}^2 = {\|\underline{y}\|}^2 + \underline{a}^TX^TX\underline{a} - 2\cdot\underline{y}^TX\underline{a}
+\end{gather}
+
+\subsection{Fehlergleichung}
+\begin{align}
+  y_i = a_0 + a_1 \cdot x_i + r_i \\
+  \underline{y} = X\cdot\underline{a} + \underline{r}
+\end{align}
+
+\subsection{Spezialfall: Parameter einer Ausgleichsgeraden}
+Model: $y_i = a_0 + a_1 \cdot x_i + r_i$
+\begin{align}
+  n\cdot a_0 + a_1\sum x_i &= \sum y_i \\
+  a_0\cdot\sum x_i + a_1\sum x_i^2 &= \sum x_i\cdot y_i
+\end{align}
+
+Normalengleichungsystem
+\begin{gather}
+  \hat{a_1} = \frac{\begin{vmatrix}1 & \overline{y} \\ n\overline{x} & \sum x_i\cdot y_i \end{vmatrix}}
+	{\begin{vmatrix} 1 & \overline{x} \\ n\overline{x} & \sum x_i^2 \end{vmatrix}} = 
+	\frac{\sum x_i\dot y_i - n\cdot\overline{x}\cdot\overline{y}}{\sum x_i^2 - n\overline{x}^2} \\
+  \hat{a_1} = \frac{\sum (x_i - \overline{x})(y_i - \overline{y})}{\sum (x_i - \overline{x})^2}
+\end{gather}
+Die erste Variante ist numerisch sehr schlecht. Besser ist die zweite Variante.
+Obige Formeln sind analog f\"ur $a_0$ anzuwenden.
+
+
+\subsection{Normalengleichungsystem}
+Matrizenschreibweise:
+\begin{equation}
+  (X^TX)\underline{a} = X^T\underline{y}
+\end{equation}
+Formale L\"osung, numerisch \textbf{sehr} schlecht, funktioniert aber f\"ur alle lienaren Modelle!
+\begin{equation}
+  \hat{\underline{a}} = {(X^TX)}^{-1}X^T\underline{y}
+\end{equation}
+
+\subsection{Formale bestimmung der Parameter}
+\begin{gather}
+  t = \underline{a}^T\underline{y} \\
+  \frac{\partial t}{\partial \underline{a}} =
+	\begin{pmatrix}
+		\frac{\partial t}{\partial a_1} \\ \vdots \\ \frac{\partial t}{\partial a_n}
+	\end{pmatrix} = \begin{pmatrix} y_1 \\ \vdots \\ y_n \end{pmatrix} \qquad
+	\frac{\partial}{\partial\underline{a}}\underline{a}^T\underline{y} = \underline{y} \\
+  Q = \underline{a}^TS\underline{a} \\
+  \frac{\partial Q}{\partial\underline{a}} \Longrightarrow
+	\frac{\partial}{\partial\underline{a}}\underline{a}^TS\underline{a} = 2\cdot S\underline{a} \\
+  \|\underline{r}\|^2 = \|\underline{y} - X\underline{a}\|^2 = \|\underline{y}\|^2 -
+	2\underline{a}^TX^T\underline{y}+\underline{a}^TS\underline{a} \quad\text{mit}\quad S=X^TX \\
+  \intertext{Ableitung von $\|\underline{r}\|^2$ nach $\underline{a}$:}
+  \frac{\partial}{\partial\underline{a}}\|\underline{r}\|^2 =
+	\frac{\partial}{\partial\underline{a}}
+	\left({\|\underline{y}\|^2 - 2\underline{a}^TX^T\underline{y} + \underline{a}^TS\underline{a}}\right) \\
+  \Longrightarrow\qquad X^TX\underline{a} = X^T\underline{y}
+\end{gather}
+
+
+\section{Simplex-Algorithmus}
+Eine lineare Ungleichung zerlegt den n-Dimensionalen Raum in zwei Halbr\"aume. In einem Halbraum ist die Gleichung erf\"ullt, im andern nicht.
+
+Eine lineare Funktion, welche auf einer abgeschlossenen konvexen Menge definiert ist, nimmt ihren Maximalwert und ihr Minimalwert auf dem Rand der Menge an.
+
+\subsection{Idee}
+Von einer bekannten Ecke des zul\"assigen Gebietes aus, schreitet man auf dem Rande von Ecke zu Ecke jeweils in einer Richtung fort in welcher die Zielfunktion zunimmt.
+
+Jede Ecke des Polygons am Rande des zul\"assigen Gebietes ist dadurch charakterisiert, dass mindestens zwei der beteiligten Variablen 0 sind, w\"ahrend die \"ubrigen einem nicht negativen Wert haben.
+
+\subsection{Beispiel}
+Lineares Ungleichungssystem:
+\begin{alignat}{4}
+  10 & x_1 & + 20 & x_2 & \leq 1100 \\
+     & x_1 & +  4 & x_2 & \leq  160 \\
+     & x_1 & +    & x_2 & \leq  100 \\
+     & x_1 &      &     & \geq    0 \\
+     &     &      & x_2 & \geq    0 \\
+\end{alignat}
+Zielfuntktion: $40x_1 + 120x_2$ muss maximiert werden. \\
+\begin{center}
+	\begin{pspicture}(-1,-1)(5,5)
+		\pspolygon[fillstyle=hlines*,fillcolor=white,linecolor=lightgray]
+			(0,0)(0,3.95)(1.72,3.8)(3.15,2.35)(3.85,0)
+		\psline{->}(0,0)(4.5,0)
+		\psline{->}(0,0)(0,4.5)
+		\rput[Bl](4.7,0){$x_1$}
+		\rput[Bb](0,4.6){$x_2$}
+		\rput[Br](-0.2,2){$x_1=0$}
+		\rput[Bt](2,-0.2){$x_2=0$}
+		\psline[linestyle=dashed]{-}(-0.5,4)(4.5,3.5)
+		\rput[Bb](4.5,3.6){$y_2=0$}
+		\psline[linestyle=dashed]{-}(1,4.5)(4.5,1)
+		\rput[Bb](4.5,1.6){$y_1=0$}
+		\psline[linestyle=dashed]{-}(2.5,4.5)(4,-0.5)
+		\rput[Bl](4.1,-0.5){$y_3=0$}
+		\pscircle(0,0){0.1}
+		\pscircle(0,3.95){0.1}
+		\pscircle(1.72,3.8){0.1}
+		\pscircle(3.15,2.35){0.1}
+		\pscircle(3.85,0){0.1}
+		\rput[Br](-0.2,-0.1){$0$}
+		\rput[Br](-0.2,4.1){$A$}
+		\rput[Bb](1.72,4.0){$B$}
+		\rput[Bl](3.25,2.45){$C$}
+		\rput[Bt](3.65,-0.2){$D$}
+	\end{pspicture}
+\end{center}
+
+
+Organisation: einf\"uhren von Schlupfvariablen
+\begin{alignat}{4}
+  y_1 &= -110x_1 & - & 20x_2 + & 1100 \\
+  y_2 &= -x_1 & - & 4x_2 + & 160 \\
+  y_3 &= -x_1 & - & x_2 + & 100
+\end{alignat}
+wobei
+\begin{alignat}{2}
+  y_i &\geq 0 \qquad i &= 1 \ldots 3 \\
+  x_i &\geq 0 \qquad i &= 1 \ldots 2
+\end{alignat}
+Zielfunktion: $z = 40x_1 + 120x_2$ \\
+
+\noindent Schema f\"ur Ecke 0 $(x_1=0, x_2=0)$:
+\begin{center}\begin{tabular}{p{2cm} | p{2cm} p{2cm} | p{2cm} |}
+\hline
+	& $x_1$ & $x_2$ & $1$ \\
+\hline
+$y_1 =$ & $-10$   & $-20$   & $1100$ \\
+$y_2 =$ & $-1$    & $-4$    & $160$ \\
+$y_3 =$ & $-1$    & $-1$    & $100$ \\
+\hline
+$z =$   & $40$    & $120$   & $0$ \\
+\hline
+\end{tabular}\end{center}
+
+\noindent Schema f\"ur Ecke A $(x_1=0, y_2=0)$: \\
+\begin{center}\begin{tabular}{p{2cm} | p{2cm} p{2cm} | p{2cm} |}
+\hline
+	& $x_1$          & $y_2$          & $1$ \\
+\hline
+$y_1 =$ & $-5$           & $5$            & $300$ \\
+$x_2 =$ & $-\frac{1}{4}$ & $-\frac{1}{4}$ & $40$ \\
+$y_3 =$ & $-\frac{3}{4}$ & $\frac{1}{4}$  & $60$ \\
+\hline
+$z =$   & $10$           & $-30$          & $4800$ \\
+\hline
+\end{tabular}\end{center}
+Der Punkt ist zul\"assig, denn alle nicht-Basisvariablen sind in diesem Punkt nicht negativ. \\
+
+Von Schema 0 zu Schema A gelangt man, indem man per Austauschverfahren die Variablen $x_2$ und $y_2$ vertauscht. Das Pivot war $-4$. usw. \ldots
+
+Das Optimum ist in Punkt B erreicht, denn alle Elemente der Zielfunktion (ausser ihrem Wert) sind negativ.
+
+Der Weg l\"angs des Randes des Polytops ist wie folgt zu w\"ahlen:
+\begin{center}
+\begin{tabular}{| p{1cm} | p{1cm} p{1cm} p{1.5cm} p{1cm} p{1cm} | p{1cm} |}
+\hline
+              & $x_1$    & $\cdots$ & $x_q$    & $\cdots$ & $x_n$ & $1$ \\
+\hline
+$y_1 =$       &          &          & $a_{1q}$ &          &       & $b_1$ \\
+$\vdots$      &          &          &          &          &       &       \\
+$y_i =$       &          &          & $a_{iq}$ &          &       & $b_i$ \\
+$\vdots$      &          &          &          &          &       &       \\
+$y_m =$       &          &          & $a_{mq}$ &          &       & $b_m$ \\
+\hline
+$z =$         & $c_1$    & $\cdots$ & $c_q$    & $\cdots$ & $c_n$ & $d$ \\
+\hline
+\end{tabular}
+\end{center}
+\begin{enumerate}
+  \item In der neuen Ecke sollte der Wert $d'$ der Zielfunktion gr\"osser als $d$ werden.
+  \item Die neue Ecke soll auf dem Rande des zul\"assigen Gebietes liegen $\Longrightarrow\quad b_i' \geq 0 \forall i$
+\end{enumerate}
+\begin{gather*}
+  d' \geq d \\
+  b_i' \geq 0 \forall i \qquad\text{insbesondere:}\quad b_p' \geq 0
+\end{gather*}
+
+\begin{itemize}
+  \item Die Pivot-Kolonne ist so zu w\"ahlen, dass ihr Element $c_q$ in der Zeile der Zielfunktion positiv allenfalls 0 ist.
+  \item In der gew\"ahlten Pivotkolonne muss das Element $a_{pq}$ negativ sein. Die Pivot-Zeile ist bestimmt durch den absolut kleinsten Quotienten $\frac{b_i}{|a_{iq}|}$, welche mit dem negativen Elementen $a_{iq}$ der Pivotkolonne gebildet werden.
+\end{itemize}
+
+Das Verfahren kann auf folgende Arten abbrechen:
+\begin{enumerate}
+  \item Alle Elemente der Zielfunktion sind negativ. Das gesuchte Optimum wurde erreicht, denn die Zielfunktion kann nicht mehr zunehmen.
+  \item Es gibt zwar positive Elemente in der Zielfunktionszeile, aber in der dazugeh\"origen Spalte sind alle Elemente gr\"osser 0, d.h. die Zielfunktion kann beliebig gross gemacht werden.
+\end{enumerate}
+
+\subsection{Zusammenfassung}
+\begin{center}
+\begin{tabular}{| p{3cm} | p{9cm} |}
+\hline
+  Optimum ist erreicht & Alle $b_i \geq 0$ und alle $c_i \leq 0$ \\
+\hline
+  Zielfunktion ist unbeschr\"ankt & $\exists k$ mit $c_k > 0$ und alle $a_{ik} \geq 0 \forall i$ in Spalte $k$ \\
+\hline
+  das lineare Programm hat keine L\"osung & $\exists i$ mit $b_i < 0$ und $a_{ik} \leq 0 \forall k$ in Zeile $i$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Normen}
+
+\subsection{Normen von Vektoren}
+Unter der Norm $\|\underline{x}\|$ eines Vektors \underline{x} versteht man eine reelle Funktion von $\underline{x}$ mit dem folgenden Eigenschaften:
+\begin{enumerate}
+  \item $\|\underline{x}\| \geq 0 \qquad \|\underline{x}\| = 0 \Leftrightarrow \underline{x}=\underline{0}$
+  \item $\|\lambda\underline{x}\| = |\lambda|\cdot\|\underline{x}\| \qquad\lambda\quad\text{ein Skalar}$
+  \item $\|\underline{x}+\underline{y}\| \leq \|\underline{x}\|+\|\underline{y}\|$ Dreiecksungleichung
+\end{enumerate}
+
+\subsubsection{Beispiele von Normen}
+\begin{align}
+  {\|\underline{x}\|}_1 = \sum_{i=1}^n |x_i| \qquad & l_1 -\text{Norm} \\
+  {\|\underline{x}\|}_2 = \sqrt{\sum_{i=1}^n |x_i|^2} \qquad & l_2 -\text{Norm, euklidsche Norm} \\
+  {\|\underline{x}\|}_p = \sqrt[p]{\sum_{i=1}^n |x_i|^p} \quad\text{mit}\quad 1\leq p < \infty\qquad & l_p -\text{Norm, H\"older-Norm} \\
+  {\|\underline{x}\|}_\infty = \max_i |x_i| \qquad & l_\infty -\text{Norm, maximum-Norm} \\
+\end{align}
+
+Es gilt:
+\begin{equation}
+  \frac{1}{n}{\|\underline{x}\|}_1 \leq {\|\underline{x}\|}_\infty \leq {\|\underline{x}\|}_1 \leq n\cdot {\|\underline{x}\|}_\infty
+\end{equation}
+
+\subsection{Normen von Matrizen}
+Unter der Norm einer Matrix $A$ versteht man eine Funktion $A\longmapsto\|A\|$ mit folgenden Eigenschaften:
+\begin{enumerate}
+  \item $\|A\|\geq 0 \qquad\|A\|=0 \Leftrightarrow A=0$
+  \item $\|\alpha \cdot A\| = |\alpha |\cdot\|A\|\qquad\forall\alpha\in\mathbb{C}$
+  \item $\|A+B\|\leq\|A\|+\|B\|$
+  \item $\|A\cdot B\|\leq\|A\|\cdot\|B\|$
+\end{enumerate}
+
+\subsubsection{Beispiele von Normen}
+\begin{align}
+  {\|A\|}_\infty &= \max_{i}\sum_k |a_{ik}| \qquad\text{Summe der Spalten}\\
+  {\|A\|}_E &= \sqrt{\sum_i \sum_k {|a_{ik}|}^2} \qquad\text{Forbenius} \\
+  {\|A\|}_1 &= \max_j \sum_i |a_{ik}| \qquad\text{Summe der Zeilen} \\
+  {\|A\|} &= \lambda_{max}^{\frac{1}{2}}
+\end{align}
+$\lambda_{max}$ als gr\"osster Eigenwert der Matrix $A^TA$.
+
+\section{Konvergenz}
+
+\subsection{Konvergenz einer Vektorfolge}
+Eine Vektorfolge ${\left\{\underline{x}^{(k)}\right\}}_{k \in \mathbb{N}}$ konvergiert gegen einen Vektor $\underline{x}$ falls jede Komponente der Folge gegen die entsprechende Komponente von $\underline{x}$ vonvergiert.
+
+Damit eine unendliche Vektorfolge gegen $\underline{x}$ konvergiert, ist es notwendig und hinreichend, dass f\"ur eine beliebige Vektornorm folgendes gilt:
+\begin{equation}
+  \lim_{k \rightarrow\infty} \|\underline{x}^{(k)} - \underline{x}\| = 0
+\end{equation}
+
+
+\subsection{Konvergenz einer Matrixfolge}
+Eine Matrixfolge $A^{(k)}$ konvergiert gegen eine Matrix $A$ falls jedes einzelne Element der Matrix $A^{(k)}$ konvergiert.
+
+Notwendig und hinreichend f\"ur die Konvergenz f\"ur eine Matrixfolge $A^{(k)}$ gegen $A$:
+\begin{equation}
+  \lim_{k \rightarrow\infty} \|A^{(k)}-A\| =0
+\end{equation}
+
+In den meisten Konvergenzbetrachtungen werden sowohl Matrizen als auch Vektoren auftreten.
+Die Norm der Matrizen und Vektoren m\"ussen vertr\"aglich sein:
+\begin{center}\begin{tabular}{p{2cm} p{1.5cm} p{2cm} p{1.5cm}}
+  $\|A\|_\infty$ & ist durch & $\|\underline{x}\|_\infty$ & induziert \\
+  $\|A\|_1$      & ist durch & $\|\underline{x}\|_1$      & induziert \\
+  $\|A\|_2$      & ist durch & $\|\underline{x}\|_2$      & induziert \\
+  $\vdots$       &           & $\vdots$                   & \\
+\end{tabular}\end{center}
+$\|A\|_E$ ist von keiner Vektornorm induziert.
+
+\noindent Jede Matrixnorm, welche durch eine Vektornorm induziert wird, stellt eine obere Schranze f\"ur die Betr\"age ihrer Eigenwerte.
+
+\noindent Sei $\underset{n\times n}{A}$ eine Matrix.\\
+\noindent Sei $\underline{x}$ Eigenvektor von $A$ zu $\lambda$.
+\begin{gather}
+  A\underline{x} = \lambda\underline{x} \quad\Longrightarrow\frac{\|A\underline{x}\|}{\|\underline{x}\|} = |\lambda| \\
+  \max_{\|\underline{x}\neq 0\|} \frac{\|A\underline{x}\|}{\|\underline{x}\|} \geq |\lambda| \\
+  \|A\| \geq |\lambda|\quad\forall\lambda \\
+  \|A\| \geq \max |\lambda |
+\end{gather}
+
+
+\section{Konditionszahl einer Matrix}
+Die Konditionszahl ist ein Mass f\"ur die Singularit\"at der Matrix. \\
+
+Geometrische Definition:
+\begin{gather}
+  \text{sei}\quad M = \max_{\underline{x}\neq\underline{0}}\frac{\|A\underline{x}\|2}{\|\underline{x}\|_2} \\
+  \text{sei}\quad m = \min_{\underline{x}\neq\underline{0}}\frac{\|A\underline{x}\|_2}{\|\underline{x}\|_2}
+\end{gather}
+\begin{equation}
+  \kappa = \frac{M}{m} \qquad\text{je gr\"osser, je gef\"ahrlicher numerisch}
+\end{equation}
+
+Falls $A$ regul\"ar: $\kappa = \|A\|_2 \cdot \|A^{-1}\|_2$
+
+\begin{gather}
+  \underset{n\times m}{A} = \underset{n\times m}{U}\cdot\underset{m\times m}\cdot V^T \\
+  \intertext{mit}
+  U^TU = I \qquad\text{Spalten sind orthonormiert} \\
+  V^TV = I \\
+  S = \begin{pmatrix}
+		s_1 & 0      & 0 \\
+		0   & \ddots & 0 \\
+		0   & 0      & s_m
+	\end{pmatrix} \qquad\text{mit} s_i \geq 0 \\
+  \kappa = \frac{\max s_i}{\min s_i} = \frac{\lambda_{max}^{\frac{1}{2}}}{\lambda_{min}^{\frac{1}{2}}} =
+	\sqrt{\frac{\lambda_{max}}{\lambda_{min}}} \\
+  \intertext{wobei}
+  1 \leq \kappa \leq \infty
+\end{gather}
+
+Faustregel beim L\"osen eines linearen Gleichungssystems $A\underline{x}=\underline{b}$:
+
+Bei einer $d$-stellingen dezimalen Gleitkommarechnung k\"onnen die relativen Fehler der Ausgangsdaten von folgender Gr\"ossenordnung sein:
+\begin{equation}
+  \frac{\|\Delta A\|}{\|A\|} \approx 5\cdot 10^{-d}
+\end{equation}
+
+Ist die Konditionszahl $\kappa (A) \approx 10^\alpha$, so gilt:
+\begin{gather}
+  \frac{\|\Delta x\|}{\|x+\Delta x\|} \leq \kappa (A) \cdot \frac{\|\Delta A\|}{\|A\|} \\
+  \frac{\|\Delta x\|}{\|\Delta x\|} \leq \kappa (A)\cdot\frac{\|\Delta b\|}{\|b\|}
+\end{gather}
+
+Wird ein lineares Gleichungsystem $A\underline{x}=\underline{b}$ mit $d$-stelligem, dezimalen Float gel\"ost und die Konditionszahl $\approx 10^\alpha$, so sind Aufgrund der unvermeidlichen Eingangsfehler nur $d-\kappa -1$ Dezimalstellen in der L\"osung $\underline{x}$ sicher.
+
+%
+% EOF
+%

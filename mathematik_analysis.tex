@@ -1,0 +1,2823 @@
+
+%
+% $Id: mathematik_analysis.tex,v 1.8 2003/10/26 12:59:53 ninja Exp $
+%
+
+\section{Allgemeines}
+
+\subsection{Quadratische Gleichung}
+\begin{gather}
+  x_{1,2} = -\frac{p}{2}\pm\sqrt{{\left(\frac{p}{2}\right)}^2-q} \\
+  x_{1,2} = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
+\end{gather}
+
+\subsection{Funktionsgleichung}
+\begin{equation}
+  y = m\cdot x+q \quad \text{mit m: Steigung, q: Achenabschnitt}
+\end{equation}
+
+\subsection{Achsenabschittsgleichung}
+\begin{equation}
+\frac{x}{p}+\frac{y}{q} = 1
+\end{equation}
+
+\subsection{Koordinatengleichung}
+\begin{equation}
+  Ax+By+C = 0
+\end{equation}
+
+\subsection{Satz von Vieta}
+\begin{align}
+  x_1 + x_2 &= -p \\
+  x_1 \cdot x_2 &= q
+\end{align}
+
+\subsection{Binominalkoeffizienten}
+\begin{equation}
+  \binom{n}{k} = \frac{n!}{k!\cdot{\left(n-k\right)}!}
+\end{equation}
+
+
+\section{Grenzwerte}
+\begin{equation}
+\lim_{x\rightarrow c}f(x) = l
+\end{equation}
+Sind die einseitigen Grenzwerte nicht gleich, so existiert kein Grenzwert:
+\begin{equation}
+\text{wenn} \lim_{x\rightarrow c^-}f(x) \neq \lim_{x\rightarrow c^+}f(x) \quad
+\Rightarrow \nexists \lim_{x\rightarrow c}f(x)
+\end{equation}
+\\
+Standardgrenzwerte:
+\begin{align}
+  {\left(1+\frac{1}{n}\right)}^n &= e \\
+  {\left(1-\frac{1}{n}\right)}^n &= \frac{1}{e} \\
+  \lim_{x\rightarrow c}\sin{x} &= \sin{c} \\
+  \lim_{x\rightarrow c}\cos{x} &= \cos{c} \\
+  \lim_{x\rightarrow 0}\frac{\sin{x}}{x} &= 1 \\
+  \lim_{x\rightarrow 0}\frac{1-\cos{x}}{x} &= 0 \\
+  \lim_{n\rightarrow \infty}x^{\frac{1}{n}} &= 0 \qquad \text{sofern} \quad x > 0 \\
+  \lim_{n\rightarrow \infty}x^n &= 0 \qquad \text{sofern} \quad |x| > 0 \\
+  \lim_{n\rightarrow \infty}\frac{x^n}{n!} &= 0 \qquad \text{mit} \quad x \in \mathbb{R} \\
+  \lim_{n\rightarrow \infty}\frac{1}{n^\alpha} &= 0 \qquad \text{f"ur} \quad \alpha > 0 \\
+  \lim_{n\rightarrow \infty}\frac{\ln{n}}{n} &= 0 \\
+  \lim_{n\rightarrow \infty}{\left(1+\frac{x}{n}\right)}^n &= e^x \qquad \text{mit} \quad x \in \mathbb{R}
+\end{align}
+
+
+\section{Folgen}
+Monotonie:
+\begin{align}
+  a_n &< a_{n+1} \qquad \text{Streng monoton wachsend} \\
+  a_n &\leq a_{n+1} \qquad \text{Monoton wachsend} \\
+  a_n &> a_{n+1} \qquad \text{Streng monoton fallend} \\
+  a_n &\geq a_{n+1} \qquad \text{Monoton fallend} \\
+\end{align}
+Divergenz: Folge ohne Grenzwert; unbeschr"ankte Folge \\
+Konvergenz: Folge mit Grenzwert; beschr"ankte Folge \\
+
+\section{Differenation}
+
+\subsection{Regeln}
+\subsubsection{Potenzregel}
+\begin{equation}
+{\left(x^n\right)}' = n \cdot x^{n-1}
+\end{equation}
+
+\subsubsection{Produktregel}
+\begin{equation}
+{\left(f(x) \cdot g(x)\right)}' = f(x) \cdot g'(x) + f'(x) \cdot g(x)
+\end{equation}
+
+\subsubsection{Summenregel}
+\begin{equation}
+{\left(f(x) + g(x)\right)}' = f'(x) + g'(x)
+\end{equation}
+
+\subsubsection{Skalar}
+\begin{equation}
+{\left(\alpha\cdot f(x)\right)}' = \alpha\cdot f'(x)
+\end{equation}
+
+\subsubsection{Reziprokregel}
+\begin{equation}
+{\left(\frac{1}{g(x)}\right)}' = - \frac{g'(x)}{g^2(x)}
+\end{equation}
+
+\subsubsection{Quotientenregel}
+\begin{equation}
+{\left(\frac{f(x)}{g(x)}\right)}' = \frac{f'(x)\cdot g(x) - f(x)\cdot g'(x)}{g^2(x)}
+\end{equation}
+
+\subsubsection{Kettenregel}
+"Aussere Ableitung mal innere Ableitung.
+\begin{equation}
+{\left(f(g(x))\right)}' = \frac{\partial y}{\partial g} \cdot \frac{\partial g}{\partial x}
+\end{equation}
+
+\subsubsection{Sontiges}
+\begin{gather}
+f\left(f^{-1}(x)\right) = x \\
+f'\left(f^{-1}(x)\right)\cdot{\left(f^{-1}(x)\right)}' = 1 \\
+{\left(f^{-1}(x)\right)}' = \frac{1}{f'\left(f^{-1}(x)\right)}
+\end{gather}
+
+\paragraph{Winkelfunktionen}
+\begin{align}
+  \sin' & \Longrightarrow \cos \\
+  \cos' & \Longrightarrow -\sin \\
+  \tan' & \Longrightarrow \frac{1}{\cos^2} = 1+\tan^2 \\
+  \cot' & \Longrightarrow -\frac{1}{\sin^2} = - \left( 1 + \cot^2 \right) \\
+  \arcsin' & \Longrightarrow \frac{1}{\sqrt{1-x^2}} \\
+  \arccos' & \Longrightarrow -\frac{1}{\sqrt{1-x^2}} \\
+  \arctan' & \Longrightarrow \frac{1}{\sqrt{1+x^2}} \\
+  {\left(\cot^{-1}\right)}' & \Longrightarrow -\frac{1}{\sqrt{1+x^2}}
+\end{align}
+
+\paragraph{Hyperbolische Funktionen}
+\begin{align}
+  \frac{\partial}{\partial x}\sinh{x} &= \cosh{x} \\
+  \frac{\partial}{\partial x}\cosh{x} &= \sinh{x} \\
+  \frac{\partial}{\partial x}\tanh{x} &= \frac{1}{\cosh^2{x}} \\
+  \frac{\partial}{\partial x} &= \frac{-1}{\sinh^2{x}} \\
+\end{align}
+
+\subsection{Differential}
+\begin{equation}
+\partial f = f'(x) \cdot \partial x
+\end{equation}
+
+\subsection{Newton-Raphson}
+\begin{equation}
+x_{n+1} = x_n - \frac{f(x_n)}{x'(x_n)}
+\end{equation}
+
+\section{Implizites Differenzieren}
+\begin{gather*}
+\frac{\partial}{\partial x}\left(3x^3y - 4y - 2x + 1\right) = 0 \\
+9x^2y + 3x^3y' - 4y' - 2 + 0 = 0 \\
+\Longrightarrow \quad y' = \frac{2 - 9x^2y}{3x^3-4}
+\end{gather*}
+
+
+\section{Logarithmus}
+\begin{align}
+  b &= \log_a(x) \qquad \hat{=} \quad \text{Exponent} \\
+  a^b &= a^{\log_a(x)} = x \\
+  \log_a(u\cdot v) &= \log_a(u) + \log_a(v) \\
+  \log_a\left(\frac{u}{v}\right) &= \log_a(u) - \log_a(v) \\
+  \log_a\left(u^n\right) &= n \cdot \log_a(u) \\
+  \log_b(x) &= \frac{\log_a(x)}{\log_a(b)} \\
+  {\left(\ln(x)\right)}' &= \frac{\partial}{\partial x}\ln(x) = \frac{1}{x} \\
+  \frac{\partial}{\partial x}\exp^x &= \exp^x \\
+  \frac{\partial}{\partial x}\exp^y &= \exp^y \cdot y' \\
+  \frac{\partial}{\partial x}\log_a(x) &= \frac{1}{\ln(a) \cdot x}
+\end{align}
+
+
+\section{Integration}
+\begin{equation}
+\int_a^b f(x)\,dx \qquad = \qquad \lim_{n \rightarrow \infty} \sum_{i=0}^{n-1}f({x_i}^*)\cdot \Delta x_i
+\end{equation}
+\\
+mit: \\
+\\
+\begin{tabular}{p{1cm} p{10cm}}
+x: & fiktive Variable \\
+a: & untere Grenze \\
+b: & obere Grenze \\
+\end{tabular}
+\\
+\textbf{Definition:} Ein Integral ist der Grenzwert einer Summe. \\
+\\
+Bezeichnungen:
+\begin{equation*}
+F(x) = \int_a^b x\,dx = \frac{x^2}{2}+c
+\end{equation*}
+\\
+mit: \\
+\\
+\begin{tabular}{p{3cm} p{9cm}}
+	$F(x)$ & Stammfunktion \\
+	$a$ & untere Grenze \\
+	$b$ & obere Grenze \\
+	$x$ & Integrand \\
+	$dx$ & Differenzial \\
+	$c$ & Integrationskonstante \\ 
+\end{tabular}
+\\
+Unbestimmtes Integral:
+\begin{equation}
+	\int\limits_a^x f(t)\,dt = F(t) \hat{=} \text{Funktion in t}
+\end{equation}
+Kurzschreibweise:
+\begin{equation}
+	\int f(t)\,dt = F(t)
+\end{equation}
+\\
+Bestimmtes Integral:
+\begin{equation}
+	\int\limits_a^b f(x)\,dx \quad \hat{=} \quad \text{Zahl}
+\end{equation}
+Berechnung:
+\begin{equation}
+	\int\limits_a^b f(x)\,dx = F(b)-F(a) = {F(x)}|_a^b
+\end{equation}
+
+
+\subsection{Linearit"at des Integrals}
+\begin{align}
+\int_a^b \left(f(x)+g(x)\right)\,dx &= \int_a^b f(x)\,dx + \int_a^b g(x)\,dx \\
+\int_a^b \alpha\cdot f(x)\,dx &= \alpha\cdot\int_a^b f(x)\,dx
+\end{align}
+
+
+\subsection{Standardsubstitution f"ur Integrale mit Winkelfunktionen}
+\begin{equation}
+u = \tan{\frac{x}{2}}
+\end{equation}
+
+
+\subsection{Grundintegrale}
+\begin{align}
+  \int x^n\,dx &= \frac{x^{n+1}}{n+1}+c \\
+  \int \frac{1}{x}\,dx &= \ln\left(|x|\right)+c \\
+  \int \frac{1}{\cos^2{x}}\,dx &= \tan(x)+c \\
+  \int \cos{x}\,dx &= \sin{x}+c \\
+  \int \sin{x}\,dx &= -\cos{x}+c \\
+  \int a^x\,dx &= \frac{a^x}{\ln(a)}+c \\
+  \int \left(\lambda + x^2\right)\,dx &= \lambda \cdot x + \frac{1}{3}\cdot x^3 + c
+\end{align}
+
+
+\subsection{Integration Trigonometrischer Funktionen}
+\begin{gather}
+  \int\cos{x}\,dx = \sin{x}+c \\
+  \int\sin{x}\,dx = -\cos{x}+c \\
+  \int\cos^2{x}\,dx = \frac{1}{2}x+\frac{1}{4}\sin{2x}+c \\
+  \int\sin^2{x}\,dx = \frac{1}{2}x-\frac{1}{4}\sin{2x}+c \\
+  \int\tan{x}\,dx = \ln{\left|{\frac{1}{\cos{x}}}\right|}+c = -\ln{\cos{x}}+c \\
+  \int\cot{x}\,dx = \ln{\left|{\sin{x}}\right|}+c \\
+  \int\arcsin{x}\,dx = x\cdot \arcsin{x}+\sqrt{1-x^2}+c \\
+  \int\frac{1}{\sqrt{a^2-x^2}}\,dx = \int\frac{1}{a\sqrt{1-{\left({\frac{x}{2}}\right)}^2}}\,dx = \arcsin{\left({\frac{x}{a}}\right)}+c \\
+  \int\frac{1}{a^2+x^2}\,dx = \frac{1}{a}\cdot\arctan{\left({\frac{x}{a}}\right)}+c \\
+  \int\arctan{x}\,dx = x\cdot\arctan{x}-\frac{1}{2}\ln{\left({1+x^2}\right)}+c
+\end{gather}
+
+
+\subsection{Integration hyperbolischer Funktionen}
+\begin{align}
+  \int\sinh{x}\,dx &= \cosh{x}+c \\
+  \int\cosh{x}\,dx &= \sinh{x}+c
+\end{align}
+
+
+\subsection{Integrationsmethoden}
+
+\subsubsection{Partielle Integration}
+\begin{equation}
+\int u\cdot v'\, = u\cdot v - \int u' \cdot v \,
+\end{equation}
+
+\subsubsection{Substitution}
+\begin{equation*}
+  \int_{g_u}^{g_o} \sin(2x)\,dx
+\end{equation*}
+\begin{align*}
+\text{Substitution durch:} & \\
+u &= 2x \\
+du &= 2 \\
+g_u' &= 2(g_u) \\
+g_o' &= 2(g_o)
+\end{align*}
+\begin{equation}
+\Longrightarrow \quad \int_{g_u'}^{g_o'} \sin(u)\,du
+\end{equation}
+
+\subsubsection{Partialbruchzerlegung}
+\begin{equation}
+\int \frac{1}{x^2 + x}\,dx
+\end{equation}
+
+\subsection{Fl"ache unter einer Kurve}
+\begin{center}
+	\begin{pspicture}(0.0,-0.5)(4.5,4.0)
+		\pscustom[linewidth=2pt]{
+			\pscurve(0.5,2.0)(1.0,3.0)(2.0,2.0)(3.5,3.0)
+			\gsave
+				\pscurve[liftpen=1](3.5,0.5)(2.5,1.0)(2.0,0.5)(0.5,1.0)
+				\fill[fillstyle=solid,fillcolor=lightgray]
+			\grestore}
+		\pscurve[linewidth=2pt](3.5,0.5)(2.5,1.0)(2.0,0.5)(0.5,1.0)
+		\rput[Bl](4.0,3.0){$f(x)$}
+		\rput[Bl](4.0,0.5){$g(x)$}
+		\psline{->}(0.0,0.0)(4.0,0.0)\rput[Bl](4.2,0.0){$x$}
+		\psline{->}(0.0,0.0)(0.0,4.0)\rput[Bl](0.2,3.8){$y$}
+		\psline[linestyle=dashed](0.5,3.5)(0.5,-0.2)\rput[Bt](0.5,-0.3){$a$}
+		\psline[linestyle=dashed](3.5,3.5)(3.5,-0.2)\rput[Bt](3.5,-0.3){$b$}
+		\rput*[B](2.0,1.4){$F$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+F = \int_a^b f(x)\,dx - \int_a^b g(x)\,dx = \int_a^b \left[{f(x)-g(x)}\right]\,dx
+\end{equation}
+\\
+Allgemein:
+\begin{equation}
+F = \int_a^b \left|{f(x) - g(x)}\right|\,dx
+\end{equation}
+\\
+Analog dazu:
+\begin{center}
+	\begin{pspicture}(-0.5,0.0)(4.5,4.0)
+		\pscustom[linewidth=2pt]{
+			\pscurve(2.0,0.5)(3.0,1.0)(3.0,3.5)
+			\gsave
+				\pscurve[liftpen=1](2.0,3.5)(0.5,1.0)(1.0,0.5)
+				\fill[fillstyle=solid,fillcolor=lightgray]
+			\grestore}
+		\pscurve[linewidth=2pt](2.0,3.5)(0.5,1.0)(1.0,0.5)
+		\rput[Bb](3.0,3.7){$F(y)$}
+		\rput[Bb](2.0,3.7){$G(y)$}
+		\psline[linestyle=dashed]{-}(-0.2,0.5)(3.5,0.5)\rput[Br](-0.3,0.4){$c$}
+		\psline[linestyle=dashed]{-}(-0.2,3.5)(3.5,3.5)\rput[Br](-0.3,3.4){$d$}
+		\psline{->}(0.0,0.0)(4.0,0.0)\rput[Bl](4.2,0.0){$x$}
+		\psline{->}(0.0,0.0)(0.0,4.0)\rput[Bl](0.2,3.8){$y$}
+		\rput*[B](2.0,2.0){$F$}
+	\end{pspicture}
+\end{center}
+\begin{equation*}
+	F =\int\limits_c^d|F(y)-G(y)|\,dy
+\end{equation*}
+
+\subsection{Volumenberechnung}
+\begin{center}
+	\begin{pspicture}(0.0,-1.5)(4.0,1.5)
+		\psellipse[linestyle=dashed](0.5,0.0)(0.25,1.0)
+		\psellipse[linestyle=dashed](2.5,0.0)(0.25,1.0)
+		\psline[linestyle=dashed]{-}(0.5,1.0)(2.5,1.0)
+		\psline[linestyle=dashed]{-}(0.5,-1.0)(2.5,-1.0)
+		\psellipse[fillstyle=solid,fillcolor=white,linewidth=2pt,linecolor=red](1.8,0.0)(0.25,1.0)
+		\psframe[fillstyle=solid,fillcolor=white,linecolor=white,linewidth=0pt](1.5,-1.0)(1.8,1.0)
+		\psellipse[fillstyle=solid,fillcolor=white,linewidth=2pt,linecolor=red](1.5,0.0)(0.25,1.0)
+		\psline[linewidth=2pt,linecolor=red]{-}(1.5,1.0)(1.8,1.0)
+		\psline[linewidth=2pt,linecolor=red]{-}(1.5,-1.0)(1.8,-1.0)
+		\psline{->}(0.0,0.0)(3.5,0.0)\rput[Bl](3.7,-0.1){$x$}
+		\psline{->}(0.0,-1.5)(0.0,1.5)\rput[Bl](0.2,1.3){$y$}
+		\rput[Bt](1.6,-1.1){$dV$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+	dV=Q\cdot dx\quad\Longrightarrow\quad V=\int\limits_a^b Q(x)\,dx
+\end{equation}
+Q : Querschnittsfl"ache an der Stelle x. Kann eine Funktion von x sein. \\
+\\
+Rotationsk"orper:
+\begin{center}
+	\begin{pspicture}(0.0,-0.5)(4.5,4.0)
+		\pscustom[linewidth=2pt]{
+			\pscurve(0.5,2.0)(1.0,3.0)(2.0,2.0)(3.5,3.0)
+			\gsave
+				\pscurve[liftpen=1](3.5,0.5)(2.5,1.0)(2.0,0.5)(0.5,1.0)
+				\fill[fillstyle=solid,fillcolor=lightgray]
+			\grestore}
+		\pscurve[linewidth=2pt](3.5,0.5)(2.5,1.0)(2.0,0.5)(0.5,1.0)
+		\rput[Bl](4.0,3.0){$f(x)$}
+		\rput[Bl](4.0,0.5){$g(x)$}
+		\psline{->}(0.0,0.0)(4.0,0.0)\rput[Bl](4.2,0.0){$x$}
+		\psline{->}(0.0,0.0)(0.0,4.0)\rput[Bl](0.2,3.8){$y$}
+		\psline[linestyle=dashed](0.5,3.5)(0.5,-0.2)\rput[Bt](0.5,-0.3){$a$}
+		\psline[linestyle=dashed](3.5,3.5)(3.5,-0.2)\rput[Bt](3.5,-0.3){$b$}
+	\end{pspicture}\\
+	Rotation um die $x$-Achse.
+\end{center}
+\begin{equation}
+	V = \pi\int\limits_a^b \left[{f^2(x) - g^2(x)}\right]\,dx
+\end{equation}
+
+
+\subsection{Geometrischer Mittelpunkt: Schwerpunkt}
+\begin{align}
+x_s &= \frac{\int_a^b f(x)\cdot x\,dx}{\int_a^b f(x)\,dx} = \frac{\int_a^b x\,dF}{\int_a^b \,dF} \\
+y_s &= \frac{\frac{1}{2}\int_a^b f^2(x)\,dx}{\int_a^b f(x)\,dx} = \frac{\int_a^b y\,dF}{\int_a^b \,dF}
+\end{align}
+\begin{align}
+x_s\cdot A &= \int_a^b \left[{f(x)-g(x)}\right]\cdot x\,dx \\
+y_s\cdot A &= \frac{1}{2}\cdot \int_a^b \left[{f^2(x)-g^2(x)}\right]\,dx
+\end{align}
+Illustration:
+\begin{center}
+	\begin{pspicture}(-0.5,-0.5)(4.5,4.0)
+		\pscustom[linewidth=2pt]{
+			\pscurve(0.5,2.0)(1.0,3.0)(2.0,2.0)(3.5,3.0)
+			\gsave
+				\pscurve[liftpen=1](3.5,0.5)(2.5,1.0)(2.0,0.5)(0.5,1.0)
+				\fill[fillstyle=solid,fillcolor=lightgray]
+			\grestore}
+		\pscurve[linewidth=2pt](3.5,0.5)(2.5,1.0)(2.0,0.5)(0.5,1.0)
+		\rput[Bl](4.0,3.0){$f(x)$}
+		\rput[Bl](4.0,0.5){$g(x)$}
+		\psline{->}(0.0,0.0)(4.0,0.0)\rput[Bl](4.2,0.0){$x$}
+		\psline{->}(0.0,0.0)(0.0,4.0)\rput[Bl](0.2,3.8){$y$}
+		\psline[linestyle=dashed](0.5,3.5)(0.5,-0.2)\rput[Bt](0.5,-0.3){$a$}
+		\psline[linestyle=dashed](3.5,3.5)(3.5,-0.2)\rput[Bt](3.5,-0.3){$b$}
+		\psline[linestyle=dashed,linecolor=red]{-}(2.0,1.5)(2.0,-0.1)\rput[Bt](2.0,-0.2){$x_s$}
+		\psline[linestyle=dashed,linecolor=red]{-}(2.0,1.5)(-0.1,1.5)\rput[Br](-0.2,1.4){$y_s$}
+		\pscircle[linecolor=red,fillstyle=solid,fillcolor=white](2.0,1.5){0.1}
+	\end{pspicture}
+\end{center}
+
+
+\subsection{Volumensatz von Pappos}
+\begin{center}
+	\begin{pspicture}(0.0,0.0)(4.0,4.0)
+		\pscustom[linewidth=2pt]{
+			\pscurve(0.5,1.5)(1.5,3.0)(2.0,2.0)(3.5,2.0)
+			\gsave
+				\pscurve[liftpen=1](3.5,2.0)(2.0,0.5)(0.5,1.5)
+				\fill[fillstyle=solid,fillcolor=lightgray]
+			\grestore
+		}
+		\pscurve[linewidth=2pt](3.5,2.0)(2.0,0.5)(0.5,1.5)
+		\rput*[B](1.0,1.5){$F$}
+		\rput[tr](0.5,0.5){$S$}
+		\psline{-}(2.0,1.5)(0.6,0.6)
+		\psline[linecolor=blue]{-}(2.0,1.5)(2.0,0.0)\rput[Bl](2.2,0.2){$\overline{R}$}
+		\pscircle[linecolor=red,fillstyle=solid,fillcolor=white](2.0,1.5){0.1}
+		\psline{->}(0.0,0.0)(4.0,0.0)\rput[Br](4.0,0.2){$x$}
+		\psline{->}(0.0,0.0)(0.0,4.0)\rput[Bl](0.2,3.8){$y$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+V = F\cdot2\cdot\pi\cdot\overline{R} \qquad \overline{R}\hat{=}\text{Mittlerer Radius}
+\end{equation}
+
+
+\subsection{Arbeit}
+\begin{equation}
+dE, dA = \vec{F}\cdot d\vec{s} = \|\vec{F}\|\cdot\cos(\phi)\cdot ds \quad \Rightarrow \quad E = \oint_{weg} \vec{F}\,d\vec{s}
+\end{equation}
+
+
+\subsection{Mittelwertsatz}
+\begin{center}
+	\begin{pspicture}(0.0,-0.7)(3.0,3.0)
+		\psecurve[linewidth=2pt](0.5,0.5)(0.5,0.5)(0.8,1.2)(1.5,2.0)(2.5,2.5)(2.5,2.5)
+		\psline[linecolor=blue]{-}(0.3,0.7)(2.0,2.7)\rput*[Bl](2.2,2.7){Tangente}
+		\psline[linecolor=magenta]{-}(0.3,0.4)(2.0,2.4)\rput*[Bl](2.2,2.3){Sehne}
+		\psline[linestyle=dashed]{-}(0.6,0.7)(0.6,-0.2)\rput[Bt](0.6,-0.3){$a$}
+		\psline[linestyle=dashed]{-}(1.9,2.1)(1.9,-0.2)\rput[Bt](1.9,-0.3){$b$}
+		\psline[linestyle=dashed]{-}(1.1,1.6)(1.1,-0.2)\rput[Bt](1.1,-0.3){$\xi$}
+		\psline{->}(0.0,0.0)(3.0,0.0)\rput[Br](3.0,0.2){$x$}
+		\psline{->}(0.0,0.0)(0.0,3.0)\rput[Bl](0.2,2.8){$y$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+\exists \xi \in (a,b) \text{mit} f'(\xi) = \frac{f(b)-f(a)}{b-a} \quad\hat{=}\quad\text{mittlere Steigung}
+\end{equation}
+
+
+\section{Kurvendiskussion}
+Notwendigkeit f"ur lokales Extrem:
+\begin{enumerate}
+  \item Ableitung verschwindet: $f'(x)=0$
+  \item Ableitung existiert nicht (z.B. am Rand)
+\end{enumerate}
+kleinstes lokales Minimum = globales Minimum \\
+gr"osstes lokales maximum = globales Maximum \\
+\\
+\textbf{Konkav}, wenn
+\begin{itemize}
+  \item $f'' > 0$
+  \item $f'$ von neg. nach pos. "ubergeht
+\end{itemize}
+\begin{center}
+	\begin{pspicture}(0.0,0.0)(4,3)
+		\psecurve[linewidth=2pt](0.3,2.5)(0.3,2.5)(2.0,1.0)(3.7,2.0)(3.7,2.0)
+		\psline[linecolor=blue]{-}(0.5,1.5)(3.4,1.0)
+		\pscircle[fillstyle=solid,fillcolor=white,linecolor=blue](0.5,1.5){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white,linecolor=blue](3.4,1.0){0.1}
+		\psline[linestyle=dashed]{-}(0.3,2.5)(0.3,0.0)
+		\psline[linestyle=dashed]{-}(3.7,2.0)(3.7,0.0)
+		\psline{->}(0,0)(4,0)\rput[Bb](3.9,0.2){$x$}
+		\psline{->}(0,0)(0,3)\rput[Bl](0.2,2.8){$y$}
+	\end{pspicture}
+\end{center}
+\textbf{Konvex}, wenn
+\begin{itemize}
+  \item $f'' < 0$
+  \item $f'$ von pos. nach neg. "ubergeht
+\end{itemize}
+\begin{center}
+	\begin{pspicture}(0.0,0.0)(4,3)
+		\psecurve[linewidth=2pt](0.3,1.5)(0.3,1.5)(2.0,2.5)(3.7,2.0)(3.7,2.0)
+		\psline[linecolor=blue]{-}(1.0,1.0)(3.0,1.5)
+		\pscircle[fillstyle=solid,fillcolor=white,linecolor=blue](1.0,1.0){0.1}
+		\pscircle[fillstyle=solid,fillcolor=white,linecolor=blue](3.0,1.5){0.1}
+		\psline[linestyle=dashed]{-}(0.3,1.5)(0.3,0.0)
+		\psline[linestyle=dashed]{-}(3.7,2.0)(3.7,0.0)
+		\psline{->}(0,0)(4,0)\rput[Bb](3.9,0.2){$x$}
+		\psline{->}(0,0)(0,3)\rput[Bl](0.2,2.8){$y$}
+	\end{pspicture}
+\end{center}
+\textbf{Wendepunkt}, wenn $f'' = 0$.
+
+
+\section{Harmonische Bewegung}
+\begin{gather}
+  \ddot{x} + \omega^2\cdot x = 0 \\
+  x_t = A\cdot\cos{(B\cdot t)} + C\cdot \sin{(D\cdot t)}
+\end{gather}
+
+
+\section{Kegelschnitte}
+\begin{center}
+	\begin{pspicture}(-2.0,-3.0)(2.0,3.0)
+		\psline[linestyle=dotted]{-}(0.0,-3.0)(0.0,3.0)
+		\psellipse(0.0,2.0)(1.5,0.5)
+		\psellipse(0.0,-2.0)(1.5,0.5)
+		\psline{-}(1.5,2.0)(-1.5,-2.0)
+		\psline{-}(-1.5,2.0)(1.5,-2.0)
+		\psline[linecolor=blue]{-}(0.5,3.0)(0.5,-3.0)
+		\rput[Bl](0.7,2.6){Hyperbel}
+		\psline[linecolor=red]{-}(2.0,1.5)(-1.0,-2.5)
+		\rput[Br](2.0,0.8){Parabel}
+		\psline[linecolor=magenta]{-}(-2.0,1.0)(1.5,0.5)
+		\rput[Bl](-2.0,0.5){Ellipse}
+	\end{pspicture}
+\end{center}
+\begin{gather}
+  \frac{x^2}{a^2}+\frac{y^2}{b^2}=1 \qquad\Longrightarrow\quad\text{Ellipse} \\
+  -\frac{x^2}{a^2}+\frac{y^2}{b^2}=1 \qquad\Longrightarrow\quad\text{Hyperbel} \\
+  x^2+y^2=1 \qquad\Longrightarrow\quad\text{Kreis}
+\end{gather}
+
+
+\section{Hessesche Normalform: Abstand Punkt-Gerade}
+Hessesche Normalform:
+\begin{equation}
+  Ax+By+C = 0
+\end{equation}
+Abstand:
+\begin{equation}
+  \left|{\frac{A\cdot x_p + B\cdot y_p + C}{\sqrt{A^2+B^2}}}\right|
+\end{equation}
+
+
+\section{Polarkoordinaten}
+Darstellung ist eindeutig wenn:
+\begin{equation}
+  r \geq 0 \qquad\text{und}\qquad \phi\in [0, 2\pi)
+\end{equation}
+\begin{center}
+	\begin{pspicture}(-0.5,-0.5)(3,3)
+		\pcline[linewidth=2pt]{->}(0,0)(2,2)\Aput{$r$}
+		\psarc(0,0){0.5}{0}{45}\rput[B](0.6,0.2){$\phi$}
+		\rput[Bl](2.2,2.3){$P(x,y)$}
+		\rput[Bl](2.2,1.8){$P(r,\phi)$}
+		\pcline[linestyle=dashed](0,2)(2,2)\Aput{$x$}
+		\pcline[linestyle=dashed](2,0)(2,2)\Aput{$y$}
+		\psline{->}(0,0)(3,0)\rput[Br](3,0.2){$x$}
+		\psline{->}(0,0)(0,3)\rput[Bl](0.2,2.8){$y$}
+		\rput[rt](-0.1,-0.1){$O$}
+		\rput[rt](4.0,-0.1){Polachse}
+	\end{pspicture}
+\end{center}
+
+\subsection{Transformationsgleichungen}
+\begin{gather}
+  x = r\cdot\cos{\phi} \\
+  y = r\cdot\sin{\phi} \\
+  r = \sqrt{x^2+y^2} \\
+  \phi = \arctan{\frac{y}{x}} \qquad\text{nicht eindeutig bestimmt!}
+\end{gather}
+
+\subsection{Beispiele von Kurven}
+\begin{itemize}
+  \item Kreis um Ursprung: $r$ ist konstant
+  \item Greade durch Ursprung: $\phi$ ist konstant
+  \item beliebige Greade: $y=m\cdot x+q \quad\Rightarrow\quad r\cdot\sin{\phi}=m\cdot r\cdot\cos{\phi}+q$
+\end{itemize}
+
+
+\section{Fl"acheninhalt in Polarkoordinaten}
+\begin{center}
+	\begin{pspicture}(-0.5,-0.5)(3,3)
+		\psline{->}(0,0)(3,0)\rput[rt](-0.1,-0.1){$O$}
+		\psline[linewidth=2pt]{->}(0,0)(2.5,1.0)
+		\psline[linewidth=2pt]{->}(0,0)(1,2)
+		\psarc(0,0){1.0}{0}{63}\rput[B](1.0,0.8){$\phi_2$}
+		\psarc(0,0){1.5}{0}{21}\rput[B](1.7,0.3){$\phi_1$}
+		\psecurve(1,2)(1,2)(1.5,1.5)(2.0,2.0)(2.5,1.0)(2.5,1.0)
+	\end{pspicture}
+\end{center}
+$\partial F$ mit einem Kresissektor approximiert:
+\begin{gather}
+  \partial F = \frac{r_\phi + r_{\phi+\partial\phi}}{2}\cdot (r\cdot\phi)\frac{1}{2} \\
+  \Longrightarrow\partial F = {\left(\frac{r_\phi + r_{\phi+\partial\phi}}{2}\right)}^2\frac{1}{2}\partial\phi \\
+  \Longrightarrow F = \frac{1}{2}\int_{\phi_u}^{\phi_o} r_\phi^2\partial\phi
+\end{gather}
+
+\subsection{Verallgemeinerung}
+\begin{center}
+	\begin{pspicture}(-0.5,-0.5)(3,3)
+		\psline{->}(0,0)(3,0)\rput[rt](-0.1,-0.1){$O$}
+		\psline[linestyle=dashed]{-}(0,0)(2.5,1.0)
+		\psline[linestyle=dashed]{-}(0,0)(1,2)
+		\psarc(0,0){1.0}{0}{63}\rput[B](0.0,0.4){$\phi_o$}
+		\psarc(0,0){1.5}{0}{21}\rput[B](1.7,0.2){$\phi_u$}
+		\psecurve(1,2)(1,2)(1.5,1.5)(2.0,1.7)(2.5,1.0)(2.5,1.0)
+		\psecurve(1.2,0.47)(1.2,0.47)(0.9,1.3)(0.55,1.1)(0.55,1.1)
+		\psline[linecolor=blue,linewidth=2pt](1.2,0.47)(2.5,1.0)
+		\rput[B](2.5,0.5){$r_1(\phi)$}
+		\psline[linecolor=blue,linewidth=2pt](0.55,1.1)(1,2)
+		\rput[B](0.5,2.0){$r_2(\phi)$}
+	\end{pspicture}
+\end{center}
+\begin{equation}
+  F = \frac{1}{2}\int_{\phi_u}^{\phi_o} \left({r_1^2-r_2^2}\right)\partial\phi
+\end{equation}
+
+
+\section{Parametrische Kurven}
+\begin{center}
+	\begin{pspicture}(0,0)(3,3)
+		\psline{->}(0,0)(3,0)\rput[Br](3,0.2){$x$}
+		\psline{->}(0,0)(0,3)\rput[Bl](0.2,2.8){$y$}
+		\psecurve[linecolor=red,linewidth=2pt](0.5,0.5)(0.5,0.5)(2.0,0.7)(1.7,1.5)(0.4,1.5)(0.8,1.0)(2.0,2.5)(2.0,2.5)
+		\pscircle[fillstyle=solid,fillcolor=white](0.5,0.5){0.1}\rput[B](0.5,0.2){$t_0$}
+		\pscircle[fillstyle=solid,fillcolor=white](2.0,0.7){0.1}\rput[B](2.3,0.6){$t_1$}
+		\pscircle[fillstyle=solid,fillcolor=white](1.7,1.5){0.1}\rput[B](1.9,1.6){$t_2$}
+		\pscircle[fillstyle=solid,fillcolor=white](0.4,1.5){0.1}\rput[B](0.3,1.7){$t_3$}
+		\pscircle[fillstyle=solid,fillcolor=white](0.8,1.0){0.1}\rput[B](0.8,0.7){$t_4$}
+		\pscircle[fillstyle=solid,fillcolor=white](2.0,2.5){0.1}\rput[B](2.3,2.4){$t_5$}
+	\end{pspicture}
+\end{center}
+Zwei von $t$ abh"angige Kurven $\Longrightarrow$ Parameter
+eliminieren. Illustration:
+\begin{gather*}
+  x = \cos{t} \\
+  y = \sin{t} \\
+  x^2 + y^2 = \cos^2{t} + \sin^2{t} = 1
+\end{gather*}
+
+\subsection{Tangente}
+\begin{equation}
+  m_t = \frac{\Dot{y_t}}{\Dot{x_t}}
+\end{equation}
+
+
+\section{Axiom der kleinsten/gr"ossten Schranke}
+\begin{equation}
+  f_{(x)} = 1-e^{-x} \qquad\text{f"ur}\quad x > 0
+\end{equation}
+\begin{center}
+	\begin{pspicture}(-0.5,-1.5)(3.5,1.5)
+		\psplot[linecolor=red,plotpoints=50]{0.0}{3.0}{0 2.718 0 x sub exp sub}
+		\psplot[linecolor=red,plotpoints=50]{0.0}{3.0}{1 2.718 0 x sub exp sub}
+		\psline{->}(0,0)(3.5,0)\rput[Br](3.5,0.2){$x$}
+		\psline{->}(0.0,-1.5)(0.0,1.5)\rput[Bl](0.2,1.3){$y$}
+		\psline[linestyle=dashed,linecolor=lightgray](0,1)(3,1)
+		\psline(-0.05,1)(0.05,1)\rput[r](-0.2,1){$+1$}
+		\psline(-0.05,-1)(0.05,-1)\rput[r](-0.2,-1){$-1$}
+		\rput[l](3.2,1.0){$f(x)$}
+		\rput[l](1.5,-0.5){$-e^{-x}$}
+	\end{pspicture}
+\end{center}
+
+$f_{(x)}$ schmiegt sich um $y=1$ bleibt aber \textbf{immer}
+darunter ($y<1$). $1$ ist die kleinste obere Schranke f"ur
+$f_{(x)}$.
+
+
+\section{Bogenl"ange}
+\begin{center}
+	\begin{pspicture}(0,0)(3,3)
+		\psline{->}(0,0)(3,0)\rput[Br](3,0.2){$x$}
+		\psline{->}(0,0)(0,3)\rput[Bl](0.2,2.8){$y$}
+		\psline[linecolor=blue,showpoints=true](0.5,0.5)(1.0,0.7)(0.7,1.0)(0.5,1.7)(1.2,2.0)(1.2,1.5)(2.0,2.0)(2.0,1.5)(1.8,1.2)(2.0,0.5)(2.5,1.0)
+		\psecurve[linewidth=1.5pt](0.5,0.5)(0.5,0.5)(1.0,0.7)(0.7,1.0)(0.5,1.7)(1.2,2.0)(1.2,1.5)(2.0,2.0)(2.0,1.5)(1.8,1.2)(2.0,0.5)(2.5,1.0)(2.5,1.0)
+		\rput[Bt](0.5,0.4){$t_0$}
+		\rput[Bt](2.7,0.9){$t_1$}
+	\end{pspicture}
+\end{center}
+Approximation des Streckenzugs zwischen $t_0$ und $t_1$.
+
+Grenz"ubergang $\Delta t \rightarrow \partial t$
+\begin{equation}
+  \Longrightarrow\qquad L = \int_{t_0}^{t_1} \sqrt{(\Dot{x})^2 + (\Dot{y})^2} \,dt
+\end{equation}
+
+\begin{equation}
+  \Longrightarrow\qquad L = \int_{x_0}^{x_1}\sqrt{1 + {\left({f'_{(x)}}\right)}^2}\,dx
+\end{equation}
+
+\subsection{Polarkoordinaten}
+\begin{gather}
+  x = r_{(\phi)} \cdot \cos{\phi} \\
+  y = r_{(\phi)} \cdot \sin{\phi} \\
+  \Longrightarrow\qquad L=\int\limits_{\phi_0}^{\phi_1}\sqrt{(r')^2+r^2}\,d\phi \qquad\text{wobei}\quad r' = \frac{\partial r}{\partial\phi}
+\end{gather}
+
+
+\section{Folgen}
+\begin{gather}
+  \left\{a_k\right\} \hat{=}\quad a_1, a_2, a_3, \ldots , a_n \\
+  \left\{a_k\right\} \hat{=}\quad a_1, a_2, \ldots , a_n, \ldots
+\end{gather}
+Beispiele: $a_k = \frac{1}{k}, a_k = \sqrt{k}$
+
+\subsection{Einzw"anungungssatz f"ur Folgen:}
+\begin{gather}
+  a_k < b_k < c_k \\
+\intertext{mit}
+  \lim_{k\rightarrow\infty}a_k=a\qquad\text{und }a=c\lim_{k\to\infty}c_k = c \\
+  \Longrightarrow\qquad\lim_{k\to\infty}b_k = b
+\end{gather}
+
+\subsection{Satz:}
+Es sei $\left\{x_k\right\}$ eine konvergente Folge mit
+$\lim_{k\rightarrow\infty}x_k=a$ stetig in $a$, dann gilt:
+\begin{equation}
+  \lim_{k\to\infty}f_{(x_k)} = f_{(a)}
+\end{equation}
+
+
+\section{Reihen}
+Folge $\left\{a_k\right\}\longmapsto\left\{S_n\right\}$ Reihe, Folge
+von Partialsummen wenn $s_n = \sum_{k=0}^n a_k$
+\begin{align}
+  \text{konvergent:}\qquad & \lim_{n\rightarrow\infty}s_n < \infty \\
+  \text{divergent:}\qquad  & \lim_{n\rightarrow\infty}s_n \pm\infty
+\end{align}
+
+\subsection{Reihenentwicklung verschiedener Funktionen}
+\begin{align}
+  \sin{x} &= x - \frac{1}{x!}x^3 + \frac{1}{5!}x^5 - \frac{1}{7!}x^7 \pm \cdots \\
+  \cos{x} &= 1 - \frac{1}{2!}x^2 + \frac{1}{4!}x^4 - \frac{1}{6!}x^6 \pm \cdots \\
+  \exp{x} &= 1 + x + \frac{1}{2}x^2 + \frac{1}{6}x^3 + \frac{1}{24}x^4 + \cdots \\
+          &= \sum_{k=0}^\infty \frac{1}{k!}\cdot x^k
+\end{align}
+
+\subsection{Geometrische Reihe}
+\begin{align}
+       s_n        & = 1 + q + q^2 + \cdots + q^n \\
+-\quad q\cdot s_n & =     q + q^2 + \cdots + q^n + q^{n+1} \\
+\Longrightarrow s_n - q \cdot s_n & = 1 - q^{n+1} \\
+\Longrightarrow s_n & = \frac{1 - q^{n+1}}{1 -q}
+\end{align}
+Grenzwert $n\rightarrow\infty$
+\begin{align}
+  |q| < 1 \qquad & \text{konvergent}\quad S = \frac{1}{1-q} \\
+  |q| \geq 1 \qquad & \text{divergent}
+\end{align}
+$\sum a_k$ und $\sum b_k$ konvergent, dann ist auch
+$\sum (a_k+b_k)$ konvergent, und $\sum (\alpha a_k)$ auch konvergent.
+
+
+\subsection{Unbestimmte Ausdr"ucke}
+\subsubsection{Von der Form $\frac{0}{0}$}
+\begin{equation}
+  \lim_{x\to x^{*}} \frac{f_{(x)}}{g_{(x)}} = \lim_{x\to x^{*}}\frac{f'_{(x)}}{g'_{(x)}}
+\end{equation}
+wenn $\frac{f_{(x)}}{g_{(x)}}$ ein unbestimmter Ausdruck der Form $\frac{0}{0}$ ist
+(Regel von \textbf{l'Hospital}).
+
+\subsubsection{Von der Form $\frac{\infty}{\infty}$}
+Beispiel:
+\begin{equation}
+  \lim_{} \frac{x}{\exp{x}}, \lim_{} \frac{\frac{1}{x}}{\left(\frac{1}{x}\right)^2}
+\end{equation}
+L"osung: gleiche Regel von l'Hospital
+
+
+\subsubsection{Uneigentliche Integrale}
+Beispiel:
+\begin{equation}
+  \int_0^\infty \exp{-x}\,dx
+\end{equation}
+Uneigentliches Integral: $I=\int\limits_a^b f_{(x)}\,dx$ f"ur $(a\rightarrow -\infty)$
+oder $(b\rightarrow +\infty)$ oder $(a\rightarrow-\infty$
+und $b\rightarrow +\infty)$.
+
+Wenn der Grenzwert existiert, nennt man das Integral \textit{konvergent}, sonst
+\textit{divergent}. Das Verhalten ist also abh"angig von $f_{(x)}$.
+
+\paragraph{Integrale von Funktionen mit einer Unendlichkeitsstelle}
+Beispiel:
+\begin{equation}
+  \int_{-1}^{+1}\frac{1}{\sqrt{|x|}}\,dx
+\end{equation}
+Allgemein:
+\begin{gather}
+  I = \int_a^b f_{(x)}\,dx \\
+  \text{mit}\quad \lim_{x\rightarrow b^-} f_{(x)} = \pm\infty \\
+  \text{oder}\quad \lim_{x\rightarrow a^+} f_{(x)} = \pm\infty \\
+  = \lim_{B\rightarrow b^-} \int_a^B f_{(x)}\,dx \\
+  \text{oder}\quad \lim_{A\rightarrow a^+}\int_A^b f_{(x)}\,dx
+\end{gather}
+
+
+\subsubsection{Integralkriterium}
+Ist eine Reihe konvergent oder divergent? \\
+Beispiel: $f_{(x)} = \frac{1}{x^2}$
+\begin{gather}
+  s = \sum_{i=1}^\infty \frac{1}{x^i} = \frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \cdots \\
+  a_k = \frac{1}{k^2} \\
+\intertext{Annahme: $s < \infty$}
+  s < 1\cdot a_1 + \int_1^\infty f_{(x)}\,dx \\
+  \int_1^\infty \frac{1}{x^2} = \lim_{B\rightarrow\infty}\int_1^B\frac{1}{x^2}\,dx = \cdots = 1
+\end{gather}
+$\Longrightarrow\qquad$ Die Reihe ist also konvergent: $s<2$
+
+\paragraph{Allgemein}
+\begin{gather}
+  s = a_1 + a_2 + a_3 + \cdots + a_n + \cdots
+\end{gather}
+$s$ ist konvergent wenn $\int\limits_1^\infty f_{(x)}\,dx < \infty$ \\
+$s$ ist divergent wenn $\int_1^\infty f_{(x)}\,dx$ divergiert mit $f_{(x)}$
+als allgemeines Glied $a_x$.
+
+
+\subsubsection{Majorantenkriterium}
+\textbf{Majorante:} Dominiert die gegebene Reihe $s=\sum a_k$ \\
+Beispiel:
+\begin{equation}
+  s = \sum_{k=1}^\infty\frac{1}{2k^3+1}\qquad ak=\frac{1}{2k^3+1}
+\end{equation}
+Majorante: $b_k=\frac{1}{k^3}$ (dominiert $a_k$, es ist $a_k < b_k \qquad\forall k$).
+Konsequenz:
+\begin{gather}
+  s = \sum_{k=1}^\infty a_k < \sum_{k=1}^\infty b_k \qquad\text{ist konvergent} \\
+  \Longrightarrow\qquad\sum_{k=1}^\infty a_k \qquad\text{ist auch konvergent}
+\end{gather}
+
+
+\subsubsection{Wurzelkriterium}
+Die Reihe $\sum a_k$ ist konvergent, wenn
+\begin{equation}
+  \lim_{k\rightarrow\infty}\sqrt[k]{a_k} < 1
+\end{equation}
+Die Reihe ist divergent, wenn
+\begin{equation}
+  \lim_{k\rightarrow\infty}\sqrt[k]{a_k} > 1
+\end{equation}
+(mit $a_k > 0$).\\
+Wenn $\lim_{k\to\infty}\sqrt[k]{a_k} = 1$ ist, dann kann keine Aussage gemacht werden,
+d.h. ein anderes Kriterium muss verwendet werden.
+
+
+\subsubsection{Quotientenkriterium}
+Die Reihe ist konvergent wenn
+\begin{equation}
+  \lim_{k\rightarrow\infty}\frac{a_{k+1}}{a_k} < 1
+\end{equation}
+und divergent wenn
+\begin{equation}
+  \lim_{k\rightarrow\infty}\frac{a_{k+1}}{a_k} > 1
+\end{equation}
+mit $a_k > 0 \qquad\forall k$\\
+Wenn $\lim_{k\to\infty}\sqrt[k]{a_k}=1$ ist, dann kann keine Aussage gemacht werden,
+d.h. ein anderes Kriterium muss verwendet werden.
+
+
+\subsection{Absolute- und bedingte Konvergenz}
+Absolut konvergente Reihen sind jene, f"ur die $\sum |a_k|$ konvergiert. \\
+Wenn $\sum |a_k|$ konvergent ist, ist auch $\sum a_k$ konvergent. \\
+Wenn $\sum a_k$ konvergiert aber $\sum |a_k|$ nicht konvergiert,
+dann ist die Reihe bedingt konvergent.
+
+
+\subsection{Alternierende Reihen}
+$(-1)^k\cdot a_k$ ergibt die alternierende Reihe
+\begin{equation}
+  \sum (-1)^k a_k
+\end{equation}
+Sie ist konvergent wenn
+\begin{enumerate}
+  \item $a_k$ monoton fallend ist.
+  \item $\{a_k\}$ konvergent gegen Null ist (\textbf{Leibnizkriterium}).
+\end{enumerate}
+
+
+\subsection{Taylorpolynome und Taylorreihen in $x$}
+(Brook Taylor, 1685-1731) \\
+
+Hat eine Funktion auf dem Intervall $I=[0, x]\qquad n+1$ stetige Ableitungen, dann gilt:
+\begin{gather}
+  f_{(x)} = f_{(0)} + \frac{f'_{(0)}}{1!}x^1 + \frac{f''_{(0)}}{2!}x^2 + \cdots + \frac{f^{(n)}_{(0)}}{n!}x^n + R_{n+1 (x)} \\
+  R_{n+1 (x)} = \frac{1}{n!}\int_0^x f^{(n+1)}_{(t)}(x-t)^n\,dt \qquad\hat{=}\quad\text{Restglied} \\
+  R_{n+1 (x)} = \frac{f^{(n+1)}_{(\xi)}}{(n+1)!}x^{n+1} \qquad\text{mit}\quad\xi\in (0,x)\quad\text{oder}\quad\xi\in (0,n)
+\end{gather}
+$T_{n(x)}$ : Taylorpolynom $n$-ten Grades in $x$
+
+Kann die Taylorreihe f"ur eine Funktion nicht um den Nullpunkt entwickelt werden, dann:
+\begin{equation}
+  f_{(x)} = \ln{x} \qquad 0 \notin\mathbb{D}_f \qquad\Longrightarrow\quad\ln{x+1}
+\end{equation}
+
+\subsection{Taylorpolynom mehrdimensional}
+\begin{gather}
+  f_{(x,y)} = f_{(x_0,y_0)} +
+	\begin{pmatrix}f_{x(x_0,y_0)} \\ f_{y(x_0,y_0)} \end{pmatrix}
+	\begin{pmatrix}x-x_0 \\ y-y_0\end{pmatrix} + \qquad\text{h"ohere Terme} \\
+\begin{split}
+  f_{(x,y)} = f_{(x_0,y_0)} + \frac{f_{x(x_0,y_0)}(x-x_0)+f_{y(x_0,y_0)}(y-y_0)}{1!} + \\
+	+ \frac{f_{xx}(x-x_0)^2 + 2f_{xy}(x-x_0)(y-y_0)+f_{yy}(y-y_0)^2}{2!} + \cdots
+\end{split} \\
+  f_{(\overrightarrow{x})} = f_{(\overrightarrow{x_0})}
+	+ \frac{\bigtriangledown f_{(\overrightarrow{x_0})}}{1!}(\overrightarrow{x}-\overrightarrow{x_0})+\cdots
+\end{gather}
+
+\subsection{Taylorpolynom und Taylorreihe in $x-a$}
+Funktion $f_{(x)}$ an der Stelle $a\hat{=}f_{(a)}$.
+Es wird nun eine Variablentransformation gemacht:
+\begin{gather}
+  u = x-a \\
+  f_{(x)} \longmapsto g_{(u)}
+\end{gather}
+Taylorpolynom f"ur $g_{(u)}$ um den Nullpunkt:
+\begin{equation}
+  g_{(u)} = T_{n(u)} + R_{n+1(u)}
+\end{equation}
+R"ucktransformation:
+\begin{gather}
+  u = x-a \\
+  T_{n(u)} \quad\Longrightarrow\quad T_{n(x)} \\
+  R_{n+1(u)} \quad\Longrightarrow\quad R_{n+1(x)} \\
+  T_{n(x)} = \frac{f_{(a)}}{0!}(x-a)^0 + \cdots + \frac{f^{(n)}_{(a)}}{n!}(x-a)^n \\
+  R_{n+1(x)} = \frac{f^{(n+1)}_{(\xi)}}{(n+1)!}(x-a)^{n+1} \quad\text{mit}\quad\xi\in (a,x)\quad\text{oder}\quad\xi\in (x,a)
+\end{gather}
+
+
+\subsection{Potenzreihen}
+\paragraph{Vergleich: Taylorreihe vs. Potenzreihe}
+Taylorreihe:
+\begin{equation}
+  f_{(x_0)} = \frac{f_{(x_0)}}{0!}(x-x_0)^0 + \frac{f'_{(x_0)}}{1!}(x-x_0)^1 + \cdots
+\end{equation}
+Potenzreihe:
+\begin{equation}
+  a_0(x-x_0)^0 + a_1(x-x_0)^1 + a_2(x-x_0)^2 + \cdots
+\end{equation}
+
+\textbf{Satz}
+Ist die Potenzreihe $\sum_{k=0}^\infty a_k\cdot x^k$ f"ur ein $x_1$
+konvergent, dann ist sie f"ur $|x| < |x_1|$ konvergent (absolute Konvergenz).
+\begin{equation*}
+\Longrightarrow\qquad\text{Konvergenzradius}
+\end{equation*}
+Analyse der Konvergenz mittels:
+\begin{itemize}
+  \item Quotientenkriterium
+  \item Wurzelkriterium
+  \item Integralkriterium (Marjoranten)
+  \item Leibniz (alternierende Reihen)
+\end{itemize}
+
+\textbf{Satz}
+Konvergente Potenzreihen k"onnen Gliedweise differenziert und integriert werden. \\
+Beispiel:
+\begin{equation}
+  \int_0^\infty\frac{\sin{x}}{x}\,dx = \int_0^\infty\frac{\frac{x^1}{1!}-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots}{x}\,dx
+\end{equation}
+
+
+\section{Konvergenzradius}
+\subsection{Quotientenkriterium}
+Kriterium:
+\begin{equation}
+  \lim_{n\rightarrow\infty}\left|{\frac{b_{n+1}}{b_n}}\right| < 1
+\end{equation}
+Konvergenzradius:
+\begin{equation}
+  \rho = \lim_{n\rightarrow\infty}\left|\frac{a_n}{a_{n+1}}\right|
+\end{equation}
+
+\subsection{Wurzelkriterium}
+Kriterium:
+\begin{equation}
+  \lim_{n\rightarrow\infty}\sqrt[n]{|b_n|} < 1
+\end{equation}
+Konvergenzradius:
+\begin{equation}
+  \rho = \frac{1}{\lim_{n\rightarrow\infty}\sqrt[n]{|a_n|}}
+\end{equation}
+\textbf{Achtung:} Analyse gilt im Interval $(-|x|, +|x|)$. Analyse f"ur
+die Werte $\pm |x|$ muss separat durchgef"uhrt werden.
+
+
+\section{Binominalreihen}
+\begin{gather}
+  {(1+x)}^\alpha = \binom{\alpha}{0}\cdot x^0 + \binom{\alpha}{1}\cdot x^1 + \binom{\alpha}{2}\cdot x^2 + \cdots \\
+  \binom{a}{k} = \frac{a(a-1)(a-2)\cdots [a-(k-1)]}{1\cdot 2\cdot 3\cdot 4\cdots k} = \frac{n!}{k! \cdot (n-k)!}
+\end{gather}
+
+\section{Kr"ummungskreis}
+Definition:
+\begin{gather}
+  \kappa = \frac{\partial\phi}{\partial s} \\
+  \kappa = \frac{y''}{{\left[{1+{(y')}^2}\right]}^\frac{3}{2}}
+	= \frac{\dot{x}\cdot\ddot{y}-\ddot{x}\cdot\dot{y}}{{\left({\dot{x^2}+\dot{y^2}}\right)}^\frac{3}{2}}
+\end{gather}
+Der Mittelpunkt liegt auf der Senkrechten zur Ber"uhrungstangente.
+
+Radius des Kr"ummungskreises:
+\begin{gather}
+  \rho = \frac{1}{|\kappa |}
+\end{gather}
+
+
+\section{Funktionen mehrerer Variablen}
+Funktion welche mehrere Variablen als Unabh"angige besitzt:
+\begin{gather}
+  f(x_1, x_2, x_3) \\
+  f(x_i) \\
+  f: (x, y, z) \longmapsto \cdots
+\end{gather}
+oder als Fl"ache 2. Ordnung:
+\begin{gather}
+  {\begin{pmatrix} x \\ y \\ z \end{pmatrix}}^T
+	\begin{pmatrix}
+		A & \frac{D}{2} & \frac{E}{2} \\
+		\frac{D}{2} & B & \frac{F}{2} \\
+		\frac{E}{2} & \frac{F}{2} & C
+	\end{pmatrix}
+	\begin{pmatrix} x \\ y \\ z	\end{pmatrix} = 0
+\end{gather}
+
+\subsection{H"ohenlinien, Niveaufl"achen}
+\begin{gather}
+  w = f(x, y, z) = A\cdot x + B\cdot y + C\cdot z + D
+\end{gather}
+ist der Ort, an welchem das gleiche Niveau herrscht ($w$ ist konstant, $x$, $y$, $z$ variabel),
+und das "uberall.
+
+
+\section{Partielle Ableitungen}
+Schreibweise:
+\begin{gather}
+  f(x, y) \\
+  \frac{\partial f}{\partial x} \hat{=} \qquad\text{partielle Ableitung nach}\quad x \\
+  \frac{\partial f}{\partial y} \hat{=} \qquad\text{partielle Ableitung nach}\quad y \\
+\end{gather}
+Wird nach einer Variablen partiell differenziert, so sind die andern Variablen als
+konstant aufzufassen.
+
+Partielle Ableitungen sind Grenzwerte:
+\begin{gather}
+  \frac{\partial f}{\partial x} = \lim_{\Delta x \rightarrow 0}{\frac{f(x+\Delta x,y) - f(x,y)}{\Delta x}} \\
+  \frac{\partial f}{\partial y} = \lim_{\Delta y \rightarrow 0}{\frac{f(x,y+\Delta y) - f(x,y)}{\Delta y}} \\
+\end{gather}
+
+\subsection{Stetigkeit}
+Eine stetige Funktion mehrerer Variablen ist in jeder Variablen f"ur sich stetig.
+
+\subsection{Satz}
+\begin{gather}
+  \frac{\partial^2 f}{\partial x\partial y} = \frac{\partial^2 f}{\partial y\partial x} \\
+  f_{xy} = f_{yx} \\
+\intertext{gilt wenn:}
+  \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial^2 f}{\partial x\partial y},
+	\frac{\partial^2 f}{\partial y\partial x} \qquad\text{stetig sind.}
+\end{gather}
+
+
+\section{Gradient}
+Der Gradient ist die Richtung des steilsten Anstiegs.
+\begin{gather}
+  \text{sei}\quad f:(x,y)\longmapsto f(x,y) \\
+  \text{grad}(f) = \nabla f = \overrightarrow{x}' = (x', y')
+\end{gather}
+$\nabla$ : Nabla-Operator, partielle Ableitung nach jeder Variablen.
+
+\subsection{Satz}
+\begin{gather}
+  \nabla(\alpha\cdot f + \beta\cdot g) = \alpha\cdot\nabla f + \beta\cdot\nabla g
+\end{gather}
+
+
+\section{Richtungsableitung}
+Die Richtungsableitung entspricht dem Tangens des Steigungswinkels der Tangente,
+deren Projektion auf den Grundriss mit der vorgegebenen Richtung $\overrightarrow{u}$
+zusammenf"allt.
+
+\subsection{Satz}
+\begin{gather}
+  f'_{\overrightarrow{u}}(\overrightarrow{x}) = \nabla f \circ\overrightarrow{u}\qquad\text{mit}\|\overrightarrow{u}\|=1
+\end{gather}
+
+\subsection{Satz}
+F"ur 2 bliebige Punkte $A$ und $B$ einer zusammenh"angenden Menge gibt es einen verbindenden Polygonzug.
+
+\subsection{Satz}
+\begin{gather}
+	\nabla f = \overrightarrow{0} \qquad\Longrightarrow f \qquad\text{konstant}
+\end{gather}
+
+\subsection{Satz}
+\begin{gather}
+	\nabla f = \nabla g \qquad\Longrightarrow f \quad\text{und}\quad g\quad\text{unterscheiden sich nur durch eine Konstante}
+\end{gather}
+
+\subsection{Zwischenwertsatz}
+$f$ stetig auf zusammenh"angender Menge, dann wird falls $f(\overrightarrow{a}) = a$, $f(\overrightarrow{b}) = b$ jeden
+Wert zwischen $a$ und $b$ angenommen. $c$ liegt zwischen $a$ und $b$. Daraus folgt:
+\begin{gather}
+	\exists \overrightarrow{c}\qquad\text{so dass}\qquad f(\overrightarrow{c}) = c
+\end{gather}
+
+\section{Ableitung entlang einer Kurve}
+\begin{gather}
+	\frac{\partial}{\partial t}f(\overrightarrow{r}_{(t)}) = \nabla f(\overrightarrow{r}_{(t)})\circ\dot{\overrightarrow{r}}_{(t)}
+\end{gather}
+
+\subsection{Satz}
+\begin{gather}
+	u_{(x,y)} = u\left(x_{(s,t), y_{(s,t)}}\right) \\
+	\frac{\partial u}{\partial s} = \frac{\partial u}{\partial x}\cdot\frac{\partial x}{\partial s}
+		+ \frac{\partial u}{\partial y}\cdot\frac{\partial y}{\partial s}
+\end{gather}
+
+\section{Maxima und Minima}
+Mehrdimensional: in dem max. bzw. min. Stellen ist die Tangentialebene horizontal:
+\begin{gather}
+	\nabla f \perp\quad\text{auf Grundriss} \qquad\Longleftrightarrow\qquad\nabla f = \underline{0}
+\end{gather}
+Sattel: horizontale Tangentialfl"ache aber keine lokales Maximun oder Minimum.
+
+Komponentenschreibweise der Tangentialfl"ache:
+\begin{gather}
+	Ax + By + Cz + D = 0
+\end{gather}
+\begin{center}
+\setlength{\GapDepth}{5mm}
+\begin{bundle}{$B^2-A\cdot C$}
+	\chunk{$>0$ : Sattelpunkt}
+	\chunk{\begin{bundle}{$<0$}
+		\chunk{$A > 0$ : lok. Min.}
+		\chunk{$A < 0$ : lok. Max.}
+	\end{bundle}}
+\end{bundle}
+\end{center}
+
+\section{Lagrange-Funktion}
+Extremwerte mit Nebenbedingungen.
+\begin{gather*}
+	g_1(x_1, \ldots, x_n) = 0\qquad\text{1. Nebenbedingung} \\
+	g_2(x_1, \ldots, x_n) = 0\qquad\text{2. Nebenbedingung} \\
+	\vdots \\
+	g_m(x_1, \ldots, x_n) = 0\qquad\text{m. Nebenbedingung} \\
+	f(x_1, \ldots, x_n) \qquad\text{zu min. oder max. Funktion}
+\end{gather*}
+\begin{gather}
+	L(x_1, \ldots, x_n, \lambda_1, \ldots , \lambda_m) =
+		f(x_1, \ldots , x_n) + \sum_{i=1}^m \lambda_i + g_i(x_1, \ldots , x_n)
+\end{gather}
+
+\section{Differentiale}
+Eindimensional:
+\begin{equation}
+	d f = f'(x) dx
+\end{equation}
+
+Zweidimensional:
+\begin{equation}
+	df = \frac{\partial f}{\partial x}dx + \frac{\partial f}{\partial y}dy
+\end{equation}
+
+Dreidimensional:
+\begin{equation}
+	df = \frac{\partial f}{\partial x}dx + \frac{\partial f}{\partial y}dy
+		+ \frac{\partial f}{\partial z}dz
+\end{equation}
+
+\section{Integrale}
+\subsection{Doppelintegrale}
+\begin{equation}
+	I = \iint\limits_\mathbb{B} f(x,y)\,dx\,dy
+\end{equation}
+
+Doppelintegral "uber Rechteck:
+\begin{center}
+	\begin{pspicture}(0,0)(4,3)
+		\psline{->}(0,0)(4,0)\rput[Br](4,0.2){$x$}
+		\psline{->}(0,0)(0,3)\rput[Bl](0.2,2.8){$y$}
+		\psframe[fillstyle=solid,fillcolor=lightgray](1.0,1.0)(3.0,2.0)
+		\rput*[B](2.0,1.4){$B$}
+		\psline[linestyle=dashed](1.0,1.0)(1.0,0.0)\rput[Bt](1.0,-0.1){$x_u$}
+		\psline[linestyle=dashed](3.0,1.0)(3.0,0.0)\rput[Bt](3.0,-0.1){$x_o$}
+		\psline[linestyle=dashed](1.0,1.0)(0.0,1.0)\rput[Br](-0.1,0.9){$y_u$}
+		\psline[linestyle=dashed](1.0,2.0)(0.0,2.0)\rput[Br](-0.1,1.9){$y_o$}
+	\end{pspicture}
+\end{center}
+\begin{gather}
+	I = \iint\limits_\mathbb{B} f(x,y)\,dx\,dy \\
+	I = \int_{x=x_u}^{x_o} \left({\int_{y=y_u}^{y_o} f(x,y)\,dy}\right)\,dx
+		= \int_{y=y_u}^{y_o} \left({\int_{x=x_u}^{x_o} f(x,y)\,dx}\right)\,dy
+\end{gather}
+
+Doppelintegral "uber beliebigem Bereich:
+\begin{center}
+	\begin{pspicture}(0,0)(4,3)
+		\pscustom{
+			\pscurve(0.5,1.5)(1.0,2.0)(2.0,2.5)(2.5,1.9)(3.0,2.0)
+			\gsave
+				\pscurve[liftpen=1](3.0,1.0)(1.5,1.0)(0.5,0.5)
+				\fill[fillstyle=solid,fillcolor=lightgray]
+			\grestore
+		}
+		\pscurve(3.0,1.0)(1.5,1.0)(0.5,0.5)
+		\rput*[B](2.0,1.5){$B$}
+		\psline[linestyle=dashed](0.5,1.5)(0.5,0.0)\rput[Bt](1.0,-0.1){$x_u$}
+		\psline[linestyle=dashed](3.0,2.0)(3.0,0.0)\rput[Bt](3.0,-0.1){$x_o$}
+		\psline{->}(0,0)(4,0)\rput[Br](4,0.2){$x$}
+		\psline{->}(0,0)(0,3)\rput[Bl](0.2,2.8){$y$}
+	\end{pspicture}
+\end{center}
+\begin{gather}
+	I = \int_{x=x_u}^{x_0} \left({\int_{y=h(x)}^{g(x)} f(x,y)\,dy}\right)\,dx
+\end{gather}
+
+Die Grenzen des inneren Integrals sind Funktionen des "ausseren Integrals.
+
+Liegt ein allgemeiner Integrationsbereich vor, welcher nicht klare Grenzen
+in einer Achse bietet, so muss der Bereich unterteilt werden (sinnvolle Unterteilung!).
+
+Das Koordinatensystem muss nicht unbedingt \textit{kartesisch} sein. Polarkoordinaten
+erweisen sich als sehr n"utzlich $\longrightarrow$ sie vereinfachen die Rechnung
+teilweise erheblich! Beispiel: Volumen eines Kreiskegels.
+
+Anwendungen:
+\begin{itemize}
+\item Massenberechnung: $M=\iint\limits_\mathbb{B} \rho(x,y)\,dx\,dy$
+\item Schwerpunkt: $x_s\cdot M=\iint\limits_\mathbb{B} x\cdot\rho(x,y)\,dx\,dy
+	\qquad y_s\cdot M=\iint\limits_\mathbb{B} y\cdot\rho(x,y)\,dx\,dy$
+\end{itemize}
+
+\subsection{Dreifachintegrale}
+\begin{gather}
+	I = \iiint\limits_\mathbb{V} f(x,y,z)\,dx\,dy\,dz \\
+	I = \int_x \left({\int_y \left({\int_z f(x,y,z)\,dz}\right)\,dy}\right)\,dx
+\end{gather}
+Die Reihenfolge der Integrale h"angt von den Integrationsgrenzen ab, sie kann aber
+im Prinzip frei gew"ahlt werden. Tipp: einfachste Reihenfolge w"ahlen, sowohl bez"uglich
+Grenzen als auch den Integralen.
+
+\subsection{Mehrfachintegrale}
+\subsubsection{Variablensubstitution}
+\begin{gather}
+	I = \iint\limits_\mathbb{B} f(x,y)\,dx\,dy = \iint\limits_\mathbb{B} f\left(x(u,v),y(u,v)\right)\cdot |D|\,du\,dv
+\end{gather}
+$D$ ist die Funktionaldeterminante oder \textit{Jacobi-Determinate}:
+\begin{equation*}
+	D = \left|{\det\begin{pmatrix}x_u & x_v \\ y_u & y_v\end{pmatrix}}\right|
+\end{equation*}
+
+\subsubsection{Koordinatentransformation 2D}
+Cartesische Koordinaten: $x, y$ $\quad\longrightarrow\quad$ Polare Koordinaten: $r, \phi$
+\begin{gather*}
+	x = r\cdot\cos(\phi) \\
+	y = r\cdot\sin(\phi) \\
+	D = r
+\end{gather*}
+Hier wird die Funktionaldeterminante entsprechend komplizierter (3x3 Matrix):
+\begin{equation*}
+	D = \det\begin{pmatrix}x_u & x_v & x_w \\ y_u & y_v & y_w \\ z_u & z_v & z_w\end{pmatrix}
+\end{equation*}
+\begin{center}
+	\begin{pspicture}(-2.0,-2.0)(2.0,2.0)
+		\psline{->}(0,0)(-1.73,-1)\rput[Bb](-1.73,-0.9){$x$}
+		\psline{->}(0,0)(1.73,-1)\rput[Bb](1.73,-0.9){$y$}
+		\psline{->}(0,0)(0,2.0)\rput[Bl](0.2,1.8){$z$}
+		\psline[linecolor=blue]{-}(0,0)(0.5,-1.5)\rput[B](0.4,-1.7){$r$}
+		\psline[linecolor=blue]{-}(0.5,-1.5)(1.0,1.5)
+		\rput[Bl](1.2,1.4){$P(x,y,z)$}
+		\rput[Bl](1.2,1.0){$P(r,\phi,z)$}
+		\psline[linecolor=red,linewidth=1.5pt]{->}(0,0)(1.0,1.5)
+		\psarc(0,0){0.5}{210}{285}\rput[Bt](-0.5,-0.5){$\phi$}
+	\end{pspicture}
+\end{center}
+
+Cartesische Koordinaten: $x,y,z$ $\quad\longrightarrow\quad$ Zylindrische Koordinaten: $r,\phi,z$
+\begin{gather*}
+	x = r\cdot\cos(\phi) \\
+	y = r\cdot\sin(\phi) \\
+	z = z \\
+	\Longrightarrow\quad |D| = r
+\end{gather*}
+
+Cartesische Koordinaten: $x,y,z$ $\quad\longrightarrow\quad$ Kugel- oder Sph"arische Koordinaten: $r,\phi,\rho$
+\begin{gather*}
+	x = r\cdot\sin(\rho)\cdot\cos(\phi) \\
+	y = r\cdot\sin(\rho)\cdot\sin(\phi) \\
+	z = r\cdot\cos(\rho)
+\intertext{mit}
+	0 \leq \rho \leq\pi \qquad\text{und}\qquad 0 \leq\phi\leq\pi \\
+	\Longrightarrow\qquad D = -r^2\cdot\sin(\rho)
+\end{gather*}
+\begin{center}
+	\begin{pspicture}(-2.0,-2.0)(2.0,2.0)
+		\psline{->}(0,0)(-1.73,-1)\rput[Bb](-1.73,-0.9){$x$}
+		\psline{->}(0,0)(1.73,-1)\rput[Bb](1.73,-0.9){$y$}
+		\psline{->}(0,0)(0,2.0)\rput[Bl](0.2,1.8){$z$}
+		\psline[linecolor=blue]{-}(0,0)(0.5,-1.5)
+		\psline[linecolor=blue]{-}(0.5,-1.5)(1.0,1.5)
+		\rput[Bl](1.2,1.4){$P(x,y,z)$}
+		\rput[Bl](1.2,1.0){$P(r,\phi,\rho)$}
+		\psline[linecolor=red,linewidth=1.5pt]{->}(0,0)(1.0,1.5)\rput[B](0.6,0.5){$r$}
+		\psarc(0,0){0.5}{210}{285}\rput[Bt](-0.5,-0.5){$\phi$}
+		\psarc(0,0){0.5}{55}{90}\rput[Bt](0.2,0.8){$\rho$}
+	\end{pspicture}
+\end{center}
+
+\subsection{Kurvenintegrale}
+\begin{center}
+	\begin{pspicture}(-2.0,-1.5)(2.0,2.0)
+		\psline{->}(0,0)(-1.73,-1)\rput[Bb](-1.73,-0.9){$x$}
+		\psline{->}(0,0)(1.73,-1)\rput[Bb](1.73,-0.9){$y$}
+		\psline{->}(0,0)(0,2.0)\rput[Bl](0.2,1.8){$z$}
+		\psecurve[linecolor=blue,linewidth=1.5pt](-1.0,-1.0)(-1.0,-1.0)(0.7,-0.7)(0.5,1.0)(1.0,1.5)(1.0,1.5)
+		\pscircle[linecolor=red,fillstyle=solid,fillcolor=white](-0.7,-1.0){0.1}
+		\psline[linecolor=red]{->}(0.5,1.0)(0.8,1.4)
+		\pscircle[linecolor=red,fillstyle=solid,fillcolor=white](0.5,1.0){0.1}
+		\rput[Bt](-0.7,-1.25){$\overrightarrow{s}_{(t)}$}
+		\rput[B](1.0,0.9){$\overrightarrow{d}_s$}
+	\end{pspicture}
+\end{center}
+\begin{gather}
+	\overrightarrow{ds} = \dot{\overrightarrow{s}}\cdot dt \\
+	E = \oint\,dE = \oint\overrightarrow{k}\circ\overrightarrow{ds}
+	= \int\limits_{t_0}^{t_1}\left({\overrightarrow{k}_{(\overrightarrow{s}_{(t)})}\circ\dot{\overrightarrow{s}}_{(t)}}\right)\,dt
+\end{gather}
+
+\subsubsection{Hauptsatz f"ur Kurvenintegrale}
+Entspricht das Kraftfeld $\overrightarrow{k}$ dem Gradientenfeld, dann ist das Wegintegral
+zwischen zwei Punkten vom Weg unabh"angig.
+
+\section{Differentialgleichungen (DGL)}
+\subsection{Definition}
+Gew"ohnliche Differengialgleichungen (DGL):
+\begin{gather}
+	F\left({y(x), y'(x), y''(x), \ldots, y^{(n)}(x), x}\right) = 0
+\end{gather}
+entspricht einer Gleichung mit einer unabh"angigen Variablen. Beispiel: $y'' + 5x = 0$
+
+\underline{Definition:} Die Ordnung der DGL entspricht der h"ochsten vorkommenden Ableitung.
+
+\underline{Definition:} Lineare DGL: $y$ und deren Ableitungen treten ausschliesslich in der 1. Potenz auf.
+
+\underline{Definition:} Die L"osung der DGL ist eine Funktion welche die DGL erf"ullt.
+
+Die Konstanten sind Integrationskonstanten und werden mit Hilfe der Anfangs- und
+Randbedingungen bestimmt.
+
+\underline{Definition:} die L"osungsmethode ist ein Verfahren zur Gewinnung einer L"osung. "Ubersicht: \\
+\begin{center}
+\begin{bundle}{L"osungsmethode}
+\chunk{
+	\begin{bundle}{analytisches Verfahren}
+	\chunk{
+		\begin{bundle}{''Integration''}
+		\chunk{homogen}
+		\chunk{inhomogen}
+		\end{bundle}}
+	\chunk{Laplace-Transformation}
+	\end{bundle}}
+\chunk{numerisches Verfahren}
+\end{bundle}
+\end{center}
+
+\vspace{3mm}
+
+\underline{homogen:} direkt, Separation, Substitution oder Ansatz \\
+\underline{inhomogen:} Ansatz, Variation der Konstanten, Reihenansatz
+
+L"osungsmethoden sind nicht generell anwendbar, sondern vom Typ der DGL abh"angig: \\
+\begin{center}
+\setlength{\GapWidth}{1.0cm}
+\begin{bundle}{DGL}
+\chunk{
+	\begin{bundle}{gew"ohnlich}
+	\chunk{
+		\begin{bundle}{linear}
+		\chunk{
+			\begin{bundle}{1./2. Ordnung}
+			\chunk{homogen}
+			\chunk{inhomogen}
+			\end{bundle}}
+			\chunk{
+				\begin{bundle}{h"ohere Ordnung}
+				\chunk{x}
+				\chunk{x}
+				\end{bundle}}
+		\end{bundle}}
+		\chunk{
+			\begin{bundle}{nicht linear}
+			\chunk{x}
+			\chunk{x}
+		\end{bundle}}
+	\end{bundle}}
+\chunk{
+	\begin{bundle}{partielle DGL}
+	\chunk{x}
+	\chunk{x}
+	\end{bundle}}
+\end{bundle}
+\end{center}
+
+\vspace{3mm}
+
+Dieser Baum ist symmetrisch aufgebaut, d.h. jeder mit 'x' gekennzeichnte Teilbaum hat die
+gleiche Struktur.
+
+\subsection{Fundamentalsatz}
+Die allgemeine L"osung einer linearen DGL ergit sich durch Addition der allgemeinen
+L"osung, der homogenen L"osung und einer partikul"aren L"osung der inhomogenen DGL
+(spezielle oder partikul"are L"osung).
+
+\subsection{Satz:}
+Die homogene L"osung einer DGL $n$-ter Ordnung besteht aus $n$ linear unabh"angigen
+Komponenten.
+
+\subsection{Definition}
+$n$ Funktionen $y_1(x), \ldots, y_n(x)$ sind linear unabh"angig, wenn es $n$ Konstanten
+$c_1, \ldots, c_n$ gibt, mit $c_1y_1+c_2y_2+\cdots+c_ny_n=0$ f"ur mindestens ein $x$,
+wobei nicht alle $c_i=0$!
+
+\subsection{Satz:}
+Die Funktionen $y_1(x), \ldots, y_n(x)$ seien differenzierbar. Sie sind linear
+unabh"angig $\Longleftrightarrow$ Wronski-Determinante $\neq 0$.
+
+\subsection{Definition: Wronksi-Determinante}
+\begin{gather}
+	W(y_1, \ldots, y_n) = \det
+	\begin{pmatrix}
+		y_1 & \cdots & y_n \\
+		y'_1 & \cdots & y'_n \\
+		\vdots & & \vdots \\
+		y^{(n-1)}_1 & \cdots & y^{(n-1)}_n
+	\end{pmatrix}
+\end{gather}
+
+\subsection{DGL mit separierbaren Variablen}
+\subsubsection{Definition}
+separierbare DGL (1. Ordnung) $\hat{=}\qquad y' = f(x)\cdot g(y)$
+
+Allgemeine L"osung:
+\begin{gather*}
+	\frac{y'}{g(y)} = f(x) \\
+	\Longrightarrow\quad\int\frac{dy}{g(y)} = \int f(x)\,dx \\
+	\Longrightarrow\quad G(y) = F(x) \quad\longrightarrow\quad\text{Aufl"osung nach}\quad y
+\end{gather*}
+\\
+\underline{Regel:}
+\begin{enumerate}
+\item Trennung der Variablen, d.h.: $G(y)\,dy = F(x)\,dx$
+\item Integration
+\item Aufl"osung nach $y$
+\end{enumerate}
+
+\subsection{DGL vom Typ $y'=f(ax+by+c)$}
+Kann durch Substitution $u=ax+by+c$ auf eine separierbare Form gebracht werden:
+\begin{gather*}
+	y'=f(ax+by+c)
+\intertext{Substituion:}
+	u=ax+by+c\quad\Longrightarrow\quad u'=a+by'
+\intertext{dann ist}
+	u'=a+b\cdot f(u) \\
+	\frac{du}{dx}=a+b\cdot f(u) \\
+	\int\frac{du}{a+b\cdot f(u)}=\int\,dx = \begin{Large}\boxed{\boldsymbol{x+c}}\end{Large}
+\end{gather*}
+\\
+\underline{Regel:}
+\begin{enumerate}
+\item Substitution $u=ax+by+c$
+\item DGL in $u$ bzw. $u'$ formulieren
+\item DGL l"osen (separierbar)
+\item Substitution aufl"osen und $y$ bestimmen
+\end{enumerate}
+
+\subsection{DGL vom Typ $y'=\frac{y}{x}$}
+\underline{Regel:}
+\begin{enumerate}
+\item Wahl der Substitution $u=\frac{y}{x}$
+\item DGL in $u$ bzw. $u'$ formulieren
+\item DGL l"osen (separierbar)
+\item Substitution aufl"osen und $y$ bestimmen
+\end{enumerate}
+
+\subsection{Lineare DGL 1. Ordnung}
+\subsubsection{Allgemein}
+\begin{equation*}
+	y' = y\cdot g(x)+h(x)
+\end{equation*}
+\begin{enumerate}
+\item L"osung der homogenen DGL: $y'-y\cdot g(x)=0$ ist separierbar $\Longrightarrow\quad y_h = \ldots$
+\item L"osung der inhomogenen DGL: $y'-y\cdot g(x)=h(x)$
+	\begin{enumerate}
+	\item Variation der Konstanten
+	\item Ansatz vom Typ der St"orfunktion
+	\end{enumerate}
+	$\Longrightarrow\quad y_{ih} = \ldots$
+\item $y=y_h+y_{ih}$ \newline
+	Bestimmung der Konstanten mit Hilfe der Anfangs- oder Randbedingungen
+\end{enumerate}
+
+\subsubsection{Variation der Konstanten}
+\begin{gather*}
+	y' = y+\sin(x)\qquad y(0)=1
+\intertext{homogen:}
+	y_h =c\cdot e^x
+\intertext{inhomogen:}
+	\text{Ansatz:}\quad y_{ih}=k(x)\cdot e^x \\
+	y'=k'\cdot e^x+k\cdot e^x
+\end{gather*}
+\begin{align*}
+\intertext{eingesetzt:}
+	k'\cdot e^x+k\cdot e^x &= k\cdot e^x+\sin(x) \\
+	k' &= e^{-x}\cdot\sin(x) \\
+	k(x) &= \int e^{-x}\cdot\sin(x)\,dx \\
+	&= \frac{e^{-x}}{2}\left({-\sin(x)-\cos(x)}\right)+c \\
+	\Longrightarrow\quad y_{ih} = k(x)\cdot e^x &= \frac{1}{2}\left[{-\sin(x)-\cos(x)}\right]+c\cdot e^x
+\end{align*}
+
+\subsubsection{Ansatz vom Typ der St"orfunktion}
+Funktioniert wie bei den Differenzgleichungen. Ans"atze f"ur St"orfunktionen:\newline\newline
+\begin{center}
+\begin{tabular}{|p{3cm}|p{6cm}|}
+\hline
+St"orfunktion & Ansatz \\
+\hline
+$\beta^t$ & $A\cdot\beta^t$ \\
+$\sin(\alpha t)$ & $A\cdot\cos(\alpha t) + B\cdot\sin(\alpha t)$ \\
+$\cos(\alpha t)$ & $A\cdot\cos(\alpha t) + B\cdot\sin(\alpha t)$ \\
+Polynom $P_m(t)$ & $A_0\cdot t^m+A_1\cdot t^{m-1} + \cdots + A_m$ \\
+$\beta^t\cdot P_m(t)$ & $\beta^t\cdot\left({A_0\cdot t^m + A_1\cdot t^{m-1}+\cdots+A_m}\right)$ \\
+$\beta^t\cdot\sin(\alpha t)$ & $\beta^t\cdot\left({A\cdot\cos(\alpha t)+B\cdot\sin(\alpha t)}\right)$ \\
+$\beta^t\cdot\cos(\alpha t)$ & $\beta^t\cdot\left({A\cdot\cos(\alpha t)+B\cdot\sin(\alpha t)}\right)$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{DGL h"oherer Ordnung}
+Allgemeine DGL 2. Ordnung:
+\begin{equation}
+	a(x)\cdot y''+b(x)\cdot y'+c(x)\cdot y = y(x)
+\end{equation}
+\newline
+homogene DGL: \textbf{nicht separierbar!} $\longrightarrow$ charakteristisches Polynom \\
+Ansatz: $y_h=c\cdot e^x$, bei doppelten Nullstellen: $y_h=c\cdot x\cdot e^x$, bei dreifachen Nullstellen: 
+$y_h=c\cdot n^2\cdot e^x$ \\
+\newline
+\underline{Beispiel:} $y''-8y'+16y=0$ (Nullstellen: $4$, $4$)
+\begin{equation*}
+	\Longrightarrow\quad y_h=c_1\cdot e^{4x}+c_2\cdot x\cdot e^{4x}
+\end{equation*}
+\newline
+\underline{Beispiel:} Nullstellen: $-2\pm 3j$
+\begin{align*}
+	y_h &=c_1\cdot e^{-2x}\cdot e^{3j}+c_2\cdot e^{-2x}\cdot e^{-3j} \\
+	\Longrightarrow\quad
+	y_h &= c_1\cdot e^{-2x}\cos(3x)+c_2\cdot e^{-2x}\cdot\sin(3x)
+\end{align*}
+
+\subsection{DGL-Systeme}
+Jede lineare DGL h"oherer Ordnung l"asst sich auf ein DGL-System 1. Ordnung zur"uckf"uhren
+(und umgekehrt). \\
+\underline{Beispiel:} $y^{(4)}-16\cdot y=e^x$ \\
+\begin{align*}
+	z_1(x) &= y(x) \\
+	z_2(x) &= y' \\
+	\vdots \\
+	z_5(x) &= y^{(4)}
+\end{align*}
+\begin{equation*}
+	\Longrightarrow\quad z_4' -16\cdot z_1=e^x
+\end{equation*}
+\begin{align*}
+	\dot{\overrightarrow{z}}=
+	\begin{pmatrix}\dot{z_1} \\ \dot{z_2} \\ \dot{z_3} \\ \dot{z_4}\end{pmatrix} &=
+	\begin{pmatrix}
+		0  & 1 & 0 & 0 \\
+		0  & 0 & 1 & 0 \\
+		0  & 0 & 0 & 1 \\
+		16 & 0 & 0 & 0
+	\end{pmatrix}
+	\begin{pmatrix}z_1 \\ z_2 \\ z_3 \\ z_4	\end{pmatrix}+
+	\begin{pmatrix}0 \\ 0 \\ 0 \\ e^x\end{pmatrix} \\
+	\dot{\overrightarrow{z}} &= A \cdot \overrightarrow{z} + \overrightarrow{g}
+\end{align*}
+
+\section{Laplace-Transformation}
+\subsection{Definition}
+\begin{equation}
+	f(t) \longmapsto\int\limits_0^\infty f(t)\cdot e^{-s\cdot t}\,dt = F(s)
+\end{equation}
+\newline
+Laplace-Transformation oder Integral-Transformation \\
+$f(t)\qquad\hat{=}\quad$ Zeitfunktion $\mathbb{D}_f = \mathbb{R}_0^+$ \\
+$F(s)\qquad\hat{=}\quad$ Laplace-Transformierte von $f$ \\
+\newline
+\underline{Kurzschreibweise:}
+\begin{align*}
+	f(t)\quad & \,\laplace\, \quad F(s) \\
+	f\quad &\overset{\mathscr{L}}{\,\laplace\,} \quad F \\
+	F(s)\quad & = \quad \mathscr{L}(f(t))
+\end{align*}
+
+\subsubsection{Satz}
+Jede stetige auf $[0,\infty)$ definierte Zeitfunktion $f(t)$, die durch eine
+Exponentialfunktion begrentzt ist, kann transformiert werden.
+
+\subsubsection{Satz}
+\begin{equation}
+	\lim_{s\rightarrow \infty} F(s) = 0
+\end{equation}
+
+\subsection{Eigenschaften}
+\subsubsection{Linearit"at}
+\begin{equation}
+	\mathscr{L}\left({c_1\cdot f_1(t) + c_2\cdot f_2(t)}\right) = c_1\cdot F_1(s) + c_2\cdot F_2(s)
+\end{equation}
+
+\subsubsection{Variablentransformation}
+\begin{align}
+	f(t) \,\laplace\, F(s)\quad &\Longleftrightarrow\quad f(a\cdot t) \,\laplace\, \frac{1}{a}\cdot F\left(\frac{s}{a}\right)
+		\quad\text{f"ur}\quad a > 0
+\intertext{Verschiebungssatz im Bildbereich:}
+	f(t) \,\laplace\, F(s)\quad &\Longleftrightarrow\quad e^{a\cdot t}\cdot f(t) \,\laplace\, F(s-a)\quad
+\intertext{Verschiebungssatz im Zeitbereich:}
+	f(t) \,\laplace\, F(s)\quad &\Longleftrightarrow\quad f(t-a) \,\laplace\, e^{-s\cdot a}\cdot F(s)\quad
+		\text{f"ur}\quad a > 0
+\end{align}
+
+\subsubsection{Differentiation im Zeitbereich}
+\begin{gather}
+	f(t) \,\laplace\, F(s)\quad\Leftrightarrow\quad f'(t) \,\laplace\, s\cdot F(s)-f(f) \\
+	f \,\laplace\, F \quad\Leftrightarrow\quad f^{(n)} \,\laplace\, s^n\cdot F(s)-s^{n-1}\cdot f(0)
+		- \cdots - f^{(n-1)}(0)
+\end{gather}
+
+\subsubsection{Integration im Zeitbereich}
+\begin{gather}
+	f(t) \,\laplace\, F(s)\quad\Longleftrightarrow\quad\int\limits_0^t f(\tau)\,d\tau \,\laplace\, \frac{1}{s}F(s) \\
+	t^n \,\laplace\, \frac{n!}{s^{n+1}}
+\end{gather}
+
+\subsubsection{Differentiation im Bildbereich}
+\begin{equation}
+	F(s) \,\Laplace\, f(t)\quad\Longleftrightarrow\quad\frac{d^n}{ds^n}F(s) \,\Laplace\, (-1)^n\cdot t^n\cdot f(t)
+\end{equation}
+
+\subsubsection{Integration im Bildbereich}
+\begin{equation}
+	f(t) \,\laplace\, F(s)\quad\Longleftrightarrow\quad\frac{1}{t}f(t) \,\laplace\, \int\limits_s^\infty F(u)\,du
+\end{equation}
+
+\subsubsection{Periodische Funktionen}
+$f(t)$ in $T$ periodisch.
+\begin{equation}
+	f(t) \,\laplace\, F(s) = \int\limits_0^T e^{-s\cdot\tau}\cdot f(\tau)\,d\tau \cdot\frac{1}{1-e^{-s\cdot T}}
+\end{equation}
+
+\subsubsection{Grenzwerte}
+\begin{gather}
+	f(0)=\lim_{s\to\infty} s\cdot F(s) \qquad f(\infty)=\lim_{s\to 0} s\cdot F(s)
+\end{gather}
+
+\subsubsection{Faltung}
+\begin{gather}
+	f(t) * g(t) = \int\limits_0^t f(u)\cdot g(t-u)\,du \\
+	f(t) * g(t) \,\laplace\, F(s)\cdot G(s)
+\end{gather}
+
+\subsection{Rationale Bildfunktionen}
+\begin{equation}
+	F(s) = \frac{Q(s)}{P(s)} \qquad\text{Grad Z"ahler < Grad Nenner}
+\end{equation}
+\subsubsection{R"ucktransformation}
+\begin{gather*}
+	\frac{Q(s)}{P(s)}=F(s) \,\Laplace\, f(t)
+\intertext{Annahme: $P(s)$ hat einfache Nullstellen $s_i$}
+	\Longrightarrow\quad F(s)=\frac{Q(s)}{P(s)}=\frac{A_1}{s-s_1}+\frac{A_2}{s-s_2}+\cdots +\frac{A_n}{s-s_n} \\
+		\text{mit}\quad A_i = F(s)\cdot(s-s_i)\quad\text{mit}\quad s=s_i \\
+	\frac{A_i}{s-s_i} \,\Laplace\, A_i\cdot e^{s_i\cdot t}
+		\begin{cases}
+		\text{$s_i$ ist reell} \quad\Longrightarrow\quad A_i\cdot e^{s_i\cdot t}\quad\text{ist reell} \\
+		\text{$s_i$ komplex;}\quad s_i=x+j\beta
+		\end{cases}
+\end{gather*}
+Im komplexen Fall:
+\begin{align*}
+	\frac{A_i}{s-s_i}
+	+\frac{\overline{A_i}}{s-\overline{s_i}} \,\Laplace\, & A_i\cdot e^{s_i\cdot t}
+	+\overline{A_i}\cdot e^{\overline{s_i}\cdot t} \\
+	& = c_i\cdot e^{\alpha\cdot t}
+	\cdot\cos(\beta\cdot t)+ c_2\cdot e^{\alpha\cdot t}\cdot\sin(\beta\cdot t)
+\end{align*}
+
+
+
+\subsection{L"osen einer DGL}
+\begin{enumerate}
+\item Laplate-Transformation der DGL in eine gew"ohnliche Gleichung
+\item L"osen der Gleichung
+\item R"ucktransformation mit Erhalt der L"osung der DGL
+\end{enumerate}
+
+\subsection{Lineare DGL mit variablen Koeffizienten}
+Allgemeine Form:
+\begin{equation}
+A(t)\cdot y^{(m)}(t)+B(t)\cdot y^{(m-1)}(t)+\cdots +N(t)\cdot y(t) = g(t)
+\end{equation}
+Herleitung allgemeiner Term:
+\begin{gather*}
+	f(t) \,\laplace\, F(s)
+	\intertext{Differentiation im Bildbereich:}
+	(-1)^n\cdot t^n\cdot f(t) \,\laplace\, \frac{d^n}{ds^n}F(s)
+	\intertext{Differentiation im Zeitbereich:}
+	f^{(k)} \,\laplace\, s^k\cdot F(s)-s^{k-1}\cdot f(0)-s^{k-2}\cdot f'(0)-\cdots-f^{(k-1)}(0) \\
+	\Longrightarrow\quad
+		(-1)^n\cdot t^n\cdot k^{(k)}(t) \,\laplace\, \frac{d^n}{ds^n}
+		\left({s^k\cdot F(s)-s^{k-1}\cdot f(0) -\cdots-f^{(k-1)}(0)}\right)
+\end{gather*}
+
+\subsection{Elektrische Schwingkreise}
+\begin{center}
+\begin{tabular}{|p{2cm}|p{3cm}|p{3cm}|}
+\hline
+$R$ & $r\cdot i(t)$ & $R\cdot I(s)$ \\
+$C$ & $\frac{1}{C}\cdot\int\limits_0^t i(\tau)\,d\tau$ & $\frac{1}{C}\cdot\frac{I(s)}{s}$ \\
+$L$ & $L\cdot\frac{di}{dt}$ & $L\cdot(s\cdot I(s)-i(0))$ \\
+Problem & $u(t)\rightarrow\Box\rightarrow i(t)$ & $U(s)\rightarrow\Box\rightarrow I(s)$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\underline{Definition:} eine "Ubertragungsfunktion ist jene Funktion, die eine
+Anregungsfunktion $u(t)$ in eine Antwort $i(t)$ verwandelt. \\
+
+\underline{Definition:} eine "Ubertragung heisst \textbf{linear}, wenn im Bildbereich
+die Antwort aus einer Multiplikation von Anregungs- und "Ubertragungsfunktion (beide
+Laplace-Transformiert) berechnet werden kann. \\
+
+Illustration:
+\begin{center}
+	\begin{pspicture}(0,0)(4,2)
+		\psframe(1.5,1.0)(2.5,2.0)
+		\rput[l](0.0,1.5){$U(s)$}
+		\rput[r](4.0,1.5){$I(s)$}
+		\rput[Bb](2.0,0.0){$G(s)$}
+		\psline{->}(1.0,1.5)(1.5,1.5)
+		\psline{->}(2.5,1.5)(3.0,1.5)
+		\psline{->}(2.0,1.0)(2.0,0.5)
+	\end{pspicture}
+\end{center}
+Prinzip von Duhamel:
+\begin{equation}
+	i_{(t)}=\int_o^ t g_{(t-\tau)}\cdot u_{(\tau)}\,d\tau
+\end{equation}
+Behauptung:
+\begin{equation*}
+	\mathscr{L}^{-1}(u_{(s)})=\mathscr{L}^{-1}(1)\hat{=}\text{ Einheitsstoss}
+\end{equation*}
+\begin{center}
+	\begin{pspicture}(-1.0,-1.0)(3.5,3)
+		\psline{->}(0,0)(3.5,0)\rput[Br](3.5,0.2){$t$}
+		\psline{->}(0,0)(0,3)\rput[Bl](0.2,2.8){$U(t)$}
+		\psframe[linewidth=0pt,fillstyle=solid,fillcolor=lightgray](1.0,0.0)(2.0,2.0)
+		\psline[linecolor=red]{-}(0,0)(1,0)(1,2)(2,2)(2,0)(3,0)
+		\psline{-}(1,-0.2)(2,-0.2)\rput[Bt](1.5,-0.3){$\epsilon$}
+		\psline{-}(-0.2,0.0)(-0.2,2.0)\rput[r](-0.3,1.0){$\frac{1}{\epsilon}$}
+	\end{pspicture}
+\end{center}
+
+\section{Fourier-Reihen}
+Eine beliebige periodische Funktion l"asst sich aus anderen Periodischen zusammensetzen.
+
+\subsection{Fourier-Reihe}
+\begin{equation}
+	f\longmapsto\sum_{k=0}^\infty{\left[a_k\cdot \cos(\omega_k\cdot t)+b_k\cdot\sin(\omega_k\cdot t)\right]}
+\end{equation}
+
+\subsection{Wavelets}
+\begin{equation}
+	f\longmapsto\sum_{i=0}^\infty{c_i\cdot y_i}
+\end{equation}
+
+\subsection{Skalarprodukt zweier Funktionen}
+\begin{equation}
+	\Vec{f}\circ\Vec{g}=\int_0^{2\pi} f_{(t)}\cdot g_{(t)}\,dt
+\end{equation}
+\begin{equation*}
+	\text{mit } \Vec{t}=\begin{pmatrix}f_{(0)}\\ \vdots \\ f_{(2\pi)}\end{pmatrix}
+	\text{ und } \Vec{g}=\begin{pmatrix}g_{(0)} \\ \vdots \\ g_{(2\pi)} \end{pmatrix}
+\end{equation*}
+
+\subsection{Entwicklung einer $2\pi$-per. Funktion in eine Fourier-Reihe}
+$f_{(t)}$ ist $2\pi$-periodisch. Ansatz:
+\begin{equation*}
+	f_{(t)}=\frac{a_0}{2}+\sum_{k=1}^\infty{\left[a_k\cdot\cos(kt)+b_k\cdot\sin(kt)\right]}
+\end{equation*}
+Skalarmultiplikation mit $cos(0\cdot t)=1$:
+\begin{align*}
+	\int_0^{2\pi} f_{(t)}\cdot 1\,dt
+		&= \int_0^{2\pi}{\left({\frac{a_0}{2}+\sum_{k=1}^\infty\left[a_k\cdot\cos(kt)+b_k\cdot\sin(kt)\right]}\right)}\,dt \\
+	\Longrightarrow\quad a_0 &= \frac{1}{\pi}\int_0^{2\pi} f_{(t)}\,dt \\
+	a_k &= \frac{1}{\pi}\int_0^{2\pi} f_{(t)}\cdot\cos(kt)\,dt \\
+	b_k &= \frac{1}{\pi}\int_0^{2\pi} f_{(t)}\cdot\sin(kt)\,dt
+\end{align*}
+
+\subsection{Entwicklung einer $t$-per. Funktion in ene Fourier-Reihe}
+\begin{equation}
+	\frac{a_0}{2}+\sum_{k=1}^\infty{\left[{a_k\cdot\cos\left({k\frac{2\pi}{T}\tau}\right)
+		+b_k\cdot\sin\left(k\frac{2\pi}{T}\tau\right)}\right]}
+\end{equation}
+\begin{align*}
+	\Longrightarrow\quad a_0 &= \frac{2}{T}\int_0^T f_{(\tau)}\,d\tau \\
+	a_k &= \frac{2}{T}\int_0^T f_{(\tau)}\cdot\cos\left({k\frac{2\pi}{T}\tau}\right)\,d\tau \\
+	b_k &= \frac{2}{T}\int_0^T f_{(\tau)}\cdot\sin\left({k\frac{2\pi}{T}\tau}\right)\,d\tau
+\end{align*}
+
+\subsection{Grundfrequenz, Harmonische}
+\begin{align}
+\text{Grundfrequenz:}\qquad & \omega = \frac{2\pi}{T} \\
+\text{k-te harmonische Frequenz:}\qquad & \omega_k = k\cdot\frac{2\pi}{T} = k\cdot\omega
+\end{align}
+
+\begin{equation*}
+	f_{(t)} = \frac{a_0}{2}+\sum_{k=1}^\infty\left[{a_k\cdot\cos(\omega_k t)+b_k\cdot\sin(\omega_k t)}\right]
+\end{equation*}
+mit
+\begin{align*}
+	a_k &= \frac{2}{T}\int\limits_{(T)} f_{(t)}\cdot\cos(\omega_k t)\,dt\qquad\text{ f"ur }\quad k=0,1,2,\ldots \\
+	b_k &= \frac{2}{T}\int\limits_{(T)} f_{(t)}\cdot\sin(\omega_k t)\,dt\qquad\text{ f"ur }\quad k=1,2,\ldots \\
+\end{align*}
+
+\subsection{Komplexe Fourier-Reihe}
+\begin{align}
+	f_{(t)} &= e^{j\omega_k t}\frac{a_k-jb_k}{2}+e^{-j\omega_k t}\frac{a_k+jb_k}{2} \\
+	&= e^{j\omega_k t}c_k+e^{-j\omega_k t}c_{-k} \\
+	c_k &= \frac{1}{T}\int\limits_{(T)} f_{(t)}\cdot e^{j\omega_k t}\,dt \\
+	c_{-k} &= \frac{1}{T}\int\limits_{(T)} f_{(t)}\cdot e^{-j\omega_k t}\,dt \\
+\end{align}
+
+\subsection{Fourier-Transformation}
+\begin{gather*}
+	f_{(t)}=\frac{1}{2\pi}\int\limits_{-\infty}^{+\infty}F_{(\omega)}\cdot e^{j\omega t}\,d\omega
+	\qquad
+	F_{(\omega)}=\int\limits_{-\infty}^{+\infty} f_{(\tau)}\cdot e^{-j\omega\tau}\,d\tau
+\end{gather*}
+\begin{align*}
+	f_{(t)} & :\text{Zeitfunktion} \\
+	F_{(\omega)} & :\text{Spektralfunktion}
+\end{align*}
+
+\subsubsection{Variante 1}
+\begin{align}
+	F_{(\omega)} &= \int\limits_{-\infty}^{+\infty} f_{(t)}\cdot e^{-j\omega t}\,dt \\
+	f_{(t)} &= \frac{1}{2\pi}\int\limits_{-\infty}^{+\infty} F_{(\omega)}\cdot e^{j\omega t}\,\omega 
+\end{align}
+\begin{align*}
+	\omega & :\text{Kreisfrequenz} \\
+	f_{(t)} & :\text{Zeitfunktion, Signalfunktion, Signal} \\
+	F_{(\omega)} & :\text{Frequenzfunktion, Spektralfunktion}
+\end{align*}
+
+\subsubsection{Variante 2}
+\begin{align}
+	H_{(f)} &= \int\limits_{-\infty}^{+\infty} h_{(t)}\cdot e^{-2\pi jft}\,dt \\
+	h_{(t)} &= \int\limits_{-\infty}^{+\infty} H_{(f)}\cdot e^{-2\pi jft}\,df
+\end{align}
+
+\subsubsection{Variante 3}
+\begin{align}
+	F_{(\omega)} &= \frac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{+\infty} f_{(t)}\cdot e^{-j\omega t}\,dt \\
+	f_{(t)} &= \frac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{+\infty} F_{(\omega)}\cdot e^{-j\omega t}\,d\omega
+\end{align}
+
+\subsection{Fourier-Integral}
+\begin{equation}
+	F=\int\limits_{-\infty}^{+\infty} f_{(t)}\cdot e^{j\omega t}\,dt = Re_{(F)}+j\cdot Im_{(F)} = |F|\cdot e^{j\Phi}
+\end{equation}
+\begin{align*}
+	\omega\mapsto |F| \quad & \hat{=}\quad\text{Amplitudenspektrum} \\
+	\omega\mapsto \Phi \quad & \hat{=}\quad\text{Phasenspektrum}
+\end{align*}
+
+\subsection{Dirac}
+\subsubsection{Definition}
+Dirac-Funktion oder auch Delta-Funktion:
+\begin{gather}
+	\delta_{(t)}=\begin{cases}
+		\infty\quad & t=0 \\
+		0\quad & 0 \text{ sonst}
+	\end{cases} \qquad \text{ mit } \int\limits_{-\infty}^{+\infty}\delta_{(t)}\,dt = 1
+\end{gather}
+\begin{center}
+	\begin{pspicture}(0,-0.5)(3.5,1.5)
+		\psline{->}(0,0)(1,0)\rput[l](1.1,0){$t$}
+		\psline{->}(0.5,0)(0.5,1.5)\psline(0.4,1.0)(0.6,1.0)\rput[l](0.7,1.0){$1$}
+		\pcline[linecolor=red,linewidth=1.5pt]{->}(0.5,0.0)(0.5,1.0)\Bput{$\delta_{(t)}$}
+		\rput[Bt](0.5,-0.2){$0$}
+		\psline{->}(2,0)(3,0)\rput[l](1.1,0){$t$}
+		\psline{->}(2.5,0)(2.5,1.5)\psline(2.4,1.0)(2.6,1.0)\rput[l](2.7,1.0){$1$}
+		\pcline[linecolor=red,linewidth=1.5pt]{->}(2.5,0.0)(2.5,1.0)\Bput{$\delta_{(t-2)}$}
+		\psline{-}(2.1,0.1)(2.1,-0.1)\rput[Bt](2.1,-0.2){$0$}
+		\rput[Bt](2.5,-0.2){$2$}
+	\end{pspicture}
+\end{center}
+
+\subsubsection{Alternative Definition}
+\begin{gather}
+	\int\limits_{-\infty}^{+\infty}\delta_{(t)}\cdot\phi_{(t)}\,dt = \phi_{(u)}
+\end{gather}
+\begin{gather*}
+	\text{mit } \phi_{(u)} \text{ als sog. Testfunktion} \lim_{t\rightarrow\pm\infty}\phi_{(t)} = 0 \\
+	\text{es ist } \phi_{(t_0)} = \int\limits_{-\infty}^{+\infty}\delta_{(t-t_0)}\cdot\phi_{(t)}\,dt
+\end{gather*}
+
+\subsubsection{Eigenschaften}
+\begin{align}
+	f_{(t)}\cdot\delta_{(t)} &= f_{(0)}\cdot\delta_{(t)} \\
+	t\cdot\delta_{(t)} &= 0 \\
+	\delta_{(a\cdot t)} &= \frac{1}{|a|}\delta_{(t)} \\
+	\delta_{(-t)} &= \delta_{(t)}
+\end{align}
+
+\subsubsection{Differentiation der Dirac-Funktion}
+$\rightarrow$ partielle Integration
+\begin{gather*}
+	\delta'_{(t)} = \frac{\partial}{\partial t}\delta_{(t)}\quad\hat{=}\text{ Distributionsfunktion}
+	\quad\text{Wirkung: }\quad\int\limits_{-\infty}^{+\infty}\delta'_{(t)}\cdot\phi_{(t)}\,dt = -\phi'_{(0)}
+\end{gather*}
+
+\begin{gather*}
+	\frac{\partial^n}{\partial t^n}\delta_{(t)} = \delta^{(n)}_{(t)}
+	\qquad\text{Wirkung: }\quad\int\limits_{-\infty}^{+\infty}\delta^{(n)}_{(t)}\cdot\phi_{(t)}\,dt = (-1)^n\cdot\phi^{(n)}_{(0)}
+\end{gather*}
+
+\subsubsection{Produktregel f"ur Diracfunktion}
+\begin{equation}
+	\left(f_{(t)}\cdot\delta_{(t)}\right)' = f'_{(t)}\cdot\delta_{(t)} + f_{(t)}\cdot\delta'_{(t)} = -f_{(0)}\cdot\phi'_{(0)}
+\end{equation}
+
+\subsubsection{Heavyside-Funktion}
+\begin{center}
+	\begin{pspicture}(0,-0.5)(2.5,1.5)
+		\psline{->}(0,0)(2,0)\rput[l](2.1,0){$t$}
+		\psline{->}(1.0,0)(1.0,1.5)\psline(0.9,1.0)(1.1,1.0)\rput[r](0.8,1.0){$1$}
+		\psline[linecolor=red,linewidth=1.5pt]{-}(0.5,0.0)(1.0,0.0)(1.0,1.0)(1.5,1.0)
+		\rput[l](1.6,1.0){$f(t)$}
+		\rput[Bt](1.0,-0.2){$0$}
+	\end{pspicture}
+\end{center}
+\begin{gather}
+	f_{(t)} = \begin{cases}
+		1 \qquad & \text{f"ur } t>0 \\
+		0 \qquad & \text{sonst}
+	\end{cases}
+\end{gather}
+\begin{equation*}
+	\delta_{(t)} = \frac{\partial}{\partial t}u_{(t)}
+\end{equation*}
+
+\subsubsection{Rechteckimpuls}
+\begin{align}
+	h_{(t)} &= \begin{cases}A\quad&|t|<t \\ 0\quad &\text{sonst}\end{cases} \\
+	H_{(f)} &= 2Ad\cdot\frac{\sin(2\pi fd)}{2\pi fd}
+\end{align}
+
+\subsubsection{Dreiecksimpuls}
+\begin{equation}
+	H_{(f)} = \frac{A^2}{2\pi^2f^2d}\cdot\sin(2\pi fd)
+\end{equation}
+\begin{center}
+	\begin{pspicture}(-1.5,-0.5)(2.0,1.5)
+		\psline{->}(-1.5,0)(1.5,0)\rput[l](1.6,0){$t$}
+		\psline{->}(0,0)(0,1.5)\psline(-0.1,1.0)(0.1,1.0)\rput[r](-0.2,1.0){$A^2$}
+		\psline[linecolor=red,linewidth=1.5pt]{-}(-1,0)(0,1)(1,0)
+		\rput[l](0.2,1.2){$h(t)$}
+		\rput[Bt](-1,-0.2){$-2d$}
+		\rput[Bt](1,-0.2){$+2d$}
+	\end{pspicture}
+\end{center}
+
+\subsection{Eigenschaften}
+\subsubsection{Linearit"at}
+\begin{align}
+	F\left(a_1 h_1(t) + a_2 h_2(t)\right) &= a_1\cdot F\left(h_1(t)\right) + a_2\cdot F\left(h_2(t)\right) \\
+	a_1 h_1(t) + a_2 h_2(t) & \,\laplace\, a_1 H_1(f) + a_2 H_2(f)
+\end{align}
+
+\subsubsection{Symmetrie}
+\begin{equation}
+	h_{(t)} \,\fourier\, H_{(f)}\quad\Longrightarrow\quad H_{(t)} \,\Laplace\, h_{(-f)}
+\end{equation}
+
+\subsubsection{Zeitskalierung}
+\begin{equation}
+	h_{(t)} \,\laplace\, H_{(f)}\quad\Longrightarrow\quad h_{(kt)} \,\laplace\, \frac{1}{|k|} H\left(\frac{f}{k}\right)
+\end{equation}
+
+\subsubsection{Frequenzskalierung}
+\begin{equation}
+	H_{(f)} \,\Laplace\, h_{(t)}\quad\Longrightarrow\quad H_{(kf)} \,\Laplace\, \frac{1}{|k|} h\left(\frac{t}{k}\right)
+\end{equation}
+
+\subsubsection{Zeitverschiebung}
+\begin{equation}
+	h_{(t)} \,\laplace\, H_{(f)}\quad\Longrightarrow\quad h_{(t-t_0)} \,\laplace\, H_{(f)}\cdot e^{-2\pi jft_0}
+\end{equation}
+
+\subsubsection{Frequenzverschiebung}
+\begin{equation}
+	H_{(f)} \,\Laplace\, h_{(t)}\quad\Longrightarrow\quad H_{(f-f_0)} \,\Laplace\, h_{(t)}\cdot e^{2\pi jf_0t}
+\end{equation}
+
+\subsubsection{Differentiation im Zeitbereich}
+\begin{equation}
+	h_{(t)} \,\laplace\, H_{(f)}\quad\Longrightarrow\quad h'_{(t)} \,\laplace\, 2\pi jf\cdot H_{(f)}
+\end{equation}
+mit $\lim_{t\rightarrow\pm\infty}h_{(t)} = 0$
+\begin{equation}
+	h^{(n)}_{(t)} \,\laplace\, \left(2\pi jf\right)^n\cdot H_{(f)}
+\end{equation}
+
+\subsubsection{Differentiation im Frequenzbereich}
+\begin{equation}
+	H_{(f)} \,\Laplace\, h_{(t)}\quad\Longrightarrow\quad H'_{(f)} \,\Laplace\, (-2\pi jf)\cdot h_{(t)}
+\end{equation}
+mit $\lim_{f\rightarrow\pm\infty}H_{(f)} = 0$
+\begin{equation}
+	H^{(n)}_{(f)} \,\Laplace\, \left(-2\pi jf\right)^n\cdot h_{(t)}
+\end{equation}
+
+
+\section{Statistik}
+\subsection{Begriffe}
+Grundgesamtheit, Stichprobe: $x_1, x_2, \ldots, x_n$,  Merkmal $X$
+\begin{equation*}
+	\text{relative H"aufigkeit} = \frac{\text{absolute H"aufigkeit}}{n}
+\end{equation*}
+\begin{center}\begin{tabular}{|l|l|l|}
+	\hline
+			& Diskret 			& Stetig \\
+	\hline
+	Stichprobe	& emp. H"aufigkeitsfunktion	& emp. Dichte \\
+			& emp. Verteilungsfunktion	& emp. Verteilungsfunktion \\
+	\hline
+	Grunsgesamtheit	& Wahr.-Funktion		& Wahr.-Dichte \\
+			& Wahr.-Verteilung		& Wahr.-Verteilung \\
+	\hline
+\end{tabular}\end{center}
+
+\subsection{Statistische Parameter}
+Stichprobe: $x_1 \ldots x_n$
+\subsubsection{Arithmetisches Mittel}
+\begin{equation}
+	\overline{x}=\frac{1}{n}\sum_{i=1}^n x_i
+\end{equation}
+
+\subsubsection{Median}
+\begin{gather}
+	\widetilde{x_1}\ldots\widetilde{x_n}\qquad :\text{geordnete Stichprobe} \\
+	x_{med} = \begin{cases}
+		\widetilde{x_{\frac{n+1}{2}}}\qquad & \text{f"ur $n$ ungerade} \\
+		\frac{\widetilde{x_{\frac{n}{2}}}+\widetilde{x_{\frac{n}{2}+1}}}{2}\qquad & \text{f"ur $n$ gerade}
+	\end{cases}
+\end{gather}
+
+\subsubsection{Modus}
+\begin{equation}
+	x_{mod} \qquad\hat{=}\qquad\text{h"aufigst aufgetretene Beobachtung}
+\end{equation}
+
+\subsubsection{Spannweite}
+\begin{equation}
+	x_o-x_u \qquad=\qquad \left(\text{max. Wert}\quad-\quad\text{min. Wert}\right)
+\end{equation}
+
+\subsubsection{Standardabweichung}
+\begin{gather}
+	s_x = \sqrt[2]{\frac{1}{n-1}\sum_{i=1}^n(\overline{x}-x_i)^2} \\
+	\text{oft auch }:\quad s_x=\sqrt[2]{\frac{1}{n}\sum_{i=1}^n(\overline{x}-x_i)^2}
+\end{gather}
+
+\subsubsection{Empirische Varianz oder Stichprobenvarianz}
+\begin{gather}
+	s_x^2 = \frac{1}{n-1}\sum_{i=1}^n(\overline{x}-x_i)^2 \\
+	\frac{1}{n-1}\sum_{i=1}^n|\overline{x}-x_i|\qquad\text{m"ogliche Definition}
+\end{gather}
+
+\subsection{Zweidimensionale Stichproben}
+\begin{center}
+	\begin{pspicture}(0,0)(7,2)
+		\pcline{->}(0,1.0)(1.5,1.0)\Aput{Anstoss}
+		\psframe(1.5,0,0)(5.0,2.0)
+		\psline{->}(5.0,1.0)(6.0,1.0)\rput[l](6.1,1.0){$x_i$, $y_i$}
+		\rput[Bb](3.25,1.0){Zufallsprozess}
+		\rput[Bb](3.25,0.4){{\footnotesize Zufallsvariablen $X$,$Y$}}
+	\end{pspicture}
+\end{center}
+\begin{center}
+\begin{tabular}{ l | p{1cm} p{1cm} p{1cm} p{1cm} | l }
+			& $y_1$		& $y_2$		& $\cdots$	& $y_n$		& $\sum$	\\
+	\hline
+	$x_1$		& $f_{11}$	& $f_{12}$	& $\cdots$	& $f_{1n}$	& $\sum f_{1i}$ \\
+	$\vdots$	& $\vdots$	& $\vdots$	&		& $\vdots$	& $\vdots$ \\
+	$x_n$		& $f_{n1}$	& $f_{n2}$	& $\cdots$	& $f_{nn}$	& $\sum f_{ni}$ \\
+	\hline
+	$\sum$		& $\sum f_{i1}$	& $\cdots$	& $\cdots$	& $\sum f_{in}$	& \\
+\end{tabular}
+\end{center}
+Randverteilung f"ur $y$
+
+\subsection{Robustheit von Masszahlen}
+Stichprobe: $x_1 \ldots x_n$ \\
+$\overline{x}$ "andert wegen einer "Anderung eines einzigen $x_i$-Wertes. \\
+$x_{mod}$ "andert wahrscheinlich nicht.
+
+\textbf{Allgemein:} $x_{mod}$ ist robuster als $\overline{x}$ \\
+Vernachl"assigung von Masswerten an den R"andern. Beispiel:
+\begin{gather*}
+	\overline{\overline{x}}=\frac{1}{n-20}\cdot\sum_{i=10}^{n-10} x_i\qquad\text{f"ur } n>20 \\
+	\overline{\overline{x}}\quad\text{ist robuster als}\quad\overline{x}
+\end{gather*}
+
+\subsection{Kombinatorik}
+\begin{center}
+\begin{tabular}{ p{3cm} | p{3cm} | p{3cm} }
+				& ohne Wiederholung		& mit Wiederholung \\
+	\hline
+	ohne Reihenfolge	& $C_n^k=\binom{n}{k}$		& $^wC_n^k = \binom{n+k-1}{k}$ \\
+	\hline
+	mit Reihenfolge		& $V_n^k=\frac{n!}{(n-k)!}$	& $^wV_n^k = n^k$ \\
+	\hline
+\end{tabular}
+\end{center}
+Spezialfall: $V_n^n=n!\quad\hat{=}\text{ Permuationen}$
+
+\subsection{Wahrscheinlichkeit}
+\begin{equation}
+	P(\mathbb{A})=\frac{|\mathbb{A}|}{|\Omega|}\hat{=}\frac{g"unstige F"alle}{\text{m"ogliche F"alle}}
+\end{equation}
+Stillschweigende Annahme: alle F"alle sind gleich Wahrscheinlich. \\
+\underline{Beispiel:} werfen von 2 W"urfeln
+\begin{equation*}
+	P(\text{Augensumme } > 4) = ?\qquad\text{mit } z =\text{ Augensumme}
+\end{equation*}
+\begin{center}
+\begin{tabular}{l|ccccccccccc}
+	$z$	& $2$ & $3$ & $4$ & $5$ & $6$ & $7$ & $8$ & $9$ & $10$ & $11$ & $12$ \\
+	\hline
+	$P(z)$ & $\frac{1}{36}$ & $\frac{2}{36}$ & $\frac{3}{36}$ & $\frac{4}{36}$ & $\frac{5}{36}$ & $\frac{6}{36}$ & $\frac{5}{36}$ & $\frac{4}{36}$ & $\frac{3}{36}$ & $\frac{2}{36}$ & $\frac{1}{36}$
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{c|cccccc|l}
+	 & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ & : 2. Wurf \\
+	\hline
+	1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+	2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+	3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+	4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+	5 & 6 & 7 & 8 & 9 & 10 & 11 \\
+	6 & 7 & 8 & 9 & 10 & 11 & 12 \\
+	\hline
+	1. Wurf	
+\end{tabular}
+\end{center}
+\begin{align*}
+	P(\text{Augensumme } > 4) & = 1-P(\text{Augensumme } \leq 4) \\
+		& = 1- \frac{1+2+3}{36} = \frac{5}{6}
+\end{align*}
+
+\subsection{Ereignisse}
+\begin{center}
+	\begin{pspicture}(-0.5,0)(6,4)
+		\psline{-}(0,1)(4,1)(6,3)(2,3)(0,1)
+		\psline{-}(1,1)(0,0)(4,0)(6,2)(5,2)
+		\psline[linecolor=lightgray]{-}(1,1)(2,2)(5,2)
+		\rput[rb](6,3.1){Ebene der Ereignisse}
+		\rput[rt](6,-0.1){Ebene der Elementarereignisse}
+		\psellipse(2,2)(0.75,0.25)\rput[Bb](2,2.5){$A$}
+		\psellipse(4,2)(0.75,0.25)\rput[Bb](4,2.5){$B$}
+		\pscircle(1,0.4){0.1}
+		\pscircle(2,0.5){0.1}
+		\pscircle(1.5,0.8){0.1}
+		\pscircle(3,0.8){0.1}
+		\pscircle(4,0.7){0.1}
+		\pscircle(4.5,1){0.1}
+		\psline[linecolor=blue]{-}(1,0.4)(1.5,2)
+		\psline[linecolor=blue]{-}(1.5,0.8)(2.1,2)
+		\psline[linecolor=blue]{-}(3,0.8)(3.7,2)
+		\psline[linecolor=blue]{-}(4,0.7)(4.0,2)
+		\psline[linecolor=blue]{-}(4.5,1)(4.2,2)
+	\end{pspicture}
+\end{center}
+Verkn"upfungen:
+\begin{align*}
+	\mathbb{A}\cup\mathbb{B}\qquad &\text{: Vereinigung} \\
+	\mathbb{A}\cap\mathbb{B}\qquad &\text{: Durchschnitt} \\
+	\mathbb{A}\backslash\mathbb{B}\qquad &\text{: Differenz} \\
+	\Omega\qquad &\text{: sicheres Ereignis} \\
+	\emptyset\qquad &\text{: unm"ogliches Ereignis} \\
+	\overline{\mathbb{A}}\qquad & \text{: Komplementiertes Ereignis zu }\mathbb{A}
+\end{align*}
+
+\subsection{Ereignisalgebra}
+$\Omega$ Menge, $\sigma$-Algebra, $\mathcal{A}$ ist Teilmenge von $P(\Omega)$, Potenzmenge
+mit Eigenschaften:
+\begin{enumerate}
+	\item $\Omega\subset\mathcal{A}$
+	\item wenn $\mathbb{A}\subset\mathcal{A}$ dann $\overline{A}\subset\mathcal{A}$
+	\item Folge $\mathbb{A}_i\subset\mathcal{A}$ dann $\lim\limits_{n\to\infty}\bigcup\limits_{i=1}^n\mathbb{A}_i\subset\mathcal{A}$
+\end{enumerate}
+
+\subsection{Axiomatische Wahrscheinlichkeitstheorie}
+\underline{Definition:}
+\begin{align}
+	P(\Omega) &= 1 \\
+	P\left({\bigcup\mathbb{A}_i}\right) &= \sum_iP(\mathbb{A}_i)\text{ mit } \mathbb{A}_i\cap\mathbb{A}_j=\emptyset\quad\forall i\neq j
+\end{align}
+\begin{align*}
+	\Longrightarrow P(\emptyset) &= 0 \\
+	P(\mathbb{A}\cup\mathbb{B}) &= P(\mathbb{A})+P(\mathbb{B})\text{ sofern }\mathbb{A}\cap\mathbb{B}=\emptyset \\
+	P(\mathbb{A}\cup\mathbb{B}) &= P(\mathbb{A})+P(\mathbb{B})-P(\mathbb{A}\cap\mathbb{B}) \\
+	P(\mathbb{A}\cup\overline{\mathbb{A}}) &= 1 \\
+	P(\mathbb{A}) &= 0\wedge\mathbb{A}\neq\emptyset\quad\text{: fast unm"ogliches Ereignis} \\
+	P(\mathbb{A}) &= 1\wedge\mathbb{A}\neq\Omega\quad\text{: fast sicheres Ereignis}
+\end{align*}
+
+\subsection{Bedingte Wahrscheinlichkeit}
+\underline{Definition:}
+\begin{equation}
+	P(\mathbb{A} / \mathbb{B}) = \frac{P(\mathbb{A}\cap\mathbb{B})}{P(\mathbb{B})}
+\end{equation}
+\underline{Multiplikationssatz:}
+\begin{equation}
+	P(\mathbb{A}\cap\mathbb{B}) = P(\mathbb{A}/\mathbb{B})\cdot P(\mathbb{B})
+\end{equation}
+
+\subsection{Ereignisb"aume}
+\begin{center}
+\setlength{\GapDepth}{1.0cm}
+\setlength{\GapWidth}{1.0cm}
+\begin{bundle}{$\circ$}
+	\chunk[$p_1$]{
+		\begin{bundle}{A}
+			\chunk[$p_2$]{B}
+			\chunk[$1-p_2$]{C}
+		\end{bundle}
+	}
+	\chunk[$1-p_1$]{
+		\begin{bundle}{}
+			\chunk{}
+			\chunk{}
+		\end{bundle}
+	}
+\end{bundle}
+\end{center}
+\begin{align*}
+	P(A) &= p_1 \\
+	P(B) &= p_1 \cdot p_2 \\
+	P(C) &= p_1 \cdot (1-p_2)
+\end{align*}
+
+\subsection{Unabh"anigkeit von Ereignissen}
+\underline{Definition:} unabh"angig wenn:
+\begin{equation}
+	P(\mathbb{A}\cap\mathbb{B}) = P(\mathbb{A}) \cdot P(\mathbb{B})
+\end{equation}
+
+\subsection{Zufallsvariablen}
+Eine Zufallsvariable ist ein quantitatives Merkmal eines Zufallsprozesses.
+
+\subsubsection{Diskrete Zufallsvariablen und ihre Verteilungen}
+Jedem Ereignis wird eine Wahrscheinlichkeit zugeordnet:
+\begin{equation}
+	P(X=x_i)=p_i\qquad i=1..n\qquad\text{mit } \sum_i p_i = 1
+\end{equation}
+Zuordnung von Wahrscheinlichkeiten heisst {\em Wahrscheinlichkeitsfunktion}:
+\begin{equation}
+	f_x : x_i\mapsto P(X=x_i)=p_i
+\end{equation}
+\begin{center}
+	\begin{pspicture}(0,-0.5)(3.5,3)
+		\psline{->}(0,0)(3,0)\rput[l](3.1,0){$X$}
+		\psline{->}(0,0)(0,2)\rput[b](0,2.2){$f_X$}
+		\psline[linecolor=red](0.5,0)(0.5,0.5)\pscircle[linecolor=red,fillcolor=red,fillstyle=solid](0.5,0.5){0.1}
+		\psline[linecolor=red](1.0,0)(1.0,1.5)\pscircle[linecolor=red,fillcolor=red,fillstyle=solid](1.0,1.5){0.1}
+		\psline[linecolor=red](1.5,0)(1.5,1.0)\pscircle[linecolor=red,fillcolor=red,fillstyle=solid](1.5,1.0){0.1}
+		\psline[linecolor=red](2.5,0)(2.5,1.3)\pscircle[linecolor=red,fillcolor=red,fillstyle=solid](2.5,1.3){0.1}
+		\rput[Bt](0.5,-0.2){$x_1$}
+		\rput[Bt](1.0,-0.2){$x_2$}
+		\rput[Bt](1.5,-0.2){$x_3$}
+		\rput[Bt](2.5,-0.2){$x_n$}
+		\rput[r](0.4,0.4){$p_1$}
+		\rput[r](0.9,1.4){$p_2$}
+		\rput[r](1.4,1.0){$p_3$}
+		\rput[r](2.4,1.0){$p_n$}
+	\end{pspicture}
+\end{center}
+Verteilungsfunktion (Wahrscheinlichkeitsfunktion)
+\begin{equation}
+	F_X(x) = P(X\leq x) = \sum_i p_i
+\end{equation}
+\begin{center}
+	\begin{pspicture}(-0.5,0.0)(4.0,2.0)
+		\psline{->}(-0.5,0.0)(3.5,0.0)\rput[l](3.6,0.0){$X$}
+		\psline{->}(0.0,0.0)(0.0,1.5)\rput[b](0.0,1.6){$F_X$}
+		\psline(-0.1,1.0)(0.1,1.0)\rput[r](-0.2,1.0){$1$}
+		\psline[linecolor=red]{-)}(-0.4,0.0)(0.5,0.0)
+		\psline[linecolor=red]{[-)}( 0.5,0.3)(1.5,0.3)
+		\psline[linecolor=red]{[-)}( 1.5,0.6)(2.5,0.6)
+		\psline[linecolor=red]{[-}( 2.5,1.0)(3.0,1.0)
+		\rput[b](0.25,0.2){$p_1$}
+		\rput[b](0.6,0.5){$p_1+p_2$}
+	\end{pspicture}
+\end{center}
+
+\begin{center}
+\begin{tabular}{ll}
+	desktriptive Statistik & Wahrscheinlichkeitstheorie \\
+	\hline
+	empirische Dichte & Wahrscheinlichkeitsfunktion \\
+	relative H"aufigkeitsfunktion & Wahrscheinlichkeitsfunktion \\
+	Stichprobenmittel & Erwartungswert \\
+	Stichprobenvarianz & Varianz \\
+	Stichprobenstandardabweichung & Standardsabweichung
+\end{tabular}
+\end{center}
+
+\subsubsection{Erwartungswert}
+\begin{align}
+	E(X) &= \sum_{i=1}^n P(X=x_i)\cdot x_i =\mu_X \\
+		&= \sum_{i=1}^n p_i\cdot x_i
+\end{align}
+\begin{equation*}
+	Y=a\cdot x+b\qquad\Longrightarrow\qquad E(Y) =a\cdot E(X)+b
+\end{equation*}
+
+\subsubsection{Varianz}
+\begin{align}
+	VAR(X) &=\sum_{(i=1)}^n P(X=x_i)\cdot (x_i-\mu_X)^2 = \sigma_X^2 \\
+		&=E(X^2)-E^2(X)
+\end{align}
+\begin{equation*}
+	Y=a\cdot x+b\qquad\Longrightarrow\qquad VAR(Y)=a^2\cdot VAR(X)
+\end{equation*}
+
+\subsubsection{Standardabweichung}
+\begin{equation}
+	\sigma_X=\sqrt(VAR(X))
+\end{equation}
+
+\subsubsection{Diskrete Gleichverteilung}
+Gleichverteilung: $P(X=x_i)=\frac{1}{n}\quad i=1..n$
+\begin{align*}
+	E(X) &= \overline{x} \\
+	VAR(X) &= \frac{1}{n}\left[{\sum_{i=1}^n x_i^2}\right]-(\overline{x})^2
+\end{align*}
+
+\subsubsection{Bernoulli / Zweipunktverteilung}
+\begin{center}
+	\begin{pspicture}(0,0)(8,2)
+		\rput[l](0,1){{\small Anstoss}}
+		\psline{->}(1.2,1)(2,1)
+		\psframe(2,0)(5,2)
+		\psline{->}(5,1)(6,1.5)
+		\psline{->}(5,1)(6,0.5)
+		\rput[b](3.5,1){{\small Bernouli-Prozess}}
+		\rput[l](6.2,1.5){{\small Erfolg: $p$}}
+		\rput[l](6.2,0.5){{\small Misserfolg: $q=1-p$}}
+	\end{pspicture}
+\end{center}
+\begin{align*}
+	E(X) &= p \\
+	VAR(X) &= p\cdot q = p\cdot (1-p)
+\end{align*}
+
+\subsubsection{Binominal-Verteilung}
+Binominalprozess $\hat{=}$ $n$-malige Wiederholung des Bernoulli-Prozess. $X$ $\hat{=}$
+Anzahl Erfolge bei $n$-maliger Durchf"uhrung eines Zweipunkt-Prozesses.
+\begin{gather*}
+	x_i \in \{0, 1, 2, \ldots, n \} \\
+	P(X=k) =\binom{n}{k}\cdot p^k\cdot (1-p)^{n-k}=\frac{n!}{k!(n-k)!}\cdot p^k\cdot (1-p)^{n-k} \\
+	E(X) = n\cdot p \\
+	VAR(X)=n\cdot p\cdot q=n\cdot p\cdot (1-p)
+\end{gather*}
+\underline{Satz:}
+\begin{align}
+	E(X+Y) &= E(X) + E(Y) \\
+	VAR(X+Y) &= VAR(X)+VAR(Y)
+\end{align}
+sofern $X$ und $Y$ unabh"angig voneinander.
+
+\subsubsection{Geometrische Verteilung}
+Folge von Bernoulli-Experimenten:
+\begin{gather*}
+	X\hat{=}\text{ Anzahl Misserfolge vor dem 1. Erfolg} \\
+	P(X=k)=p\cdot (1-p)^k\quad k=0,\ldots
+\end{gather*}
+\begin{center}
+	\setlength{\GapDepth}{1.0cm}
+	\setlength{\GapWidth}{1.0cm}
+	\begin{bundle}{$\circ$}
+	\chunk[$p$]{Erfolg $x=0$}
+	\chunk[$1-p$]{
+		\begin{bundle}{Misserfolg}
+		\chunk[$p$]{Erfolg $x=1$}
+		\chunk[$1-p$]{
+			\begin{bundle}{Misserfolg}
+			\chunk[$p$]{Erfolg $x=2$}
+			\chunk[$1-p$]{
+				\begin{bundle}{Misserfolg}
+				\drawwith{\dashline[50]{3}}
+				\chunk{}
+				\chunk{}
+				\end{bundle}
+			}
+			\end{bundle}
+		}
+		\end{bundle}
+	}
+	\end{bundle}
+\end{center}
+\begin{gather*}
+	E(X)=\frac{q}{p}=\frac{1-p}{p}\qquad VAR(X)=\frac{1-p}{p^2}
+\end{gather*}
+
+\subsubsection{Hypergeometrische Verteilung}
+Von Bedeutung bei der Qualit"atskontrolle.
+\begin{center}
+	\begin{pspicture}(0,0)(4,3)
+		\psline{|-|}(0,2)(0,0)(3.5,0)(3.5,2)
+		\psarcn{->}(3.5,1.5){1.0}{180}{45}
+		\rput[b](1.75,1.0){{\small $M$ schwarze Kugeln}}
+		\rput[b](1.75,0.5){{\small $N-M$ weisse Kugeln}}
+	\end{pspicture}
+\end{center}
+\begin{align*}
+	n\quad &\text{: Kugeln, ohne Zur"ucklegen} \\
+	X\quad &\text{: Anzahl gezogene schwarze Kugeln} \\
+	M\quad &\text{: Anzahl schwarze Kugeln} \\
+	N-M\quad &\text{: Anzahl weisse Kugeln} \\
+	P(X=k) &=\frac{\binom{M}{k}}{\binom{N-M}{n-k}}{\binom{N}{n}}
+\end{align*}
+
+\subsubsection{Poisson-Verteilung}
+Ankunftsprozess: Poststelle, Check-in-Schalter, etc.
+\begin{gather*}
+	X \hat{=}\text{ Anzahl Ank"unfte in einer gegebenen Periode} \\
+	P(X=k)=\frac{e^{-\lambda}\cdot\lambda^k}{k!}\qquad\text{mit }k=0,1,\ldots\text{ und }\lambda\text{ : Parameter} \\
+	E(X) = \lambda\qquad VAR(X)=\lambda
+\end{gather*}
+
+\subsubsection{Stetige Zufallsvariablen}
+\paragraph{Wahrscheinlichkeitsdichte (Dichtefunktion)}
+\begin{enumerate}
+	\item $f_X(x)\geq 0\quad\forall x$
+	\item $\int\limits_{-\infty}^{+\infty}f_X(x)\,dx=1$
+	\item $P(a\leq x\leq b) = \int\limits_a^b f_X(\tau)\,d\tau=F_X(b)-F_X(a)$
+\end{enumerate}
+
+\paragraph{Erwartungswert}
+\begin{equation}
+	E(X)=\int\limits_{-\infty}^{+\infty}x\cdot f_X(x)\,dx = \mu_X
+\end{equation}
+
+\paragraph{Varianz}
+\begin{align}
+	VAR(X) &= \int\limits_{-\infty}^{+\infty}(x-\mu_X)^2\cdot f_X(x)\,dx = \sigma_X \\
+		&= E(X^2)-\mu^2_X
+\end{align}
+
+\paragraph{Gleichverteilung}
+\begin{center}
+	\begin{pspicture}(-0.5,-0.5)(4.0,2.0)
+		\psline{->}(0,0)(3.5,0)\rput[l](3.6,0){$X$}
+		\psline{->}(0,0)(0,1.5)\rput[b](0,1.6){$f_X$}
+		\psframe[fillstyle=solid,fillcolor=lightgray,linewidth=0pt](0.5,0)(2.5,1)
+		\psline[linecolor=red,linewidth=1.5pt](0,0)(0.5,0)(0.5,1)(2.5,1)(2.5,0)(3,0)
+		\rput[t](0.5,-0.2){$a$}
+		\rput[t](2.5,-0.2){$b$}
+		\rput[b](1.5,0.5){{\small Fl\"ache $=1$}}
+		\psline[linestyle=dashed](0,1)(0.5,1)
+		\rput[r](-0.1,1){$\frac{1}{b-a}$}
+	\end{pspicture}
+\end{center}
+\begin{align}
+	f_X(x) &= \begin{cases}
+		\frac{1}{b-a}\qquad &\text{: f"ur } x\in [a,b] \\
+		0 \qquad &\text{sonst}
+		\end{cases} \\
+	E(X) &= \frac{a+b}{2} \\
+	E(X^2) &= \frac{1}{3}(b^2+ab+a^2) \\
+	VAR(X) &= \frac{(a-b)^2}{12}
+\end{align}
+Standardfall: $\text{random }\hat{=} \mathrm{GL}(0,1)$
+
+\paragraph{Normalverteilung} (Gauss-Verteilt)
+\begin{equation}
+	f_X(x)=\frac{1}{\sigma\cdot\sqrt{2\pi}}\cdot e^{-\frac{(x-\mu)^2}{2\sigma^2}}\text{ mit }\mu,\sigma\text{ als Parameter}
+\end{equation}
+\begin{center}
+	\begin{pspicture}(0,-1)(6,3)
+		% mu = 3.0  sigma = 0.5
+		\psplot[linecolor=red,linewidth=1.5pt]{0.0}{5.5}{2.718 0 x 3.0 sub dup mul 2 0.5 dup mul mul div sub exp 1 2 3.14159265 mul sqrt 0.5 mul div mul 2.5 mul}
+		\psline{->}(0,0)(6,0)
+		\psline{->}(0,0)(0,3)
+		\psline[linestyle=dashed](3,3)(3,-0.5)\rput[t](3,-0.6){$\mu$}
+		\psline[linecolor=lightgray](2.5,1.2)(2.5,-0.2)\rput[t](2.5,-0.3){$-\sigma$}
+		\psline[linecolor=lightgray](3.5,1.2)(3.5,-0.2)\rput[t](3.5,-0.3){$+\sigma$}
+		\psline[linecolor=lightgray](2.4,1.2)(3.6,1.2)\rput[l](3.8,1.2){Wendepunkte}
+	\end{pspicture}
+\end{center}
+Schreibweise: $x \thicksim \mathcal{N}(\mu_X, \sigma^2_X)$ \\
+Verteilungsfunktion $F_X$ wird mit $\Phi$ bestimmt (siehe Tabelle). \\
+
+\underline{Satz:}
+\begin{equation}
+	x\thicksim\mathcal{N}(\mu,\sigma^2)\quad\Rightarrow\quad Y=aX+b\thicksim\mathcal{N}(a\cdot\mu+b,a^2\cdot\sigma^2)
+\end{equation}
+
+\paragraph{Exponentialverteilung}
+\begin{equation}
+	f_X(x) = \lambda\cdot e^{-\lambda\cdot x}\cdot u(x)
+\end{equation}
+$u$ : unit-step \\
+Anwendung: Beschreibung der Lebensdauer von Objekten.
+\begin{equation*}
+	E(X) = \frac{1}{x}\qquad VAR(X)=\frac{1}{x^2}
+\end{equation*}
+
+\paragraph{Momente einer Verteilung}
+$k$-tes Moment einer Zufallsvariablen $X$ : $E(X^k)$ \\
+$k$-tes zentriertes Moment einr Zufallsvariablen $X$ : $E(|x-c|^k)$ \\
+Spezialf"alle:
+\begin{enumerate}
+	\item Moment entspricht dem {\em Erwartungswert}
+	\item Moment zentriert be"uglich $\mu$ entspricht der {\em Varianz}
+\end{enumerate}
+\underline{Satz:} (Markoff-Ungleichung)
+\begin{gather}
+	P(|x-c|\geq x)\leq\frac{1}{x^k}\cdot E(|x-c|^k)\text{ sofern }E(|x-c|^k)<\infty
+	\intertext{Spezialfall: Tschebyscheff-Ungleichung}
+	P(|x-\mu|\geq x)\leq\frac{1}{x^2}\cdot E(|x-\mu|^2)=\frac{\sigma^2_x}{x^2}
+\end{gather}
+
+\subsubsection{Diskret-Stetig}
+
+\paragraph{Binominal - Poission}
+Wenn $x\thicksim\mathrm{B}(n,p)$ mit $n$ gross und $p$ klein, dann ist
+\begin{equation}
+	X\thicksim P_0(\lambda)\text{ mit }\lambda=n\cdot p
+\end{equation}
+
+\paragraph{Binominal - Normalverteilung}
+\begin{gather}
+	X\thicksim\mathrm{B}(n,p)\text{ mit } n\cdot p\cdot q> q
+	\intertext{dann}
+	X \thicksim\mathcal{N}(\mu, \sigma^2)\text{ mit } \mu=n\cdot p\text{ und }\sigma^2=n\cdot p\cdot q
+\end{gather}
+
+\subsection{Mehrdimensionale Zufallsvariablen}
+\begin{center}
+	\begin{pspicture}(0,0)(6,2)
+		\rput[l](0,1){{\small Anstoss}}
+		\psline{->}(1.2,1)(2.0,1)
+		\psframe(2.0,0)(4.5,2)\rput[b](3.25,0.9){{\small Zufallsprozess}}
+		\psline{->}(4.5,1)(5.0,1)
+		\rput[l](5.1,1){{\small Ereignis (2 Werte)}}
+	\end{pspicture}
+\end{center}
+
+\subsubsection{Diskret}
+Zweidimensionale Wahrscheinlichkeitsfunktion $P(X=x_i,Y=y_i)$ mit
+\begin{gather}
+	\sum_{i=1}^n\sum_{j=1}^m p_{ij} = 1\qquad\text{und } p_{ij}\geq0\quad\forall i,j \notag \\
+	F_{XY}=P(X\leq x,Y\leq y) = \sum_{x_i\leq x}\sum{y_i\leq y}p_{ij}
+\end{gather}
+
+\subsubsection{Stetig}
+\begin{gather}
+	f_{XY}(x,y)\text{ mit }\iint\limits_\mathbb{G}f_{XY}(x,y)\,dxdy=1\text{ und }f_{XY}\geq 0\quad\forall x,y \\
+	F_{XY}=P(X\leq x,Y\leq y)=\int\limits_{-\infty}^{+\infty}\int\limits_{-\infty}^{+\infty}f_{XY}(x,y)\,dxdy
+\end{gather}
+
+\subsubsection{Zweidimensionale Normalverteilung}
+\begin{gather}
+	f_{XY}(x,y)=\frac{1}{2\pi\sqrt{\Delta}}\cdot e^{\begin{pmatrix}x-\mu_x & y-\mu_y\end{pmatrix}\begin{pmatrix}\sigma^2_1 & \sigma_{12} \\ \sigma_{12} & \sigma^2_2 \end{pmatrix}^{-1}\begin{pmatrix}x-\mu_x \\ y-\mu_y\end{pmatrix}}
+	\intertext{wobei}
+	\mu_x=E(X)\quad\sigma^2_1=VAR(X)\qquad\text{und}\qquad\mu_y=E(Y)\sigma^2_y=VAR(Y) \notag\\
+	\sigma_{12}\text{ : weiterer Parameter} \notag \\
+	\Delta = \sigma^2_1\cdot\sigma^2_2-(\sigma_{12})^2
+\end{gather}
+
+\subsubsection{Unabh"angigkeit}
+Zwei Zufallsvariablen $X$ und $Y$ sind unabh"angig, wenn
+\begin{equation}
+	f_{XY} = f_X\cdot f_Y
+\end{equation}
+diskreter Fall:
+\begin{equation}
+	P(X=x_i, Y=y_i) = P(X=x_i)\cdot P(Y=y_i)
+\end{equation}
+
+\subsubsection{Summe von Zufallsvariablen}
+Ist $Z=X+Y$ mit $X\thicksim F_X(x)$ und $Y\thicksim F_Y(y)$ voneinander unabh"angig, dann ist:
+\begin{equation}
+	f_Z(z)=\int\limits_{-\infty}^{+\infty}f_X(\tau)\cdot f_Y(z-\tau)\,d\tau\qquad\hat{=}\text{Faltungsintegral}
+\end{equation}
+Zur Berechnung k"onnen eine der folgenden M"oglichkeiten gew"ahlt werden:
+\begin{itemize}
+	\item diskret
+	\item Lapalce-Transformation
+	\item Fourier-Transformation
+\end{itemize}
+
+Wenn $X_1\thicksim P_o(\lambda_1)$ und $X_2\thicksim P_u(\lambda_2)$ diskret und unabh"angig sind
+und $Z=X_1+X_2$ gilt, dann ist
+\begin{equation}
+	P(Z\leq z)=\frac{e^{-\lambda_1-\lambda_2}}{z!}(\lambda_1+\lambda_2)^2
+\end{equation}
+
+\underline{Satz:} Die Summe zweier unabh"angiger poissonverteilten Zufallsvariablenist wiederum
+poissonverteilt.
+\begin{align*}
+	X_1+X_2 &\thicksim\mathcal{N}(\mu_1+\mu_2, \sigma^2_1+\sigma^2_2) \\
+	X_1-X_2 &\thicksim\mathcal{N}(\mu_1-\mu_2, \sigma^2_1+\sigma^2_2)
+\end{align*}
+falls
+\begin{gather*}
+	X_1\thicksim\mathcal{N}(\mu_1,\sigma^2_1)\quad\text{ und }\quad X_2\thicksim\mathcal{N}(\mu_2,\sigma^2_2)
+\end{gather*}
+
+\subsubsection{Produkt von Zufallsvariablen}
+Falls $X$ und $Y$ unabh"angig sind:
+\begin{equation}
+	E(X\cdot Y)=E(X)\cdot E(Y)
+\end{equation}
+Falls $X$ und $Y$ abh"angig voneinander:
+\begin{align*}
+	E(X\cdot Y) &\neq E(X)\cdot E(Y) \\
+	VAR(X\cdot Y) &\neq VAR(X)\cdot VAR(Y)
+\end{align*}
+
+\subsubsection{Kovarianz}
+\begin{equation}
+	COV(X,Y) = E(X\cdot Y)-E(X)\cdot E(Y)
+\end{equation}
+$X$ und $Y$ sind unabh"angig voneinander
+
+\subsubsection{Korelation}
+\begin{equation}
+	\rho(X,Y)=\frac{COV(X,Y)}{\sqrt{VAR(X)\cdot VAR(Y)}}
+\end{equation}
+\underline{Satz:}
+\begin{equation}
+	|\rho| \leq 1
+\end{equation}
+\underline{Satz:}
+\begin{equation}
+	COV(X,Y)=E\left[{\bigl(X-E(X)\bigr)\cdot\bigl(Y-E(Y)\bigr)}\right]
+\end{equation}
+
+\subsection{Zentraler Grenzwertsatz}
+Saloppe Erkl"arung:
+\begin{equation}
+	\lim_{n\to\infty}\overline{x} = E(X)
+\end{equation}
+formal:
+\begin{gather}
+	X = z_1 + z_2 + \cdots + z_n\qquad z_i\text{ unabh"angig, identisch verteilt} \notag \\
+	\Longrightarrow\qquad X\thicksim\mathcal{N}(\mu,\sigma^2)
+\end{gather}
+
+\subsection{Markov-Ketten}
+\subsubsection{Stochastischer Prozess}
+Folge von Zufallsvariablen $U_i$ beschreibt den Zustand eines Systems hinsichtlich
+eines Merkmals. Dies entspricht einem {\em Stochastischem Prozess}.
+\newline
+\newline
+\underline{Definition:} Markov-Eigenschaft $U_i$ ist nur von $U_{i-1}$ anh"angig.
+Konsequenz: $P(U_i=u)$ ist von $U_{i-1}$ abh"angig, d.h. $P(U_i=u / U_{i-1}=w)$ ist
+eine {\em bedingte Wahrscheinlichkeit}, eine {\em "Ubergangswahrscheinlichkeit}.
+\newline
+\newline
+\underline{Definition:} Folge von $U_i$ mit Markov-Eigenschaft heisst {\em Markov-Kette}.
+"Ubergangswahrscheinlichkeiten k"onnen als Matrix geschrieben werden:
+\begin{equation*}
+	M=\begin{pmatrix}
+		p_{11} & \cdots & p_{1n} \\
+		\vdots & & \vdots \\
+		p_{n1} & \cdots & p_{nn}
+	\end{pmatrix}\qquad\text{mit Zeilensumme} = 1
+\end{equation*}
+Ausgangslage: $P(U_1=w_k)=\mu_k$
+\newline
+\newline
+\underline{Beispiel:}
+\begin{center}
+	\begin{pspicture}(0,-0.5)(6,4)
+		\cnodeput[fillcolor=lightgray,fillstyle=solid](1,3){n}{~$n$~}
+		\cnodeput[fillcolor=lightgray,fillstyle=solid](5,3){p}{~$p$~}
+		\cnodeput[fillcolor=lightgray,fillstyle=solid](3,1){c}{~$c$~}
+		\nccircle[angleA=90]{->}{n}{0.4}\Bput{$0.5$}
+		\nccircle[angleA=315]{->}{p}{0.4}\Bput{$0.9$}
+		\nccircle[angleA=180]{->}{c}{0.4}\Bput{$0.5$}
+		\ncarc{->}{n}{p}\Aput{$0.3$}
+		\ncarc{->}{n}{c}\Aput{$0.2$}
+		\ncarc{->}{c}{n}\Aput{$0.3$}
+		\ncarc{->}{c}{p}\Aput{$0.2$}
+		\ncarc{->}{p}{c}\Aput{$0.1$}
+	\end{pspicture} \\
+	\vspace{5mm}
+	\begin{tabular}{c|ccc}
+		& $n$ & $p$ & $c$ \\
+	\hline
+		$n$ & $0.5$ & $0.3$ & $0.2$ \\
+		$p$ & $0.0$ & $0.9$ & $0.1$ \\
+		$c$ & $0.3$ & $0.2$ & $0.5$
+	\end{tabular}
+\end{center}
+\begin{gather*}
+	t=0\quad\text{ : }\Vec{\mu}=\begin{pmatrix}0.8& 0.1 & 0.1\end{pmatrix} \\
+	\Vec{\nu}^{(1)} = \Vec{\mu}\cdot M \\
+	\Vec{\nu}^{(n+1)} = \Vec{\mu}\cdot M^n \\
+\end{gather*}
+Grenzwert: existiert und ist $\Vec{\pi}\quad\Longrightarrow\quad\Vec{\pi}=\Vec{\pi}\cdot M$
+(nur Eigenvektor zu $\lambda=1$).
+
+\subsection{$\chi^2$-Verteilung}
+Stetige Zufallsvariable $X$ mit der Dichte
+\begin{equation}
+	f_X(x)=\begin{cases}
+		0 \qquad & \text{f"ur } x<0 \\
+		\frac{x^{\frac{n}{2}-1}\cdot e^{-\frac{x}{2}}}{2^{\frac{n}{2}}\cdot\Gamma\left(\frac{n}{2}\right)} \qquad & \text{f"ur } x\geq 0
+	\end{cases}
+\end{equation}
+heisst $\chi^2$-Verteilung mit $n$ Freiheitsgraden $X\thicksim\chi^2(n)$ oder $X\thicksim\mathrm{Chi}^2(n)$.
+
+\subsubsection{Gamma-Funktion}
+\begin{gather}
+	\Gamma(\alpha) = \int\limits_0^\infty e^{-t}\cdot t^{k-1}\,dt\quad\text{mit }\alpha>0
+\end{gather}
+mit
+\begin{align*}
+	\Gamma(1) &=1 \\
+	\Gamma\left(\frac{1}{2}\right) &= \sqrt{\pi} \\
+	\Gamma(\alpha+1) &= \alpha-\Gamma(\alpha)	
+\end{align*}
+\begin{align*}
+	E(X)=n && X_1\thicksim\chi^2(n_1) \\
+	VAR(X)=2n && X_2\thicksim\chi(n_2)
+\end{align*}
+sind voneinander unabh"angig $\Longrightarrow X_1+X_2\thicksim\chi^2(n_1+n_2)$.
+\newline
+\newline
+\underline{Satz:}
+\begin{gather}
+	x_i\thicksim\mathcal{N}(0,1)\qquad\text{mit }i=1\ldots n\text{ , unabh"angig} \notag \\
+	\Longrightarrow z=x_1^2 + \cdots + x_n^2 \thicksim\chi^2(n)
+\end{gather}
+
+\subsection{$t$-Verteilung}
+Stetige Zufallsvariable $X$ mit der Dichte
+\begin{equation}
+	f_X(x)=\frac{\Gamma(\frac{n+1}{n})}{\Gamma(\frac{n}{2})\sqrt{n\pi}}\left({1+\frac{x^2}{n}}\right)^{-\frac{n+1}{2}}\qquad x\in\mathbb{R}
+\end{equation}
+Grenzfall: $n\to\infty$ : $f_X(x)\rightarrow\mathcal{N}(0,1)$
+\begin{gather*}
+	E(X)= 0\qquad\text{(wegen Symmetrie)} \\
+	VAR(X)=\frac{n}{n-2}\qquad\text{f"ur }n\geq 3
+\end{gather*}
+
+\subsection{F-Verteilung}
+Eine Zufallsvariable $X$ mit der Dichte
+\begin{equation}
+	f_X(x)=\begin{cases}
+		0\qquad & \text{f"ur } x\leq 0 \\
+		\frac{\Gamma(\frac{m+n}{2})\cdot\left({\frac{m}{n}}\right)^\frac{n}{2}}{\Gamma(\frac{m}{n})\cdot\Gamma(\frac{n}{2})}
+			\cdot
+			\frac{x^{\frac{n}{2}}-1}{\left({1+\frac{m}{n}\cdot x}\right)^\frac{m+n}{2}}\qquad &\text{f"ur }x>0
+	\end{cases}
+\end{equation}
+heisst {\em F-Verteilt} mit $(m,n)$ Freiheitsgrade.
+\begin{gather*}
+	E(X) = \frac{n}{n-2} \qquad\text{f"ur }n\geq 3 \\
+	VAR(X) = \frac{2n^2(m+n-2}{m(n-2)^2(n-4)}\qquad\text{f"ur }x\geq 5 \\
+	X_1\thicksim\chi^2(n_1)\qquad\text{und}\qquad X_2\thicksim\chi^2(n_2)
+	\intertext{voneinander unabh"angig}
+	\Longrightarrow\frac{X_1 / n_1}{X_2 / n_2} \thicksim F(n_1, n_2)
+	\intertext{wobei}
+	X\thicksim F(m,n)\quad\Longrightarrow\quad\frac{1}{x}\thicksim F(n,m)
+\end{gather*}
+
+%
+% EOF
+%
